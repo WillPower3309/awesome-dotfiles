@@ -57,6 +57,7 @@ theme.menu_width  = dpi(100)
 
 theme.notification_max_width = dpi(500)
 theme.notification_margin = dpi(5)
+theme.notification_padding = dpi(8)
 
 
 -- ===================================================================
