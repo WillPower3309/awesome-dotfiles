@@ -66,9 +66,6 @@ awful.layout.layouts = {
 
 
 awful.screen.connect_for_each_screen(function(s)
-    -- Wallpaper
-    --set_wallpaper(s)
-
     -- Each screen has its own tag table.
     local l = awful.layout.suit -- Alias to save time :)
     -- Tag layouts
