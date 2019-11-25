@@ -89,21 +89,13 @@ do
       )
       in_error = false
 
-
-
-
-
--- Notification template
-
--- margin
-naughty.connect_signal("request::display", function(n)
-
-  naughty.layout.box {
-    notification = n,
-    type = "splash",
-    shape = gears.shape.rectangle,
-    widget_template = {
-      {
+    -- Notification template
+    naughty.connect_signal("request::display", function(n)
+    naughty.layout.box {
+        notification = n,
+        type = "splash",
+        shape = gears.shape.rectangle,
+        widget_template = {
         {
           {
             {
@@ -111,90 +103,87 @@ naughty.connect_signal("request::display", function(n)
                 {
                   {
                     {
+                      {
                       -- TITLE
-                      {
                         {
                           {
-                            align = "center",
-                            widget = naughty.widget.title,
+                            {
+                              align = "center",
+                              widget = naughty.widget.title,
+                            },
+                            margins = beautiful.notification_margin,
+                            widget  = wibox.container.margin,
                           },
-                          margins = beautiful.notification_margin,
-                          widget  = wibox.container.margin,
+                          -- BG of Titlebar
+                          bg = '#000000'.. '44',
+                          widget  = wibox.container.background,
                         },
-                        -- BG of Titlebar
-                        bg = '#000000'.. '44',
-                        widget  = wibox.container.background,
+                        -- ICON And Message
+                        {
+                          {
+                            {
+                              resize_strategy = 'center',
+                              widget = naughty.widget.icon,
+                            },
+                            margins = dpi(5),
+                            widget  = wibox.container.margin,
+                          },
+                          {
+                            {
+                              align = "center",
+                              widget = naughty.widget.message,
+                            },
+                            margins = beautiful.notification_margin,
+                            widget  = wibox.container.margin,
+                          },
+                          layout = wibox.layout.fixed.horizontal,
+                        },
+                        fill_space = true,
+                        spacing = beautiful.notification_margin,
+                        layout  = wibox.layout.fixed.vertical,
                       },
-                      -- ICON And Message
-                      {
-                        {
-                          {
-                            resize_strategy = 'center',
-                            widget = naughty.widget.icon,
-                          },
-                          margins = dpi(5),
-                          widget  = wibox.container.margin,
-                        },
-                        {
-                          {
-                            align = "center",
-                            widget = naughty.widget.message,
-                          },
-                          margins = beautiful.notification_margin,
-                          widget  = wibox.container.margin,
-                         },
-                         layout = wibox.layout.fixed.horizontal,
-                       },
-                       fill_space = true,
-                       spacing = beautiful.notification_margin,
-                       layout  = wibox.layout.fixed.vertical,
-                     },
-                     -- Margin between the fake background
-                     -- Set to 0 to preserve the 'titlebar' effect
-                     margins = dpi(0),
-                     widget  = wibox.container.margin,
-                   },
-                   bg = "#00000000",
-                   widget  = wibox.container.background,
-                 },
-                 -- Notification action list
-                 naughty.list.actions,
-                 spacing = dpi(4),
-                 layout  = wibox.layout.fixed.vertical,
-               },
-               bg     = "#00000000",
-               id     = "background_role",
-               widget = naughty.container.background,
-             },
+                      -- Margin between the fake background
+                      -- Set to 0 to preserve the 'titlebar' effect
+                      margins = dpi(0),
+                      widget  = wibox.container.margin,
+                    },
+                    bg = "#00000000",
+                    widget  = wibox.container.background,
+                  },
+                  -- Notification action list
+                  naughty.list.actions,
+                  spacing = dpi(4),
+                  layout  = wibox.layout.fixed.vertical,
+                },
+                bg     = "#00000000",
+                id     = "background_role",
+                widget = naughty.container.background,
+              },
              strategy = "min",
              width    = dpi(160),
              widget   = wibox.container.constraint,
-           },
-           strategy = "max",
-           width    = beautiful.notification_max_width,
-           widget   = wibox.container.constraint,
-         },
-         -- Anti-aliasing container
-         -- Real BG
-         bg = beautiful.bg_normal,
-         -- This will be the anti-aliased shape of the notification
-         shape = gears.shape.rounded_rect,
-         widget = wibox.container.background
-       },
-       -- Margin of the fake BG to have a space between notification and the screen edge
-       margins = beautiful.notification_margin,
-       widget  = wibox.container.margin
-     }
-   }
+            },
+            strategy = "max",
+            width    = beautiful.notification_max_width,
+            widget   = wibox.container.constraint,
+          },
+          -- Anti-aliasing container
+          -- Real BG
+          bg = beautiful.bg_normal,
+          -- This will be the anti-aliased shape of the notification
+          shape = gears.shape.rounded_rect,
+          widget = wibox.container.background
+        },
+        -- Margin of the fake BG to have a space between notification and the screen edge
+        margins = beautiful.notification_margin,
+        widget  = wibox.container.margin
+      }}
 
-
-   -- Don't Show/Destroy popup notifications if notification panel is visible
-   -- And if do not dont_disturb is on
-  if panel_visible or dont_disturb then
-    naughty.destroy_all_notifications()
-  end
-
-end)
-
-end)
+      -- Don't Show/Destroy popup notifications if notification panel is visible
+      -- And if do not dont_disturb is on
+      if panel_visible or dont_disturb then
+        naughty.destroy_all_notifications()
+      end
+    end)
+  end)
 end
