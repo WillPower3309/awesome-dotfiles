@@ -50,11 +50,12 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
     taglist_square_size, theme.fg_normal
 )
 
--- Variables set for theming the menu:
+-- Menu Variables:
 theme.menu_submenu_icon = themes_path.."default/submenu.png"
 theme.menu_height = dpi(15)
 theme.menu_width  = dpi(100)
 
+-- Notification Variables:
 theme.notification_max_width = dpi(500)
 theme.notification_margin = dpi(5)
 theme.notification_padding = dpi(8)
