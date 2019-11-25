@@ -1,3 +1,15 @@
+--      ███████╗██╗  ██╗██╗████████╗    ███████╗ ██████╗██████╗ ███████╗███████╗███╗   ██╗
+--      ██╔════╝╚██╗██╔╝██║╚══██╔══╝    ██╔════╝██╔════╝██╔══██╗██╔════╝██╔════╝████╗  ██║
+--      █████╗   ╚███╔╝ ██║   ██║       ███████╗██║     ██████╔╝█████╗  █████╗  ██╔██╗ ██║
+--      ██╔══╝   ██╔██╗ ██║   ██║       ╚════██║██║     ██╔══██╗██╔══╝  ██╔══╝  ██║╚██╗██║
+--      ███████╗██╔╝ ██╗██║   ██║       ███████║╚██████╗██║  ██║███████╗███████╗██║ ╚████║
+--      ╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝       ╚══════╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═══╝
+
+-- ===================================================================
+-- Imports
+-- ===================================================================
+
+
 local awful = require('awful')
 local gears = require('gears')
 local wibox = require('wibox')
@@ -7,7 +19,12 @@ local clickable_container = require('widgets.clickable-container')
 local apps = require('apps')
 local dpi = require('beautiful').xresources.apply_dpi
 
+
+-- ===================================================================
 -- Appearance
+-- ===================================================================
+
+
 local icon_size = dpi(90)
 
 local buildButton = function(icon)
@@ -38,21 +55,31 @@ local buildButton = function(icon)
   return abutton
 end
 
+
+-- ===================================================================
+-- Functionality
+-- ===================================================================
+
+
 function suspend_command()
   exit_screen_hide()
   awful.spawn.with_shell(apps.default.lock .. ' & systemctl suspend')
 end
+
 function exit_command()
   awesome.quit()
 end
+
 function lock_command()
   exit_screen_hide()
   awful.spawn.with_shell('sleep 1 && ' .. apps.default.lock)
 end
+
 function poweroff_command()
   awful.spawn.with_shell('poweroff')
   awful.keygrabber.stop(exit_screen_grabber)
 end
+
 function reboot_command()
   awful.spawn.with_shell('reboot')
   awful.keygrabber.stop(exit_screen_grabber)
@@ -98,7 +125,12 @@ lock:connect_signal(
   end
 )
 
--- Get screen geometry
+
+-- ===================================================================
+-- Create Widget
+-- ===================================================================
+
+
 local screen_geometry = awful.screen.focused().geometry
 
 -- Create the widget
