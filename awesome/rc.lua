@@ -22,10 +22,6 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
 
-local menubar = require("menubar")
-local hotkeys_popup = require("awful.hotkeys_popup")
-require("awful.hotkeys_popup.keys")
-
 -- Import rules
 awful.rules.rules = require("rules");
 
