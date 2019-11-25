@@ -37,7 +37,7 @@ keys.desktopbuttons = gears.table.join()
 -- ===================================================================
 
 
-keys.globalkeys = gears.table.join(    
+keys.globalkeys = gears.table.join(
     -- =========================================
     -- APPLICATION KEY BINDINGS
     -- =========================================
@@ -54,6 +54,78 @@ keys.globalkeys = gears.table.join(
             awful.spawn(apps.launcher)
         end,
         {description = "application launcher", group = "launcher"}),
+
+    -- =========================================
+    -- VOLUME / BRIGHTNESS
+    -- =========================================
+
+    -- Brightness
+    awful.key({}, 'XF86MonBrightnessUp',
+        function()
+            awful.spawn('xbacklight -inc 10')
+            if toggleBriOSD ~= nil then
+                _G.toggleBriOSD(true)
+            end
+            if UpdateBrOSD ~= nil then
+                _G.UpdateBrOSD()
+            end
+        end,
+        {description = '+10%', group = 'hotkeys'}),
+    awful.key({}, 'XF86MonBrightnessDown',
+        function()
+            awful.spawn('xbacklight -dec 10')
+            if toggleBriOSD ~= nil then
+                _G.toggleBriOSD(true)
+            end
+            if UpdateBrOSD ~= nil then
+                _G.UpdateBrOSD()
+            end
+        end,
+        {description = '-10%', group = 'hotkeys'}),
+
+    -- ALSA volume control
+    awful.key({}, 'XF86AudioRaiseVolume',
+        function()
+            awful.spawn('amixer -D pulse sset Master 5%+')
+            if toggleVolOSD ~= nil then
+                _G.toggleVolOSD(true)
+            end
+            if UpdateVolOSD ~= nil then
+                _G.UpdateVolOSD()
+            end
+        end,
+        {description = 'volume up', group = 'hotkeys'}),
+    awful.key({}, 'XF86AudioLowerVolume',
+        function()
+            awful.spawn('amixer -D pulse sset Master 5%-')
+            if toggleVolOSD ~= nil then
+                _G.toggleVolOSD(true)
+            end
+            if UpdateVolOSD ~= nil then
+                 _G.UpdateVolOSD()
+            end
+        end,
+        {description = 'volume down', group = 'hotkeys'}),
+    awful.key({}, 'XF86AudioMute',
+        function()
+            awful.spawn('amixer -D pulse set Master 1+ toggle')
+        end,
+        {description = 'toggle mute', group = 'hotkeys'}),
+    awful.key({}, 'XF86AudioNext',
+        function()
+            awful.spawn('mpc next')
+        end,
+        {description = 'next music', group = 'hotkeys'}),
+    awful.key({}, 'XF86AudioPrev',
+        function()
+            awful.spawn('mpc prev')
+        end,
+        {description = 'previous music', group = 'hotkeys'}),
+    awful.key({}, 'XF86AudioPlay',
+        function()
+            awful.spawn('mpc toggle')
+        end,
+        {description = 'play/pause music', group = 'hotkeys'}),
 
     -- =========================================
     -- CLIENT FOCUSING
@@ -116,18 +188,12 @@ keys.globalkeys = gears.table.join(
         function ()
             awful.client.focus.byidx( 1)
         end,
-        {description = "focus next by index", group = "client"}
-    ),
+        {description = "focus next by index", group = "client"}),
     awful.key({ modkey, "Shift" }, "Tab",
         function ()
             awful.client.focus.byidx(-1)
         end,
-        {description = "focus previous by index", group = "client"}
-    ),
-
-    -- =========================================
-    -- GAP CONTROL (TODO)
-    -- =========================================
+        {description = "focus previous by index", group = "client"}),
 
     -- =========================================
     -- RELOAD / QUIT AWESOME
@@ -143,6 +209,16 @@ keys.globalkeys = gears.table.join(
             exit_screen_show()
         end,
         {description = "quit awesome", group = "awesome"}),
+
+    awful.key({}, 'XF86PowerOff',
+        function()
+            exit_screen_show()
+        end,
+        {description = 'toggle exit screen', group = 'hotkeys'}),
+
+    -- =========================================
+    -- GAP CONTROL (TODO)
+    -- =========================================
 
     -- =========================================
     -- CLIENT RESIZING (TODO)

@@ -23,9 +23,7 @@ apps.launcher = "rofi -show drun"
 -- List of apps to start once on start-up
 run_on_start_up = {
     'compton',
-    'unclutter',
-    'redshift -l 43.544811:-80.248108',
-    'flashfocus'
+    'unclutter'
 }
 
 
