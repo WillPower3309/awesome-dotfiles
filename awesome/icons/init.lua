@@ -15,5 +15,6 @@ return {
   sleep = dir .. '/power-sleep.svg',
   power = dir .. '/power.svg',
   lock = dir .. '/lock.svg',
+  brightness = dir .. '/brightness.svg',
   restart = dir .. '/restart.svg'
 }

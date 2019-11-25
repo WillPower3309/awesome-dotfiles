@@ -31,6 +31,7 @@ local keys = require("keys")
 -- Import Components
 require("components.notifications") -- startup error handling done in here
 require("components.exit-screen")
+require("components.brightness-osd");
 
 
 -- ===================================================================
