@@ -2,11 +2,12 @@
 local awful = require("awful")
 local gears = require("gears")
 local wibox = require("wibox")
+local watch = require('awful.widget.watch')
 local beautiful = require('beautiful')
 local dpi = require('beautiful').xresources.apply_dpi
 
 
-local bri_osd = require('widgets.brightness.brightness-slider-osd')
+local vol_osd = require('widgets.volume.volume-slider-osd')
 
 
 awful.screen.connect_for_each_screen(
@@ -15,7 +16,7 @@ awful.screen.connect_for_each_screen(
 
     local offsetx = dpi(56)
     local offsety = dpi(300)
-    brightnessOverlay = wibox(
+    volumeOverlay = wibox(
       {
         visible = nil,
         ontop = true,
@@ -30,14 +31,13 @@ awful.screen.connect_for_each_screen(
   end
 )
 
-
 -- Put its items in a shaped container
-brightnessOverlay:setup {
+volumeOverlay:setup {
     -- Container
     {
         -- Items go here
         --wibox.widget.textbox("Hello!"),
-        wibox.container.rotate(bri_osd,'east'),
+        wibox.container.rotate(vol_osd, 'east'),
         -- ...
         layout = wibox.layout.fixed.vertical
     },
@@ -53,17 +53,17 @@ local hideOSD = gears.timer {
     timeout = 5,
     autostart = true,
     callback  = function()
-      brightnessOverlay.visible = false
+      volumeOverlay.visible = false
     end
-  }
+}
 
 
-function toggleBriOSD(bool)
-  brightnessOverlay.visible = bool
+function toggleVolOSD(bool)
+  volumeOverlay.visible = bool
   if bool then
     hideOSD:again()
-    if toggleVolOSD ~= nil then
-      _G.toggleVolOSD(false)
+    if toggleBriOSD ~= nil then
+      _G.toggleBriOSD(false)
     end
   else
     hideOSD:stop()
@@ -71,4 +71,4 @@ function toggleBriOSD(bool)
 end
 
 
-return brightnessOverlay
+return volumeOverlay
