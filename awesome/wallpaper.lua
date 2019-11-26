@@ -37,16 +37,16 @@ function timeChecker()
   time = time.hour
   -- Morning
   if tonumber(time) >= dayTime and tonumber(time) < noonTime then
-    awful.spawn.with_shell("feh --bg-scale " .. wall_dir .. "day-wallpaper.png")
+    awful.spawn.with_shell("feh --bg-fill " .. wall_dir .. "day-wallpaper.png")
   -- Noon
   elseif tonumber(time) >= noonTime and tonumber(time) < eveningTime then
-    awful.spawn.with_shell("feh --bg-scale " .. wall_dir .. "noon-wallpaper.png")
+    awful.spawn.with_shell("feh --bg-fill " .. wall_dir .. "noon-wallpaper.png")
   -- Evening
   elseif tonumber(time) >= eveningTime then
-    awful.spawn.with_shell("feh --bg-scale " .. wall_dir .. "evening-wallpaper.png")
+    awful.spawn.with_shell("feh --bg-fill " .. wall_dir .. "evening-wallpaper.png")
   -- Night
   else
-    awful.spawn.with_shell("feh --bg-scale " .. wall_dir .. "night-wallpaper.png")
+    awful.spawn.with_shell("feh --bg-fill " .. wall_dir .. "night-wallpaper.png")
   end
 end
 
