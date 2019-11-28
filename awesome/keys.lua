@@ -217,8 +217,22 @@ keys.globalkeys = gears.table.join(
         {description = 'toggle exit screen', group = 'hotkeys'}),
 
     -- =========================================
-    -- GAP CONTROL (TODO)
+    -- GAP CONTROL
     -- =========================================
+
+    -- Gap control
+    awful.key({ modkey, "Shift" }, "minus",
+        function ()
+            awful.tag.incgap(5, nil)
+        end,
+        {description = "increment gaps size for the current tag", group = "gaps"}
+    ),
+    awful.key({ modkey }, "minus",
+        function ()
+            awful.tag.incgap(-5, nil)
+        end,
+        {description = "decrement gap size for the current tag", group = "gaps"}
+    ),
 
     -- =========================================
     -- CLIENT RESIZING (TODO)
