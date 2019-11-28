@@ -1,5 +1,6 @@
 # awesome-dotfiles
 
+![](/screenshot.jpg)
 
 ## Contents ##
 1. [Details](#details)
