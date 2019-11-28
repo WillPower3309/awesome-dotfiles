@@ -1,8 +1,9 @@
-syntax on
+set nocompatible
+filetype off
 
-set number relativenumber
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
 
-set tabstop=4
-set autoindent
-set expandtab
-set softtabstop=4
+call vundle#end()
+filetype plugin indent on

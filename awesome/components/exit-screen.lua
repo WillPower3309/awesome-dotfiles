@@ -72,7 +72,7 @@ end
 
 function lock_command()
   exit_screen_hide()
-  awful.spawn.with_shell('sleep 1 && ' .. apps.default.lock)
+  awful.spawn.with_shell('sleep 1 && i3lock')
 end
 
 function poweroff_command()
