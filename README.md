@@ -6,7 +6,8 @@
 1. [Details](#details)
 2. [Dependencies](#dependencies)
 3. [Installation](#installation)
-4. [Folder Structure](#folderStructure)
+4. [Application Theming](#appTheming)
+5. [Folder Structure](#folderStructure)
 
 <a name="details"></a>
 ## Details ##
@@ -33,6 +34,9 @@
 3. navigate to the `awesome` folder and place your desired wallpapers into the `wallpaper` folder, ensuring that you follow the naming conventions
 4. edit the `apps.lua` file to define your desired default and startup applications
 5. optional: edit the `keys.lua` file to change / add keybinds. Please refer to the [Folder Structure](#folderStructure) section of the readme to learn about how the file structure is laid out
+
+<a name="appTheming"></a>
+## Application Theming ##
 
 <a name="folderStructure"></a>
 ## Awesome Folder File Structure ##
