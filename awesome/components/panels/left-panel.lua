@@ -100,7 +100,6 @@ local left_panel = function(screen)
 
   panel:setup {
     layout = wibox.layout.align.horizontal,
-    nil
   }
   return panel
 end

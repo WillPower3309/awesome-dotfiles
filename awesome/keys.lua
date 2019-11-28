@@ -291,9 +291,9 @@ keys.globalkeys = gears.table.join(
     -- =========================================
 
     -- select next layout
-    awful.key({ modkey }, "Space",
+    awful.key({ modkey }, "space",
         function ()
-            awful.layout.inc( 1)
+            awful.layout.inc(1)
         end,
         {description = "select next", group = "layout"}),
     -- select previous layout
@@ -388,7 +388,7 @@ keys.clientkeys = gears.table.join(
     --end),
 
     -- Minimize
-    awful.key({ modkey,           }, "n",
+    awful.key({ modkey, }, "n",
         function (c)
             -- The client currently has the input focus, so it cannot be
             -- minimized, since minimized clients can't have the focus.
@@ -397,7 +397,7 @@ keys.clientkeys = gears.table.join(
         {description = "minimize", group = "client"}),
 
     -- Maximize
-    awful.key({ modkey,           }, "m",
+    awful.key({ modkey, }, "m",
         function (c)
             c.maximized = not c.maximized
             c:raise()
