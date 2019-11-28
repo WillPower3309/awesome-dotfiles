@@ -28,6 +28,9 @@ awful.rules.rules = require("rules");
 -- Import keybinds
 local keys = require("keys")
 
+-- Set Wallpaper
+require("wallpaper")
+
 -- Import Components
 require("components.notifications") -- startup error handling done in here
 require("components.panels")
@@ -35,8 +38,6 @@ require("components.exit-screen")
 require("components.brightness-osd")
 require("components.volume-osd")
 
--- Set Wallpaper
-require("wallpaper")
 
 -- ===================================================================
 -- Layouts
