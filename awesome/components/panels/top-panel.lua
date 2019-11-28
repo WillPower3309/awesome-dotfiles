@@ -70,7 +70,7 @@ end)
 
 -- Execute only if system tray widget is not loaded
 awesome.connect_signal("toggle_tray", function()
-  if not require('widget.systemtray') then
+  if not require('widgets.systemtray') then
     if awful.screen.focused().systray.visible ~= true then
       awful.screen.focused().systray.visible = true
     else
@@ -78,27 +78,6 @@ awesome.connect_signal("toggle_tray", function()
     end
   end
 end)
-
--- The `+` sign in top panel
-local add_button = mat_icon_button(mat_icon(icons.plus, dpi(16))) -- add button -- 24
-add_button:buttons(
-  gears.table.join(
-    awful.button(
-      {},
-      1,
-      nil,
-      function()
-        awful.spawn(
-          awful.screen.focused().selected_tag.defaultApp,
-          {
-            tag = _G.mouse.screen.selected_tag,
-            placement = awful.placement.bottom_right
-          }
-        )
-      end
-    )
-  )
-)
 
 
 local TopPanel = function(s, offset)
@@ -136,8 +115,7 @@ local TopPanel = function(s, offset)
     {
       layout = wibox.layout.fixed.horizontal,
       -- Create a taglist widget
-      TaskList(s),
-      add_button
+      TaskList(s)
     },
 	  -- Clock
     -- Change to `nil` if you want to extend tasklist up to the right
@@ -145,12 +123,12 @@ local TopPanel = function(s, offset)
     {
       layout = wibox.layout.fixed.horizontal,
       s.systray,
-      --require('widget.systemtray'),
-      --require('widget.package-updater'),
+      require('widgets.systemtray'),
+      require('widgets.package-updater'),
       --require('widget.music'),
-      --require('widget.bluetooth'),
-      --require('widget.wifi'),
-      --require('widget.battery'),
+      require('widgets.bluetooth'),
+      require('widgets.wifi'),
+      require('widgets.battery'),
       --require('widget.search'),
       --require('widget.notification-center'),
     }
