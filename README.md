@@ -17,7 +17,7 @@
 
 ## Dependencies ##
 |Dependency|Description|Why|
-|----------|:-------------:|------:|
+|:----------|:-------------:|:------:|
 |`awesome-git`|Window manager - **must use git version**|The WM these dotfiles are built around|
 |`compton-tryone`|Window compositor|Screen tearing sucks and transparenct blurry windows are cool|
 |`rofi`|Application launcher|used to launch applications|
