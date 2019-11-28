@@ -38,7 +38,7 @@
 <a name="appTheming"></a>
 ## Application Theming ##
 ### Firefox ###
-1. [Set up My Custom Firefox Theme] (https://github.com/willpower3309/MinimalistMaterialFox)
+1. [Set up My Custom Firefox Theme](https://github.com/willpower3309/MinimalistMaterialFox)
 2. Use [this](https://github.com/Jaredk3nt/homepage) homepage
 
 ### Spotify ###
