@@ -37,6 +37,36 @@
 
 <a name="appTheming"></a>
 ## Application Theming ##
+### Firefox ###
+  - [Set up My Custom Firefox Theme] (https://github.com/willpower3309/MinimalistMaterialFox)
+
+### Spotify ###
+1. [Install `Spicetify`](https://github.com/khanhas/spicetify-cli)
+2. chown spotify directory: `sudo chown $USER -R /opt/spotify`
+3. run `spicetify` once to generate config
+4. `spicetify backup apply enable-devtool` to enable devtools
+5. Place your color.ini and user.css in `~/.config/spicetify/Themes/<your theme name, whatever you want>` and edit `~/.config/spicetify/config.ini` to reflect this name
+6. run `spicetify update restart`
+
+### OhMyZsh ###
+- Install Powerline Fonts
+  - `git clone https://github.com/powerline/fonts.git`
+  - `cd fonts`
+  - `./install.sh`
+  - set font
+- Change theme to agnoster
+  -`open ~/.zshrc`
+  - Set ZSH_THEME="agnoster" and save the file
+- Install Plugins (Note That ~/.zshrc edits are in repo)
+  - Syntax Hilighting
+    - `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`
+    - Edit `~/.zshrc`, add `zsh-syntax-highlighting` to the plugins section
+    - Reread config `source ~/.zshrc`
+  - Autosuggestion
+    - `git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions`
+    - Edit `~/.zshrc`, add `zsh-autosuggestions` to the plugins section
+    - Reread config `source ~/.zshrc`
+- [Guide](https://www.freecodecamp.org/news/jazz-up-your-zsh-terminal-in-seven-steps-a-visual-guide-e81a8fd59a38/)
 
 <a name="folderStructure"></a>
 ## Awesome Folder File Structure ##
