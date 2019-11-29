@@ -22,5 +22,6 @@ return {
   harddisk = dir ..'harddisk.svg',
   thermometer = dir .. 'thermometer.svg',
   close = dir .. 'close.png',
+  open = dir .. 'open.svg',
   restart = dir .. 'restart.svg'
 }

@@ -142,5 +142,4 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
   - make adjust volume / brightness more smooth
   - fix notifications UI
   - add floating layout icon
-  - open tag application button icon
   - fix rofi focus bugs
