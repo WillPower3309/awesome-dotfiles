@@ -46,10 +46,12 @@ I have made my best effort to reduce the number of dependencies by using the awe
 |[`SF Text`](https://aur.archlinux.org/packages/otf-san-francisco/)|System font - Same font used by apple in macOS / iOS / watchOS|
 
 There are also a number of optional dependencies, which will improve the user experience but aren't required:
+- `acpi -i`: Battery managing cli application, used by top bar widget to determine battery status
 - `xfce4-power-manager`: Lightweight power manager spawned when the top panel battery icon is clicked
+- `bluetoothctl`: Bluetooth cli application, used by top bar widget to determine if bluetooth is on
 - `blueman`: Bluetooth managing application, spawned when the bluetooth top panel icon is clicked
 - `pamac-aur`: Lightweight GUI package manager, spawned when the top panel package icon is clicked
-- `NetworkManager`: GUI wifi connection editor, spawned when the top panel wifi icon is clickedfi
+- `nm-connection-editor`: GUI wifi connection editor, spawned when the top panel wifi icon is clicked
 - `Scrot`: Screenshot tool, which is mapped to the print screen key in keys.lua. **If you want to meet this dependency, ensure that the ~/Pictures` folder exists**, otherwise the program will not save your screenshots
 - `Alsa`: Provides kernel driven sound drivers, which the control of has been mapped to volume keys in keys.lua
 - `xbacklight`: Controls display brightness, which the control of has been mapped to brightness keys in keys.lua
