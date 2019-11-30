@@ -89,5 +89,5 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 - fix spinning cursor bug on adjust volume / brightness (due to components or widgets)
 - make adjust volume / brightness more smooth
 - finish adding keybinds
-- populate side panel
+- populate side panel with tag indicators
 - lock screen
