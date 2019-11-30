@@ -22,9 +22,9 @@ return wibox.widget{
   {
     {
       actionTitle,
-      bg = beautiful.bg_modal_title,
+      bg = "#ffffff15",
       shape = function(cr, width, height)
-        gears.shape.partially_rounded_rect(cr, width, height, true, true, false, false, beautiful.modal_radius) end,
+        gears.shape.partially_rounded_rect(cr, width, height, true, true, false, false, beautiful.rounded_corner_radius) end,
       widget = wibox.container.background,
     },
     widget = mat_list_item,
@@ -35,7 +35,7 @@ return wibox.widget{
       require('widgets.action-center.wifi-button'),
       bg = barColor,
       shape = function(cr, width, height)
-        gears.shape.partially_rounded_rect(cr, width, height, false, false, false, false, beautiful.modal_radius) end,
+        gears.shape.partially_rounded_rect(cr, width, height, false, false, false, false, beautiful.rounded_corner_radius) end,
       widget = wibox.container.background
     },
     widget = mat_list_item,
@@ -48,7 +48,7 @@ return wibox.widget{
       require('widgets.action-center.bluetooth-button'),
       bg = barColor,
       shape = function(cr, width, height)
-         gears.shape.partially_rounded_rect(cr, width, height, false, false, false, false, beautiful.modal_radius) end,
+         gears.shape.partially_rounded_rect(cr, width, height, false, false, false, false, beautiful.rounded_corner_radius) end,
       widget = wibox.container.background
     },
     widget = mat_list_item,

@@ -39,11 +39,12 @@ theme.fg_focus      = "#e4e4e4"
 theme.fg_urgent     = "#cc9393"
 theme.fg_minimize   = "#ffffff"
 
-theme.useless_gap   = dpi(7)
-theme.border_width  = dpi(0)
-theme.border_normal = theme.bg_normal
-theme.border_focus  = "#ff8a65"
-theme.border_marked = theme.fg_urgent
+theme.useless_gap           = dpi(7)
+theme.border_width          = dpi(0)
+theme.rounded_corner_radius = dpi(6)
+theme.border_normal         = theme.bg_normal
+theme.border_focus          = "#ff8a65"
+theme.border_marked         = theme.fg_urgent
 
 -- Generate taglist squares:
 local taglist_square_size = dpi(4)

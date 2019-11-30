@@ -10,7 +10,7 @@ local quickTitle = wibox.widget {
   widget = wibox.widget.textbox
 }
 
-local barColor = beautiful.bg_modal
+local barColor = beautiful.bg_normal
 local volSlider = require('widgets.volume.volume-slider')
 local brightnessSlider = require('widgets.brightness.brightness-slider')
 
@@ -19,9 +19,9 @@ return wibox.widget {
   {
     {
       quickTitle,
-      bg = beautiful.bg_modal_title,
+      bg = "#ffffff10",
       shape = function(cr, width, height)
-        gears.shape.partially_rounded_rect(cr, width, height, true, true, false, false, beautiful.modal_radius) end,
+        gears.shape.partially_rounded_rect(cr, width, height, true, true, false, false, beautiful.rounded_corner_radius) end,
       widget = wibox.container.background,
     },
     widget = mat_list_item,
@@ -33,7 +33,7 @@ return wibox.widget {
         volSlider,
         bg = barColor,
         shape = function(cr, width, height)
-          gears.shape.partially_rounded_rect(cr, width, height, false, false, false, false, beautiful.modal_radius) end,
+          gears.shape.partially_rounded_rect(cr, width, height, false, false, false, false, beautiful.rounded_corner_radius) end,
         widget = wibox.container.background
       },
       widget = mat_list_item
@@ -46,7 +46,7 @@ return wibox.widget {
       brightnessSlider,
       bg = barColor,
       shape = function(cr, width, height)
-        gears.shape.partially_rounded_rect(cr, width, height, false, false, true, true, beautiful.modal_radius) end,
+        gears.shape.partially_rounded_rect(cr, width, height, false, false, true, true, beautiful.rounded_corner_radius) end,
       widget = wibox.container.background
     },
     widget = mat_list_item,

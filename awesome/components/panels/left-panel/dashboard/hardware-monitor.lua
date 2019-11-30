@@ -3,7 +3,7 @@ local gears = require('gears')
 local beautiful = require('beautiful')
 local mat_list_item = require('widgets.list-item')
 
-local barColor = beautiful.bg_modal
+local barColor = beautiful.bg_normal
 
 local hardwareTitle = wibox.widget
 {
@@ -19,9 +19,9 @@ return wibox.widget {
   {
     {
       hardwareTitle,
-      bg = beautiful.bg_modal_title,
+      bg = "#ffffff10",
       shape = function(cr, width, height)
-        gears.shape.partially_rounded_rect(cr, width, height, true, true, false, false, beautiful.modal_radius) end,
+        gears.shape.partially_rounded_rect(cr, width, height, true, true, false, false, beautiful.rounded_corner_radius) end,
       widget = wibox.container.background,
     },
     widget = mat_list_item,
@@ -31,7 +31,7 @@ return wibox.widget {
       require('widgets.hardware-monitor.cpu-meter'),
       bg = barColor,
       shape = function(cr, width, height)
-        gears.shape.partially_rounded_rect(cr, width, height, false, false, false, false, beautiful.modal_radius) end,
+        gears.shape.partially_rounded_rect(cr, width, height, false, false, false, false, beautiful.rounded_corner_radius) end,
       widget = wibox.container.background
     },
     widget = mat_list_item,
@@ -41,7 +41,7 @@ return wibox.widget {
       require('widgets.hardware-monitor.ram-meter'),
       bg = barColor,
       shape = function(cr, width, height)
-        gears.shape.partially_rounded_rect(cr, width, height, false, false, false, false, beautiful.modal_radius) end,
+        gears.shape.partially_rounded_rect(cr, width, height, false, false, false, false, beautiful.rounded_corner_radius) end,
       widget = wibox.container.background
     },
     widget = mat_list_item,

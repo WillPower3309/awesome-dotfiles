@@ -22,5 +22,6 @@ return {
   harddisk = dir ..'/harddisk.svg',
   thermometer = dir .. '/thermometer.svg',
   menu = dir .. '/menu.svg',
+  search = dir .. '/search.svg',
   restart = dir .. '/restart.svg'
 }

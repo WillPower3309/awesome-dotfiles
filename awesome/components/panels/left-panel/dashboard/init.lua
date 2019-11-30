@@ -16,7 +16,7 @@ return function(_, panel)
       widget = mat_icon
     },
     wibox.widget {
-      text = 'Web Search',
+      text = 'App Search',
       font = 'SF Display Regular 12',
       widget = wibox.widget.textbox,
       align = center
@@ -47,7 +47,7 @@ return function(_, panel)
     },
     wibox.widget {
       text = 'End work session',
-      font = 'SFNS Display Regular 12',
+      font = 'SF Display Regular 12',
       widget = wibox.widget.textbox
     },
     clickable = true,
@@ -91,9 +91,9 @@ return function(_, panel)
       {
         {
           search_button,
-          bg = beautiful.bg_modal, 
+          bg = "#ffffff10", 
           shape = function(cr, w, h)
-                    gears.shape.rounded_rect(cr, w, h, beautiful.modal_radius)
+                    gears.shape.rounded_rect(cr, w, h, beautiful.rounded_corner_radius)
                   end,
           widget = wibox.container.background,
         },
@@ -113,10 +113,10 @@ return function(_, panel)
       {
         {
           exit_button,
-          bg = beautiful.bg_modal,
+          bg = "#ffffff10",
           widget = wibox.container.background,
           shape = function(cr, w, h)
-                    gears.shape.rounded_rect(cr, w, h, beautiful.modal_radius)
+                    gears.shape.rounded_rect(cr, w, h, beautiful.rounded_corner_radius)
                   end,
         },
         widget = mat_list_item,
