@@ -14,9 +14,6 @@ local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 
-local gfs = require("gears.filesystem")
-local themes_path = gfs.get_themes_dir()
-
 local theme = {}
 
 
@@ -48,16 +45,10 @@ theme.border_focus          = "#ff8a65"
 theme.border_marked         = theme.fg_urgent
 
 -- Taglist
-
 theme.taglist_bg_empty = theme.bg_normal
 theme.taglist_bg_occupied =  '#ffffff' .. '1A'  --theme.background.hue_800
 theme.taglist_bg_urgent = '#E91E6399'
 theme.taglist_bg_focus = '#424242'
-
--- Menu Variables:
-theme.menu_submenu_icon = themes_path.."default/submenu.png"
-theme.menu_height = dpi(15)
-theme.menu_width  = dpi(100)
 
 -- Notification Variables:
 theme.notification_max_width = dpi(500)
@@ -72,7 +63,9 @@ theme.notification_padding = dpi(8)
 
 -- You can use your own layout icons like this:
 theme.layout_tile = "~/.config/awesome/icons/layouts/view-quilt.png"
-theme.layout_floating  = themes_path.."default/layouts/floatingw.png" -- TODO: GET BETTER ICON
+theme.layout_floating = "~/.config/awesome/icons/layouts/" -- TODO: ADD FLOATING ICON
 theme.layout_max = "~/.config/awesome/icons/layouts/arrow-expand-all.png"
 
+
+-- return theme
 return theme
