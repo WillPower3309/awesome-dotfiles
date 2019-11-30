@@ -1,7 +1,5 @@
-local awful = require('awful')
 local beautiful = require('beautiful')
 local wibox = require('wibox')
-local apps = require('apps')
 local dpi = require('beautiful').xresources.apply_dpi
 
 local TagList = require('widgets.tag-list')
