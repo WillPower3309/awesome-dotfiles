@@ -88,7 +88,7 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 - `widgets`: stores scripts used in the functionality of the components
 
 ## Current To-Do ##
-- fix spinning cursor bug on start awesomewm (due to left-panel)
+- fix spinning cursor bug on start awesomewm (due to left-panel dashboard component)
 - fix spinning cursor bug on adjust volume / brightness (due to components or widgets)
 - make adjust volume / brightness more smooth
 - finish adding keybinds
