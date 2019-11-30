@@ -16,8 +16,13 @@ configuration {
 
 window {
     transparency:                   "real";
-    fullscreen: true;
     background-color:               @background;
+    height:                         1784px;
+    width:                          2666px;
+    location:                       northwest;
+    anchor:                         northwest;
+    x-offset:                       70;
+    y-offset:                       40;
 }
 
 prompt {
