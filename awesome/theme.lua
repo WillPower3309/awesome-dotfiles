@@ -39,9 +39,10 @@ theme.fg_focus      = "#e4e4e4"
 theme.fg_urgent     = "#cc9393"
 theme.fg_minimize   = "#ffffff"
 
-theme.useless_gap           = dpi(7)
-theme.border_width          = dpi(0)
-theme.rounded_corner_radius = dpi(6)
+theme.useless_gap           = dpi(7)            -- window gap distance
+theme.gap_single_client     = true              -- gaps if only one window is open?
+theme.border_width          = dpi(0)            -- window border width
+theme.rounded_corner_radius = dpi(6)            -- border radius of rounded theme elements
 theme.border_normal         = theme.bg_normal
 theme.border_focus          = "#ff8a65"
 theme.border_marked         = theme.fg_urgent

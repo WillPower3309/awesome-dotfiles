@@ -32,7 +32,7 @@
 1. Ensure all [dependencies](#dependencies) are met
 2. Clone this repository and place its contents into your `.config` folder
 3. navigate to the `awesome` folder and place your desired wallpapers into the `wallpaper` folder, ensuring that you follow the naming conventions
-4. edit the `apps.lua` file to define your desired default and startup applications
+4. edit the `apps.lua` file to define your desired default and startup applications. If you do not have an application installed that matches a given variable name, change the variable to '' (ie: if you do not have an image editor installed, ensure `apps.imageEditor = ''`)
 5. edit the `widgets/wifi.lua` file and ensure that the `local interface` variable matches your wifi interface
 6. optional: edit the `keys.lua` file to change / add keybinds
 
@@ -78,6 +78,7 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 - `keys.lua`: Contains keybinds
 - `rules.lua`: Contains window rules
 - `theme.lua`: Contains theme variables
+- `tags.lua`: Contains tag (aka workspace) information, edit this to change the application that launches when the add tab button is pressed while a given tag is active, or edit the tag's icon
 - `wallpaper.lua`: Contains wallpaper time changing functionality
 - `icons`: stores icons used in WM
 - `wallpaper`: stores wallpaper
@@ -92,3 +93,7 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 - populate side panel with tag indicators
 - iron out theme.lua
 - lock screen
+- center left dashboard
+- add one more workspace with icon
+- center left panel icons
+- return default app functionality

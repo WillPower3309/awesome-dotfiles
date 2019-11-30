@@ -20,6 +20,12 @@ local apps = {}
 apps.terminal = "alacritty"
 apps.launcher = "rofi -show drun"
 apps.filebrowser = "thunar"
+apps.browser = "firefox"
+apps.editor = "code"
+apps.musicPlayer = "spotify"
+apps.gameLauncher = "steam"
+apps.imageEditor = "gimp"
+apps.virtualMachineLauncher = "virtualbox"
 apps.lock = "i3lock"
 
 -- List of apps to start once on start-up
