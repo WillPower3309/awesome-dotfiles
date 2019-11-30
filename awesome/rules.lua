@@ -57,9 +57,7 @@ rules = {
     {
       rule_any = {
         class = {
-          "dota2",
           "Terraria.bin.x86",
-          "dontstarve_steam",
         },
       }, properties = { fullscreen = true }
     },
@@ -73,6 +71,8 @@ rules = {
         class = {
             "Steam",
             "discord",
+            "Nm-connection-editor",
+            "Pavucontrol"
         },
         role = {
             "GtkFileChooserDialog"
@@ -117,6 +117,12 @@ rules = {
     -- File chooser dialog
     {
       rule_any = { role = { "GtkFileChooserDialog" } },
+      properties = { floating = true, width = screen_width * 0.55, height = screen_height * 0.65 }
+    },
+
+    -- Pavucontrol
+    {
+      rule_any = { class = { "Pavucontrol" } },
       properties = { floating = true, width = screen_width * 0.55, height = screen_height * 0.65 }
     },
 
