@@ -93,7 +93,6 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 - make adjust volume / brightness more smooth
 - finish adding keybinds
 - fix notification UI
-- fix bug of gap distance changing upon layout change (mod + space)
 - iron out theme.lua
 - lock screen
 - center left dashboard

@@ -2,6 +2,9 @@
 local dir = os.getenv('HOME') .. '/.config/awesome/icons/tags/'
 local apps = require("apps")
 local awful = require("awful")
+local gears = require("gears")
+local beautiful = require("beautiful")
+beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
 
 -- define tag values
 local tags = {
@@ -84,7 +87,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
   end
 end)
 
-
+-- remove gaps if layout is set to max
 _G.tag.connect_signal(
   'property::layout',
   function(t)
@@ -92,7 +95,7 @@ _G.tag.connect_signal(
     if (currentLayout == awful.layout.suit.max) then
       t.gap = 0
     else
-      t.gap = 4
+      t.gap = beautiful.useless_gap
     end
   end
 )
