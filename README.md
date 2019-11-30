@@ -92,11 +92,11 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 - fix spinning cursor bug on adjust volume / brightness (due to components or widgets)
 - make adjust volume / brightness more smooth
 - finish adding keybinds
-- fix notification UI
+- fix notifications UI
 - iron out theme.lua
 - lock screen
 - center left dashboard
 - add one more workspace with icon
 - center left panel icons
 - return default app functionality
-- change open tag indicators on left panel, change tag background colour instead of adding a square on the top left corner
+- change open tag indicators on left panel, change tag background colour instead of adding a square on the top left corner -> check out theme.lua
