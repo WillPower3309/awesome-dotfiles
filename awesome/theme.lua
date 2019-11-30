@@ -47,14 +47,12 @@ theme.border_normal         = theme.bg_normal
 theme.border_focus          = "#ff8a65"
 theme.border_marked         = theme.fg_urgent
 
--- Generate taglist squares: -- TODO: EDIT ME TO REMOVE TAGLIST SQUARES!
-local taglist_square_size = dpi(4)
-theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
-    taglist_square_size, theme.fg_normal
-)
-theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
-    taglist_square_size, theme.fg_normal
-)
+-- Taglist
+
+theme.taglist_bg_empty = theme.bg_normal
+theme.taglist_bg_occupied =  '#ffffff' .. '1A'  --theme.background.hue_800
+theme.taglist_bg_urgent = '#E91E6399'
+theme.taglist_bg_focus = '#424242'
 
 -- Menu Variables:
 theme.menu_submenu_icon = themes_path.."default/submenu.png"

@@ -92,8 +92,7 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 - make adjust volume / brightness more smooth
 - finish adding keybinds
 - fix notifications UI
-- iron out theme.lua
+- IRON OUT THEME.LUA
 - lock screen
 - add one more workspace with icon
 - return default app functionality
-- change open tag indicators on left panel, change tag background colour instead of adding a square on the top left corner -> check out theme.lua
