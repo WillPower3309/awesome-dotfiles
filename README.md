@@ -34,7 +34,7 @@
 3. navigate to the `awesome` folder and place your desired wallpapers into the `wallpaper` folder, ensuring that you follow the naming conventions
 4. edit the `apps.lua` file to define your desired default and startup applications
 5. edit the `widgets/wifi.lua` file and ensure that the `local interface` variable matches your wifi interface
-6. optional: edit the `keys.lua` file to change / add keybinds. Please refer to the [Folder Structure](#folderStructure) section of the readme to learn about how the file structure is laid out
+6. optional: edit the `keys.lua` file to change / add keybinds
 
 <a name="appTheming"></a>
 ## Application Theming ##
