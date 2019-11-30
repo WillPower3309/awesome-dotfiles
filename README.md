@@ -90,4 +90,5 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 - make adjust volume / brightness more smooth
 - finish adding keybinds
 - populate side panel with tag indicators
+- iron out theme.lua
 - lock screen
