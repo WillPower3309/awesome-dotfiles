@@ -95,5 +95,5 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 - lock screen
 - add one more workspace with icon
 - add floating layout icon
-- return default app functionality
+- better open tag application button icon
 - fix pixels in active tag bg

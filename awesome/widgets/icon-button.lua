@@ -4,7 +4,6 @@ local clickable_container = require('widgets.clickable-container')
 local dpi = require('beautiful').xresources.apply_dpi
 
 function build(imagebox, args)
-  -- return wibox.container.margin(container, 6, 6, 6, 6)
   return wibox.widget {
     wibox.widget {
       wibox.widget {

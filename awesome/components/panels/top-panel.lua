@@ -77,6 +77,26 @@ awesome.connect_signal("toggle_tray", function()
   end
 end)
 
+-- open tag application button
+local add_button = mat_icon_button(mat_icon(icons.close, dpi(16))) --TODO: BETTER ICON
+add_button:buttons(
+  gears.table.join(
+    awful.button(
+      {},
+      1,
+      nil,
+      function()
+        awful.spawn(
+          awful.screen.focused().selected_tag.defaultApp,
+          {
+            tag = mouse.screen.selected_tag,
+            placement = awful.placement.bottom_right
+          }
+        )
+      end
+    )
+  )
+)
 
 local TopPanel = function(s, offset)
 
@@ -109,7 +129,8 @@ local TopPanel = function(s, offset)
     layout = wibox.layout.align.horizontal,
     {
       layout = wibox.layout.fixed.horizontal,
-      TaskList(s)
+      TaskList(s),
+      add_button
     },
 	  -- Clock
 	  clock_widget,
