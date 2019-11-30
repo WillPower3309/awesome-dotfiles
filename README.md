@@ -20,12 +20,12 @@
 
 <a name="dependencies"></a>
 ## Dependencies ##
-|Dependency|Description|Why|
-|:----------|:-------------:|:------:|
-|`awesome-git`|Window manager - **must use git version**|The WM these dotfiles are built around|
-|`compton-tryone`|Window compositor|Screen tearing sucks and transparenct blurry windows are cool|
-|`rofi`|Application launcher|used to launch applications|
-|`feh`|Image viewer, used to set background|Sets background|
+|Dependency|Description|
+|:----------:|:-------------:|
+|`awesome-git`|Window manager - **must use git version**|
+|`compton-tryone`|Window compositor, eliminates screen tearing and gives the cool transparent blur effect|
+|`rofi`|Application launcher|
+|`feh`|Image viewer, used to set background|
 
 <a name="installation"></a>
 ## Installation ##
@@ -33,7 +33,8 @@
 2. Clone this repository and place its contents into your `.config` folder
 3. navigate to the `awesome` folder and place your desired wallpapers into the `wallpaper` folder, ensuring that you follow the naming conventions
 4. edit the `apps.lua` file to define your desired default and startup applications
-5. optional: edit the `keys.lua` file to change / add keybinds. Please refer to the [Folder Structure](#folderStructure) section of the readme to learn about how the file structure is laid out
+5. edit the `widgets/wifi.lua` file and ensure that the `local interface` variable matches your wifi interface
+6. optional: edit the `keys.lua` file to change / add keybinds
 
 <a name="appTheming"></a>
 ## Application Theming ##
@@ -88,5 +89,6 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 - fix spinning cursor bug on adjust volume / brightness (due to components or widgets)
 - make adjust volume / brightness more smooth
 - finish adding keybinds
-- populate side panel
+- populate side panel with tag indicators
+- iron out theme.lua
 - lock screen
