@@ -23,5 +23,6 @@ return {
   thermometer = dir .. '/thermometer.svg',
   menu = dir .. '/menu.svg',
   search = dir .. '/search.svg',
+  close = dir .. '/close.png',
   restart = dir .. '/restart.svg'
 }
