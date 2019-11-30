@@ -52,6 +52,8 @@ local left_panel = function(screen)
     )
   )
 
+local TagList = require('widgets.tag-list')
+
   panel:setup {
     layout = wibox.layout.align.horizontal,
     wibox.widget {
@@ -59,8 +61,9 @@ local left_panel = function(screen)
       layout = wibox.layout.align.vertical,
       forced_width = action_bar_width,
       {
-        -- Create a taglist widget
+        -- add taglist widget
         TagList(screen),
+        -- add
         require("widgets.xdg-folders"),
         layout = wibox.layout.fixed.vertical,
       },
@@ -69,7 +72,7 @@ local left_panel = function(screen)
         require("widgets.layout-box"),
         layout = wibox.layout.fixed.vertical,
       }
-    }  
+    }
   }
   return panel
 end
