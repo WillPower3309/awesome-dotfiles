@@ -30,31 +30,29 @@ prompt {
 }
 
 entry  {
-    width:                          36em;
-    margin:                         50px 800px;
+    margin:                         5% 30%;
     border-radius:                  12;
-    padding:                        25px 35px;
+    padding:                        1.3%;
     background-color:               #ffffff20;
-    border:                         0px 0px solid 0px 0px;
     border-color:                   @text-color;
     font:                           "SF Display 18";
 }
 
 mainbox {
     children: [ inputbar, listview ];
-    padding: 60px;
+    padding: 5%;
 }
 
 listview {
     columns: 5;
     layout: vertical;
     spacing: 100;
-    margin: 50px 200px;
+    margin: 5% 7%;
 }
 
 element {
     orientation: vertical;
-    padding: 36 0;
+    padding: 2% 0;
     border-radius: 4;
 }
 
