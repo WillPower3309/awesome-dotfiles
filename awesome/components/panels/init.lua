@@ -10,7 +10,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
       -- Create the Top bar
       s.top_panel = top_panel(s, true)
     else
-      -- Create the Top bar
+      -- Just create the top bar on non primary displays
       s.top_panel = top_panel(s, false)
     end
 end)
@@ -30,14 +30,14 @@ function updateBarsVisibility()
   end
 end
 
-_G.tag.connect_signal(
+tag.connect_signal(
   'property::selected',
   function(t)
     updateBarsVisibility()
   end
 )
 
-_G.client.connect_signal(
+client.connect_signal(
   'property::fullscreen',
   function(c)
     if c.first_tag then
@@ -47,7 +47,7 @@ _G.client.connect_signal(
   end
 )
 
-_G.client.connect_signal(
+client.connect_signal(
   'unmanage',
   function(c)
     if c.fullscreen then

@@ -36,7 +36,6 @@ awful.tooltip(
 
 
 local cal_shape = function(cr, width, height)
-  -- gears.shape.infobubble(cr, width, height, 12)
   gears.shape.partially_rounded_rect(
     cr, width, height, false, false, true, true, 12)
 end
@@ -114,23 +113,18 @@ local TopPanel = function(s, offset)
     layout = wibox.layout.align.horizontal,
     {
       layout = wibox.layout.fixed.horizontal,
-      -- Create a taglist widget
       TaskList(s)
     },
 	  -- Clock
-    -- Change to `nil` if you want to extend tasklist up to the right
 	  clock_widget,
     {
       layout = wibox.layout.fixed.horizontal,
       s.systray,
       require('widgets.systemtray'),
       require('widgets.package-updater'),
-      --require('widget.music'),
       require('widgets.bluetooth'),
       require('widgets.wifi'),
       require('widgets.battery'),
-      --require('widget.search'),
-      --require('widget.notification-center'),
     }
   }
 
