@@ -17,12 +17,12 @@ configuration {
 window {
     transparency:                   "real";
     background-color:               @background;
-    height:                         1784px;
-    width:                          2666px;
+    height:                         97.8%;
+    width:                          97.45%;
     location:                       northwest;
     anchor:                         northwest;
-    x-offset:                       70;
-    y-offset:                       40;
+    x-offset:                       2.57%;
+    y-offset:                       2.3%;
 }
 
 prompt {
