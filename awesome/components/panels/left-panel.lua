@@ -54,18 +54,6 @@ local left_panel = function(screen)
 
   panel:setup {
     layout = wibox.layout.align.horizontal,
-    nil,
-    {
-      id = 'panel_content',
-      bg = beautiful.bg_normal,
-      widget = wibox.container.background,
-      visible = false,
-      forced_width = panel_content_width,
-      {
-        --require('components.panels.left-panel.dashboard')(screen, panel),
-        layout = wibox.layout.stack
-      }
-    },
     require('components.panels.left-panel.action-bar')(screen, panel, action_bar_width)
   }
   return panel
