@@ -26,6 +26,7 @@
 |`compton-tryone`|Window compositor, eliminates screen tearing and gives the cool transparent blur effect|
 |`rofi`|Application launcher|
 |`feh`|Image viewer, used to set background|
+|[`SF Text`](https://aur.archlinux.org/packages/otf-san-francisco/)|System font - Same font used by apple in macOS / iOS / watchOS|
 
 <a name="installation"></a>
 ## Installation ##
@@ -41,6 +42,7 @@
 ### Firefox ###
 1. [Set up My Custom Firefox Theme](https://github.com/willpower3309/MinimalistMaterialFox)
 2. Use [this](https://github.com/Jaredk3nt/homepage) homepage
+3. Use `SF Text` font
 
 ### Spotify ###
 1. [Install `Spicetify`](https://github.com/khanhas/spicetify-cli)
@@ -90,7 +92,6 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 - fix spinning cursor bug on adjust volume / brightness (due to components or widgets)
 - make adjust volume / brightness more smooth
 - finish adding keybinds
-- populate side panel with tag indicators
 - iron out theme.lua
 - lock screen
 - center left dashboard
