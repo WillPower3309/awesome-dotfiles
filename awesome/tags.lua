@@ -1,4 +1,15 @@
--- define icon folder directory
+--      ████████╗ █████╗  ██████╗ ███████╗
+--      ╚══██╔══╝██╔══██╗██╔════╝ ██╔════╝
+--         ██║   ███████║██║  ███╗███████╗
+--         ██║   ██╔══██║██║   ██║╚════██║
+--         ██║   ██║  ██║╚██████╔╝███████║
+--         ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚══════╝
+
+-- ===================================================================
+-- Imports
+-- ===================================================================
+
+
 local dir = os.getenv('HOME') .. '/.config/awesome/icons/tags/'
 local apps = require("apps")
 local awful = require("awful")
@@ -6,7 +17,12 @@ local gears = require("gears")
 local beautiful = require("beautiful")
 beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
 
--- define tag values
+
+-- ===================================================================
+-- Define tags
+-- ===================================================================
+
+
 local tags = {
   {
     icon = dir .. 'terminal.svg',
@@ -64,13 +80,20 @@ local tags = {
   }
 }
 
--- Define window layouts
+
+-- ===================================================================
+-- Additional Setup
+-- ===================================================================
+
+
+-- define tag layouts
 awful.layout.layouts = {
     awful.layout.suit.tile,
     awful.layout.suit.floating,
     awful.layout.suit.max,
 }
 
+-- apply tag settings to each tag
 screen.connect_signal("request::desktop_decoration", function(s)
   for i, tag in pairs(tags) do
     awful.tag.add(

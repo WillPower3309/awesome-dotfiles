@@ -76,13 +76,4 @@ theme.layout_tile = "~/.config/awesome/icons/layouts/view-quilt.png"
 theme.layout_floating  = themes_path.."default/layouts/floatingw.png" -- TODO: GET BETTER ICON
 theme.layout_max = "~/.config/awesome/icons/layouts/arrow-expand-all.png"
 
--- Generate Awesome icon:
-theme.awesome_icon = theme_assets.awesome_icon(
-    theme.menu_height, theme.bg_focus, theme.fg_focus
-)
-
--- Define the icon theme for application icons.
--- If not set then the icons from /usr/share/icons and /usr/share/icons/hicolor will be used.
-theme.icon_theme = nil
-
 return theme
