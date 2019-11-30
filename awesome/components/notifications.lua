@@ -31,7 +31,7 @@ naughty.config.defaults.timeout = 5
 naughty.config.defaults.shape = function(cr, w, h) gears.shape.rounded_rect(cr, w, h, dpi(6)) end
 naughty.config.defaults.title = 'System Notification'
 
--- -- Apply theme variables
+-- Apply theme variables
 naughty.config.padding = 8
 naughty.config.spacing = 8
 naughty.config.defaults.margin = dpi(16)
@@ -46,8 +46,6 @@ naughty.config.presets.normal = {
   font         = beautiful.title_font,
   fg           = beautiful.fg_normal,
   bg           = beautiful.bg_normal,
-  border_width = 0,
-  margin       = dpi(16),
   position     = 'top_right'
 }
 
@@ -55,8 +53,6 @@ naughty.config.presets.low = {
   font         = beautiful.title_font,
   fg           = beautiful.fg_normal,
   bg           = beautiful.bg_normal,
-  border_width = 0,
-  margin       = dpi(16),
   position     = 'top_right'
 }
 
@@ -64,8 +60,6 @@ naughty.config.presets.critical = {
   font         = 'SF Display Bold 10',
   fg           = '#ffffff',
   bg           = '#ff0000',
-  border_width = 0,
-  margin       = dpi(16),
   position     = 'top_right',
   timeout      = 0
 }
@@ -127,11 +121,8 @@ end
 -- Notification Template Setup
 -- ===================================================================
 
-
--- margin
-beautiful.notification_margin = dpi(5)
+-- margin=
 naughty.connect_signal("request::display", function(n)
-
   naughty.layout.box {
     notification = n,
     type = "splash",

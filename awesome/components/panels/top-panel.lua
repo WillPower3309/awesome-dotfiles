@@ -50,7 +50,7 @@ local month_calendar = awful.widget.calendar_popup.month({
 	style_header = { border_width = 0, bg_color = '#00000000'},
 	style_weekday = { border_width = 0, bg_color = '#00000000'},
 	style_normal = { border_width = 0, bg_color = '#00000000'},
-	style_focus = { border_width = 0, bg_color = beautiful.bg_focus},
+	style_focus = { border_width = 0, bg_color = '#8AB4F8'},
 })
 -- Attach calentar to clock_widget
 month_calendar:attach(clock_widget, "tc" , { on_pressed = true, on_hover = false })

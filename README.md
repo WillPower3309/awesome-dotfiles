@@ -92,7 +92,8 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 - make adjust volume / brightness more smooth
 - finish adding keybinds
 - fix notifications UI
-- IRON OUT THEME.LUA
 - lock screen
 - add one more workspace with icon
+- add floating layout icon
 - return default app functionality
+- fix pixels in active tag bg

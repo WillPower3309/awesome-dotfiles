@@ -148,8 +148,8 @@ exit_screen =
 )
 
 -- define exit screen foreground and background
-exit_screen.bg = ""
-exit_screen.fg = beautiful.exit_screen_fg or beautiful.wibar_fg or '#FEFEFE'
+exit_screen.bg = beautiful.bg_normal
+exit_screen.fg = '#FEFEFE'
 
 local exit_screen_grabber
 
