@@ -96,4 +96,5 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 - add one more workspace with icon
 - add floating layout icon
 - better open tag application button icon
+- rofi --normal-window with window rules for max?
 - fix pixels in active tag bg

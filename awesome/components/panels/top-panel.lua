@@ -78,7 +78,7 @@ awesome.connect_signal("toggle_tray", function()
 end)
 
 -- open tag application button
-local add_button = mat_icon_button(mat_icon(icons.close, dpi(16))) --TODO: BETTER ICON
+local add_button = mat_icon_button(mat_icon(icons.close, dpi(16))) --TODO: BETTER ICON (transparent circle)
 add_button:buttons(
   gears.table.join(
     awful.button(

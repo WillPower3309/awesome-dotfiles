@@ -9,6 +9,10 @@ local awful = require('awful')
 local beautiful = require("beautiful")
 local keys = require("keys")
 
+local screen_height = awful.screen.focused().geometry.height
+local screen_width = awful.screen.focused().geometry.width
+
+
 rules = {
     -- All clients will match this rule.
     {
@@ -29,33 +33,92 @@ rules = {
     { 
       rule_any = {
         instance = {
-          "DTA",  -- Firefox addon DownThemAll.
-          "copyq",  -- Includes session name in class.
-          "pinentry",
+          "DTA",
+          "copyq",
         },
         class = {
-          "Arandr",
-          "Blueman-manager",
-          "Gpick",
-          "Kruler",
-          "MessageWin",  -- kalarm.
-          "Sxiv",
-          "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
-          "Wpa_gui",
-          "veromix",
-          "xtightvncviewer"},
-
-        -- Note that the name property shown in xprop might be set slightly after creation of the client
-        -- and the name shown there might not match defined rules here.
+          "Nm-connection-editor"
+        },
         name = {
-          "Event Tester",  -- xev.
+          "Event Tester",
+          "Steam Guard - Computer Authorization Required"
         },
         role = {
-          "AlarmWindow",  -- Thunderbird's calendar.
-          "ConfigManager",  -- Thunderbird's about:config.
-          "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
+          "pop-up",
+          "GtkFileChooserDialog"
+        },
+        type = {
+          "dialog"
         }
-      }, properties = { floating = true }},
+      }, properties = { floating = true }
+    },
+
+    -- Fullscreen clients
+    {
+      rule_any = {
+        class = {
+          "dota2",
+          "Terraria.bin.x86",
+          "dontstarve_steam",
+        },
+      }, properties = { fullscreen = true }
+    },
+
+    -- Centered clients
+    {
+      rule_any = {
+        type = {
+            "dialog",
+        },
+        class = {
+            "Steam",
+            "discord",
+        },
+        role = {
+            "GtkFileChooserDialog"
+        }
+      },
+      properties = {},
+      callback = function (c)
+        awful.placement.centered(c,{honor_padding = true, honor_workarea=true})
+      end
+    },
+
+    -- "Switch to tag"
+    -- These clients make you switch to their tag when they appear
+    {
+      rule_any = {
+        class = {
+          "Firefox"
+        },
+      }, properties = { switchtotag = true }
+    },
+
+    -- Visualizer
+    {
+      rule_any = { class = { "Visualizer" } },
+      properties = {
+          floating = true,
+          maximized_horizontal = true,
+          sticky = true,
+          ontop = false,
+          skip_taskbar = true,
+          below = true,
+          focusable = false,
+          height = screen_height * 0.40,
+          opacity = 0.6
+      },
+      callback = function (c)
+          decorations.hide(c)
+          awful.placement.bottom(c)
+      end
+    },
+
+    -- File chooser dialog
+    {
+      rule_any = { role = { "GtkFileChooserDialog" } },
+      properties = { floating = true, width = screen_width * 0.55, height = screen_height * 0.65 }
+    },
 
     -- Do not add titlebars to normal clients and dialogs
     { rule_any = {type = { "normal", "dialog" }
