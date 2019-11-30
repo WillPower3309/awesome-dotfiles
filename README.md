@@ -20,12 +20,12 @@
 
 <a name="dependencies"></a>
 ## Dependencies ##
-|Dependency|Description|Why|
-|:----------|:-------------:|:------:|
-|`awesome-git`|Window manager - **must use git version**|The WM these dotfiles are built around|
-|`compton-tryone`|Window compositor|Screen tearing sucks and transparenct blurry windows are cool|
-|`rofi`|Application launcher|used to launch applications|
-|`feh`|Image viewer, used to set background|Sets background|
+|Dependency|Description
+|:----------:|:-------------:|
+|`awesome-git`|Window manager - **must use git version**|
+|`compton-tryone`|Window compositor|
+|`rofi`|Application launcher|
+|`feh`|Image viewer, used to set background|
 
 <a name="installation"></a>
 ## Installation ##
