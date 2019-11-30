@@ -65,17 +65,20 @@ rules = {
     -- Centered clients
     {
       rule_any = {
-        type = {
-            "dialog",
-        },
         class = {
             "Steam",
             "discord",
             "Nm-connection-editor",
             "Pavucontrol"
         },
+        name = {
+          "Bluetooth Devices"
+        },
         role = {
             "GtkFileChooserDialog"
+        },
+        type = {
+            "dialog",
         }
       },
       properties = {},
@@ -120,10 +123,10 @@ rules = {
       properties = { floating = true, width = screen_width * 0.55, height = screen_height * 0.65 }
     },
 
-    -- Pavucontrol
+    -- Pavucontrol & Bluetooth Devices
     {
-      rule_any = { class = { "Pavucontrol" } },
-      properties = { floating = true, width = screen_width * 0.55, height = screen_height * 0.65 }
+      rule_any = { class = {"Pavucontrol"}, name = {"Bluetooth Devices"} },
+      properties = { floating = true, width = screen_width * 0.55, height = screen_height * 0.45 }
     },
 
     -- Do not add titlebars to normal clients and dialogs
