@@ -5,8 +5,8 @@ local apps = require('apps')
 local dpi = require('beautiful').xresources.apply_dpi
 
 local left_panel = function(screen)
-  local action_bar_width = dpi(45)
-  local panel_content_width = dpi(350)
+  local action_bar_width = dpi(45) -- 48
+  local panel_content_width = dpi(350) -- 400
 
   local panel =
     wibox {
@@ -42,7 +42,7 @@ local left_panel = function(screen)
 
   function panel:run_rofi()
     _G.awesome.spawn(
-      apps.launcher,
+      apps.default.launcher,
       false,
       false,
       false,
@@ -100,6 +100,19 @@ local left_panel = function(screen)
 
   panel:setup {
     layout = wibox.layout.align.horizontal,
+    nil,
+    {
+      id = 'panel_content',
+      bg = beautiful.bg_normal,
+      widget = wibox.container.background,
+      visible = false,
+      forced_width = panel_content_width,
+      {
+        require('components.panels.left-panel.dashboard')(screen, panel),
+        layout = wibox.layout.stack
+      }
+    },
+    require('components.panels.left-panel.action-bar')(screen, panel, action_bar_width)
   }
   return panel
 end
