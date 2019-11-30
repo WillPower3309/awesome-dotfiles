@@ -47,7 +47,7 @@ theme.border_normal         = theme.bg_normal
 theme.border_focus          = "#ff8a65"
 theme.border_marked         = theme.fg_urgent
 
--- Generate taglist squares:
+-- Generate taglist squares: -- TODO: EDIT ME TO REMOVE TAGLIST SQUARES!
 local taglist_square_size = dpi(4)
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
     taglist_square_size, theme.fg_normal
@@ -70,6 +70,7 @@ theme.notification_padding = dpi(8)
 -- ===================================================================
 -- Icons
 -- ===================================================================
+
 
 -- You can use your own layout icons like this:
 theme.layout_tile = "~/.config/awesome/icons/layouts/view-quilt.png"
