@@ -2,15 +2,15 @@ local awful = require('awful')
 local beautiful = require('beautiful')
 local wibox = require('wibox')
 local gears = require('gears')
+local dpi = require('beautiful').xresources.apply_dpi
 
+local icons = require('icons')
+
+-- import widgets
 local TaskList = require('widgets.task-list')
 local clickable_container = require('widgets.clickable-container')
 local mat_icon_button = require('widgets.icon-button')
 local mat_icon = require('widgets.icon')
-
-local dpi = require('beautiful').xresources.apply_dpi
-
-local icons = require('icons')
 
 -- Clock / Calendar 12h format
 -- Get Time/Date format using `man strftime`
@@ -33,7 +33,6 @@ awful.tooltip(
     margin_topbottom = dpi(8)
   }
 )
-
 
 local cal_shape = function(cr, width, height)
   gears.shape.partially_rounded_rect(
@@ -80,33 +79,30 @@ end)
 
 
 local TopPanel = function(s, offset)
+
   local offsetx = 0
   if offset == true then
     offsetx = dpi(45)
   end
-  local panel =
-    wibox(
-    {
-      ontop = true,
-      screen = s,
-      height = dpi(26),
-      width = s.geometry.width - offsetx,
-      x = s.geometry.x + offsetx,
-      y = s.geometry.y,
-      stretch = false,
-      bg = beautiful.bg_normal,
-      fg = beautiful.fg_normal,
-      struts = {
-        top = dpi(26)
-      }
-    }
-  )
 
-  panel:struts(
-    {
+  local panel = wibox {
+    ontop = true,
+    screen = s,
+    height = dpi(26),
+    width = s.geometry.width - offsetx,
+    x = s.geometry.x + offsetx,
+    y = s.geometry.y,
+    stretch = false,
+    bg = beautiful.bg_normal,
+    fg = beautiful.fg_normal,
+    struts = {
       top = dpi(26)
     }
-  )
+  }
+
+  panel:struts({
+    top = dpi(26)
+  })
 
   panel:setup {
     expand = "none",

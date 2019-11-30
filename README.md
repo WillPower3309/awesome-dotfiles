@@ -95,8 +95,6 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 - fix notifications UI
 - iron out theme.lua
 - lock screen
-- center left dashboard
 - add one more workspace with icon
-- center left panel icons
 - return default app functionality
 - change open tag indicators on left panel, change tag background colour instead of adding a square on the top left corner -> check out theme.lua
