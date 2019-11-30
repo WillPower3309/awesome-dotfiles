@@ -21,7 +21,6 @@ return {
   memory = dir .. 'memory.svg',
   harddisk = dir ..'harddisk.svg',
   thermometer = dir .. 'thermometer.svg',
-  menu = dir .. 'menu.svg',
   search = dir .. 'search.svg',
   close = dir .. 'close.png',
   restart = dir .. 'restart.svg'
