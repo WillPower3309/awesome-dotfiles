@@ -63,7 +63,7 @@ end
 
 function suspend_command()
   exit_screen_hide()
-  awful.spawn.with_shell(apps.default.lock .. ' & systemctl suspend')
+  awful.spawn.with_shell(apps.lock .. ' & systemctl suspend')
 end
 
 function exit_command()
@@ -72,7 +72,7 @@ end
 
 function lock_command()
   exit_screen_hide()
-  awful.spawn.with_shell('sleep 1 && i3lock')
+  awful.spawn.with_shell('sleep 1 && ' .. apps.lock)
 end
 
 function poweroff_command()

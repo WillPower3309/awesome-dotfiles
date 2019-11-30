@@ -71,7 +71,7 @@ awful.screen.connect_for_each_screen(function(s)
         l.tile,
         l.tile,
         l.tile,
-        l.max
+        l.tile
     }
 
     -- Tag names

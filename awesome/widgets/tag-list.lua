@@ -3,11 +3,8 @@ local wibox = require('wibox')
 local dpi = require('beautiful').xresources.apply_dpi
 local capi = {button = _G.button}
 local clickable_container = require('widgets.clickable-container')
-local modkey = require('keys').modKey
---- Common method to create buttons.
--- @tab buttons
--- @param object
--- @treturn table
+local modkey = require('keys').modkey
+
 local function create_buttons(buttons, object)
   if buttons then
     local btns = {}

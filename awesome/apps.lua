@@ -20,6 +20,7 @@ local apps = {}
 apps.terminal = "alacritty"
 apps.launcher = "rofi -show drun"
 apps.filebrowser = "thunar"
+apps.lock = "i3lock"
 
 -- List of apps to start once on start-up
 local run_on_start_up = {
