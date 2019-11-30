@@ -20,7 +20,7 @@
 
 <a name="dependencies"></a>
 ## Dependencies ##
-|Dependency|Description
+|Dependency|Description|
 |:----------:|:-------------:|
 |`awesome-git`|Window manager - **must use git version**|
 |`compton-tryone`|Window compositor|
