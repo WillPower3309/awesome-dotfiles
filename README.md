@@ -23,7 +23,7 @@
 |Dependency|Description|
 |:----------:|:-------------:|
 |`awesome-git`|Window manager - **must use git version**|
-|`compton-tryone`|Window compositor|
+|`compton-tryone`|Window compositor, eliminates screen tearing and gives the cool transparent blur effect|
 |`rofi`|Application launcher|
 |`feh`|Image viewer, used to set background|
 
