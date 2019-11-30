@@ -6,7 +6,7 @@ local beautiful = require('beautiful')
 local dpi = require('beautiful').xresources.apply_dpi
 
 
-local bri_osd = require('widgets.brightness.brightness-slider-osd')
+local bri_osd = require('widgets.brightness-slider-osd')
 
 
 awful.screen.connect_for_each_screen(
