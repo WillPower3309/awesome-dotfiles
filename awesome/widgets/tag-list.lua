@@ -122,8 +122,8 @@ local TagList = function(s)
         {modkey},
         1,
         function(t)
-          if _G.client.focus then
-            _G.client.focus:move_to_tag(t)
+          if client.focus then
+            client.focus:move_to_tag(t)
             t:view_only()
           end
         end
@@ -133,8 +133,8 @@ local TagList = function(s)
         {modkey},
         3,
         function(t)
-          if _G.client.focus then
-            _G.client.focus:toggle_tag(t)
+          if client.focus then
+            client.focus:toggle_tag(t)
           end
         end
       ),

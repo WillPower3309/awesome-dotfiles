@@ -14,7 +14,7 @@ local mat_icon = require('widgets.icon')
 
 -- Clock / Calendar 12h format
 -- Get Time/Date format using `man strftime`
-local textclock = wibox.widget.textclock('<span font="SF Display Bold 10">%l:%M %p</span>', 1)
+local textclock = wibox.widget.textclock('<span font="SF Display 10">%l:%M %p</span>', 1)
 
 -- Clock / Calendar 12AM/PM fornatan font="Roboto Mono bold 11">%I\n%M</span>\n<span font="Roboto Mono bold 9">%p</span>')
 local clock_widget = wibox.container.margin(textclock, dpi(0), dpi(0))
@@ -132,7 +132,6 @@ local TopPanel = function(s, offset)
       TaskList(s),
       add_button
     },
-	  -- Clock
 	  clock_widget,
     {
       layout = wibox.layout.fixed.horizontal,
@@ -141,7 +140,7 @@ local TopPanel = function(s, offset)
       require('widgets.package-updater'),
       require('widgets.bluetooth'),
       require('widgets.wifi'),
-      require('widgets.battery'),
+      require('widgets.battery')
     }
   }
 
