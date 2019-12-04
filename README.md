@@ -9,6 +9,7 @@
 4. [Installation](#installation)
 5. [Application Theming](#appTheming)
 6. [Folder Structure](#folderStructure)
+7. [My Preferred Applications](#applications)
 
 <a name="details"></a>
 ## Details ##
@@ -99,6 +100,13 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 - `wallpaper`: stores wallpaper
 - `components`: Folder that contains all of the components of the WM, such as panels, volume and brightness widgets, notification widget etc
 - `widgets`: stores scripts used in the functionality of the components
+
+<a name="applications"></a>
+## My Preferred Applications ##
+- **Text Editor - Vim**: I'm an alpha chad
+- **File Browser - Thunar**: Lightweight file browser, few dependencies, and can be configured to work with a preferred terminal. Also has extensions for easy right click extraction / compression of archive files (ie zip / rar etc)
+- **Web Browser - Firefox**: Super configurable and isn't made by Google
+- **Terminal - Kitty**: Used to use alacritty, switched to kitty as it is very fast and has great ligature implementation (which helps with programming in vim). Is very configurable and has build in tmux like functionality
 
 ## Current To-Do ##
 - fix spinning cursor bug on adjust volume / brightness (due to components or widgets)
