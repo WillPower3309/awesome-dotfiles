@@ -7,9 +7,9 @@
 2. [Features](#features)
 3. [Dependencies](#dependencies)
 4. [Installation](#installation)
-5. [Application Theming](#appTheming)
-6. [Folder Structure](#folderStructure)
-7. [My Preferred Applications](#applications)
+5. [Folder Structure](#folderStructure)
+6. [My Preferred Applications](#applications)
+7. [Application Theming](#appTheming)
 
 <a name="details"></a>
 ## Details ##
@@ -51,6 +51,28 @@ I have made my best effort to reduce the number of dependencies by allowing user
 5. edit the `widgets/wifi.lua` file and ensure that the `local interface` variable matches your wifi interface name (if you are unsure how to find your interface name, check out [this discussion](https://bbs.archlinux.org/viewtopic.php?id=166171)).
 6. optional: edit the `keys.lua` file to change / add keybinds
 
+<a name="folderStructure"></a>
+## Awesome Folder File Structure ##
+In order to avoid a poorly organized rc.lua spanning thousands of lines, it has been split into multiple files / folders.
+- `rc.lua`: Contains the script that runs when awesome starts (essentially links all the other files together)
+- `apps.lua`: Contains the default and startup applications
+- `keys.lua`: Contains keybinds
+- `rules.lua`: Contains window rules
+- `theme.lua`: Contains theme variables
+- `tags.lua`: Contains tag (aka workspace) information, edit this to change the application that launches when the add tab button is pressed while a given tag is active, or edit the tag's icon
+- `wallpaper.lua`: Contains wallpaper time changing functionality
+- `icons`: stores icons used in WM
+- `wallpaper`: stores wallpaper
+- `components`: Folder that contains all of the components of the WM, such as panels, volume and brightness widgets, notification widget etc
+- `widgets`: stores scripts used in the functionality of the components
+
+<a name="applications"></a>
+## My Preferred Applications ##
+- **Text Editor - Vim**: I'm an alpha chad
+- **File Browser - Thunar**: Lightweight file browser, few dependencies, and can be configured to work with a preferred terminal. Also has extensions for easy right click extraction / compression of archive files (ie zip / rar etc)
+- **Web Browser - Firefox**: Super configurable and isn't made by Google
+- **Terminal - Kitty**: Used to use alacritty, switched to kitty as it is very fast and has great ligature implementation (which helps with programming in vim). Is very configurable and has build in tmux like functionality
+
 <a name="appTheming"></a>
 ## Application Theming ##
 ### Firefox ###
@@ -85,28 +107,6 @@ I have made my best effort to reduce the number of dependencies by allowing user
     - Edit `~/.zshrc`, add `zsh-autosuggestions` to the plugins section
     - Reread config `source ~/.zshrc`
 - [Guide](https://www.freecodecamp.org/news/jazz-up-your-zsh-terminal-in-seven-steps-a-visual-guide-e81a8fd59a38/)
-
-<a name="folderStructure"></a>
-## Awesome Folder File Structure ##
-In order to avoid a poorly organized rc.lua spanning thousands of lines, it has been split into multiple files / folders.
-- `rc.lua`: Contains the script that runs when awesome starts (essentially links all the other files together)
-- `apps.lua`: Contains the default and startup applications
-- `keys.lua`: Contains keybinds
-- `rules.lua`: Contains window rules
-- `theme.lua`: Contains theme variables
-- `tags.lua`: Contains tag (aka workspace) information, edit this to change the application that launches when the add tab button is pressed while a given tag is active, or edit the tag's icon
-- `wallpaper.lua`: Contains wallpaper time changing functionality
-- `icons`: stores icons used in WM
-- `wallpaper`: stores wallpaper
-- `components`: Folder that contains all of the components of the WM, such as panels, volume and brightness widgets, notification widget etc
-- `widgets`: stores scripts used in the functionality of the components
-
-<a name="applications"></a>
-## My Preferred Applications ##
-- **Text Editor - Vim**: I'm an alpha chad
-- **File Browser - Thunar**: Lightweight file browser, few dependencies, and can be configured to work with a preferred terminal. Also has extensions for easy right click extraction / compression of archive files (ie zip / rar etc)
-- **Web Browser - Firefox**: Super configurable and isn't made by Google
-- **Terminal - Kitty**: Used to use alacritty, switched to kitty as it is very fast and has great ligature implementation (which helps with programming in vim). Is very configurable and has build in tmux like functionality
 
 ## Current To-Do ##
 - fix spinning cursor bug on adjust volume / brightness (due to components or widgets)
