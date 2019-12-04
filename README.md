@@ -20,6 +20,7 @@
 
 <a name="dependencies"></a>
 ## Dependencies ##
+I have made my best effort to reduce the number of dependencies by allowing users to edit the `apps.lua` file (see [installation section](#installation)) to define their own preferred applications. That being said, here are the dependencies.
 |Dependency|Description|
 |:----------:|:-------------:|
 |`awesome-git`|Window manager - **must use git version**|
@@ -27,6 +28,7 @@
 |`rofi`|Application launcher|
 |`feh`|Image viewer, used to set background|
 |[`SF Text`](https://aur.archlinux.org/packages/otf-san-francisco/)|System font - Same font used by apple in macOS / iOS / watchOS|
+|xfce4-power-manager|Lightweight power manager required by the battery panel widget|
 
 <a name="installation"></a>
 ## Installation ##
