@@ -48,7 +48,7 @@ I have made my best effort to reduce the number of dependencies by allowing user
 2. Clone this repository and place its contents into your `.config` folder
 3. navigate to the `awesome` folder and place your desired wallpapers into the `wallpaper` folder, ensuring that you follow the naming conventions
 4. edit the `apps.lua` file to define your desired default and startup applications. If you do not have an application installed that matches a given variable name, change the variable to `''` (ie: if you do not have an image editor installed, ensure `apps.imageEditor = ''`)
-5. edit the `widgets/wifi.lua` file and ensure that the `local interface` variable matches your wifi interface
+5. edit the `widgets/wifi.lua` file and ensure that the `local interface` variable matches your wifi interface name (if you are unsure how to find your interface name, check out [this discussion](https://bbs.archlinux.org/viewtopic.php?id=166171)).
 6. optional: edit the `keys.lua` file to change / add keybinds
 
 <a name="appTheming"></a>
