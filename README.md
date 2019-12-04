@@ -4,10 +4,11 @@
 
 ## Contents ##
 1. [Details](#details)
-2. [Dependencies](#dependencies)
-3. [Installation](#installation)
-4. [Application Theming](#appTheming)
-5. [Folder Structure](#folderStructure)
+2. [Features](#features)
+3. [Dependencies](#dependencies)
+4. [Installation](#installation)
+5. [Application Theming](#appTheming)
+6. [Folder Structure](#folderStructure)
 
 <a name="details"></a>
 ## Details ##
@@ -17,6 +18,15 @@
 - **Theme**: Adwaita-dark
 - **Icons**: McMojave-Circle-Blue-Dark
 - **Terminal**: Alacritty
+
+<a name="features"></a>
+## Features ##
+- Lightweight: Uses ~250 MB of ram on my desktop!
+- Easy installation / configuration
+- Very Few Dependencies
+- Wallpaper time-changing functionality
+- Log out / shutdown / restart screen
+- Volume / brightness adjustment widgets with sliders
 
 <a name="dependencies"></a>
 ## Dependencies ##
@@ -36,7 +46,7 @@ I have made my best effort to reduce the number of dependencies by allowing user
 1. Ensure all [dependencies](#dependencies) are met
 2. Clone this repository and place its contents into your `.config` folder
 3. navigate to the `awesome` folder and place your desired wallpapers into the `wallpaper` folder, ensuring that you follow the naming conventions
-4. edit the `apps.lua` file to define your desired default and startup applications. If you do not have an application installed that matches a given variable name, change the variable to '' (ie: if you do not have an image editor installed, ensure `apps.imageEditor = ''`)
+4. edit the `apps.lua` file to define your desired default and startup applications. If you do not have an application installed that matches a given variable name, change the variable to `''` (ie: if you do not have an image editor installed, ensure `apps.imageEditor = ''`)
 5. edit the `widgets/wifi.lua` file and ensure that the `local interface` variable matches your wifi interface
 6. optional: edit the `keys.lua` file to change / add keybinds
 
