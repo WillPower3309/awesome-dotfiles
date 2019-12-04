@@ -1,7 +1,5 @@
 # awesome-dotfiles
 
-![](/screenshot.png)
-
 ## Contents ##
 1. [Details](#details)
 2. [Features](#features)
@@ -10,6 +8,8 @@
 5. [Application Theming](#appTheming)
 6. [Folder Structure](#folderStructure)
 7. [My Preferred Applications](#applications)
+
+![](/screenshot.png)
 
 <a name="details"></a>
 ## Details ##
