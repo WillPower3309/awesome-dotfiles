@@ -68,6 +68,7 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 
 <a name="applications"></a>
 ## My Preferred Applications ##
+- **Display Manager - SDDM (with sugar-candy theme)**: Beautiful display manager which matches the window manager theme fairly well and looks amazing
 - **Text Editor - Vim**: I'm an alpha chad
 - **File Browser - Thunar**: Lightweight file browser, few dependencies, and can be configured to work with a preferred terminal. Also has extensions for easy right click extraction / compression of archive files (ie zip / rar etc)
 - **Web Browser - Firefox**: Super configurable and isn't made by Google
