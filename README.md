@@ -37,7 +37,7 @@ I have made my best effort to reduce the number of dependencies by allowing user
 |:----------:|:-------------:|
 |`awesome-git`|Window manager - **must use git version**|
 |`compton-tryone`|Window compositor, eliminates screen tearing and gives the cool transparent blur effect|
-|`rofi`|Application launcher|
+|`rofi-git`|Application launcher -- **must use git version**|
 |`feh`|Image viewer, used to set background|
 |[`SF Text`](https://aur.archlinux.org/packages/otf-san-francisco/)|System font - Same font used by apple in macOS / iOS / watchOS|
 |`xfce4-power-manager`|Lightweight power manager required by the battery panel widget|
