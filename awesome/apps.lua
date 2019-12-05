@@ -1,4 +1,4 @@
---      █████╗ ██████╗ ██████╗ ███████╗
+--       █████╗ ██████╗ ██████╗ ███████╗
 --      ██╔══██╗██╔══██╗██╔══██╗██╔════╝
 --      ███████║██████╔╝██████╔╝███████╗
 --      ██╔══██║██╔═══╝ ██╔═══╝ ╚════██║
@@ -17,7 +17,7 @@ local filesystem = require('gears.filesystem')
 
 local apps = {}
 
-apps.terminal = "alacritty"
+apps.terminal = "kitty"
 apps.launcher = "rofi -show drun"
 apps.filebrowser = "thunar"
 apps.browser = "firefox"
@@ -32,7 +32,8 @@ apps.lock = "i3lock"
 local run_on_start_up = {
     "compton",
     "unclutter",
-    "redshift -l 43.544804:-80.248169"
+    "redshift -l 43.544804:-80.248169",
+    "xinput set-prop 10 305 1" -- set touchpad to tap to click
 }
 
 

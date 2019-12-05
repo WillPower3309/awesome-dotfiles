@@ -28,6 +28,7 @@ noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 """"""""""""""""""""""""""""""""""
 
 
+" Line number settings
 set number relativenumber
 augroup numbertoggle
     autocmd!
@@ -36,15 +37,20 @@ augroup numbertoggle
 augroup end
 
 
+" Make comments italic
+highlight comment cterm=italic gui=italic
+
+
 """"""""""""""""""""""""""""""""""
 "   Plugins
 """"""""""""""""""""""""""""""""""
 
 
 call plug#begin()
-Plug 'ayu-theme/ayu-vim'
-Plug 'bling/vim-airline'
-Plug 'Yggdroot/indentLine'
+    Plug 'ayu-theme/ayu-vim' " colorscheme
+    Plug 'bling/vim-airline' " bottom status bar
+    Plug 'Yggdroot/indentLine' " line indentation visualization
+    Plug 'scrooloose/nerdtree' " side directory viewer
 call plug#end()
 
 set termguicolors
