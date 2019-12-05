@@ -18,7 +18,7 @@ local filesystem = require('gears.filesystem')
 local apps = {}
 
 apps.terminal = "kitty"
-apps.launcher = "rofi -show drun"
+apps.launcher = "rofi -show drun -normal-window"
 apps.filebrowser = "thunar"
 apps.browser = "firefox"
 apps.editor = "code"

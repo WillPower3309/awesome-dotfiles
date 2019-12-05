@@ -17,12 +17,6 @@ configuration {
 window {
     transparency:                   "real";
     background-color:               @background;
-    height:                         97.8%;
-    width:                          97.45%;
-    location:                       northwest;
-    anchor:                         northwest;
-    x-offset:                       2.57%;
-    y-offset:                       2.3%;
 }
 
 prompt {
@@ -35,7 +29,7 @@ entry  {
     padding:                        1.3%;
     background-color:               #ffffff20;
     border-color:                   @text-color;
-    font:                           "SF Display 18";
+    font:                           "SF Display 15";
 }
 
 mainbox {
@@ -80,7 +74,7 @@ element selected.active {
 }
 
 element-icon {
-    size: 86;
+    size: 6%;
 }
 
 element-text {

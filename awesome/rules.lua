@@ -62,6 +62,15 @@ rules = {
       }, properties = { fullscreen = true }
     },
 
+    -- Maximized clients
+    {
+        rule_any = {
+            name = {
+                "rofi"
+            }
+        }, properties = { maximized = true }
+    },
+
     -- Centered clients
     {
       rule_any = {
