@@ -28,6 +28,7 @@
 - Wallpaper time-changing functionality
 - Log out / shutdown / restart screen
 - Volume / brightness adjustment widgets with sliders
+- Automatic dpi / resolution scaling. Note that xft.dpi must be properly assigned in the .Xresources file if you are using a high DPI screen
 
 <a name="dependencies"></a>
 ## Dependencies ##
