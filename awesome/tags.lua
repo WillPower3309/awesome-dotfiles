@@ -111,7 +111,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
 end)
 
 -- remove gaps if layout is set to max
-_G.tag.connect_signal(
+tag.connect_signal(
   'property::layout',
   function(t)
     local currentLayout = awful.tag.getproperty(t, 'layout')

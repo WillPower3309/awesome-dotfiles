@@ -65,7 +65,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
   beautiful.systray_icon_spacing = 16
 end)
 
-
 -- Execute only if system tray widget is not loaded
 awesome.connect_signal("toggle_tray", function()
   if not require('widgets.systemtray') then
@@ -98,29 +97,21 @@ add_button:buttons(
   )
 )
 
-local TopPanel = function(s, offset)
-
-  local offsetx = 0
-  if offset == true then
-    offsetx = dpi(45)
-  end
-
+local TopPanel = function(s)
   local panel = wibox {
     type = "dock",
     ontop = true,
     screen = s,
     height = dpi(26),
-    width = s.geometry.width - offsetx,
-    x = s.geometry.x + offsetx,
+    width = s.geometry.width,
+    x = s.geometry.x,
     y = s.geometry.y,
     stretch = false,
     bg = beautiful.bg_top_panel,
-    fg = beautiful.fg_normal,
-    struts = {
-      top = dpi(26)
-    }
+    fg = beautiful.fg_normal
   }
 
+  -- define space to push windows away (equal to bar length so windows dont cover panel)
   panel:struts({
     top = dpi(26)
   })
@@ -141,7 +132,8 @@ local TopPanel = function(s, offset)
       require('widgets.package-updater'),
       require('widgets.bluetooth'),
       require('widgets.wifi'),
-      require('widgets.battery')
+      require('widgets.battery'),
+      require("widgets.layout-box")
     }
   }
 

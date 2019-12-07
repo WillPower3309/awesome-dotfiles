@@ -46,12 +46,12 @@ local function list_update(w, buttons, label, data, objects)
       tbm = cache.tbm
       ibm = cache.ibm
     else
-	  local icondpi = 10 -- CUSTOM VARIABLE
+	  local icondpi = 7
       ib = wibox.widget.imagebox()
       tb = wibox.widget.textbox()
       bgb = wibox.container.background()
       tbm = wibox.container.margin(tb, dpi(4), dpi(16))
-      ibm = wibox.container.margin(ib, dpi(icondpi), dpi(icondpi), dpi(icondpi), dpi(icondpi)) -- ALL 12
+      ibm = wibox.container.margin(ib, dpi(icondpi), dpi(icondpi), dpi(icondpi), dpi(icondpi))
       l = wibox.layout.fixed.horizontal()
       bg_clickable = clickable_container()
 
@@ -78,19 +78,6 @@ local function list_update(w, buttons, label, data, objects)
     local text, bg, bg_image, icon, args = label(o, tb)
     args = args or {}
 
-    -- The text might be invalid, so use pcall.
-    if text == nil or text == '' then
-      tbm:set_margins(0)
-    else
-      if not tb:set_markup_silently(text) then
-        tb:set_markup('<i>&lt;Invalid text&gt;</i>')
-      end
-    end
-    bgb:set_bg(bg)
-    if type(bg_image) == 'function' then
-      -- TODO: Why does this pass nil as an argument?
-      bg_image = bg_image(tb, o, nil, objects, i)
-    end
     bgb:set_bgimage(bg_image)
     if icon then
       ib.image = icon
