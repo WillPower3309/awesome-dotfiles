@@ -28,6 +28,8 @@
 - Wallpaper time-changing functionality
 - Log out / shutdown / restart screen
 - Volume / brightness adjustment widgets with sliders
+- Automatic dpi / resolution scaling
+  - Note that xft.dpi must be properly assigned in the .Xresources file if you are using a high DPI screen
 
 <a name="dependencies"></a>
 ## Dependencies ##
@@ -37,7 +39,7 @@ I have made my best effort to reduce the number of dependencies by allowing user
 |:----------:|:-------------:|
 |`awesome-git`|Window manager - **must use git version**|
 |`compton-tryone`|Window compositor, eliminates screen tearing and gives the cool transparent blur effect|
-|`rofi`|Application launcher|
+|`rofi-git`|Application launcher -- **must use git version**|
 |`feh`|Image viewer, used to set background|
 |[`SF Text`](https://aur.archlinux.org/packages/otf-san-francisco/)|System font - Same font used by apple in macOS / iOS / watchOS|
 |`xfce4-power-manager`|Lightweight power manager required by the battery panel widget|
@@ -70,9 +72,10 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 ## My Preferred Applications ##
 - **Display Manager - SDDM (with sugar-candy theme)**: Beautiful display manager which matches the window manager theme fairly well and looks amazing
 - **Text Editor - Vim**: I'm an alpha chad
-- **File Browser - Thunar**: Lightweight file browser, few dependencies, and can be configured to work with a preferred terminal. Also has extensions for easy right click extraction / compression of archive files (ie zip / rar etc)
+- **File Manager - Thunar**: Lightweight file browser, few dependencies, and can be configured to work with a preferred terminal. Also has extensions for easy right click extraction / compression of archive files (ie zip / rar etc)
 - **Web Browser - Firefox**: Super configurable and isn't made by Google
 - **Terminal - Kitty**: Used to use alacritty, switched to kitty as it is very fast and has great ligature implementation (which helps with programming in vim). Is very configurable and has build in tmux like functionality
+- **Theme / Look & Feel Manager - lxappearance**: makes managing icon / cursor / application themes easy, only theme manager with no DE dependencies, and works very well
 
 <a name="appTheming"></a>
 ## Application Theming ##
@@ -118,5 +121,7 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 - add one more workspace with icon
 - add floating layout icon
 - better open tag application button icon
-- rofi --normal-window with window rules for max?
-- fix pixels in active tag bg
+- macOS style "dock" tag viewer
+- try fully transparent dock (may look weird for window tabs)
+- new wallpaper functionality: pull all wallpapers from directory, put into list. # of wallpapers in list, divide time in day by # wallpapers, set up with feh
+- fix pixels in active tag bg (only on surface?)
