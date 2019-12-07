@@ -14,7 +14,7 @@ local mat_icon = require('widgets.icon')
 
 -- Clock / Calendar 12h format
 -- Get Time/Date format using `man strftime`
-local textclock = wibox.widget.textclock('<span font="SF Display 10">%l:%M %p</span>', 1)
+local textclock = wibox.widget.textclock('<span font="' .. beautiful.title_font ..'">%l:%M %p</span>', 1)
 
 -- Clock / Calendar 12AM/PM fornatan font="Roboto Mono bold 11">%I\n%M</span>\n<span font="Roboto Mono bold 9">%p</span>')
 local clock_widget = wibox.container.margin(textclock, dpi(0), dpi(0))
@@ -43,7 +43,7 @@ end
 local month_calendar = awful.widget.calendar_popup.month({
 	start_sunday = true,
 	spacing = 10,
-	font = 'SF Display 10',
+	font = beautiful.title_font,
 	long_weekdays = true,
 	margin = 0, -- 10
 	style_month = { border_width = 0, padding = 12, shape = cal_shape, padding = 25},
@@ -106,6 +106,7 @@ local TopPanel = function(s, offset)
   end
 
   local panel = wibox {
+    type = "dock",
     ontop = true,
     screen = s,
     height = dpi(26),
@@ -113,7 +114,7 @@ local TopPanel = function(s, offset)
     x = s.geometry.x + offsetx,
     y = s.geometry.y,
     stretch = false,
-    bg = beautiful.bg_normal,
+    bg = beautiful.bg_top_panel,
     fg = beautiful.fg_normal,
     struts = {
       top = dpi(26)
