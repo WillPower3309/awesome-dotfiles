@@ -14,8 +14,7 @@ local left_panel = function(screen)
     height = screen.geometry.height  * 2/3,
     x = screen.geometry.x,
     y = screen.geometry.y + screen.geometry.height * 1/6,
-    bg = beautiful.bg_normal,
-    fg = beautiful.fg_normal
+    bg = "#00000000",
   }
 
   -- define space to push windows away (equal to bar length so windows dont cover panel)
@@ -24,16 +23,25 @@ local left_panel = function(screen)
   })
 
   panel:setup {
-    expand = "none",
-    layout = wibox.layout.align.vertical,
-    nil, -- need nil to center items
     {
-      layout = wibox.layout.fixed.vertical,
-      -- add taglist widget
-      TagList(screen),
-      -- add folders widget
-      require("widgets.xdg-folders"),
-    }
+      expand = "none",
+      layout = wibox.layout.align.vertical,
+      nil, -- need nil to center items
+      {
+        layout = wibox.layout.fixed.vertical,
+        -- add taglist widget
+        TagList(screen),
+        -- add folders widget
+        require("widgets.xdg-folders"),
+      },
+    },
+    -- The real background color
+    bg = beautiful.bg_normal,
+    -- The real, anti-aliased shape
+    --shape = function(cr, width, height)
+    --  gears.shape.rounded_rect(cr, width, height, 6)
+    --end,
+    widget = wibox.container.background()
   }
   return panel
 end

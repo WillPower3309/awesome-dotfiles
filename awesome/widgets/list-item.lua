@@ -128,9 +128,6 @@ function mat_list_item:get_suffix()
 end
 
 --- The widget who will be the content.
--- @property content
--- @tparam widget widget The widget
-
 function mat_list_item:set_content(widget)
   if widget then
     base.check_widget(widget)
@@ -183,9 +180,5 @@ end
 function mat_list_item.mt:__call(...)
   return new(...)
 end
-
---@DOC_widget_COMMON@
-
---@DOC_object_COMMON@
 
 return setmetatable(mat_list_item, mat_list_item.mt)

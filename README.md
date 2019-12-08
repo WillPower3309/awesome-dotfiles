@@ -42,7 +42,15 @@ I have made my best effort to reduce the number of dependencies by allowing user
 |`rofi-git`|Application launcher -- **must use git version**|
 |`feh`|Image viewer, used to set background|
 |[`SF Text`](https://aur.archlinux.org/packages/otf-san-francisco/)|System font - Same font used by apple in macOS / iOS / watchOS|
-|`xfce4-power-manager`|Lightweight power manager required by the battery panel widget|
+
+There are also a number of optional dependencies, which will improve the user experience but aren't required:
+- `xfce4-power-manager`: Lightweight power manager spawned when the top panel battery icon is clicked
+- `blueman-manager`: Bluetooth managing application, spawned when the bluetooth top panel icon is clicked
+- `pamac`: Lightweight GUI package manager, spawned when the top panel package icon is clicked
+- `NetworkManager`: GUI wifi connection editor, spawned when the top panel wifi icon is clickedfi
+- `Scrot`: Screenshot tool, which is mapped to the print screen key in keys.lua. **If you want to meet this dependency, ensure that the ~/Pictures` folder exists**, otherwise the program will not save your screenshots
+- `Alsa`: Provides kernel driven sound drivers, which the control of has been mapped to volume keys in keys.lua
+- `xbacklight`: Controls display brightness, which the control of has been mapped to brightness keys in keys.lua
 
 <a name="installation"></a>
 ## Installation ##
@@ -114,14 +122,16 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 
 ## Current To-Do ##
 - fix spinning cursor bug on adjust volume / brightness (due to components or widgets)
+- make folder icons have dpi(7) to match taglist icons
 - make adjust volume / brightness more smooth
+- make panel swap for maximized layout too
+- make panel swap more smooth (panel behind left panel taking up fullscreen that changes color?)
 - finish adding keybinds
 - fix notifications UI
 - lock screen
 - add one more workspace with icon
 - add floating layout icon
 - better open tag application button icon
-- macOS style "dock" tag viewer
-- try fully transparent dock (may look weird for window tabs)
 - new wallpaper functionality: pull all wallpapers from directory, put into list. # of wallpapers in list, divide time in day by # wallpapers, set up with feh
-- fix pixels in active tag bg (only on surface?)
+- set wallpaper with gears.wallpaper over feh
+- fix rofi bugs

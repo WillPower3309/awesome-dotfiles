@@ -25,7 +25,7 @@ rules = {
         keys = keys.clientkeys,
         buttons = clientbuttons,
         screen = awful.screen.preferred,
-        placement = awful.placement.no_overlap+awful.placement.no_offscreen
+        placement = awful.placement.no_overlap + awful.placement.no_offscreen
      }
     },
 
@@ -62,30 +62,23 @@ rules = {
       }, properties = { fullscreen = true }
     },
 
-    -- Maximized clients
-    {
-      rule_any = {
-        name = { "rofi" }
-      }, properties = { maximized = true, ontop = true }
-    },
-
     -- Centered clients
     {
       rule_any = {
         class = {
-            "Steam",
-            "discord",
-            "Nm-connection-editor",
-            "Pavucontrol"
+          "Steam",
+          "discord",
+          "Nm-connection-editor",
+          "Pavucontrol"
         },
         name = {
           "Bluetooth Devices"
         },
         role = {
-            "GtkFileChooserDialog"
+          "GtkFileChooserDialog"
         },
         type = {
-            "dialog",
+          "dialog",
         }
       },
       properties = {},
@@ -108,20 +101,26 @@ rules = {
     {
       rule_any = { class = { "Visualizer" } },
       properties = {
-          floating = true,
-          maximized_horizontal = true,
-          sticky = true,
-          ontop = false,
-          skip_taskbar = true,
-          below = true,
-          focusable = false,
-          height = screen_height * 0.40,
-          opacity = 0.6
+        floating = true,
+        maximized_horizontal = true,
+        sticky = true,
+        ontop = false,
+        skip_taskbar = true,
+        below = true,
+        focusable = false,
+        height = screen_height * 0.40,
+        opacity = 0.6
       },
       callback = function (c)
-          decorations.hide(c)
-          awful.placement.bottom(c)
+        decorations.hide(c)
+        awful.placement.bottom(c)
       end
+    },
+
+    -- Rofi
+    {
+      rule_any = { name = { "rofi" } },
+      properties = { maximized = true, ontop = true }
     },
 
     -- File chooser dialog
@@ -132,13 +131,13 @@ rules = {
 
     -- Pavucontrol & Bluetooth Devices
     {
-      rule_any = { class = {"Pavucontrol"}, name = {"Bluetooth Devices"} },
+      rule_any = { class = { "Pavucontrol" }, name = { "Bluetooth Devices" } },
       properties = { floating = true, width = screen_width * 0.55, height = screen_height * 0.45 }
     },
 
     -- Do not add titlebars to normal clients and dialogs
-    { rule_any = {type = { "normal", "dialog" }
-      }, properties = { titlebars_enabled = false }
+    { rule_any = { type = { "normal", "dialog" } },
+      properties = { titlebars_enabled = false }
     },
 }
 

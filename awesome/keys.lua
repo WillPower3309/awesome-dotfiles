@@ -56,7 +56,7 @@ keys.globalkeys = gears.table.join(
         {description = "application launcher", group = "launcher"}),
 
     -- =========================================
-    -- VOLUME / BRIGHTNESS
+    -- VOLUME / BRIGHTNESS / SCREENSHOT
     -- =========================================
 
     -- Brightness
@@ -126,6 +126,12 @@ keys.globalkeys = gears.table.join(
             awful.spawn('mpc toggle')
         end,
         {description = 'play/pause music', group = 'hotkeys'}),
+
+    -- Screenshot on prtscn using scrot
+    awful.key({}, "Print",
+        function ()
+            awful.util.spawn("scrot -e 'mv $f ~/Pictures/ 2>/dev/null'", false)
+        end),
 
     -- =========================================
     -- CLIENT FOCUSING
