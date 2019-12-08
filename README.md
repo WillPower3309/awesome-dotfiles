@@ -33,14 +33,13 @@
 
 <a name="dependencies"></a>
 ## Dependencies ##
-I have made my best effort to reduce the number of dependencies by allowing users to edit the `apps.lua` file (see [installation section](#installation)) to define their own preferred applications. That being said, here are the dependencies.
+I have made my best effort to reduce the number of dependencies by using the awesome API to its fullest extent (one of the only dotfiles on the internet that doesn't require `feh`!) and allowing users to edit the `apps.lua` file (see [installation section](#installation)) to define their own preferred applications. That being said, here are the dependencies.
 
 |Dependency|Description|
 |:----------:|:-------------:|
 |`awesome-git`|Window manager - **must use git version**|
 |`compton-tryone`|Window compositor, eliminates screen tearing and gives the cool transparent blur effect|
 |`rofi-git`|Application launcher -- **must use git version**|
-|`feh`|Image viewer, used to set background|
 |[`SF Text`](https://aur.archlinux.org/packages/otf-san-francisco/)|System font - Same font used by apple in macOS / iOS / watchOS|
 
 There are also a number of optional dependencies, which will improve the user experience but aren't required:
@@ -132,6 +131,5 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 - add one more workspace with icon
 - add floating layout icon
 - better open tag application button icon
-- new wallpaper functionality: pull all wallpapers from directory, put into list. # of wallpapers in list, divide time in day by # wallpapers, set up with feh
-- set wallpaper with gears.wallpaper over feh
+- new wallpaper functionality: pull all wallpapers from directory, put into list. # of wallpapers in list, divide time in day by # wallpapers, set wallpaper
 - fix rofi bugs

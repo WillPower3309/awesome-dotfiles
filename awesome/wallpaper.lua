@@ -37,16 +37,16 @@ function timeChecker()
   time = time.hour
   -- Morning
   if tonumber(time) >= dayTime and tonumber(time) < noonTime then
-    awful.spawn.with_shell("feh --bg-scale " .. wall_dir .. "day-wallpaper.png")
+    gears.wallpaper.maximized(wall_dir .. "noon-wallpaper.png", nil, false)
   -- Noon
   elseif tonumber(time) >= noonTime and tonumber(time) < eveningTime then
-    awful.spawn.with_shell("feh --bg-scale " .. wall_dir .. "noon-wallpaper.png")
+    gears.wallpaper.maximized(wall_dir .. "noon-wallpaper.png", nil, false)
   -- Evening
   elseif tonumber(time) >= eveningTime then
-    awful.spawn.with_shell("feh --bg-scale " .. wall_dir .. "evening-wallpaper.png")
+    gears.wallpaper.maximized(wall_dir .. "noon-wallpaper.png", nil, false)
   -- Night
   else
-    awful.spawn.with_shell("feh --bg-scale " .. wall_dir .. "night-wallpaper.png")
+    gears.wallpaper.maximized(wall_dir .. "noon-wallpaper.png", nil, false)
   end
 end
 
@@ -72,3 +72,10 @@ local runOnce = gears.timer {
 }
 
 timeChecker()
+
+--local f = io.popen("sh -c \"find ~/.wallpaper -name '*.png' | shuf -n 1 | xargs echo -n\"")
+--local wallpaper = f:read("*all")
+--f:close()
+--for s = 1, screen.count() do
+--  gears.wallpaper.maximized(wallpaper, nil, true, nil)
+--end
