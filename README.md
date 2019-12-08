@@ -121,17 +121,19 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 - [Guide](https://www.freecodecamp.org/news/jazz-up-your-zsh-terminal-in-seven-steps-a-visual-guide-e81a8fd59a38/)
 
 ## Current To-Do ##
-- fix spinning cursor bug on adjust volume / brightness (due to components or widgets)
-- make folder icons have dpi(7) to match taglist icons
-- make adjust volume / brightness more smooth
-- make panel swap for maximized layout too
-- make panel swap more smooth (panel behind left panel taking up fullscreen that changes color?)
-- finish adding keybinds
-- fix notifications UI
-- lock screen
-- add one more workspace with icon
-- add floating layout icon
-- better open tag application button icon
-- new wallpaper functionality: pull all wallpapers from directory, put into list. # of wallpapers in list, divide time in day by # wallpapers, set up with feh
-- set wallpaper with gears.wallpaper over feh
-- fix rofi bugs
+- **Features**:
+  - make folder icons have dpi(7) to match taglist icons
+  - make panel swap more smooth (panel behind left panel taking up fullscreen that changes color?), work for maximized layout too
+  - finish adding keybinds
+  - lock screen
+  - add one more workspace with icon
+  - new wallpaper functionality: pull all wallpapers from directory, put into list. # of wallpapers in list, divide time in day by # wallpapers, set up with feh
+  - set wallpaper with gears.wallpaper over feh
+
+- **Bug Fixes:**
+  - fix spinning cursor bug on adjust volume / brightness (due to components or widgets)
+  - make adjust volume / brightness more smooth
+  - fix notifications UI
+  - add floating layout icon
+  - open tag application button icon
+  - fix rofi focus bugs
