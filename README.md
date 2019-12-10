@@ -40,7 +40,7 @@ I have made my best effort to reduce the number of dependencies by using the awe
 
 |Dependency|Description|
 |:----------:|:-------------:|
-|`awesome-git`|Window manager - **must use git version**|
+|`awesome-git`|Window manager - **must use git version.** If you are using an Arch based distro you can install it off of the AUR. Otherwise [refer to the installation instructions](https://github.com/awesomeWM/awesome/)|
 |`compton-tryone`|Window compositor, eliminates screen tearing and gives the cool transparent blur effect|
 |`rofi-git`|Application launcher -- **must use git version**|
 |[`SF Text`](https://aur.archlinux.org/packages/otf-san-francisco/)|System font - Same font used by apple in macOS / iOS / watchOS|
@@ -120,7 +120,7 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 
 <a name="notes"></a>
 ## Notes ##
-- **If the config isn't working there is a 99% it's because you are not using `awesome` and not `awesome-git`.** Arch and Manjaro users can download the awesome-git package from the AUR, while users on other distros will need to build it from source. This sounds scary but is as simple as folling the steps outlined in [the official awesomeWM repo](https://github.com/awesomeWM/awesome/)
+- **If the config isn't working there is a 99% chance it's because you are not using `awesome` and not `awesome-git`.** Arch and Manjaro users can download the awesome-git package from the AUR, while users on other distros will need to build it from source. This sounds scary but is as simple as folling the steps outlined in [the official awesomeWM repo](https://github.com/awesomeWM/awesome/)
 - [Awesome API Documentation](https://awesomewm.org/apidoc/index.html)
 - If you encounter any problems please open an issue in this repo and I will gladly investigate it
 
