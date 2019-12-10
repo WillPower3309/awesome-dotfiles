@@ -17,9 +17,9 @@
 - **OS**: Arch Linux
 - **Shell**: ZSH
 - **WM**: awesome
-- **Theme**: Adwaita-dark
+- **Theme**: Qogir-dark
 - **Icons**: McMojave-Circle-Blue-Dark
-- **Terminal**: Alacritty
+- **Terminal**: kitty
 
 <a name="features"></a>
 ## Features ##
