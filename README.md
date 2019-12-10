@@ -90,7 +90,7 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 <a name="appTheming"></a>
 ## Application Theming ##
 ### Firefox ###
-1. [Set up My Custom Firefox Theme](https://github.com/willpower3309/MinimalistMaterialFox)
+1. Set up [my custom Firefox theme](https://github.com/willpower3309/MinimalistMaterialFox)
 2. Use [this](https://github.com/Jaredk3nt/homepage) homepage
 3. Use `SF Text` font
 
