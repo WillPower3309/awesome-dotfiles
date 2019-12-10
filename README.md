@@ -124,7 +124,7 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 
 <a name="notes"></a>
 ## Notes ##
-- **If the config isn't working its 99% because you are not using awesome and not awesome-git.** Arch and Manjaro users can download the awesome-git package from the AUR, while users on other distros will need to build it from source. This sounds scary but is as simple as folling the steps outlined in [the official awesomeWM repo](https://github.com/awesomeWM/awesome/)
+- **If the config isn't working its 99% because you are not using `awesome` and not `awesome-git`.** Arch and Manjaro users can download the awesome-git package from the AUR, while users on other distros will need to build it from source. This sounds scary but is as simple as folling the steps outlined in [the official awesomeWM repo](https://github.com/awesomeWM/awesome/)
 - [Awesome API Documentation](https://awesomewm.org/apidoc/index.html)
 - If you encounter any problems please open an issue in this repo and I will gladly investigate it
 
