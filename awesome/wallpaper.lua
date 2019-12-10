@@ -37,16 +37,16 @@ function timeChecker()
   time = time.hour
   -- Morning
   if tonumber(time) >= dayTime and tonumber(time) < noonTime then
-    gears.wallpaper.maximized(wall_dir .. "noon-wallpaper.png", nil, false)
+    gears.wallpaper.maximized(wall_dir .. "day-wallpaper.png", nil, false)
   -- Noon
   elseif tonumber(time) >= noonTime and tonumber(time) < eveningTime then
     gears.wallpaper.maximized(wall_dir .. "noon-wallpaper.png", nil, false)
   -- Evening
   elseif tonumber(time) >= eveningTime then
-    gears.wallpaper.maximized(wall_dir .. "noon-wallpaper.png", nil, false)
+    gears.wallpaper.maximized(wall_dir .. "evening-wallpaper.png", nil, false)
   -- Night
   else
-    gears.wallpaper.maximized(wall_dir .. "noon-wallpaper.png", nil, false)
+    gears.wallpaper.maximized(wall_dir .. "night-wallpaper.png", nil, false)
   end
 end
 
@@ -73,9 +73,14 @@ local runOnce = gears.timer {
 
 timeChecker()
 
---local f = io.popen("sh -c \"find ~/.wallpaper -name '*.png' | shuf -n 1 | xargs echo -n\"")
---local wallpaper = f:read("*all")
---f:close()
---for s = 1, screen.count() do
---  gears.wallpaper.maximized(wallpaper, nil, true, nil)
+-- pull list of wallpapers
+--local wallpapers = io.popen("find ~/.config/awesome/wallpapers")
+--wallpapers:read('*l')
+
+-- iterate through wallpapers in directory
+--while true do
+--    local file = wallpapers:read('*l')
+--    if file == nil or file == "" then break end
+--    print(file)
 --end
+

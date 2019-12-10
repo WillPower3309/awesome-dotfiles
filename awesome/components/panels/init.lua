@@ -16,30 +16,16 @@ screen.connect_signal("request::desktop_decoration", function(s)
     end
 end)
 
--- Hide bars when app go fullscreen, extend bars when apps are maximized
+-- Hide bars when app go fullscreen
 function updateBarsVisibility()
   for s in screen do
     if s.selected_tag then
       local fullscreen = s.selected_tag.fullscreenMode
-      local maximized = s.selected_tag.maximizedMode
 
       -- make top / left bar visible if fullscreen
       s.top_panel.visible = not fullscreen
       if s.left_panel then
         s.left_panel.visible = not fullscreen
-      end
-
-      -- extend left bar if maximized
-      if maximized then
-        s.left_panel.height = s.geometry.height - dpi(26)
-        if s.left_panel then
-          s.left_panel.y = s.geometry.y + dpi(26)
-        end
-      else
-        s.left_panel.height = s.geometry.height * 2/3
-        if s.left_panel then
-          s.left_panel.y = s.geometry.y + s.geometry.height * 1/6
-        end
       end
     end
   end
@@ -63,24 +49,10 @@ client.connect_signal(
 )
 
 client.connect_signal(
-  'property::maximized',
-  function(c)
-    if c.first_tag then
-      c.first_tag.maximizedMode = c.maximized
-    end
-    updateBarsVisibility()
-  end
-)
-
-client.connect_signal(
   'unmanage',
   function(c)
     if c.fullscreen then
       c.screen.selected_tag.fullscreenMode = false
-      updateBarsVisibility()
-    end
-    if c.maximized then
-      c.screen.selected_tag.maximizedMode = false
       updateBarsVisibility()
     end
   end
