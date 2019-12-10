@@ -10,6 +10,7 @@
 5. [Folder Structure](#folderStructure)
 6. [My Preferred Applications](#applications)
 7. [Application Theming](#appTheming)
+8. [Notes](#notes)
 
 <a name="details"></a>
 ## Details ##
@@ -30,6 +31,8 @@
 - Volume / brightness adjustment widgets with sliders
 - Automatic dpi / resolution scaling
   - Note that xft.dpi must be properly assigned in the .Xresources file if you are using a high DPI screen
+- Supports multi monitor setups!
+  - The top bar appears on every monitor, and the side bar only appears on the main monitor
 
 <a name="dependencies"></a>
 ## Dependencies ##
@@ -118,6 +121,12 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
     - Edit `~/.zshrc`, add `zsh-autosuggestions` to the plugins section
     - Reread config `source ~/.zshrc`
 - [Guide](https://www.freecodecamp.org/news/jazz-up-your-zsh-terminal-in-seven-steps-a-visual-guide-e81a8fd59a38/)
+
+<a name="notes"></a>
+## Notes ##
+- **If the config isn't working its 99% because you are not using awesome and not awesome-git.** Arch and Manjaro users can download the awesome-git package from the AUR, while users on other distros will need to build it from source. This sounds scary but is as simple as folling the steps outlined in [the official awesomeWM repo](https://github.com/awesomeWM/awesome/)
+- [Awesome API Documentation](https://awesomewm.org/apidoc/index.html)
+- If you encounter any problems please open an issue in this repo and I will gladly investigate it
 
 ## Current To-Do ##
 - **Features**:
