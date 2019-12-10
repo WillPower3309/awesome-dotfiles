@@ -99,28 +99,24 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 2. chown spotify directory: `sudo chown $USER -R /opt/spotify`
 3. run `spicetify` once to generate config
 4. `spicetify backup apply enable-devtool` to enable devtools
-5. Place your color.ini and user.css in `~/.config/spicetify/Themes/<your theme name, whatever you want>` and edit `~/.config/spicetify/config.ini` to reflect this name
+5. Copy my spicetify folder to `~/.config`
 6. run `spicetify update restart`
 
 ### OhMyZsh ###
-- Install Powerline Fonts
-  - `git clone https://github.com/powerline/fonts.git`
-  - `cd fonts`
-  - `./install.sh`
-  - set font
-- Change theme to agnoster
-  -`open ~/.zshrc`
-  - Set ZSH_THEME="agnoster" and save the file
-- Install Plugins (Note That ~/.zshrc edits are in repo)
-  - Syntax Hilighting
-    - `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`
+**[Guide](https://www.freecodecamp.org/news/jazz-up-your-zsh-terminal-in-seven-steps-a-visual-guide-e81a8fd59a38/) if you are having trouble following the steps below**
+1. Install a font that supports powerline, my favourites are Fira Code and Source Code Pro, however a quick google search will show many other great fonts
+2. Change the zsh theme to agnoster
+  - Open `~/.zshrc` with your fave text editor
+  - Set `ZSH_THEME="agnoster"` and save the file
+3. Install Plugins (Note that the ~/.zshrc edits are already done in this repo)
+  - Syntax highlighting (copy and paste the below command to install)
+    - ```git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting```
     - Edit `~/.zshrc`, add `zsh-syntax-highlighting` to the plugins section
     - Reread config `source ~/.zshrc`
-  - Autosuggestion
-    - `git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions`
+  - Autosuggestions (copy and paste the below command to install)
+    - ```git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions```
     - Edit `~/.zshrc`, add `zsh-autosuggestions` to the plugins section
-    - Reread config `source ~/.zshrc`
-- [Guide](https://www.freecodecamp.org/news/jazz-up-your-zsh-terminal-in-seven-steps-a-visual-guide-e81a8fd59a38/)
+4. Fini!
 
 <a name="notes"></a>
 ## Notes ##
