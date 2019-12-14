@@ -33,7 +33,7 @@ local run_on_start_up = {
     "compton",
     "unclutter",
     "redshift -l 43.544804:-80.248169",
-    "xinput set-prop 10 305 1" -- set touchpad to tap to click
+    "xinput set-prop 9 309 1" -- set touchpad to tap to click
 }
 
 
