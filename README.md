@@ -48,7 +48,7 @@ I have made my best effort to reduce the number of dependencies by using the awe
 There are also a number of optional dependencies, which will improve the user experience but aren't required:
 - `xfce4-power-manager`: Lightweight power manager spawned when the top panel battery icon is clicked
 - `blueman-manager`: Bluetooth managing application, spawned when the bluetooth top panel icon is clicked
-- `pamac`: Lightweight GUI package manager, spawned when the top panel package icon is clicked
+- `pamac-aur`: Lightweight GUI package manager, spawned when the top panel package icon is clicked
 - `NetworkManager`: GUI wifi connection editor, spawned when the top panel wifi icon is clickedfi
 - `Scrot`: Screenshot tool, which is mapped to the print screen key in keys.lua. **If you want to meet this dependency, ensure that the ~/Pictures` folder exists**, otherwise the program will not save your screenshots
 - `Alsa`: Provides kernel driven sound drivers, which the control of has been mapped to volume keys in keys.lua
