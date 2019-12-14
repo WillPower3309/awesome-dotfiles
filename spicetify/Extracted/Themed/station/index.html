@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html dir="auto">
+  <head>
+    <meta charset="utf-8" />
+    <title>Station</title>
+    <link rel="stylesheet" href="css/glue.css" />
+  <link rel="stylesheet" href="css/station.css"><link rel="stylesheet" class="userCSS" href="https://zlink.app.spotify.com/css/user.css"></head>
+  <body data-interaction-context="station">
+    <div class="online-content">
+      <div class="app-header"></div>
+      <div class="app-content">
+        <div
+          class="track-list-container container"
+          data-interaction-context="track-list-container"
+          data-navbar-view-id="track-list-container"
+        ></div>
+      </div>
+      <div class="loading-container">
+        <div class="throbber-initial"><div></div></div>
+      </div>
+    </div>
+
+    <div class="offline-content-container"></div>
+
+    <!-- "init.js" is served by the desktop client and provides the "window.__spotify" object. -->
+    <script src="init.js"></script>
+  <script src="station.bundle.js"></script></body>
+</html>

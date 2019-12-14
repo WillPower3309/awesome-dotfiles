@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html dir="auto">
+  <head>
+    <meta charset="utf-8" />
+    <title>Play Queue</title>
+
+    <link rel="stylesheet" href="css/glue.css" />
+  <link rel="stylesheet" href="css/queue.css"><link rel="stylesheet" class="userCSS" href="https://zlink.app.spotify.com/css/user.css"></head>
+  <body>
+    <div id="outer">
+      <div id="header" class="play-queue-header"></div>
+      <div id="navbar"></div>
+      <div id="containers" class="container play-queue-content">
+        <div id="queue-container" data-navbar-view-id="queue">
+          <div id="queue-tracklist"></div>
+          <div id="queue-error" class="empty-container"></div>
+        </div>
+        <div id="history-container" data-navbar-view-id="history">
+          <div id="history-tracklist"></div>
+          <div id="history-error" class="empty-container"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- "init.js" is served by the desktop client and provides the "window.__spotify" object. -->
+    <script src="init.js"></script>
+  <script src="queue.bundle.js"></script></body>
+</html>

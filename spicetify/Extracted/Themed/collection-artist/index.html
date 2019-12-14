@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html dir="auto">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/glue.css" />
+  <link rel="stylesheet" href="css/collection-artist.css"><link rel="stylesheet" class="userCSS" href="https://zlink.app.spotify.com/css/user.css"></head>
+  <body class="unlike-removes-entity">
+    <div
+      id="collection-artist-wrapper"
+      class="ca-hidden"
+      data-play-source="library-collection-artist"
+    >
+      <div id="header-wrapper"></div>
+      <div id="virtual-songs-list-wrapper" class="container app-content"></div>
+    </div>
+    <div id="error-wrapper" class="show-error-screen"></div>
+    <div id="nux-wrapper"></div>
+    <div
+      id="confirm-dialog-container"
+      class="hidden confirm-dialog-container"
+    ></div>
+
+    <!-- "init.js" is served by the desktop client and provides the "window.__spotify" object. -->
+    <script src="init.js"></script>
+  <script src="collection-artist.bundle.js"></script></body>
+</html>
