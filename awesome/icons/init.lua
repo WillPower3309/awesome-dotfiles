@@ -24,5 +24,5 @@ return {
   close = dir .. 'close.png',
   open = dir .. 'open.svg',
   restart = dir .. 'restart.svg',
-  arch = dir .. 'arch.png'
+  arch = dir .. 'arch.svg'
 }
