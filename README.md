@@ -141,3 +141,4 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
   - make adjust volume / brightness more smooth
   - fix notifications UI
   - fix rofi focus bugs
+  - spinning cursor bug when pressing arch icon when rofi already open
