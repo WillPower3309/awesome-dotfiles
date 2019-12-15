@@ -135,11 +135,9 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
   - add one more workspace with icon
   - new wallpaper functionality: pull all wallpapers from directory, put into list. # of wallpapers in list, divide time in day by # wallpapers, set wallpaper
   - make more components pull variables from theme.lua
-  - add arch widget icon to top bar that opens rofi
 
 - **Bug Fixes:**
   - fix spinning cursor bug on adjust volume / brightness (due to components or widgets)
   - make adjust volume / brightness more smooth
   - fix notifications UI
-  - add floating layout icon
   - fix rofi focus bugs

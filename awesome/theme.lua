@@ -1,5 +1,5 @@
 --      ████████╗██╗  ██╗███████╗███╗   ███╗███████╗    
---       ══██╔══╝██║  ██║██╔════╝████╗ ████║██╔════╝    
+--      ╚══██╔══╝██║  ██║██╔════╝████╗ ████║██╔════╝    
 --         ██║   ███████║█████╗  ██╔████╔██║█████╗      
 --         ██║   ██╔══██║██╔══╝  ██║╚██╔╝██║██╔══╝      
 --         ██║   ██║  ██║███████╗██║ ╚═╝ ██║███████╗    
@@ -83,7 +83,7 @@ theme.notification_padding = dpi(8)
 
 -- You can use your own layout icons like this:
 theme.layout_tile = "~/.config/awesome/icons/layouts/view-quilt.png"
-theme.layout_floating = "~/.config/awesome/icons/layouts/" -- TODO: ADD FLOATING ICON
+theme.layout_floating = "~/.config/awesome/icons/layouts/view-float.png"
 theme.layout_max = "~/.config/awesome/icons/layouts/arrow-expand-all.png"
 
 theme.icon_theme = "McMojave-circle-blue-dark"
