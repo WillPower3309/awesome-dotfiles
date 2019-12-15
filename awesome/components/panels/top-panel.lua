@@ -121,6 +121,7 @@ local TopPanel = function(s)
     layout = wibox.layout.align.horizontal,
     {
       layout = wibox.layout.fixed.horizontal,
+      require('widgets.launcher'),
       TaskList(s),
       add_button
     },

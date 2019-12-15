@@ -23,5 +23,6 @@ return {
   thermometer = dir .. 'thermometer.svg',
   close = dir .. 'close.png',
   open = dir .. 'open.svg',
-  restart = dir .. 'restart.svg'
+  restart = dir .. 'restart.svg',
+  arch = dir .. 'arch.png'
 }
