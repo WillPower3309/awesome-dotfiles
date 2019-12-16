@@ -135,6 +135,7 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
   - add one more workspace with icon
   - new wallpaper functionality: pull all wallpapers from directory, put into list. # of wallpapers in list, divide time in day by # wallpapers, set wallpaper
   - make more components pull variables from theme.lua
+  - add desktop app drawer?
 
 - **Bug Fixes:**
   - fix spinning cursor bug on adjust volume / brightness (due to components or widgets)

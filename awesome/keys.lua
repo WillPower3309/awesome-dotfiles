@@ -441,7 +441,7 @@ for i = 1, 9 do
                     tag:view_only()
                 end
             end,
-            {description = "view tag #"..i, group = "tag"
+            {description = "view tag #"..i, group = "tag"}
         ),
         -- Toggle tag display.
         awful.key({ modkey, "Control" }, "#" .. i + 9,

@@ -15,18 +15,18 @@ local filesystem = require('gears.filesystem')
 -- ===================================================================
 
 
-local apps = {}
-
-apps.terminal = "kitty"
-apps.launcher = "rofi -normal-window -show drun"
-apps.lock = "i3lock"
-apps.filebrowser = "thunar"
-apps.browser = "firefox"
-apps.editor = "code"
-apps.musicPlayer = "spotify"
-apps.gameLauncher = "steam"
-apps.imageEditor = "gimp"
-apps.virtualMachineLauncher = "virtualbox"
+local apps = {
+    terminal = "kitty",
+    launcher = "rofi -normal-window -show drun",
+    lock = "i3lock",
+    filebrowser = "thunar",
+    browser = "firefox",
+    editor = "code",
+    musicPlayer = "spotify",
+    gameLauncher = "steam",
+    imageEditor = "gimp",
+    virtualMachineLauncher = "virtualbox"
+}
 
 -- List of apps to start once on start-up
 local run_on_start_up = {
@@ -41,7 +41,7 @@ local run_on_start_up = {
 -- ===================================================================
 
 
--- Run all the apps listed in run_on_start_up only once when awesome starts
+-- Run all the apps listed in run_on_start_up when awesome starts
 local function run_once(cmd)
     local findme = cmd
     local firstspace = cmd:find(' ')
