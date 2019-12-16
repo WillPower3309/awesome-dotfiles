@@ -119,9 +119,12 @@ end
 -- ===================================================================
 -- Notification Template Setup
 -- ===================================================================
-
--- margin=
+beautiful.notification_bg = "#00000000"
+local notification_bg = beautiful.notification_bg
+-- margin
+beautiful.notification_margin = dpi(5)
 naughty.connect_signal("request::display", function(n)
+
   naughty.layout.box {
     notification = n,
     type = "splash",
@@ -135,13 +138,14 @@ naughty.connect_signal("request::display", function(n)
                 {
                   {
                     {
+                      -- TITLE
                       {
                         {
                           {
                             align = "center",
                             widget = naughty.widget.title,
                           },
-                          margins = beautiful.notification_margin,
+                          margins = dpi(5),--beautiful.notification_margin,
                           widget  = wibox.container.margin,
                         },
                         -- BG of Titlebar
@@ -177,7 +181,7 @@ naughty.connect_signal("request::display", function(n)
                     margins = dpi(0),
                     widget  = wibox.container.margin,
                   },
-                  bg = "#00000000",
+                  bg = notification_bg,
                   widget  = wibox.container.background,
                 },
                 -- Notification action list
@@ -194,18 +198,18 @@ naughty.connect_signal("request::display", function(n)
             widget   = wibox.container.constraint,
           },
           strategy = "max",
-          width    = beautiful.notification_max_width,
+          width    = beautiful.notification_max_width or dpi(500),
           widget   = wibox.container.constraint,
         },
         -- Anti-aliasing container
         -- Real BG
-        bg = beautiful.bg_normal,
+        bg = "#424242",
         -- This will be the anti-aliased shape of the notification
         shape = gears.shape.rounded_rect,
         widget = wibox.container.background
       },
       -- Margin of the fake BG to have a space between notification and the screen edge
-      margins = beautiful.notification_margin,
+      margins = dpi(5),--beautiful.notification_margin,
       widget  = wibox.container.margin
     }
   }

@@ -142,7 +142,7 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 - **Bug Fixes:**
   - fix spinning cursor bug on adjust volume / brightness (due to components or widgets)
   - make adjust volume / brightness more smooth
-  - fix notifications UI
+  - fix notifications UI -> background messed up if open over a client
   - fix rofi focus bugs
   - exit screen sleep bug
   - manu spawn right beside mouse (currently strange gap to the right)
