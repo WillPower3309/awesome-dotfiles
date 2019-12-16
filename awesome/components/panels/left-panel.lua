@@ -6,6 +6,7 @@ local TagList = require('widgets.tag-list')
 
 local bar_width = dpi(45)
 
+
 local left_panel = function(screen)
   local panel = wibox {
     ontop = true,
@@ -29,6 +30,7 @@ local left_panel = function(screen)
       nil, -- need nil to center items
       {
         layout = wibox.layout.fixed.vertical,
+        require("widgets.launcher-button"),
         -- add taglist widget
         TagList(screen),
         -- add folders widget
