@@ -5,12 +5,22 @@
 --      ██║  ██║╚██████╔╝███████╗███████╗███████║
 --      ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚══════╝╚══════╝
 
+-- ===================================================================
+-- Imports
+-- ===================================================================
+
+
 local awful = require('awful')
 local beautiful = require("beautiful")
 local keys = require("keys")
 
 local screen_height = awful.screen.focused().geometry.height
 local screen_width = awful.screen.focused().geometry.width
+
+
+-- ===================================================================
+-- Rules
+-- ===================================================================
 
 
 rules = {
@@ -99,7 +109,7 @@ rules = {
 
     -- Visualizer
     {
-      rule_any = { class = { "Visualizer" } },
+      rule_any = { name = { "cava" } },
       properties = {
         floating = true,
         maximized_horizontal = true,

@@ -19,6 +19,7 @@ local apps = {}
 
 apps.terminal = "kitty"
 apps.launcher = "rofi -normal-window -show drun"
+apps.lock = "i3lock"
 apps.filebrowser = "thunar"
 apps.browser = "firefox"
 apps.editor = "code"
@@ -26,7 +27,6 @@ apps.musicPlayer = "spotify"
 apps.gameLauncher = "steam"
 apps.imageEditor = "gimp"
 apps.virtualMachineLauncher = "virtualbox"
-apps.lock = "i3lock"
 
 -- List of apps to start once on start-up
 local run_on_start_up = {
