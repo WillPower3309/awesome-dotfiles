@@ -130,7 +130,6 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 ## Current To-Do ##
 - Panel:
   - make folder icons have dpi(7) to match taglist icons
-  - make panel swap more smooth (panel behind left panel taking up fullscreen that changes color?), work for maximized layout too
 - finish adding keybinds
 - lock screen
 - add one more workspace with icon

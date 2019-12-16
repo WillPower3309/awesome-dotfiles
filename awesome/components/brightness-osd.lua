@@ -12,7 +12,6 @@ local bri_osd = require('widgets.brightness-slider-osd')
 awful.screen.connect_for_each_screen(
   function(s)
     -- Create the box
-
     local offsetx = dpi(56)
     local offsety = dpi(300)
     brightnessOverlay = wibox(

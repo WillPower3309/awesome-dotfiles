@@ -6,8 +6,8 @@ local gears = require('gears')
 
 local TagList = require('widgets.tag-list')
 
-awful.screen.connect_for_each_screen(function(s)
-  s.left_panel = awful.wibar({
+local LeftPanel = function(s)
+  left_panel = awful.wibar({
     position = "left",
     screen = s,
     width = dpi(45),
@@ -17,7 +17,7 @@ awful.screen.connect_for_each_screen(function(s)
     end
   })
 
-  s.left_panel:setup {
+  left_panel:setup {
     expand = "none",
     layout = wibox.layout.align.vertical,
     nil,
@@ -29,4 +29,22 @@ awful.screen.connect_for_each_screen(function(s)
       require("widgets.xdg-folders"),
     },
   }
-end)
+
+  function maximizeLeftPanel(bool)
+    if bool == true then
+      left_panel.height = s.geometry.height - dpi(26)
+      left_panel.y = dpi(26)
+      left_panel.shape = function(cr, width, height)
+        gears.shape.rectangle(cr, width, height)
+      end
+    else
+      left_panel.height = s.geometry.height  * 2/3
+      left_panel.shape = function(cr, width, height)
+        gears.shape.partially_rounded_rect(cr, width, height, false, true, true, false, 12)
+      end
+    end
+  end
+  return left_panel
+end
+
+return LeftPanel
