@@ -128,23 +128,20 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 - If you encounter any problems please open an issue in this repo and I will gladly investigate it
 
 ## Current To-Do ##
-- **Features**:
+- Panel:
   - make folder icons have dpi(7) to match taglist icons
   - make panel swap more smooth (panel behind left panel taking up fullscreen that changes color?), work for maximized layout too
-  - finish adding keybinds
-  - lock screen
-  - add one more workspace with icon
-  - new wallpaper functionality: pull all wallpapers from directory, put into list. # of wallpapers in list, divide time in day by # wallpapers, set wallpaper
-  - make more components pull variables from theme.lua
-  - wallpaper blurring
-  - finish menu.lua
-
-- **Bug Fixes:**
-  - fix spinning cursor bug on adjust volume / brightness (due to components or widgets)
-  - make adjust volume / brightness more smooth
-  - fix notifications UI -> background messed up if open over a client
-  - fix rofi focus bugs
-  - exit screen sleep bug
-  - manu spawn right beside mouse (currently strange gap to the right)
-  - menu contents
-  - fix launcher widget
+- finish adding keybinds
+- lock screen
+- add one more workspace with icon
+- new wallpaper functionality: pull all wallpapers from directory, put into list. # of wallpapers in list, divide time in day by # wallpapers, set wallpaper
+- make more components pull variables from theme.lua
+- wallpaper blurring
+- finish menu.lua
+- fix spinning cursor bug on adjust volume / brightness (due to components or widgets)
+- make adjust volume / brightness more smooth
+- fix notifications UI -> background messed up if open over a client
+- fix rofi focus bugs
+- menu spawn right beside mouse (currently strange gap to the right)
+- menu contents
+- fix launcher widget

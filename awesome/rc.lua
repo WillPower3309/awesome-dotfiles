@@ -32,8 +32,8 @@ local keys = require("keys")
 require("wallpaper")
 
 -- Import Components
+require('components.panels')
 require("components.notifications") -- startup error handling done in here
-require("components.panels")
 require("components.exit-screen")
 require("components.brightness-osd")
 require("components.volume-osd")
