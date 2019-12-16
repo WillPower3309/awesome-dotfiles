@@ -29,6 +29,7 @@
 - Wallpaper time-changing functionality
 - Log out / shutdown / restart screen
 - Volume / brightness adjustment widgets with sliders
+- Right click app menu
 - Automatic dpi / resolution scaling
   - Note that xft.dpi must be properly assigned in the .Xresources file if you are using a high DPI screen
 - Supports multi monitor setups!
@@ -135,12 +136,13 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
   - add one more workspace with icon
   - new wallpaper functionality: pull all wallpapers from directory, put into list. # of wallpapers in list, divide time in day by # wallpapers, set wallpaper
   - make more components pull variables from theme.lua
-  - add desktop app drawer?
+  - wallpaper blurring
+  - finish menu.lua
 
 - **Bug Fixes:**
   - fix spinning cursor bug on adjust volume / brightness (due to components or widgets)
   - make adjust volume / brightness more smooth
   - fix notifications UI
   - fix rofi focus bugs
-  - spinning cursor bug when pressing arch icon when rofi already open
   - exit screen sleep bug
+  - manu spawn right beside mouse (currently strange gap to the right)

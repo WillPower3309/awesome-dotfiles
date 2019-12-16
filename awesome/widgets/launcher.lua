@@ -20,12 +20,10 @@ widget.icon:set_image(icons.arch)
 local widget_button = clickable_container(wibox.container.margin(widget, dpi(7), dpi(7), dpi(7), dpi(7)))
 widget_button:buttons(
   gears.table.join(
-    awful.button(
-      {},
-      1,
-      nil,
+    -- spawn menu when clicked
+    awful.button({}, 1,
       function()
-        awful.spawn(apps.launcher)
+        mymainmenu:toggle()
       end
     )
   )

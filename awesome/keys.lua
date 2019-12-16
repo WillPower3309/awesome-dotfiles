@@ -13,13 +13,14 @@
 
 local awful = require("awful")
 local gears = require("gears")
+local naughty = require("naughty")
 
 -- Default Applications
-apps = require("apps");
+local apps = require("apps");
 
 -- Define mod key
-modkey = "Mod4"
-altkey = "Mod1"
+local modkey = "Mod4"
+local altkey = "Mod1"
 
 local keys = {}
 
@@ -30,17 +31,29 @@ local keys = {}
 
 
 -- Mouse buttons on the desktop
-keys.desktopbuttons = gears.table.join()
+keys.desktopbuttons = gears.table.join(
+    -- left click on desktop to hide notification
+    awful.button({}, 1,
+        function ()
+            naughty.destroy_all_notifications()
+        end
+    ),
+
+    -- right click on desktop to pull up menu
+    awful.button({}, 3,
+        function ()
+            mymainmenu:toggle()
+        end
+    )
+)
 
 -- Mouse buttons on the client
 keys.clientbuttons = gears.table.join(
-    awful.button(
-      {},
-      1,
-      function(c)
-        client.focus = c
-        c:raise()
-      end
+    awful.button({}, 1,
+        function(c)
+            client.focus = c
+            c:raise()
+        end
     ),
     awful.button({modkey}, 1, awful.mouse.client.move),
     awful.button({modkey}, 3, awful.mouse.client.resize)
@@ -155,7 +168,7 @@ keys.globalkeys = gears.table.join(
     -- Screenshot on prtscn using scrot
     awful.key({}, "Print",
         function ()
-            awful.util.spawn("scrot -e 'mv $f ~/Pictures/ 2>/dev/null'", false)
+            awful.util.spawn(apps.screenshot, false)
         end
     ),
 

@@ -19,6 +19,7 @@ local apps = {
     terminal = "kitty",
     launcher = "rofi -normal-window -show drun",
     lock = "i3lock",
+    screenshot = "scrot -e 'mv $f ~/Pictures/ 2>/dev/null'",
     filebrowser = "thunar",
     browser = "firefox",
     editor = "code",

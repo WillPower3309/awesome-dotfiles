@@ -37,6 +37,7 @@ require("components.panels")
 require("components.exit-screen")
 require("components.brightness-osd")
 require("components.volume-osd")
+require("components.menu")
 
 -- Import Tag Settings
 require("tags")
