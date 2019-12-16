@@ -9,12 +9,6 @@ terminal = apps.terminal
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
-
-
--- Theming Menu
-beautiful.menu_font = "SF Display Regular 10"
-beautiful.menu_submenu = '' -- ➤
-
 -- icon theme is in `awesome/theme/default-theme.lua`
 -- Search for `theme.icon_theme`
 

@@ -1,13 +1,10 @@
 local awful = require('awful')
 local wibox = require('wibox')
 local dpi = require('beautiful').xresources.apply_dpi
-local capi = {button = _G.button}
+local capi = {button = button}
 local gears = require('gears')
 local clickable_container = require('widgets.clickable-container')
---- Common method to create buttons.
--- @tab buttons
--- @param object
--- @treturn table
+
 local function create_buttons(buttons, object)
   if buttons then
     local btns = {}
@@ -162,7 +159,7 @@ local tasklist_buttons =
     {},
     1,
     function(c)
-      if c == _G.client.focus then
+      if c == client.focus then
         c.minimized = true
       else
         -- Without this, the following
@@ -173,7 +170,7 @@ local tasklist_buttons =
         end
         -- This will also un-minimize
         -- the client, if needed
-        _G.client.focus = c
+        client.focus = c
         c:raise()
       end
     end
