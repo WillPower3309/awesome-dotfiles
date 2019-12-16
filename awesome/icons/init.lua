@@ -17,11 +17,7 @@ return {
   lock = dir .. 'lock.svg',
   brightness = dir .. 'brightness.svg',
   volume = dir .. 'volume.svg',
-  chart = dir .. 'chart.svg',
-  memory = dir .. 'memory.svg',
-  harddisk = dir ..'harddisk.svg',
-  thermometer = dir .. 'thermometer.svg',
-  close = dir .. 'close.png',
+  close = dir .. 'close.svg',
   open = dir .. 'open.svg',
   restart = dir .. 'restart.svg',
   arch = dir .. 'arch.svg'

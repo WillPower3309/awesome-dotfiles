@@ -4,6 +4,7 @@ local dpi = require('beautiful').xresources.apply_dpi
 local capi = {button = button}
 local gears = require('gears')
 local clickable_container = require('widgets.clickable-container')
+local icons = require("icons")
 
 local function create_buttons(buttons, object)
   if buttons then
@@ -49,16 +50,7 @@ local function list_update(w, buttons, label, data, objects)
     else
       ib = wibox.widget.imagebox()
       tb = wibox.widget.textbox()
-      cb =
-        clickable_container(
-        wibox.container.margin(
-          wibox.widget.imagebox(os.getenv('HOME') .. '/.config/awesome/icons/close.png'),
-          4,
-          4,
-          4,
-          4
-        )
-      )
+      cb = clickable_container(wibox.container.margin(wibox.widget.imagebox(icons.close), dpi(6), dpi(6), dpi(6), dpi(6)))
       cb.shape = gears.shape.circle
       cbm = wibox.container.margin(cb, dpi(4), dpi(8), dpi(2), dpi(2)) -- 4, 8 ,12 ,12 -- close button
       cbm:buttons(
