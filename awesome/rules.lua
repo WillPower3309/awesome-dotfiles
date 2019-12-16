@@ -23,7 +23,7 @@ rules = {
         focus = awful.client.focus.filter,
         raise = true,
         keys = keys.clientkeys,
-        buttons = clientbuttons,
+        buttons = keys.clientbuttons,
         screen = awful.screen.preferred,
         placement = awful.placement.no_overlap + awful.placement.no_offscreen
      }

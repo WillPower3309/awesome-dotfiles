@@ -142,3 +142,4 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
   - fix notifications UI
   - fix rofi focus bugs
   - spinning cursor bug when pressing arch icon when rofi already open
+  - exit screen sleep bug
