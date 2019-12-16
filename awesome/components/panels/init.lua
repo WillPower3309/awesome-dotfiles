@@ -7,12 +7,12 @@ local dpi = require('beautiful').xresources.apply_dpi
 screen.connect_signal("request::desktop_decoration", function(s)
   if s.index == 1 then
       -- Create the left_panel
-      s.left_panel = left_panel(s)
+      --s.left_panel = left_panel(s)
       -- Create the Top bar
       s.top_panel = top_panel(s, true)
     else
       -- Just create the top bar on non primary displays
-      s.top_panel = top_panel(s, false)
+      --s.top_panel = top_panel(s, false)
     end
 end)
 
