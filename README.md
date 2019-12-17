@@ -128,8 +128,6 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 - If you encounter any problems please open an issue in this repo and I will gladly investigate it
 
 ## Current To-Do ##
-- Panel:
-  - make folder icons have dpi(7) to match taglist icons
 - finish adding keybinds
 - lock screen
 - add one more workspace with icon
@@ -141,6 +139,6 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 - make adjust volume / brightness more smooth
 - fix notifications UI -> background messed up if open over a client
 - fix rofi focus bugs
-- menu spawn right beside mouse (currently strange gap to the right)
 - menu contents
+- menu hide when lose focus (https://www.reddit.com/r/awesomewm/comments/5jaja5/how_to_make_a_menu_close_when_it_loses_focus/)
 - fix launcher widget

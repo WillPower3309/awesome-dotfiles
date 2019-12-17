@@ -24,9 +24,7 @@ local widget =
 local widget_button = clickable_container(wibox.container.margin(widget, dpi(7), dpi(7), dpi(7), dpi(7)))
 widget_button:buttons(
   gears.table.join(
-    awful.button(
-      {},
-      1,
+    awful.button({}, 1,
       nil,
       function()
         awesome.emit_signal("toggle_tray")
@@ -44,7 +42,6 @@ awesome.connect_signal("toggle_tray", function()
     awful.screen.focused().systray.visible = false
     widget.icon:set_image(gears.surface.load_uncached(PATH_TO_ICONS .. 'right-arrow.svg'))
   end
-  -- awful.screen.focused().systray.visible = not awful.screen.focused().systray.visible
 end)
 
 if awful.screen.focused().systray.visible ~= true then

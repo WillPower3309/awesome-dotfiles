@@ -46,7 +46,7 @@ local function list_update(w, buttons, label, data, objects)
       tbm = cache.tbm
       ibm = cache.ibm
     else
-	  local icondpi = 7
+	  local icondpi = 10
       ib = wibox.widget.imagebox()
       tb = wibox.widget.textbox()
       bgb = wibox.container.background()
@@ -145,9 +145,7 @@ local TagList = function(s)
         end
       )
     ),
-    {
-      spacing = dpi(8)
-    },
+    {},
     list_update,
     wibox.layout.fixed.vertical()
   )
