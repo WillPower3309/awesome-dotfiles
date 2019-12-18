@@ -28,6 +28,7 @@ rules = {
     {
       rule = {},
       properties = {
+        round_corners = true,
         border_width = beautiful.border_width,
         border_color = beautiful.border_normal,
         focus = awful.client.focus.filter,

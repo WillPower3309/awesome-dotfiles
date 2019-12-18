@@ -130,7 +130,7 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 ## Current To-Do ##
 - finish adding keybinds
 - lock screen
-- rounded windows + osx style titlebar
+- osx style titlebar
 - add one more workspace with icon
 - wallpaper blurring
 - fix spinning cursor bug on adjust volume / brightness (due to components or widgets)
