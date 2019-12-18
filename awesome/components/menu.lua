@@ -3,6 +3,7 @@ local gears = require("gears")
 local beautiful = require("beautiful")
 local apps = require('apps')
 local hotkeys_popup = require('awful.hotkeys_popup').widget
+local icons = require('icons')
 
 
 terminal = apps.terminal
@@ -63,21 +64,20 @@ if isModuleAvailable("freedesktop") == true then
   local freedesktop = require("freedesktop")
   local menubar = require("menubar")
 
-  mymainmenu = freedesktop.menu.build({
+  local mymainmenu = freedesktop.menu.build({
     icon_size = 16,
     before = {
       { "Terminal", terminal, menubar.utils.lookup_icon("utilities-terminal") },
       -- other triads can be put here
     },
     after = {
-      {"Awesome", myawesomemenu--[[, "/usr/share/awesome/icons/awesome32.png"--]]},
+      {"Awesome", myawesomemenu},
       {"Take a Screenshot", screenshot},
       {"End Session", function() _G.exit_screen_show() end},
       -- other triads can be put here
     }
   })
   mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon, menu = mymainmenu })
-  -- Menubar configuration
 
 
 else
@@ -115,10 +115,9 @@ else
       {"xdg_menu", g},
       {"Awesome", myawesomemenu},
       {"Take a Screenshot", screenshot},
-      {"End Session", function() _G.exit_screen_show() end},
+      {"End Session", function() exit_screen_show() end},
     }
   })
 
-  mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon, menu = mymainmenu })
-
+  mylauncher = awful.widget.launcher({ image = icons.arch, menu = mymainmenu })
 end

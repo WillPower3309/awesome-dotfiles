@@ -42,8 +42,8 @@ I have made my best effort to reduce the number of dependencies by using the awe
 |Dependency|Description|
 |:----------:|:-------------:|
 |`awesome-git`|Window manager - **must use git version.** If you are using an Arch based distro you can install it off of the AUR. Otherwise [refer to the installation instructions](https://github.com/awesomeWM/awesome/)|
-|`compton-tryone`|Window compositor, eliminates screen tearing and gives the cool transparent blur effect|
-|`rofi-git`|Application launcher -- **must use git version**|
+|`compton`|Window compositor, eliminates screen tearing and allows for cool fade effects|
+|`rofi-git`|Application launcher - **must use git version**|
 |[`SF Text`](https://aur.archlinux.org/packages/otf-san-francisco/)|System font - Same font used by apple in macOS / iOS / watchOS|
 
 There are also a number of optional dependencies, which will improve the user experience but aren't required:
@@ -130,15 +130,14 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 ## Current To-Do ##
 - finish adding keybinds
 - lock screen
+- rounded windows + osx style titlebar
 - add one more workspace with icon
-- new wallpaper functionality: pull all wallpapers from directory, put into list. # of wallpapers in list, divide time in day by # wallpapers, set wallpaper
-- make more components pull variables from theme.lua
 - wallpaper blurring
-- finish menu.lua
 - fix spinning cursor bug on adjust volume / brightness (due to components or widgets)
 - make adjust volume / brightness more smooth
-- fix notifications UI -> background messed up if open over a client
 - fix rofi focus bugs
-- menu contents
+- finish launcher.lua
+- finish menu.lua
 - menu hide when lose focus (https://www.reddit.com/r/awesomewm/comments/5jaja5/how_to_make_a_menu_close_when_it_loses_focus/)
-- fix launcher widget
+- fix launcher widget icon size
+- update color scheme

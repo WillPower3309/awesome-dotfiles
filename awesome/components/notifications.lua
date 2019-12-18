@@ -201,7 +201,7 @@ naughty.connect_signal("request::display", function(n)
         },
         -- Anti-aliasing container
         -- Real BG
-        bg = "#424242",
+        bg = beautiful.bg_normal,
         -- This will be the anti-aliased shape of the notification
         shape = gears.shape.rounded_rect,
         widget = wibox.container.background

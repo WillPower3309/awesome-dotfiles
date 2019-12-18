@@ -29,7 +29,7 @@ awful.rules.rules = require("rules");
 local keys = require("keys")
 
 -- Set Wallpaper
-require("wallpaper")
+awful.spawn("feh --bg-fill " .. gears.filesystem.get_configuration_dir() .. "/wallpaper.png")
 
 -- Import Components
 require('components.panels')

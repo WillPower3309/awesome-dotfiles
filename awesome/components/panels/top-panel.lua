@@ -3,8 +3,9 @@ local beautiful = require('beautiful')
 local wibox = require('wibox')
 local gears = require('gears')
 local dpi = require('beautiful').xresources.apply_dpi
-
 local icons = require('icons')
+
+local menu = require('components.menu')
 
 -- import widgets
 local TaskList = require('widgets.task-list')
@@ -121,7 +122,7 @@ local TopPanel = function(s)
     layout = wibox.layout.align.horizontal,
     {
       layout = wibox.layout.fixed.horizontal,
-      -- launcher
+      mylauncher,
       TaskList(s),
       add_button
     },
