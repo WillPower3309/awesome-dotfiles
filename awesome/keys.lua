@@ -37,13 +37,6 @@ keys.desktopbuttons = gears.table.join(
         function ()
             naughty.destroy_all_notifications()
         end
-    ),
-
-    -- right click on desktop to pull up menu
-    awful.button({}, 3,
-        function ()
-            mymainmenu:toggle()
-        end
     )
 )
 

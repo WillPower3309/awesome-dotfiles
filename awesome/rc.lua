@@ -23,13 +23,13 @@ local beautiful = require("beautiful")
 beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
 
 -- Import rules
-awful.rules.rules = require("rules");
+awful.rules.rules = require("rules")
 
 -- Import keybinds
 local keys = require("keys")
 
 -- Set Wallpaper
-awful.spawn("feh --bg-fill " .. gears.filesystem.get_configuration_dir() .. "/wallpaper.png")
+gears.wallpaper.maximized(gears.filesystem.get_configuration_dir() .. "/wallpaper.png")
 
 -- Import Components
 require('components.panels')
@@ -37,7 +37,6 @@ require("components.notifications") -- startup error handling done in here
 require("components.exit-screen")
 require("components.brightness-osd")
 require("components.volume-osd")
-require("components.menu")
 
 -- Import Tag Settings
 require("tags")

@@ -137,7 +137,3 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 - make adjust volume / brightness more smooth
 - fix rofi focus bugs
 - finish launcher.lua
-- finish menu.lua
-- menu hide when lose focus (https://www.reddit.com/r/awesomewm/comments/5jaja5/how_to_make_a_menu_close_when_it_loses_focus/)
-- fix launcher widget icon size
-- update color scheme

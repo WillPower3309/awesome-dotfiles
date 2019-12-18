@@ -5,8 +5,6 @@ local gears = require('gears')
 local dpi = require('beautiful').xresources.apply_dpi
 local icons = require('icons')
 
-local menu = require('components.menu')
-
 -- import widgets
 local TaskList = require('widgets.task-list')
 local clickable_container = require('widgets.clickable-container')
@@ -122,7 +120,6 @@ local TopPanel = function(s)
     layout = wibox.layout.align.horizontal,
     {
       layout = wibox.layout.fixed.horizontal,
-      mylauncher,
       TaskList(s),
       add_button
     },
