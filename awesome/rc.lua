@@ -29,7 +29,7 @@ awful.rules.rules = require("rules")
 local keys = require("keys")
 
 -- Set Wallpaper
-gears.wallpaper.maximized(gears.filesystem.get_configuration_dir() .. "/wallpaper.png")
+gears.wallpaper.maximized(gears.filesystem.get_configuration_dir() .. "/wallpaper.jpg")
 
 -- Import Components
 require('components.panels')
