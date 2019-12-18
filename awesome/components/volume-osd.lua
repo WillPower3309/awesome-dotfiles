@@ -42,7 +42,7 @@ volumeOverlay:setup {
         layout = wibox.layout.fixed.vertical
     },
     -- The real background color
-    bg = "#000000".. "66",
+    bg = beautiful.bg_normal,
     -- The real, anti-aliased shape
     shape = gears.shape.rounded_rect,
     widget = wibox.container.background()
