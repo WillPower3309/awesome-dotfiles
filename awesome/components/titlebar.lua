@@ -1,14 +1,31 @@
+--  ████████╗██╗████████╗██╗     ███████╗██████╗  █████╗ ██████╗ 
+--  ╚══██╔══╝██║╚══██╔══╝██║     ██╔════╝██╔══██╗██╔══██╗██╔══██╗
+--     ██║   ██║   ██║   ██║     █████╗  ██████╔╝███████║██████╔╝
+--     ██║   ██║   ██║   ██║     ██╔══╝  ██╔══██╗██╔══██║██╔══██╗
+--     ██║   ██║   ██║   ███████╗███████╗██████╔╝██║  ██║██║  ██║
+--     ╚═╝   ╚═╝   ╚═╝   ╚══════╝╚══════╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+-- ===================================================================
+-- Imports
+-- ===================================================================
+
+
 local awful = require("awful")
 local gears = require("gears")
 local wibox = require('wibox')
 local beautiful = require("beautiful")
 local dpi = require('beautiful').xresources.apply_dpi
 
+
+-- ===================================================================
+-- Add titlebars and rounded corners to clients
+-- ===================================================================
+
+
 -- Connect signal when client layout is changed
 screen.connect_signal("arrange", function(s)
   for _, c in pairs(s.clients) do
     -- if client is maximized or fullscreen hide titlebar, no round corners
-    if c.first_tag.layout.name == 'max' or c.fullscreen  or c.maximized then
+    if c.first_tag.layout.name == 'max' or c.fullscreen or c.maximized then
       awful.titlebar.hide(c)
       c.shape = function(cr, w, h)
         gears.shape.rectangle(cr, w, h)
