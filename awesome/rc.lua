@@ -38,7 +38,7 @@ require("components.brightness-osd")
 require("components.volume-osd")
 
 
-awful.spawn("sh " .. config_dir .. "/components/wallblur.sh -i ~/.config/awesome/wallpaper.jpg")
+awful.spawn.with_shell("sh " .. config_dir .. "/components/wallblur.sh -i ~/.config/awesome/wallpaper.jpg")
 
 -- Import Tag Settings
 require("tags")
