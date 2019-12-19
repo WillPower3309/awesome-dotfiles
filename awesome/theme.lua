@@ -28,7 +28,7 @@ theme.title_font    = "SF Pro Display Medium 10"
 
 -- Background
 theme.bg_normal     = "#1F2430"--"#00000066"
-theme.bg_dark       = "000000099"
+theme.bg_dark       = "0000000"
 theme.bg_focus      = "#5a5a5a"
 theme.bg_urgent     = "#3f3f3f"
 theme.bg_minimize   = "#444444"
@@ -36,21 +36,26 @@ theme.bg_systray    = theme.bg_normal
 theme.bg_top_panel  = theme.bg_normal
 
 -- Foreground
-theme.fg_normal     = "#ffffffde"
+theme.fg_normal     = "#ffffff"
 theme.fg_focus      = "#e4e4e4"
 theme.fg_urgent     = "#cc9393"
 theme.fg_minimize   = "#ffffff"
 
 -- Sizing
-theme.useless_gap           = dpi(7)            -- window gap distance
-theme.gap_single_client     = true              -- gaps if only one window is open?
-theme.rounded_corner_radius = dpi(6)            -- border radius of rounded theme elements
+theme.corner_radius       = dpi(6)            -- border radius of rounded theme elements
+theme.useless_gap         = dpi(7)            -- window gap distance
+theme.gap_single_client   = true              -- gaps if only one window is open?
 
 -- Window Borders
 theme.border_width          = dpi(0)            -- window border width
 theme.border_normal         = theme.bg_normal
 theme.border_focus          = "#ff8a65"
 theme.border_marked         = theme.fg_urgent
+
+-- Titlebars
+theme.titlebar_font = theme.title_font
+theme.titlebar_bg = theme.bg_normal
+theme.titlebar_bg_focus = theme.titlebar_bg -- make titlebars not change color when focused
 
 -- Taglist
 theme.taglist_bg_empty = theme.bg_dark

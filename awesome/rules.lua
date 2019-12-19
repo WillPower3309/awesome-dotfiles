@@ -28,7 +28,6 @@ rules = {
     {
       rule = {},
       properties = {
-        round_corners = true,
         border_width = beautiful.border_width,
         border_color = beautiful.border_normal,
         focus = awful.client.focus.filter,
@@ -37,7 +36,7 @@ rules = {
         buttons = keys.clientbuttons,
         screen = awful.screen.preferred,
         placement = awful.placement.no_overlap + awful.placement.no_offscreen
-     }
+      }
     },
 
     -- Floating clients.
@@ -146,9 +145,9 @@ rules = {
       properties = { floating = true, width = screen_width * 0.55, height = screen_height * 0.45 }
     },
 
-    -- Do not add titlebars to normal clients and dialogs
+    -- add titlebars to normal clients and dialogs
     { rule_any = { type = { "normal", "dialog" } },
-      properties = { titlebars_enabled = false }
+      properties = { titlebars_enabled = true }
     },
 }
 

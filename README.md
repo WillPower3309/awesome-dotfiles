@@ -132,7 +132,6 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 - lock screen
 - osx style titlebar
 - add one more workspace with icon
-- wallpaper blurring
 - fix spinning cursor bug on adjust volume / brightness (due to components or widgets)
 - make adjust volume / brightness more smooth
 - fix rofi focus bugs
