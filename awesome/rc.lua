@@ -32,12 +32,12 @@ gears.wallpaper.maximized(config_dir .. "/wallpaper.jpg")
 -- Import Components
 require("components.notifications") -- startup error handling done in here
 require("components.panels")
-require("components.titlebar")
+--require("components.titlebar")
 require("components.exit-screen")
 require("components.brightness-osd")
 require("components.volume-osd")
 
-
+-- Run blur wallpaper script
 awful.spawn.with_shell("sh " .. config_dir .. "/components/wallblur.sh -i ~/.config/awesome/wallpaper.jpg")
 
 -- Import Tag Settings

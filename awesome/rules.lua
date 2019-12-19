@@ -135,7 +135,7 @@ rules = {
     -- Rofi
     {
       rule_any = { name = { "rofi" } },
-      properties = { maximized = true, ontop = true }
+      properties = { maximized = true, ontop = true, titlebars_enabled = false }
     },
 
     -- File chooser dialog

@@ -132,6 +132,7 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 - finish adding keybinds
 - lock screen
 - osx style titlebar
+- fix titlebar related bugs - lag & resizing
 - add one more workspace with icon
 - fix spinning cursor bug on adjust volume / brightness (due to components or widgets)
 - make adjust volume / brightness more smooth

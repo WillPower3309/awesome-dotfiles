@@ -16,8 +16,7 @@ local gears = require("gears")
 local wibox = require("wibox")
 local beautiful = require('beautiful')
 local dpi = require('beautiful').xresources.apply_dpi
-
-local vol_osd = require('widgets.brightness-slider-osd')
+local bri_osd = require('widgets.brightness-slider-osd')
 
 
 -- ===================================================================
@@ -47,28 +46,22 @@ screen.connect_signal("request::desktop_decoration", function(s)
   brightnessOverlay:setup {
     -- Container
     {
-      -- Items go here
-      --wibox.widget.textbox("Hello!"),
-      wibox.container.rotate(vol_osd,'east'),
-      -- ...
+      wibox.container.rotate(bri_osd,'east'),
       layout = wibox.layout.fixed.vertical
     },
-    -- The real background color
+    -- The real background color & shape
     bg = beautiful.bg_normal,
-    -- The real, anti-aliased shape
     shape = gears.shape.rounded_rect,
     widget = wibox.container.background()
   }
-
 
   local hideOSD = gears.timer {
     timeout = 5,
     autostart = true,
     callback  = function()
-    brightnessOverlay.visible = false
-  end
-}
-
+      brightnessOverlay.visible = false
+    end
+  }
 
   function toggleBriOSD(bool)
     brightnessOverlay.visible = bool

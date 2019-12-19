@@ -14,10 +14,8 @@
 local awful = require("awful")
 local gears = require("gears")
 local wibox = require("wibox")
-local watch = require('awful.widget.watch')
 local beautiful = require('beautiful')
 local dpi = require('beautiful').xresources.apply_dpi
-
 local vol_osd = require('widgets.volume-slider-osd')
 
 
@@ -46,10 +44,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
   volumeOverlay:setup {
     -- Container
     {
-      -- Items go here
-      --wibox.widget.textbox("Hello!"),
       wibox.container.rotate(vol_osd, 'east'),
-      -- ...
       layout = wibox.layout.fixed.vertical
     },
     -- The real background color
@@ -59,16 +54,13 @@ screen.connect_signal("request::desktop_decoration", function(s)
     widget = wibox.container.background()
   }
 
-
-  local hideOSD = gears.timer 
-  {
+  local hideOSD = gears.timer {
     timeout = 5,
     autostart = true,
     callback  = function()
-    volumeOverlay.visible = false
+      volumeOverlay.visible = false
     end
   }
-
 
   function toggleVolOSD(bool)
     volumeOverlay.visible = bool
