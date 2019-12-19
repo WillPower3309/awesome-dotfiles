@@ -39,6 +39,11 @@ rules = {
       }
     },
 
+    -- add titlebars to normal clients and dialogs
+    { rule_any = { type = { "normal", "dialog" } },
+      properties = { titlebars_enabled = true }
+    },
+
     -- Floating clients.
     { 
       rule_any = {
@@ -143,11 +148,6 @@ rules = {
     {
       rule_any = { class = { "Pavucontrol" }, name = { "Bluetooth Devices" } },
       properties = { floating = true, width = screen_width * 0.55, height = screen_height * 0.45 }
-    },
-
-    -- add titlebars to normal clients and dialogs
-    { rule_any = { type = { "normal", "dialog" } },
-      properties = { titlebars_enabled = true }
     },
 }
 

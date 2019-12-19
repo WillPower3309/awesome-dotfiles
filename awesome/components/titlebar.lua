@@ -4,15 +4,22 @@ local wibox = require('wibox')
 local beautiful = require("beautiful")
 local dpi = require('beautiful').xresources.apply_dpi
 
--- Client's shape
-local round_corner_client = function(cr, width, height)
-  gears.shape.rounded_rect(cr, width, height, beautiful.corner_radius)
-end
-
 -- Connect signal when client layout is changed
 screen.connect_signal("arrange", function(s)
   for _, c in pairs(s.clients) do
-    c.shape = round_corner_client
+    -- if client is maximized or fullscreen hide titlebar, no round corners
+    if c.first_tag.layout.name == 'max' or c.fullscreen  or c.maximized then
+      awful.titlebar.hide(c)
+      c.shape = function(cr, w, h)
+        gears.shape.rectangle(cr, w, h)
+      end
+
+    -- otherwise add round corners
+    else
+      c.shape = function(cr, width, height)
+        gears.shape.rounded_rect(cr, width, height, beautiful.corner_radius)
+      end
+    end
   end
 end)
 
