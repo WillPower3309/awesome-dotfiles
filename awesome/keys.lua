@@ -87,10 +87,10 @@ keys.globalkeys = gears.table.join(
         function()
             awful.spawn('xbacklight -inc 10')
             if toggleBriOSD ~= nil then
-                _G.toggleBriOSD(true)
+                toggleBriOSD(true)
             end
             if UpdateBrOSD ~= nil then
-                _G.UpdateBrOSD()
+                UpdateBriOSD()
             end
         end,
         {description = '+10%', group = 'hotkeys'}
@@ -99,10 +99,10 @@ keys.globalkeys = gears.table.join(
         function()
             awful.spawn('xbacklight -dec 10')
             if toggleBriOSD ~= nil then
-                _G.toggleBriOSD(true)
+                toggleBriOSD(true)
             end
             if UpdateBrOSD ~= nil then
-                _G.UpdateBrOSD()
+                UpdateBriOSD()
             end
         end,
         {description = '-10%', group = 'hotkeys'}
@@ -113,10 +113,10 @@ keys.globalkeys = gears.table.join(
         function()
             awful.spawn('amixer -D pulse sset Master 5%+')
             if toggleVolOSD ~= nil then
-                _G.toggleVolOSD(true)
+                toggleVolOSD(true)
             end
             if UpdateVolOSD ~= nil then
-                _G.UpdateVolOSD()
+                UpdateVolOSD()
             end
         end,
         {description = 'volume up', group = 'hotkeys'}
@@ -125,10 +125,10 @@ keys.globalkeys = gears.table.join(
         function()
             awful.spawn('amixer -D pulse sset Master 5%-')
             if toggleVolOSD ~= nil then
-                _G.toggleVolOSD(true)
+                toggleVolOSD(true)
             end
             if UpdateVolOSD ~= nil then
-                 _G.UpdateVolOSD()
+                UpdateVolOSD()
             end
         end,
         {description = 'volume down', group = 'hotkeys'}

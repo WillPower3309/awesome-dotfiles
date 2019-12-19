@@ -1,7 +1,3 @@
--- I decided to create another slider for the OSDs
--- So we can modify its behaviour without messing
--- the slider in the dashboard.
--- Excuse my messy code.
 
 local wibox = require('wibox')
 local mat_list_item = require('widgets.list-item')
@@ -21,7 +17,7 @@ local slider_osd =
 slider_osd:connect_signal(
   'property::value',
   function()
-    spawn('amixer -D pulse sset Master ' .. slider_osd.value .. '%')
+    spawn('amixer -D pulse sset Master ' .. slider_osd.value .. '%', false)
   end
 )
 
@@ -37,7 +33,7 @@ slider_osd:connect_signal(
     slider_osd:connect_signal(
       'property::value',
       function()
-        _G.toggleVolOSD(true)
+        toggleVolOSD(true)
       end
     )
   end
@@ -48,7 +44,7 @@ function UpdateVolOSD()
     local mute = string.match(stdout, '%[(o%D%D?)%]')
     local volume = string.match(stdout, '(%d?%d?%d)%%')
     slider_osd:set_value(tonumber(volume))
-  end)
+  end, false)
 end
 
 local icon =
