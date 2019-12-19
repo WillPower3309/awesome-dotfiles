@@ -9,15 +9,16 @@
 -- Initialization
 -- ===================================================================
 
-
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
+
+local config_dir = gears.filesystem.get_configuration_dir()
 require("awful.autofocus")
 
 -- Import theme
 local beautiful = require("beautiful")
-beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
+beautiful.init(config_dir .. "theme.lua")
 
 -- Import rules
 awful.rules.rules = require("rules")
@@ -26,7 +27,7 @@ awful.rules.rules = require("rules")
 local keys = require("keys")
 
 -- Set Wallpaper
-gears.wallpaper.maximized(gears.filesystem.get_configuration_dir() .. "/wallpaper.jpg")
+gears.wallpaper.maximized(config_dir .. "/wallpaper.jpg")
 
 -- Import Components
 require("components.notifications") -- startup error handling done in here
@@ -35,6 +36,9 @@ require("components.titlebar")
 require("components.exit-screen")
 require("components.brightness-osd")
 require("components.volume-osd")
+
+
+awful.spawn("sh " .. config_dir .. "/components/wallblur.sh -i ~/.config/awesome/wallpaper.jpg")
 
 -- Import Tag Settings
 require("tags")

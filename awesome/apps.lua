@@ -33,8 +33,7 @@ local apps = {
 local run_on_start_up = {
     "compton",
     "unclutter",
-    "redshift -l 43.544804:-80.248169",
-    "sh ~/Documents/wallblur.sh -i ~/.config/awesome/wallpaper.jpg"
+    "redshift -l 43.544804:-80.248169"
 }
 
 
