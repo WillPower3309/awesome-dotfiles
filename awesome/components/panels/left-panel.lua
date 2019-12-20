@@ -23,7 +23,7 @@ local LeftPanel = function(s)
     nil,
     {
       layout = wibox.layout.fixed.vertical,
-      require('widgets.launcher'),
+      --require('widgets.launcher'),
       -- add taglist widget
       TagList(s),
       -- add folders widget
