@@ -64,7 +64,7 @@ There are also a number of optional dependencies, which will improve the user ex
 2. Clone this repository and place its contents into your `.config` folder
 3. navigate to the `awesome` folder and place your desired wallpapers into the `wallpaper` folder, ensuring that you follow the naming conventions
 4. edit the `apps.lua` file to define your desired default and startup applications. If you do not have an application installed that matches a given variable name, change the variable to `''` (ie: if you do not have an image editor installed, ensure `apps.imageEditor = ''`)
-5. edit the `widgets/wifi.lua` file and ensure that the `local interface` variable matches your wifi interface name (if you are unsure how to find your interface name, check out [this discussion](https://bbs.archlinux.org/viewtopic.php?id=166171)).
+5. edit the `widgets/wifi.lua` file and ensure that the `local interface` variable matches your wifi interface name (if you are unsure how to find your interface name, check out [this discussion](https://bbs.archlinux.org/viewtopic.php?id=166171)).]
 6. optional: edit the `keys.lua` file to change / add keybinds
 
 <a name="folderStructure"></a>
@@ -127,14 +127,13 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 - **If the config isn't working there is a 99% chance it's because you are using `awesome` and not `awesome-git`.** Arch and Manjaro users can download the awesome-git package from the AUR, while users on other distros will need to build it from source. This sounds scary but is as simple as folling the steps outlined in [the official awesomeWM repo](https://github.com/awesomeWM/awesome/)
 - [Awesome API Documentation](https://awesomewm.org/apidoc/index.html)
 - If you encounter any problems please open an issue in this repo and I will gladly investigate it
+- If you would like to change the wallpaper, ensure that the wallpaper is named "wallpaper.jpg" and is located in the `~/.config/awesome` folder
 
 ## Current To-Do ##
 - finish adding keybinds
 - lock screen
-- osx style titlebar
-- blur background black bars on blur or unblur
-- fix titlebar related bugs - lag & resizing
+- fix black bars on blur or unblur bg
 - add one more workspace with icon
 - fix spinning cursor bug on adjust volume / brightness (due to components or widgets)
-- make adjust volume / brightness more smooth
+- make adjust brightness more smooth
 - fix rofi focus bugs
