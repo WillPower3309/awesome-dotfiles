@@ -116,17 +116,17 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 3. Run `:PlugInstall`
 4. Exit and reopen neovim
 
-### OhMyZsh ###
+### Zsh ###
 **[Guide](https://www.freecodecamp.org/news/jazz-up-your-zsh-terminal-in-seven-steps-a-visual-guide-e81a8fd59a38/) if you are having trouble following the steps below**
 1. Install a font that supports powerline, my favourites are Fira Code and Source Code Pro, however a quick google search will show many other great fonts
-2. Change the shell to zsh
+2. Install oh-my-zsh
 ```
-chsh -s $(which zsh)
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
-2. Change the zsh theme to agnoster
+3. Change the zsh theme to agnoster
   - Open `~/.zshrc` with your fave text editor
   - Set `ZSH_THEME="agnoster"` and save the file
-3. Install Plugins (Note that the ~/.zshrc edits are already done in this repo)
+4. Install Plugins (Note that the ~/.zshrc edits are already done in this repo)
   - Syntax highlighting (copy and paste the below command to install)
     - ```git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting```
     - Edit `~/.zshrc`, add `zsh-syntax-highlighting` to the plugins section
