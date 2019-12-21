@@ -106,6 +106,16 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 5. Copy my spicetify folder to `~/.config`
 6. run `spicetify update restart`
 
+### Neovim ###
+1. Ensure the nvim folder from the repo has been copied into the `~/.config` directory
+2. Install VimPlug with
+```
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
+```
+3. Run `:PlugInstall`
+4. Exit and reopen neovim
+
 ### OhMyZsh ###
 **[Guide](https://www.freecodecamp.org/news/jazz-up-your-zsh-terminal-in-seven-steps-a-visual-guide-e81a8fd59a38/) if you are having trouble following the steps below**
 1. Install a font that supports powerline, my favourites are Fira Code and Source Code Pro, however a quick google search will show many other great fonts
