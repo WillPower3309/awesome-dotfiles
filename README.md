@@ -119,6 +119,10 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 ### OhMyZsh ###
 **[Guide](https://www.freecodecamp.org/news/jazz-up-your-zsh-terminal-in-seven-steps-a-visual-guide-e81a8fd59a38/) if you are having trouble following the steps below**
 1. Install a font that supports powerline, my favourites are Fira Code and Source Code Pro, however a quick google search will show many other great fonts
+2. Change the shell to zsh
+```
+chsh -s $(which zsh)
+```
 2. Change the zsh theme to agnoster
   - Open `~/.zshrc` with your fave text editor
   - Set `ZSH_THEME="agnoster"` and save the file
@@ -128,7 +132,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     - Edit `~/.zshrc`, add `zsh-syntax-highlighting` to the plugins section
     - Reread config `source ~/.zshrc`
   - Autosuggestions (copy and paste the below command to install)
-    - ```git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions```
+    - ```git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions```
     - Edit `~/.zshrc`, add `zsh-autosuggestions` to the plugins section
 4. Fini!
 
