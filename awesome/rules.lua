@@ -39,11 +39,6 @@ rules = {
       }
     },
 
-    -- add titlebars to normal clients and dialogs
-    { rule_any = { type = { "normal", "dialog" } },
-      properties = { titlebars_enabled = true }
-    },
-
     -- Floating clients.
     { 
       rule_any = {
@@ -135,7 +130,7 @@ rules = {
     -- Rofi
     {
       rule_any = { name = { "rofi" } },
-      properties = { maximized = true, ontop = true, titlebars_enabled = false }
+      properties = { maximized = true, ontop = true }
     },
 
     -- File chooser dialog

@@ -53,6 +53,7 @@ client.connect_signal(
   function(c)
     if c.first_tag then
       maximizeLeftPanel(c.maximized)
+      maximizeTopPanel(c.maximized)
     end
   end
 )
@@ -66,6 +67,7 @@ client.connect_signal(
     end
     if c.maximized then
       maximizeLeftPanel(false)
+      maximizeTopPanel(false)
     end
   end
 )
@@ -77,8 +79,10 @@ tag.connect_signal(
     local currentLayout = awful.tag.getproperty(t, 'layout')
     if (currentLayout == awful.layout.suit.max) then
       maximizeLeftPanel(true)
+      maximizeTopPanel(true)
     else
       maximizeLeftPanel(false)
+      maximizeTopPanel(false)
     end
   end
 )

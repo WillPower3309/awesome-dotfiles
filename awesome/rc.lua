@@ -9,6 +9,7 @@
 -- Initialization
 -- ===================================================================
 
+
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
@@ -26,22 +27,22 @@ awful.rules.rules = require("rules")
 -- Import keybinds
 local keys = require("keys")
 
+-- Import Tag Settings
+require("tags")
+
 -- Set Wallpaper
 gears.wallpaper.maximized(config_dir .. "/wallpaper.jpg")
 
 -- Import Components
 require("components.notifications") -- startup error handling done in here
 require("components.panels")
---require("components.titlebar")
+require("components.round-corners")
 require("components.exit-screen")
 require("components.brightness-osd")
 require("components.volume-osd")
 
 -- Run blur wallpaper script
 awful.spawn.with_shell("sh " .. config_dir .. "/components/wallblur.sh -i ~/.config/awesome/wallpaper.jpg")
-
--- Import Tag Settings
-require("tags")
 
 
 -- ===================================================================
@@ -73,7 +74,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 
 -- ===================================================================
--- Garbage collection (Enable for lower memory consumption)
+-- Garbage collection (Allows for lower memory consumption)
 -- ===================================================================
 
 
