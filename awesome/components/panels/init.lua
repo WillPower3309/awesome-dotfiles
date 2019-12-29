@@ -1,7 +1,25 @@
+--      ██████╗  █████╗ ███╗   ██╗███████╗██╗     ███████╗
+--      ██╔══██╗██╔══██╗████╗  ██║██╔════╝██║     ██╔════╝
+--      ██████╔╝███████║██╔██╗ ██║█████╗  ██║     ███████╗
+--      ██╔═══╝ ██╔══██║██║╚██╗██║██╔══╝  ██║     ╚════██║
+--      ██║     ██║  ██║██║ ╚████║███████╗███████╗███████║
+--      ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚══════╝╚══════╝
+
+-- ===================================================================
+-- Imports
+-- ===================================================================
+
+
 local awful = require('awful')
 local top_panel = require('components.panels.top-panel')
 local left_panel = require('components.panels.left-panel')
 local dpi = require('beautiful').xresources.apply_dpi
+
+
+-- ===================================================================
+-- Initialization & Functionality
+-- ===================================================================
+
 
 -- Create a wibox for each screen and add it
 screen.connect_signal("request::desktop_decoration", function(s)

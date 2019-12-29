@@ -1,3 +1,15 @@
+--      ████████╗ ██████╗ ██████╗     ██████╗  █████╗ ███╗   ██╗███████╗██╗
+--      ╚══██╔══╝██╔═══██╗██╔══██╗    ██╔══██╗██╔══██╗████╗  ██║██╔════╝██║
+--         ██║   ██║   ██║██████╔╝    ██████╔╝███████║██╔██╗ ██║█████╗  ██║
+--         ██║   ██║   ██║██╔═══╝     ██╔═══╝ ██╔══██║██║╚██╗██║██╔══╝  ██║
+--         ██║   ╚██████╔╝██║         ██║     ██║  ██║██║ ╚████║███████╗███████╗
+--         ╚═╝    ╚═════╝ ╚═╝         ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚══════╝
+
+-- ===================================================================
+-- Imports
+-- ===================================================================
+
+
 local awful = require('awful')
 local beautiful = require('beautiful')
 local wibox = require('wibox')
@@ -10,6 +22,12 @@ local TaskList = require('widgets.task-list')
 local clickable_container = require('widgets.clickable-container')
 local mat_icon_button = require('widgets.icon-button')
 local mat_icon = require('widgets.icon')
+
+
+-- ===================================================================
+-- Bar Widget Creation
+-- ===================================================================
+
 
 -- Clock / Calendar 12h format
 -- Get Time/Date format using `man strftime`
@@ -96,6 +114,12 @@ add_button:buttons(
     )
   )
 )
+
+
+-- ===================================================================
+-- Bar Creation
+-- ===================================================================
+
 
 local TopPanel = function(s)
   local panel = wibox {
