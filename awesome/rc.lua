@@ -19,7 +19,7 @@ require("awful.autofocus")
 
 -- Import theme
 local beautiful = require("beautiful")
-beautiful.init(config_dir .. "theme.lua")
+beautiful.init(config_dir .. "/theme.lua")
 
 -- Import rules
 awful.rules.rules = require("rules")
@@ -30,19 +30,14 @@ local keys = require("keys")
 -- Import Tag Settings
 require("tags")
 
--- Set Wallpaper
-gears.wallpaper.maximized(config_dir .. "/wallpaper.jpg")
-
 -- Import Components
 require("components.notifications") -- startup error handling done in here
+require("components.wallpaper")
 require("components.panels")
 require("components.round-corners")
 require("components.exit-screen")
 require("components.brightness-osd")
 require("components.volume-osd")
-
--- Run blur wallpaper script
-awful.spawn.with_shell("sh " .. config_dir .. "/components/wallblur.sh -i ~/.config/awesome/wallpaper.jpg")
 
 
 -- ===================================================================
@@ -63,7 +58,6 @@ client.connect_signal("manage", function (c)
         awful.placement.no_offscreen(c)
     end
 end)
-
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal("mouse::enter", function(c)
     c:emit_signal("request::activate", "mouse_enter", {raise = false})

@@ -99,7 +99,6 @@ add_button:buttons(
 
 local TopPanel = function(s)
   local panel = wibox {
-    type = "dock",
     ontop = true,
     screen = s,
     height = dpi(26),
@@ -107,7 +106,7 @@ local TopPanel = function(s)
     x = s.geometry.x,
     y = s.geometry.y,
     stretch = false,
-    bg = "#00000000",
+    bg = beautiful.bg_normal,
     fg = beautiful.fg_normal
   }
 
@@ -136,14 +135,6 @@ local TopPanel = function(s)
       require("widgets.layout-box")
     }
   }
-
-  function maximizeTopPanel(bool)
-    if bool then
-      panel.bg = beautiful.bg_normal
-    else
-      panel.bg = "#00000000"
-    end
-  end
 
   return panel
 end

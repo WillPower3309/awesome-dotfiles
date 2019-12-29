@@ -37,14 +37,13 @@
 
 <a name="dependencies"></a>
 ## Dependencies ##
-I have made my best effort to reduce the number of dependencies by using the awesome API to its fullest extent, and allowing users to edit the `apps.lua` file (see [installation section](#installation)) to define their own preferred applications. That being said, here are the dependencies.
+I have made my best effort to reduce the number of dependencies by using the awesome API to its fullest extent (feh isn't even required), and allowing users to edit the `apps.lua` file (see [installation section](#installation)) to define their own preferred applications. That being said, here are the dependencies.
 
 |Dependency|Description|
 |:----------:|:-------------:|
 |`awesome-git`|Window manager - **must use git version.** If you are using an Arch based distro you can install it off of the AUR. Otherwise [refer to the installation instructions](https://github.com/awesomeWM/awesome/)|
 |`compton`|Window compositor, eliminates screen tearing and allows for cool fade effects|
 |`rofi-git`|Application launcher - **must use git version**|
-|`feh`|Used by window blurring script to blur the wallpaper|
 |[`SF Text`](https://aur.archlinux.org/packages/otf-san-francisco/)|System font - Same font used by apple in macOS / iOS / watchOS|
 
 There are also a number of optional dependencies, which will improve the user experience but aren't required:
