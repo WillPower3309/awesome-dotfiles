@@ -31,7 +31,7 @@ local apps = {
 
 -- List of apps to start once on start-up
 local run_on_start_up = {
-    "compton",
+    "picom",
     "unclutter",
     "redshift -l 43.544804:-80.248169"
 }

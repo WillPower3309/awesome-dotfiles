@@ -145,7 +145,6 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 ## Current To-Do ##
 - finish adding keybinds
 - lock screen
-- fix black bars on blur or unblur bg
 - add one more workspace with icon
 - fix spinning cursor bug on adjust volume / brightness (due to components or widgets)
 - make adjust brightness more smooth
