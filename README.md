@@ -23,7 +23,7 @@
 
 <a name="features"></a>
 ## Features ##
-- Lightweight: Uses ~250 MB of ram on my desktop!
+- Lightweight: Uses ~400 MB of ram on my desktop!
 - Easy installation / configuration
 - Very Few Dependencies
 - Wallpaper time-changing functionality
@@ -47,10 +47,12 @@ I have made my best effort to reduce the number of dependencies by using the awe
 |[`SF Text`](https://aur.archlinux.org/packages/otf-san-francisco/)|System font - Same font used by apple in macOS / iOS / watchOS|
 
 There are also a number of optional dependencies, which will improve the user experience but aren't required:
-- `acpi -i`: Battery managing cli application, used by top bar widget to determine battery status
+**Bear in mind that most of these dependencies come preinstalled on non arch systems. I would recommend reading their descriptions below to determine which ones you need to install**
+- `flashfocus-git`: Flashes a window when it becomes focused (allows a user to clearly determine when a window enters focus without a window border)
+- `acpi`: Battery managing cli application, used by top bar widget to determine battery status
 - `xfce4-power-manager`: Lightweight power manager spawned when the top panel battery icon is clicked
-- `bluetoothctl`: Bluetooth cli application, used by top bar widget to determine if bluetooth is on
-- `blueman`: Bluetooth managing application, spawned when the bluetooth top panel icon is clicked
+- `bluez`, `bluez-utils`: Bluetooth cli application, used by top bar widget to determine if bluetooth is on
+- `blueman`: Bluetooth managing application, spawns when the bluetooth top panel icon is clicked
 - `pamac-aur`: Lightweight GUI package manager, spawned when the top panel package icon is clicked
 - `nm-connection-editor`: GUI wifi connection editor, spawned when the top panel wifi icon is clicked
 - `Scrot`: Screenshot tool, which is mapped to the print screen key in keys.lua. **If you want to meet this dependency, ensure that the ~/Pictures` folder exists**, otherwise the program will not save your screenshots
@@ -145,7 +147,10 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 ## Current To-Do ##
 - finish adding keybinds
 - lock screen
-- add one more workspace with icon
+- more intelligent wallpaper cache clearing
+- better method of maximizing left panel
+- top bar not on tag 1 on first start bug
+- set battery-unknown icon on desktop
 - fix spinning cursor bug on adjust volume / brightness (due to components or widgets)
 - make adjust brightness more smooth
 - fix rofi focus bugs

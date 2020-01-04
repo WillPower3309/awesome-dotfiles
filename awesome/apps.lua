@@ -33,7 +33,8 @@ local apps = {
 local run_on_start_up = {
     "picom",
     "unclutter",
-    "redshift -l 43.544804:-80.248169"
+    "redshift -l 43.544804:-80.248169",
+    "flashfocus"
 }
 
 

@@ -13,7 +13,6 @@
 local awful = require('awful')
 local top_panel = require('components.panels.top-panel')
 local left_panel = require('components.panels.left-panel')
-local dpi = require('beautiful').xresources.apply_dpi
 
 
 -- ===================================================================
