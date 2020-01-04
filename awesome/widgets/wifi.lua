@@ -9,8 +9,8 @@ local clickable_container = require('widgets.clickable-container')
 local gears = require('gears')
 local dpi = require('beautiful').xresources.apply_dpi
 
-local HOME = os.getenv('HOME')
-local PATH_TO_ICONS = HOME .. '/.config/awesome/icons/wifi/'
+local PATH_TO_ICONS = os.getenv('HOME') .. '/.config/awesome/icons/wifi/'
+
 local interface = 'wlp1s0'
 local connected = false
 local essid = 'N/A'
@@ -42,10 +42,7 @@ widget_button:buttons(
 local widget_button = clickable_container(wibox.container.margin(widget, dpi(7), dpi(7), dpi(7), dpi(7)))
 widget_button:buttons(
   gears.table.join(
-    awful.button(
-      {},
-      1,
-      nil,
+    awful.button({}, 1, nil,
       function()
         awful.spawn('nm-connection-editor')
       end

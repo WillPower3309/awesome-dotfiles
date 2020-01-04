@@ -106,19 +106,12 @@ do
   )
 end
 
-function log_this(title, txt)
-  naughty.notify(
-    {
-      title = 'log: ' .. title,
-      text = txt
-    }
-  )
-end
-
 
 -- ===================================================================
 -- Notification Template Setup
 -- ===================================================================
+
+
 beautiful.notification_bg = "#00000000"
 local notification_bg = beautiful.notification_bg
 

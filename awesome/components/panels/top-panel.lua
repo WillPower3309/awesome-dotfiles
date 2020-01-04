@@ -19,7 +19,6 @@ local icons = require('icons')
 
 -- import widgets
 local TaskList = require('widgets.task-list')
-local clickable_container = require('widgets.clickable-container')
 local mat_icon_button = require('widgets.icon-button')
 local mat_icon = require('widgets.icon')
 
@@ -98,10 +97,7 @@ end)
 local add_button = mat_icon_button(mat_icon(icons.open, dpi(10)))
 add_button:buttons(
   gears.table.join(
-    awful.button(
-      {},
-      1,
-      nil,
+    awful.button({}, 1, nil,
       function()
         awful.spawn(
           awful.screen.focused().selected_tag.defaultApp,

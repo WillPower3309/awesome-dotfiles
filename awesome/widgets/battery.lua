@@ -15,12 +15,7 @@ local clickable_container = require('widgets.clickable-container')
 local gears = require('gears')
 local dpi = require('beautiful').xresources.apply_dpi
 
--- acpi sample outputs
--- Battery 0: Discharging, 75%, 01:51:38 remaining
--- Battery 0: Charging, 53%, 00:57:43 until charged
-
-local HOME = os.getenv('HOME')
-local PATH_TO_ICONS = HOME .. '/.config/awesome/icons/battery/'
+local PATH_TO_ICONS = os.getenv('HOME') .. '/.config/awesome/icons/battery/'
 
 local widget =
   wibox.widget {
@@ -35,10 +30,7 @@ local widget =
 local widget_button = clickable_container(wibox.container.margin(widget, dpi(7), dpi(7), dpi(7), dpi(7)))
 widget_button:buttons(
   gears.table.join(
-    awful.button(
-      {},
-      1,
-      nil,
+    awful.button({}, 1, nil,
       function()
         awful.spawn('xfce4-power-manager-settings')
       end
@@ -55,11 +47,6 @@ local battery_popup =
     preferred_positions = {'right', 'left', 'top', 'bottom'}
   }
 )
-
--- To use colors from beautiful theme put
--- following lines in rc.lua before require("battery"):
---beautiful.tooltip_fg = beautiful.fg_normal
---beautiful.tooltip_bg = beautiful.bg_normal
 
 local function show_battery_warning()
   naughty.notify {

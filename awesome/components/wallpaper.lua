@@ -20,6 +20,7 @@ local config_dir = gears.filesystem.get_configuration_dir()
 -- Initialization
 -- ===================================================================
 
+--os.getenv('HOME')
 
 local blurred = false;
 

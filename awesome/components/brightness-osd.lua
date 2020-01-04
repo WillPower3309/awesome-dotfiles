@@ -11,7 +11,6 @@
 -- ===================================================================
 
 
-local awful = require("awful")
 local gears = require("gears")
 local wibox = require("wibox")
 local beautiful = require('beautiful')
@@ -22,7 +21,6 @@ local bri_osd = require('widgets.brightness-slider-osd')
 -- ===================================================================
 -- Add Brightness Overlay to Each Screen
 -- ===================================================================
-
 
 
 screen.connect_signal("request::desktop_decoration", function(s)
