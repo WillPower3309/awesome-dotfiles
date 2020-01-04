@@ -20,12 +20,14 @@ local config_dir = gears.filesystem.get_configuration_dir()
 -- Initialization
 -- ===================================================================
 
---os.getenv('HOME')
 
 local blurred = false;
 
 local wallpaper = config_dir .. "/wallpaper.png"
-local blurredWallpaper = config_dir .. "/blurredWallpaper.png"
+local blurredWallpaper = os.getenv('HOME') .. "/.cache/blurredWallpaper.png"
+
+-- Clear Cache (FIND BETTER METHOD THAT ONLY CLEARS WHEN WALLPAPER IS NEW)
+awful.spawn.with_shell("rm " .. blurredWallpaper)
 
 -- Set Wallpaper
 gears.wallpaper.maximized(wallpaper)
