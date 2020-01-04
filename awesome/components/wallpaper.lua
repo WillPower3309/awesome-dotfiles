@@ -47,7 +47,7 @@ end
 -- check if blurred wallpaper needs to be created
 if not exists(blurredWallpaper) then
    -- uses image magick to create a blurred version of the wallpaper
-   awful.spawn.with_shell("convert -filter Gaussian -blur 0x9 " .. wallpaper .. " " .. blurredWallpaper)
+   awful.spawn.with_shell("convert -filter Gaussian -blur 0x30 " .. wallpaper .. " " .. blurredWallpaper)
 end
 
 

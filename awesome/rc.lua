@@ -34,7 +34,6 @@ require("tags")
 require("components.notifications") -- startup error handling done in here
 require("components.wallpaper")
 require("components.panels")
-require("components.round-corners")
 require("components.exit-screen")
 require("components.brightness-osd")
 require("components.volume-osd")
