@@ -26,14 +26,14 @@ local apps = {
     musicPlayer = "spotify",
     gameLauncher = "steam",
     imageEditor = "gimp",
-    virtualMachineLauncher = "virtualbox"
+    virtualMachineLauncher = "virt-manager"
 }
 
 -- List of apps to start once on start-up
 local run_on_start_up = {
     "picom",
     "unclutter",
-    "redshift -l 43.544804:-80.248169",
+    "redshift",
     "flashfocus"
 }
 
