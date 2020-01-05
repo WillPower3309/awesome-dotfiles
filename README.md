@@ -155,3 +155,4 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 - make adjust brightness more smooth
 - fix rofi focus bugs
 - place floating windows in middle of screen
+- change icons to sweet variant
