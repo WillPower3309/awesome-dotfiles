@@ -13,6 +13,7 @@
 local awful = require("awful")
 local gears = require("gears")
 local naughty = require("naughty")
+local beautiful = require('beautiful')
 local config_dir = gears.filesystem.get_configuration_dir()
 
 
@@ -79,7 +80,6 @@ tag.connect_signal('property::selected', function(t)
       blur()
       return
    end
-
    -- if tag has no clients
    unblur()
 end)

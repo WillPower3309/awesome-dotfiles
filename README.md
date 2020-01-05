@@ -42,7 +42,7 @@ I have made my best effort to reduce the number of dependencies by using the awe
 |Dependency|Description|
 |:----------:|:-------------:|
 |`awesome-git`|Window manager - **must use git version.** If you are using an Arch based distro you can install it off of the AUR. Otherwise [refer to the installation instructions](https://github.com/awesomeWM/awesome/)|
-|`compton`|Window compositor, eliminates screen tearing and allows for cool fade effects|
+|`picom`|Window compositor, eliminates screen tearing and allows for cool fade effects|
 |`rofi-git`|Application launcher - **must use git version**|
 |[`SF Text`](https://aur.archlinux.org/packages/otf-san-francisco/)|System font - Same font used by apple in macOS / iOS / watchOS|
 
@@ -154,3 +154,4 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 - fix spinning cursor bug on adjust volume / brightness (due to components or widgets)
 - make adjust brightness more smooth
 - fix rofi focus bugs
+- place floating windows in middle of screen
