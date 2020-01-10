@@ -146,6 +146,7 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 
 ## Current To-Do ##
 - finish adding keybinds
+- implement flashfocus like functionality using lua
 - lock screen
 - more intelligent wallpaper cache clearing
 - better method of maximizing left panel
