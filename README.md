@@ -142,7 +142,7 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 - **If the config isn't working there is a 99% chance it's because you are using `awesome` and not `awesome-git`.** Arch and Manjaro users can download the awesome-git package from the AUR, while users on other distros will need to build it from source. This sounds scary but is as simple as folling the steps outlined in [the official awesomeWM repo](https://github.com/awesomeWM/awesome/)
 - [Awesome API Documentation](https://awesomewm.org/apidoc/index.html)
 - If you encounter any problems please open an issue in this repo and I will gladly investigate it
-- If you would like to change the wallpaper, ensure that the wallpaper is named "wallpaper.jpg" and is located in the `~/.config/awesome` folder. **ENSURE THAT THE WALLPAPER MATCHES YOUR DISPLAY RESOLUTION!** I have noticed that the awesomewm gears wallpaper setting slows down the wm considerably on high res images on lower res screens
+- If you would like to change the wallpaper, ensure that the wallpaper is named "wallpaper.jpg" and is located in the `~/.config/awesome` folder.
 
 ## Current To-Do ##
 - finish adding keybinds
