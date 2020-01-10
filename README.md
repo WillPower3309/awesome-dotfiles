@@ -155,4 +155,4 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 - fix spinning cursor bug on adjust volume / brightness (due to components or widgets)
 - make adjust brightness more smooth
 - fix rofi focus bugs
-- place floating windows in middle of screen
+- [place floating windows in middle of screen (awful.placement.centered())](https://awesomewm.org/doc/api/libraries/awful.placement.html)
