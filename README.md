@@ -25,12 +25,11 @@
 ## Features ##
 - Lightweight: Uses ~400 MB of ram on my desktop!
 - Easy installation / configuration
-- Very Few Dependencies
-- Wallpaper time-changing functionality
+- Very few dependencies (doesn't even require feh!)
+- Wallpaper auto-blur functionality
 - Log out / shutdown / restart screen
 - Volume / brightness adjustment widgets with sliders
-- Right click app menu
-- Automatic dpi / resolution scaling
+- Integrated dpi / resolution scaling
   - Note that xft.dpi must be properly assigned in the .Xresources file if you are using a high DPI screen
 - Supports multi monitor setups!
   - The top bar appears on every monitor, and the side bar only appears on the main monitor
@@ -44,7 +43,8 @@ I have made my best effort to reduce the number of dependencies by using the awe
 |`awesome-git`|Window manager - **must use git version.** If you are using an Arch based distro you can install it off of the AUR. Otherwise [refer to the installation instructions](https://github.com/awesomeWM/awesome/)|
 |`picom`|Window compositor, eliminates screen tearing and allows for cool fade effects|
 |`rofi-git`|Application launcher - **must use git version**|
-|[`SF Text`](https://aur.archlinux.org/packages/otf-san-francisco/)|System font - Same font used by apple in macOS / iOS / watchOS|
+|`SF Text`|System font - Same font used by apple in macOS / iOS / watchOS|
+|`imagemagick`|Used in config to generate blurred wallpaper|
 
 There are also a number of optional dependencies, which will improve the user experience but aren't required:
 **Bear in mind that most of these dependencies come preinstalled on non arch systems. I would recommend reading their descriptions below to determine which ones you need to install**
@@ -63,7 +63,7 @@ There are also a number of optional dependencies, which will improve the user ex
 ## Installation ##
 1. Ensure all [dependencies](#dependencies) are met
 2. Clone this repository and place its contents into your `.config` folder
-3. navigate to the `awesome` folder and place your desired wallpapers into the `wallpaper` folder, ensuring that you follow the naming conventions
+3. navigate to the `awesome` folder and place your desired wallpaper there, ensuring that it is named "wallpaper". One  awesome (pun intended) feature of my config is that the filetype of the wallpaper can be any image filetype and it will automatically recognize it
 4. edit the `apps.lua` file to define your desired default and startup applications. If you do not have an application installed that matches a given variable name, change the variable to `''` (ie: if you do not have an image editor installed, ensure `apps.imageEditor = ''`)
 5. If the wifi top bar widget is not working, edit the `widgets/wifi.lua` file and ensure that the `local interface` variable matches your wifi interface name (if you are unsure how to find your interface name, check out [this discussion](https://bbs.archlinux.org/viewtopic.php?id=166171)).]
 6. optional: edit the `keys.lua` file to change / add keybinds
@@ -79,14 +79,13 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 - `tags.lua`: Contains tag (aka workspace) information, edit this to change the application that launches when the add tab button is pressed while a given tag is active, or edit the tag's icon
 - `wallpaper.lua`: Contains wallpaper time changing functionality
 - `icons`: stores icons used in WM
-- `wallpaper`: stores wallpaper
 - `components`: Folder that contains all of the components of the WM, such as panels, volume and brightness widgets, notification widget etc
 - `widgets`: stores scripts used in the functionality of the components
 
 <a name="applications"></a>
 ## My Preferred Applications ##
-- **Display Manager - SDDM (with sugar-candy theme)**: Beautiful display manager which matches the window manager theme fairly well and looks amazing
-- **Text Editor - Vim**: I'm an alpha chad
+- **Display Manager - SDDM (with sddm-sugar-dark theme)**: Beautiful display manager which matches the window manager theme fairly well and looks amazing
+- **Text Editor - nvim**: I'm an alpha chad
 - **File Manager - Nautilus**: Lightweight file browser, few dependencies, and can be configured to work with a preferred terminal. Also has extensions for easy right click extraction / compression of archive files (ie zip / rar etc)
 - **Web Browser - Firefox**: Super configurable and isn't made by Google
 - **Terminal - Kitty**: Used to use alacritty, switched to kitty as it is very fast and has great ligature implementation (which helps with programming in vim). Is very configurable and has built in tmux-like functionality
@@ -142,13 +141,14 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 - **If the config isn't working there is a 99% chance it's because you are using `awesome` and not `awesome-git`.** Arch and Manjaro users can download the awesome-git package from the AUR, while users on other distros will need to build it from source. This sounds scary but is as simple as folling the steps outlined in [the official awesomeWM repo](https://github.com/awesomeWM/awesome/)
 - [Awesome API Documentation](https://awesomewm.org/apidoc/index.html)
 - If you encounter any problems please open an issue in this repo and I will gladly investigate it
-- If you would like to change the wallpaper, ensure that the wallpaper is named "wallpaper.jpg" and is located in the `~/.config/awesome` folder.
+- If you would like to change the wallpaper, ensure that the wallpaper is named "wallpaper" and is located in the `~/.config/awesome` folder.
 
 ## Current To-Do ##
 - finish adding keybinds
+- make wallpaper script work with any image filetype
+- time based wallpaper?
 - implement flashfocus like functionality using lua
 - lock screen
-- more intelligent wallpaper cache clearing
 - better method of maximizing left panel
 - top bar not on tag 1 on first start bug
 - set battery-unknown icon on desktop
@@ -156,4 +156,3 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 - make adjust brightness more smooth
 - fix rofi focus bugs
 - place floating windows in middle of screen
-- change icons to sweet variant
