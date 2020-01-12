@@ -24,11 +24,8 @@ local config_dir = gears.filesystem.get_configuration_dir()
 
 local blurred = false;
 
-local wallpaper = config_dir .. "/wallpaper.png"
-local blurredWallpaper = os.getenv('HOME') .. "/.cache/blurredWallpaper.png"
-
--- Clear Cache (FIND BETTER METHOD THAT ONLY CLEARS WHEN WALLPAPER IS NEW)
-awful.spawn.with_shell("rm " .. blurredWallpaper)
+local wallpaper = config_dir .. "/wallpaper.jpg"
+local blurredWallpaper = config_dir .. "/blurredWallpaper.jpg"
 
 -- Set Wallpaper
 gears.wallpaper.maximized(wallpaper)
@@ -47,6 +44,11 @@ end
 
 -- check if blurred wallpaper needs to be created
 if not exists(blurredWallpaper) then
+  naughty.notify({
+     preset = naughty.config.presets.normal,
+     title = 'Wallpaper',
+     text = 'Generating blurred wallpaper...'
+   })
    -- uses image magick to create a blurred version of the wallpaper
    awful.spawn.with_shell("convert -filter Gaussian -blur 0x30 " .. wallpaper .. " " .. blurredWallpaper)
 end
