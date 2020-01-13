@@ -1,5 +1,5 @@
 # awesome-dotfiles
-[![HitCount](http://hits.dwyl.io/willpower3309/awesome-dotfiles.svg)](http://hits.dwyl.io/willpower3309/awesome-dotfiles)![GitHub All Releases](https://img.shields.io/github/downloads/willpower3309/awesome-dotfiles/total?style=flat-square)
+[![HitCount](http://hits.dwyl.io/willpower3309/awesome-dotfiles.svg)](http://hits.dwyl.io/willpower3309/awesome-dotfiles)!
 
 ## Contents ##
 1. [Details](#details)
