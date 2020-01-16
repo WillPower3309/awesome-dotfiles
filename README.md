@@ -148,7 +148,7 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 **Note that the modkey is set to be the windows / command key. If you would like to use a different modkey check out the `keys.lua` file.**
 If you are new to awesomewm, note that tag refers to workspace, and client refers to window.
 
-###Keyboard###
+### Keyboard ###
 + `mod + enter`: Spawn terminal
 + `mod + d`: Spawn rofi (an application menu)
 + `mod + f`: Make client fullscreen
@@ -160,7 +160,7 @@ If you are new to awesomewm, note that tag refers to workspace, and client refer
 + `mod + shift`: Change the tag layout, alternating between tiled, floating, and maximized
 + `mod + [up / down / left / right / h / j / k / l]`: Change client by direction
 
-###Mouse###
+### Mouse ###
 + `mod + left click + drag`: Move client
 + `mod + right click + drag`: Resize client
 
