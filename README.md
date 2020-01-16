@@ -182,4 +182,3 @@ If you are new to awesomewm, note that tag refers to workspace, and client refer
 + fix spinning cursor bug on adjust volume / brightness (due to components or widgets)
 + make adjust brightness more smooth
 + fix rofi focus bugs
-+ move workspace specific apps to `apps.lua`?
