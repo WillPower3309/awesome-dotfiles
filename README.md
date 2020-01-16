@@ -96,7 +96,12 @@ In order to avoid a poorly organized `rc.lua` spanning thousands of lines, it ha
 + **Web Browser - Firefox**: Super configurable and isn't made by Google
 + **Terminal - Kitty**: Used to use alacritty, switched to kitty as it is very fast and has great ligature implementation (which helps with programming in vim). Is very configurable and has built in tmux-like functionality
 + **Theme / Look & Feel Manager - lxappearance**: makes managing icon / cursor / application themes easy, only theme manager with no DE dependencies, and works very well
-+ **Other cool applications you should install**: `redshift`, `flashfocus-git`, `neofetch`, `unimatrix`, `cava`
+
+### Other cool applications you should install ###
++ `redshift`: Changed screen warmth based on the time of day
++ `neofetch`: Command that displays systems information in the terminal
++ `unimatrix`: Terminal base matrix text effect
++ `cava`: Terminal audio visualizer!
 
 <a name="appTheming"></a>
 ## Application Theming ##
