@@ -77,7 +77,7 @@ These will improve the user experience but aren't required:
 
 <a name="folderStructure"></a>
 ## Awesome Folder File Structure ##
-In order to avoid a poorly organized rc.lua spanning thousands of lines, it has been split into multiple files / folders.
+In order to avoid a poorly organized rc.lua spanning thousands of lines, it has been split into multiple files / folders. I have taken extra care to create a logical directory structure that will hopefully allow those new to awesomewm to have an easy time navigating it.
 + `rc.lua`: Contains the script that runs when awesome starts (essentially links all the other files together)
 + `apps.lua`: Contains the default and startup applications
 + `keys.lua`: Contains keybinds
