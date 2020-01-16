@@ -83,10 +83,10 @@ In order to avoid a poorly organized `rc.lua` spanning thousands of lines, it ha
 + `keys.lua`: Contains keybinds
 + `rules.lua`: Contains window rules
 + `theme.lua`: Contains theme variables
-+ `tags.lua`: Contains tag (aka workspace) information, edit this to change the application that launches when the add tab button is pressed while a given tag is active, or edit the tag's icon
++ `tags.lua`: Contains tag (aka workspace) information, edit this to change the tag's icon
 + `icons`: stores icons used in WM
 + `components`: Folder that contains all of the components of the WM, such as panels, volume and brightness widgets, notification widget etc
-+ `widgets`: stores scripts used in the functionality of the components
++ `widgets`: stores widgets used in the functionality of the components
 
 <a name="applications"></a>
 ## My Preferred Applications ##
