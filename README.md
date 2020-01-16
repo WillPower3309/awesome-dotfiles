@@ -63,8 +63,8 @@ These will improve the user experience but aren't required:
 + `xbacklight`: Controls display brightness, which the control of has been mapped to brightness keys in keys.lua
 
 ### Fonts You Should Install ###
-`SF-Text`: System font used by macOS, iOS, and watchOS. Used in this config as the WM font. Also used as font for firefox
-`Fira Code`: Great monospaced font with ligature support, used in terminal and text editors
++ `SF-Text`: System font used by macOS, iOS, and watchOS. Used in this config as the WM font. Also used as font for firefox
++ `Fira Code`: Great monospaced font with ligature support, used in terminal and text editors
 
 <a name="installation"></a>
 ## Installation ##
