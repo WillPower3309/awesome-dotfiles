@@ -63,7 +63,7 @@ These will improve the user experience but aren't required:
 + `xbacklight`: Controls display brightness, which the control of has been mapped to brightness keys in keys.lua
 
 ### Fonts You Should Install ###
-+ `SF-Text`: System font used by macOS, iOS, and watchOS. Used in this config as the WM font. Also used as font for firefox
++ `SF Text`: System font used by macOS, iOS, and watchOS. Used in this config as the WM font. Also used as font for firefox
 + `Fira Code`: Great monospaced font with ligature support, used in terminal and text editors
 
 <a name="installation"></a>
@@ -77,7 +77,7 @@ These will improve the user experience but aren't required:
 
 <a name="folderStructure"></a>
 ## Awesome Folder File Structure ##
-In order to avoid a poorly organized rc.lua spanning thousands of lines, it has been split into multiple files / folders. I have taken extra care to create a logical directory structure that will hopefully allow those new to awesomewm to have an easy time navigating it.
+In order to avoid a poorly organized `rc.lua` spanning thousands of lines, it has been split into multiple files / folders. I have taken extra care to create a logical directory structure that will hopefully allow those new to awesomewm to have an easy time navigating it.
 + `rc.lua`: Contains the script that runs when awesome starts (essentially links all the other files together)
 + `apps.lua`: Contains the default and startup applications
 + `keys.lua`: Contains keybinds
