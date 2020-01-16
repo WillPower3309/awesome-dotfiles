@@ -1,4 +1,5 @@
 # awesome-dotfiles
+[![HitCount](http://hits.dwyl.io/willpower3309/awesome-dotfiles.svg)](http://hits.dwyl.io/willpower3309/awesome-dotfiles)
 
 ![](/screenshot.png)
 
@@ -63,7 +64,7 @@ There are also a number of optional dependencies, which will improve the user ex
 ## Installation ##
 1. Ensure all [dependencies](#dependencies) are met
 2. Clone this repository and place its contents into your `.config` folder
-3. navigate to the `awesome` folder and place your desired wallpaper there, ensuring that it is named "wallpaper". One  awesome (pun intended) feature of my config is that the filetype of the wallpaper can be any image filetype and it will automatically recognize it
+3. navigate to the `awesome` folder and place your desired wallpaper there, ensuring that it is named "wallpaper". One  awesome (pun intended) feature of my config is that the filetype of the wallpaper can be any image filetype and it will automatically recognize it. Remember to delete the `blurredWallpaper` file in order to make the blurring script recognize a new wallpaper has been added and needs to be blurred 
 4. edit the `apps.lua` file to define your desired default and startup applications. If you do not have an application installed that matches a given variable name, change the variable to `''` (ie: if you do not have an image editor installed, ensure `apps.imageEditor = ''`)
 5. If the wifi top bar widget is not working, edit the `widgets/wifi.lua` file and ensure that the `local interface` variable matches your wifi interface name (if you are unsure how to find your interface name, check out [this discussion](https://bbs.archlinux.org/viewtopic.php?id=166171)).]
 6. optional: edit the `keys.lua` file to change / add keybinds
@@ -110,7 +111,7 @@ In order to avoid a poorly organized rc.lua spanning thousands of lines, it has 
 2. Install VimPlug with
 ```
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 3. Run `:PlugInstall`
 4. Exit and reopen neovim
@@ -140,11 +141,11 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 - **If the config isn't working there is a 99% chance it's because you are using `awesome` and not `awesome-git`.** Arch and Manjaro users can download the awesome-git package from the AUR, while users on other distros will need to build it from source. This sounds scary but is as simple as folling the steps outlined in [the official awesomeWM repo](https://github.com/awesomeWM/awesome/)
 - [Awesome API Documentation](https://awesomewm.org/apidoc/index.html)
 - If you encounter any problems please open an issue in this repo and I will gladly investigate it
-- If you would like to change the wallpaper, ensure that the wallpaper is named "wallpaper" and is located in the `~/.config/awesome` folder.
+- If you would like to change the wallpaper, ensure that the wallpaper is named "wallpaper" and is located in the `~/.config/awesome` folder. Also ensure that you delete the blurred wallpaper file in order for the blurring script to recognize it needs to generate a new blurred wallpaper
 
 ## Current To-Do ##
 - finish adding keybinds
-- make wallpaper script work with any image filetype
+- make script work with any image filetype
 - time based wallpaper?
 - implement flashfocus like functionality using lua
 - lock screen
