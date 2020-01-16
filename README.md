@@ -125,7 +125,7 @@ In order to avoid a poorly organized `rc.lua` spanning thousands of lines, it ha
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
-3. Run `:PlugInstall`
+3. Open neovim and run `:PlugInstall`
 4. Exit and reopen neovim
 
 ### Zsh ###
@@ -140,13 +140,16 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
   + Set `ZSH_THEME="agnoster"` and save the file
 4. Install Plugins (Note that the ~/.zshrc edits are already done in this repo)
   + Syntax highlighting (copy and paste the below command to install)
-    + ```git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting```
+    ```
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    ```
     + Edit `~/.zshrc`, add `zsh-syntax-highlighting` to the plugins section
-    + Reread config `source ~/.zshrc`
   + Autosuggestions (copy and paste the below command to install)
-    + ```git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions```
+    ```
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    ```
     + Edit `~/.zshrc`, add `zsh-autosuggestions` to the plugins section
-4. Fini!
+4. Fini! Reopen the terminal to view the fruit of your labor
 
 <a name="keybinds"></a>
 ## Keybinds ##
