@@ -35,7 +35,7 @@ rules = {
         keys = keys.clientkeys,
         buttons = keys.clientbuttons,
         screen = awful.screen.preferred,
-        placement = awful.placement.no_overlap + awful.placement.no_offscreen
+        placement = awful.placement.centered
       }
     },
 

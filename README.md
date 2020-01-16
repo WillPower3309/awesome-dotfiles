@@ -37,11 +37,12 @@
 
 <a name="dependencies"></a>
 ## Dependencies ##
-I have made my best effort to reduce the number of dependencies by using the awesome API to its fullest extent (feh isn't even required), and allowing users to edit the `apps.lua` file (see [installation section](#installation)) to define their own preferred applications. That being said, here are the dependencies.
+I have made my best effort to reduce the number of dependencies by using the awesome API to its fullest extent, and allowing users to edit the `apps.lua` file (see [installation section](#installation)) to define their own preferred applications. That being said, here are the dependencies.
 
 |Dependency|Description|
 |:----------:|:-------------:|
 |`awesome-git`|Window manager - **must use git version.** If you are using an Arch based distro you can install it off of the AUR. Otherwise [refer to the installation instructions](https://github.com/awesomeWM/awesome/)|
+|`feh`|Fast image viewer used as wallpaper setting utility|
 |`picom`|Window compositor, eliminates screen tearing and allows for cool fade effects|
 |`rofi-git`|Application launcher - **must use git version**|
 |`SF Text`|System font - Same font used by apple in macOS / iOS / watchOS|
@@ -150,9 +151,7 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 - implement flashfocus like functionality using lua
 - lock screen
 - better method of maximizing left panel
-- top bar not on tag 1 on first start bug
 - set battery-unknown icon on desktop
 - fix spinning cursor bug on adjust volume / brightness (due to components or widgets)
 - make adjust brightness more smooth
 - fix rofi focus bugs
-- [place floating windows in middle of screen (awful.placement.centered())](https://awesomewm.org/doc/api/libraries/awful.placement.html)
