@@ -27,16 +27,15 @@ awful.rules.rules = require("rules")
 -- Import keybinds
 local keys = require("keys")
 
--- Import Tag Settings
-require("tags")
-
 -- Import Components
 require("components.notifications") -- startup error handling done in here
-require("components.wallpaper")
 require("components.panels")
 require("components.exit-screen")
 require("components.brightness-osd")
 require("components.volume-osd")
+require("components.wallpaper")
+-- Import Tag Settings
+require("tags")
 
 
 -- ===================================================================

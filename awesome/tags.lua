@@ -95,29 +95,23 @@ awful.layout.layouts = {
 -- apply tag settings to each tag
 screen.connect_signal("request::desktop_decoration", function(s)
   for i, tag in pairs(tags) do
-    awful.tag.add(
-      i,
-      {
-        icon = tag.icon,
-        icon_only = true,
-        layout = awful.layout.suit.tile,
-        screen = s,
-        defaultApp = tag.defaultApp,
-        selected = i == 1
-      }
-    )
+    awful.tag.add(i, {
+      icon = tag.icon,
+      icon_only = true,
+      layout = awful.layout.suit.tile,
+      screen = s,
+      defaultApp = tag.defaultApp,
+      selected = i == 1
+    })
   end
 end)
 
 -- remove gaps if layout is set to max
-tag.connect_signal(
-  'property::layout',
-  function(t)
-    local currentLayout = awful.tag.getproperty(t, 'layout')
-    if (currentLayout == awful.layout.suit.max) then
-      t.gap = 0
-    else
-      t.gap = beautiful.useless_gap
-    end
+tag.connect_signal('property::layout', function(t)
+  local currentLayout = awful.tag.getproperty(t, 'layout')
+  if (currentLayout == awful.layout.suit.max) then
+    t.gap = 0
+  else
+    t.gap = beautiful.useless_gap
   end
-)
+end)
