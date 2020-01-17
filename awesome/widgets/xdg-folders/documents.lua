@@ -48,6 +48,6 @@ awful.tooltip(
   }
 )
 
-docuWidget.icon:set_image(PATH_TO_ICONS .. 'folder-documents' .. '.svg')
+docuWidget.icon:set_image(PATH_TO_ICONS .. 'folder-documents' .. '.png')
 
 return docu_button

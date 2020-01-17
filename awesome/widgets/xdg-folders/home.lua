@@ -48,6 +48,6 @@ awful.tooltip(
   }
 )
 
-homeWidget.icon:set_image(PATH_TO_ICONS .. 'user-home' .. '.svg')
+homeWidget.icon:set_image(PATH_TO_ICONS .. 'folder-home' .. '.png')
 
 return home_button

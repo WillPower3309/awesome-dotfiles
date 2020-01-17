@@ -48,6 +48,6 @@ awful.tooltip(
   }
 )
 
-dlWidget.icon:set_image(PATH_TO_ICONS .. 'folder-download' .. '.svg')
+dlWidget.icon:set_image(PATH_TO_ICONS .. 'folder-download' .. '.png')
 
 return downloads_button

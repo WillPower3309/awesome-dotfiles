@@ -24,55 +24,55 @@ local beautiful = require("beautiful")
 
 local tags = {
   {
-    icon = dir .. 'terminal.svg',
+    icon = dir .. 'terminal.png',
     type = 'terminal',
     defaultApp = apps.terminal,
     screen = 1
   },
   {
-    icon = dir .. 'google-chrome.svg',
+    icon = dir .. 'firefox.png',
     type = 'chrome',
     defaultApp = apps.browser,
     screen = 1
   },
   {
-    icon = dir .. 'code-braces.svg',
+    icon = dir .. 'notepad.png',
     type = 'code',
     defaultApp = apps.editor,
     screen = 1
   },
   {
-    icon = dir .. 'folder.svg',
+    icon = dir .. 'folder.png',
     type = 'files',
     defaultApp = apps.filebrowser,
     screen = 1
   },
   {
-    icon = dir .. 'music.svg',
+    icon = dir .. 'player.png',
     type = 'music',
     defaultApp = apps.musicPlayer,
     screen = 1
   },
   {
-    icon = dir .. 'google-controller.svg',
+    icon = dir .. 'videogame.png',
     type = 'game',
     defaultApp = apps.gameLauncher,
     screen = 1
   },
   {
-    icon = dir .. 'art.svg',
+    icon = dir .. 'star.png',
     type = 'art',
     defaultApp = apps.imageEditor,
     screen = 1
   },
   {
-    icon = dir .. 'vbox.svg',
+    icon = dir .. 'mail.png',
     type = 'virtualbox',
     defaultApp = apps.virtualMachineLauncher,
     screen = 1
   },
   {
-    icon = dir .. 'flask.svg',
+    icon = dir .. 'spotify.png',
     type = 'any',
     defaultApp = '',
     screen = 1

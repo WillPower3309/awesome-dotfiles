@@ -28,8 +28,8 @@ local LeftPanel = function(s)
   local left_panel = awful.wibar({
     position = "left",
     screen = s,
-    width = dpi(50),
-    height = s.geometry.height  * 2/3,
+    width = dpi(55),
+    height = s.geometry.height  * 7/10,
     shape = function(cr, width, height)
       gears.shape.partially_rounded_rect(cr, width, height, false, true, true, false, 12)
     end
@@ -57,7 +57,7 @@ local LeftPanel = function(s)
         gears.shape.rectangle(cr, width, height)
       end
     else
-      left_panel.height = s.geometry.height  * 2/3
+      left_panel.height = s.geometry.height  * 7/10
       left_panel.shape = function(cr, width, height)
         gears.shape.partially_rounded_rect(cr, width, height, false, true, true, false, 12)
       end

@@ -155,3 +155,5 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 - fix spinning cursor bug on adjust volume / brightness (due to components or widgets)
 - make adjust brightness more smooth
 - fix rofi focus bugs
+- find actual logout icon
+- create downloads folder icon

@@ -24,10 +24,7 @@ local trashWidget =
 local trash_button = clickable_container(wibox.container.margin(trashWidget, dpi(8), dpi(8), dpi(8), dpi(8)))
 trash_button:buttons(
   gears.table.join(
-    awful.button(
-      {},
-      1,
-      nil,
+    awful.button({}, 1, nil,
       function()
         awful.spawn.easy_async_with_shell(filebrowser .. " trash://", function(stderr) end, 1)
       end
@@ -48,6 +45,6 @@ awful.tooltip(
   }
 )
 
-trashWidget.icon:set_image(PATH_TO_ICONS .. 'user-trash-full' .. '.svg')
+trashWidget.icon:set_image(PATH_TO_ICONS .. 'trash' .. '.png')
 
 return trash_button
