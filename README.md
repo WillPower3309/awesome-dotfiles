@@ -25,11 +25,11 @@
 
 <a name="features"></a>
 ## Features ##
-+ Lightweight: Uses ~400 MB of ram on my desktop!
++ Lightweight: Uses ~350 MB of ram on my desktop!
 + Easy installation / configuration
 + Very few dependencies
 + Wallpaper auto-blur functionality
-+ Log out / shutdown / restart screen
++ Log out / shutdown / restart / lock screen
 + Volume / brightness adjustment widgets with sliders
 + Integrated dpi / resolution scaling
   + Note that xft.dpi must be properly assigned in the .Xresources file if you are using a high DPI screen
@@ -51,14 +51,14 @@ I have made my best effort to reduce the number of dependencies by using the awe
 
 ### Optional Dependencies ###
 These will improve the user experience but aren't required:
-**Bear in mind that most of these dependencies come preinstalled on non arch systems. I would recommend reading their descriptions below to determine which ones you need to install**
+**Bear in mind that most of these dependencies come preinstalled on non arch systems. I would recommend reading their descriptions below to determine which ones you need to install. Alternatively, set up my config and install the packages based on what isn't appearing in the top panel.**
 + `acpi`: Battery managing cli application, used by top bar widget to determine battery status
 + `xfce4-power-manager`: Lightweight power manager spawned when the top panel battery icon is clicked
 + `bluez`, `bluez-utils`: Bluetooth cli application, used by top bar widget to determine if bluetooth is on
 + `blueman`: Bluetooth managing application, spawns when the bluetooth top panel icon is clicked
 + `pamac-aur`: Lightweight GUI package manager, spawned when the top panel package icon is clicked
 + `nm-connection-editor`: GUI wifi connection editor, spawned when the top panel wifi icon is clicked
-+ `Scrot`: Screenshot tool, which is mapped to the print screen key in keys.lua. **If you want to meet this dependency, ensure that the `~/Pictures` folder exists**, otherwise the program will not save your screenshots
++ `Scrot`: Screenshot tool, which is mapped to the Print Screen key in keys.lua. **If you want to meet this dependency, ensure that the `~/Pictures` folder exists**, otherwise the program will not save your screenshots
 + `Alsa`: Provides kernel driven sound drivers, which the control of has been mapped to volume keys in keys.lua
 + `xbacklight`: Controls display brightness, which the control of has been mapped to brightness keys in keys.lua
 
@@ -85,12 +85,12 @@ In order to avoid a poorly organized `rc.lua` spanning thousands of lines, it ha
 + `theme.lua`: Contains theme variables
 + `tags.lua`: Contains tag (aka workspace) information, edit this to change the tag's icon and behaviour
 + `icons`: stores icons used in WM
-+ `components`: Folder that contains all of the components of the WM, such as panels, volume and brightness widgets, notification widget etc
++ `components`: Folder that contains all of the components of the WM, such as panels, volume and brightness sliders, notification pop-ups, etc
 + `widgets`: stores widgets used in the functionality of the components
 
 <a name="applications"></a>
 ## My Preferred Applications ##
-+ **Display Manager - SDDM (with sddm-sugar-dark theme)**: Beautiful display manager which matches the window manager theme fairly well and looks amazing
++ **Display Manager - SDDM (with sddm-sugar-dark theme)**: Beautiful display manager. Matches the window manager theme very well and looks amazing
 + **Text Editor - nvim**: I'm an alpha chad
 + **File Manager - Nautilus**: Lightweight file browser, few dependencies, and can be configured to work with a preferred terminal. Also has extensions for easy right click extraction / compression of archive files (ie zip / rar etc)
 + **Web Browser - Firefox**: Super configurable and isn't made by Google
@@ -99,8 +99,8 @@ In order to avoid a poorly organized `rc.lua` spanning thousands of lines, it ha
 
 ### Other cool applications you should install ###
 + `redshift`: Changed screen warmth based on the time of day
-+ `neofetch`: Command that displays systems information in the terminal
-+ `unimatrix`: Terminal base matrix text effect
++ `neofetch`: Displays system information in the terminal
++ `cmatrix`: Terminal base matrix text effect
 + `cava`: Terminal audio visualizer!
 
 <a name="appTheming"></a>
@@ -178,17 +178,3 @@ If you are new to awesomewm, note that tag refers to workspace, and client refer
 + [Awesome API Documentation](https://awesomewm.org/apidoc/index.html)
 + If you encounter any problems please open an issue in this repo and I will gladly investigate it
 + If you would like to change the wallpaper, ensure that the wallpaper is named "wallpaper" and is located in the `~/.config/awesome` folder. Also ensure that you delete the blurred wallpaper file in order for the blurring script to recognize it needs to generate a new blurred wallpaper
-
-## Current To-Do ##
-+ finish adding keybinds
-+ make script work with any image filetype
-+ time based wallpaper?
-+ implement flashfocus like functionality using lua
-+ lock screen
-+ better method of maximizing left panel
-+ set battery-unknown icon on desktop
-+ fix spinning cursor bug on adjust volume / brightness (due to components or widgets)
-+ make adjust brightness more smooth
-+ fix rofi focus bugs
-+ find actual logout icon
-+ create downloads folder icon
