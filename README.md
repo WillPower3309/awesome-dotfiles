@@ -27,7 +27,7 @@
 ## Features ##
 + Lightweight: Uses ~400 MB of ram on my desktop!
 + Easy installation / configuration
-+ Very few dependencies (doesn't even require feh!)
++ Very few dependencies
 + Wallpaper auto-blur functionality
 + Log out / shutdown / restart screen
 + Volume / brightness adjustment widgets with sliders
