@@ -165,7 +165,7 @@ If you are new to awesomewm, note that tag refers to workspace, and client refer
 + `mod + shift + n`: Unminimize client
 + `mod + [1-9]`: Switch to tag [1-9]
 + `mod + shift + [1-9]`: Move client to tag [1-9]
-+ `mod + shift`: Change the tag layout, alternating between tiled, floating, and maximized
++ `mod + space`: Change the tag layout, alternating between tiled, floating, and maximized
 + `mod + [up / down / left / right / h / j / k / l]`: Change client by direction
 
 ### Mouse ###
