@@ -11,7 +11,6 @@ local dir = os.getenv('HOME') .. '/.config/awesome/icons/'
 
 -- return icons
 return {
-  menu = dir .. 'menu.svg',
   logout = dir .. 'logout.png',
   sleep = dir .. 'sleep.png',
   power = dir .. 'power.png',
