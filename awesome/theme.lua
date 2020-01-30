@@ -41,7 +41,6 @@ theme.fg_urgent     = "#cc9393"
 theme.fg_minimize   = "#ffffff"
 
 -- Sizing
-theme.corner_radius       = dpi(6)            -- border radius of rounded theme elements
 theme.useless_gap         = dpi(7)            -- window gap distance
 theme.gap_single_client   = true              -- gaps if only one window is open?
 
