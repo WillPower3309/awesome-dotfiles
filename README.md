@@ -1,4 +1,6 @@
-# awesome-dotfiles
+<div align="center">
+    <h1>Glorious Dotfiles</h1>
+</div>
 [![HitCount](http://hits.dwyl.io/willpower3309/awesome-dotfiles.svg)](http://hits.dwyl.io/willpower3309/awesome-dotfiles)
 
 ![](/screenshot.png)
