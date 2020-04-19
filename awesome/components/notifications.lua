@@ -10,198 +10,268 @@
 -- ===================================================================
 
 
-local naughty = require('naughty')
-local beautiful = require('beautiful')
 local gears = require('gears')
 local wibox = require('wibox')
 local awful = require('awful')
-local dpi = require('beautiful').xresources.apply_dpi
+local ruled = require('ruled')
+local naughty = require('naughty')
+local menubar = require('menubar')
+local beautiful = require('beautiful')
+
+local dpi = beautiful.xresources.apply_dpi
+
+local clickable_container = require('widgets.clickable-container')
 
 
 -- ===================================================================
--- Variable Definitions
+-- Notification Theme
 -- ===================================================================
 
 
 -- Defaults
 naughty.config.defaults.ontop = true
 naughty.config.defaults.icon_size = dpi(32)
-naughty.config.defaults.screen = awful.screen.focused()
 naughty.config.defaults.timeout = 5
-naughty.config.defaults.shape = function(cr, w, h) gears.shape.rounded_rect(cr, w, h, dpi(6)) end
 naughty.config.defaults.title = 'System Notification'
+naughty.config.defaults.margin = dpi(16)
+naughty.config.defaults.border_width = 0
+naughty.config.defaults.position = 'top_right'
+naughty.config.defaults.shape = function(cr, w, h) gears.shape.rounded_rect(cr, w, h, dpi(6)) end
 
 -- Apply theme variables
 naughty.config.padding = 8
 naughty.config.spacing = 8
-naughty.config.defaults.margin = dpi(16)
-naughty.config.defaults.border_width = 0
-naughty.config.defaults.position = 'top_right'
-
--- Timeouts
-naughty.config.presets.low.timeout = 3
-naughty.config.presets.critical.timeout = 0
-
-naughty.config.presets.normal = {
-  font         = beautiful.title_font,
-  fg           = beautiful.fg_normal,
-  bg           = beautiful.bg_normal,
-  position     = 'top_right'
+naughty.config.icon_dirs = {
+	"/usr/share/icons/Tela",
+	"/usr/share/icons/Tela-blue-dark",
+	"/usr/share/icons/la-capitaine-icon-theme/",
+	"/usr/share/icons/Papirus/",
+	"/usr/share/icons/gnome/",
+	"/usr/share/icons/hicolor/",
+	"/usr/share/pixmaps/"
 }
+naughty.config.icon_formats = {	"png", "svg", "jpg", "gif" }
 
-naughty.config.presets.low = {
-  font         = beautiful.title_font,
-  fg           = beautiful.fg_normal,
-  bg           = beautiful.bg_normal,
-  position     = 'top_right'
-}
+-- Presets / rules
+ruled.notification.connect_signal('request::rules', function()
+	
+	-- Critical notifications
+	ruled.notification.append_rule {
+		rule = { urgency = 'critical' },
+		properties = { 
+			font = 'SF Pro Text Bold 10',
+			bg = '#ff0000', 
+			fg = '#ffffff',
+			margin = dpi(16),
+			position = 'top_right',
+			implicit_timeout = 0
+		}
+	}
 
-naughty.config.presets.critical = {
-  font         = 'SF Display Bold 10',
-  fg           = '#ffffff',
-  bg           = '#ff0000',
-  position     = 'top_right',
-  timeout      = 0
-}
+	-- Normal notifications
+	ruled.notification.append_rule {
+		rule = { urgency = 'normal' },
+		properties = {
+			font = 'SF Pro Text Regular 10',
+			bg = beautiful.transparent, 
+			fg = beautiful.fg_normal,
+			margin = dpi(16),
+			position = 'top_right',
+			timeout = 5,
+			implicit_timeout = 5
+		}
+	}
 
-naughty.config.presets.ok = naughty.config.presets.normal
-naughty.config.presets.info = naughty.config.presets.normal
-naughty.config.presets.warn = naughty.config.presets.critical
+	-- Low notifications
+	ruled.notification.append_rule {
+		rule = { urgency = 'low' },
+		properties = { 
+			font = 'SF Pro Text Regular 10',
+			bg = beautiful.transparent,
+			fg = beautiful.fg_normal,
+			margin = dpi(16),
+			position = 'top_right',
+			implicit_timeout = 5
+		}
+	}
+end)
 
 
 -- ===================================================================
--- Error Handling
+-- Notification Creation
 -- ===================================================================
 
 
-if awesome.startup_errors then
-  naughty.notify(
-    {
-      preset = naughty.config.presets.critical,
-      title = 'Oops, there were errors during startup!',
-      text = awesome.startup_errors
+-- Error handling
+naughty.connect_signal("request::display_error", function(message, startup)
+    naughty.notification {
+        urgency = "critical",
+        title   = "Oops, an error happened"..(startup and " during startup!" or "!"),
+        message = message,
+        app_name = 'System Notification',
+        icon = beautiful.awesome_icon
     }
-  )
-end
+end)
 
-do
-  local in_error = false
-  awesome.connect_signal(
-    'debug::error',
-    function(err)
-      if in_error then
-        return
-      end
-      in_error = true
+-- XDG icon lookup
+naughty.connect_signal("request::icon", function(n, context, hints)
+    if context ~= "app_icon" then return end
 
-      naughty.notify(
-        {
-          preset = naughty.config.presets.critical,
-          title = 'Oops, an error happened!',
-          text = tostring(err)
-        }
-      )
-      in_error = false
+    local path = menubar.utils.lookup_icon(hints.app_icon) or
+        menubar.utils.lookup_icon(hints.app_icon:lower())
+
+    if path then
+        n.icon = path
     end
-  )
-end
+end)
 
-
--- ===================================================================
--- Notification Template Setup
--- ===================================================================
-
-
-beautiful.notification_bg = "#00000000"
-local notification_bg = beautiful.notification_bg
-
+-- Naughty template
 naughty.connect_signal("request::display", function(n)
-  naughty.layout.box {
-    notification = n,
-    type = "splash",
-    shape = gears.shape.rectangle,
-    widget_template = {
-      {
-        {
-          {
-            {
-              {
-                {
-                  {
-                    {
-                      -- TITLE
-                      {
-                        {
-                          {
-                            align = "center",
-                            widget = naughty.widget.title,
-                          },
-                          margins = beautiful.notification_margin,
-                          widget  = wibox.container.margin,
-                        },
-                        -- BG of Titlebar
-                        bg = '#000000'.. '44',
-                        widget  = wibox.container.background,
-                      },
-                      -- ICON And Message
-                      {
-                        {
-                          {
-                            resize_strategy = 'center',
-                            widget = naughty.widget.icon,
-                          },
-                          margins = dpi(5),
-                          widget  = wibox.container.margin,
-                        },
-                        {
-                          {
-                            align = "center",
-                            widget = naughty.widget.message,
-                          },
-                          margins = beautiful.notification_margin,
-                          widget  = wibox.container.margin,
-                        },
-                        layout = wibox.layout.fixed.horizontal,
-                      },
-                      fill_space = true,
-                      spacing = beautiful.notification_margin,
-                      layout  = wibox.layout.fixed.vertical,
-                    },
-                    -- Margin between the fake background
-                    -- Set to 0 to preserve the 'titlebar' effect
-                    margins = dpi(0),
-                    widget  = wibox.container.margin,
-                  },
-                  bg = notification_bg,
-                  widget  = wibox.container.background,
-                },
-                -- Notification action list
-                naughty.list.actions,
-                spacing = dpi(4),
-                layout  = wibox.layout.fixed.vertical,
-              },
-              bg     = "#00000000",
-              id     = "background_role",
-              widget = naughty.container.background,
-            },
-            strategy = "min",
-            width    = dpi(160),
-            widget   = wibox.container.constraint,
-          },
-          strategy = "max",
-          width    = beautiful.notification_max_width or dpi(500),
-          widget   = wibox.container.constraint,
-        },
-        -- Anti-aliasing container
-        -- Real BG
-        bg = beautiful.bg_normal,
-        -- This will be the anti-aliased shape of the notification
-        shape = gears.shape.rounded_rect,
-        widget = wibox.container.background
-      },
-      -- Margin of the fake BG to have a space between notification and the screen edge
-      margins = beautiful.notification_margin,
-      widget  = wibox.container.margin
-    }
-  }
+
+	-- naughty.actions template
+	local actions_template = wibox.widget {
+		notification = n,
+		base_layout = wibox.widget {
+			spacing        = dpi(0),
+			layout         = wibox.layout.flex.horizontal
+		},
+		widget_template = {
+			{
+				{
+					{
+						{
+							id     = 'text_role',
+							font   = 'SF Pro Text Regular 10',
+							widget = wibox.widget.textbox
+						},
+						widget = wibox.container.place
+					},
+					widget = clickable_container
+				},
+				bg                 = beautiful.groups_bg,
+				shape              = gears.shape.rounded_rect,
+				forced_height      = dpi(30),
+				widget             = wibox.container.background
+			},
+			margins = dpi(4),
+			widget  = wibox.container.margin
+		},
+		style = { underline_normal = false, underline_selected = true },
+		widget = naughty.list.actions
+	}
+
+	-- Custom notification layout
+	naughty.layout.box {
+		notification = n,
+		type = "notification",
+		screen = awful.screen.preferred(),
+		shape = gears.shape.rectangle,
+		widget_template = {
+			{
+				{
+					{
+						{
+							{
+								{
+									{
+										{
+											{
+												{
+													{
+														markup = n.app_name or 'System Notification',
+														font = 'SF Pro Text Bold 10',
+														align = 'center',
+														valign = 'center',
+														widget = wibox.widget.textbox
+
+													},
+													margins = beautiful.notification_margin,
+													widget  = wibox.container.margin,
+												},
+												bg = '#000000'.. '44',
+												widget  = wibox.container.background,
+											},
+											{
+												{
+													{
+														resize_strategy = 'center',
+														widget = naughty.widget.icon,
+													},
+													margins = beautiful.notification_margin,
+													widget  = wibox.container.margin,
+												},
+												{
+													{
+														layout = wibox.layout.align.vertical,
+														expand = 'none',
+														nil,
+														{
+															{
+																align = 'left',
+																widget = naughty.widget.title
+															},
+															{
+																align = "left",
+																widget = naughty.widget.message,
+															},
+															layout = wibox.layout.fixed.vertical
+														},
+														nil
+													},
+													margins = beautiful.notification_margin,
+													widget  = wibox.container.margin,
+												},
+												layout = wibox.layout.fixed.horizontal,
+											},
+											fill_space = true,
+											spacing = beautiful.notification_margin,
+											layout  = wibox.layout.fixed.vertical,
+										},
+										-- Margin between the fake background
+										-- Set to 0 to preserve the 'titlebar' effect
+										margins = dpi(0),
+										widget  = wibox.container.margin,
+									},
+									bg = beautiful.transparent,
+									widget  = wibox.container.background,
+								},
+								-- Notification action list
+								-- naughty.list.actions,
+								actions_template,
+								spacing = dpi(4),
+								layout  = wibox.layout.fixed.vertical,
+							},
+							bg     = beautiful.transparent,
+							id     = "background_role",
+							widget = naughty.container.background,
+						},
+						strategy = "min",
+						width    = dpi(160),
+						widget   = wibox.container.constraint,
+					},
+					strategy = "max",
+					width    = beautiful.notification_max_width or dpi(500),
+					widget   = wibox.container.constraint,
+				},
+				-- Anti-aliasing container
+				-- Real BG
+				bg = beautiful.background,
+				-- This will be the anti-aliased shape of the notification
+				shape = gears.shape.rounded_rect,
+				widget = wibox.container.background
+			},
+			-- Margin of the fake BG to have a space between notification and the screen edge
+			margins = dpi(5),--beautiful.notification_margin,
+			widget  = wibox.container.margin
+		}
+	
+	}
+
+	-- Destroy popups if dont_disturb mode is on
+	-- Or if the right_panel is visible
+	local focused = awful.screen.focused()
+	if _G.dont_disturb or (focused.right_panel and focused.right_panel.visible) then
+		naughty.destroy_all_notifications()
+	end
+
 end)
