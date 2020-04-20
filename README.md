@@ -55,6 +55,7 @@ I have made my best effort to reduce the number of dependencies by using the awe
 ### Optional Dependencies ###
 These will improve the user experience but aren't required:
 **Bear in mind that most of these dependencies come preinstalled on non arch systems. I would recommend reading their descriptions below to determine which ones you need to install. Alternatively, set up my config and install the packages based on what isn't appearing in the top panel.**
++ `i3lock`: Will be opened when the lock icon is selected in the exit window
 + `acpi`: Battery managing cli application, used by top bar widget to determine battery status
 + `xfce4-power-manager`: Lightweight power manager spawned when the top panel battery icon is clicked
 + `bluez`, `bluez-utils`: Bluetooth cli application, used by top bar widget to determine if bluetooth is on
