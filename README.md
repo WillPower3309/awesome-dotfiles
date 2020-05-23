@@ -139,9 +139,14 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 ```
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
-3. Change the zsh theme to agnoster
+3. Change the zsh theme to powerlevel10k
+  + Install [this font](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
+  + Install powerlevel10k with the command below:
+  ```
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
+  ```
   + Open `~/.zshrc` with your fave text editor
-  + Set `ZSH_THEME="agnoster"` and save the file
+  + Set `ZSH_THEME="powerlevel10k/powerlevel10k"` and save the file
 4. Install Plugins (Note that the ~/.zshrc edits are already done in this repo)
   + Syntax highlighting (copy and paste the below command to install)
     ```
