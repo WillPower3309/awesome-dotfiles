@@ -24,7 +24,7 @@
 + **WM**: awesome
 + **Theme**: Qogir-dark
 + **Icons**: McMojave-Circle-Blue-Dark
-+ **Terminal**: kitty
++ **Terminal**: Alacritty
 
 <a name="features"></a>
 ## Features ##
@@ -95,10 +95,10 @@ In order to avoid a poorly organized `rc.lua` spanning thousands of lines, it ha
 <a name="applications"></a>
 ## My Preferred Applications ##
 + **Display Manager - SDDM (with sddm-sugar-dark theme)**: Beautiful display manager. Matches the window manager theme very well and looks amazing
-+ **Text Editor - nvim**: I'm an alpha chad
++ **Text Editor - doom emacs and nvim: I'm an alpha chad
 + **File Manager - Nautilus**: Lightweight file browser, few dependencies, and can be configured to work with a preferred terminal. Also has extensions for easy right click extraction / compression of archive files (ie zip / rar etc)
 + **Web Browser - Firefox**: Super configurable and isn't made by Google
-+ **Terminal - Kitty**: Used to use alacritty, switched to kitty as it is very fast and has great ligature implementation (which helps with programming in vim). Is very configurable and has built in tmux-like functionality
++ **Terminal - Alacritty**: A FREAKIN GPU ACCELERATED TERMINAL. So OP I love it
 + **Theme / Look & Feel Manager - lxappearance**: makes managing icon / cursor / application themes easy, only theme manager with no DE dependencies, and works very well
 
 ### Other cool applications you should install ###
