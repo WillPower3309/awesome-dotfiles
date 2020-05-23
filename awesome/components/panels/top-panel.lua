@@ -93,24 +93,6 @@ awesome.connect_signal("toggle_tray", function()
   end
 end)
 
--- open tag application button
-local add_button = mat_icon_button(mat_icon(icons.open, dpi(10)))
-add_button:buttons(
-  gears.table.join(
-    awful.button({}, 1, nil,
-      function()
-        awful.spawn(
-          awful.screen.focused().selected_tag.defaultApp,
-          {
-            tag = mouse.screen.selected_tag,
-            placement = awful.placement.bottom_right
-          }
-        )
-      end
-    )
-  )
-)
-
 
 -- ===================================================================
 -- Bar Creation
@@ -118,17 +100,16 @@ add_button:buttons(
 
 
 local TopPanel = function(s)
-  local panel = wibox {
+  local panel = awful.wibar({
     ontop = true,
     screen = s,
+    position = "top",
     height = dpi(26),
     width = s.geometry.width,
-    x = s.geometry.x,
-    y = s.geometry.y,
     stretch = false,
     bg = beautiful.bg_normal,
     fg = beautiful.fg_normal
-  }
+  })
 
   -- define space to push windows away (equal to bar length so windows dont cover panel)
   panel:struts({
@@ -141,18 +122,16 @@ local TopPanel = function(s)
     {
       layout = wibox.layout.fixed.horizontal,
       TaskList(s),
-      add_button
     },
 	  clock_widget,
     {
       layout = wibox.layout.fixed.horizontal,
       s.systray,
-      require('widgets.systemtray'),
-      require('widgets.package-updater'),
-      require('widgets.bluetooth'),
-      require('widgets.wifi'),
-      require('widgets.battery'),
-      require("widgets.layout-box")
+      --require('widgets.systemtray'),
+      --require('widgets.bluetooth'),
+      --require('widgets.wifi'),
+      --require('widgets.battery'),
+      --require("widgets.layout-box")
     }
   }
 

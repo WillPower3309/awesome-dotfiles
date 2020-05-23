@@ -1,7 +1,7 @@
 --       █████╗ ██╗    ██╗███████╗███████╗ ██████╗ ███╗   ███╗███████╗
 --      ██╔══██╗██║    ██║██╔════╝██╔════╝██╔═══██╗████╗ ████║██╔════╝
---      ███████║██║ █╗ ██║█████╗  ███████╗██║   ██║██╔████╔██║█████╗  
---      ██╔══██║██║███╗██║██╔══╝  ╚════██║██║   ██║██║╚██╔╝██║██╔══╝  
+--      ███████║██║ █╗ ██║█████╗  ███████╗██║   ██║██╔████╔██║█████╗
+--      ██╔══██║██║███╗██║██╔══╝  ╚════██║██║   ██║██║╚██╔╝██║██╔══╝
 --      ██║  ██║╚███╔███╔╝███████╗███████║╚██████╔╝██║ ╚═╝ ██║███████╗
 --      ╚═╝  ╚═╝ ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝
 
@@ -14,34 +14,69 @@
 local gears = require("gears")
 local awful = require("awful")
 
-local config_dir = gears.filesystem.get_configuration_dir()
-require("awful.autofocus")
-
 -- Import theme
 local beautiful = require("beautiful")
-beautiful.init(config_dir .. "/theme.lua")
+beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
+
+-- Import Keybinds
+local keys = require("keys")
+root.keys(keys.globalkeys)
+root.buttons(keys.desktopbuttons)
 
 -- Import rules
-awful.rules.rules = require("rules")
+local create_rules = require("rules")
+awful.rules.rules = create_rules(keys.clientkeys, keys.clientbuttons)
 
--- Import keybinds
-local keys = require("keys")
+-- Notification library
+local naughty = require("naughty")
 
--- Import Components
-require("components.notifications") -- startup error handling done in here
-require("components.panels")
-require("components.exit-screen")
-require("components.brightness-osd")
-require("components.volume-osd")
-require("components.wallpaper")
+-- {{{ Error handling
+-- Check if awesome encountered an error during startup and fell back to
+-- another config (This code will only ever execute for the fallback config)
+if awesome.startup_errors then
+    naughty.notify({ preset = naughty.config.presets.critical,
+                     title = "Oops, there were errors during startup!",
+                     text = awesome.startup_errors })
+end
+
+-- Handle runtime errors after startup
+do
+    local in_error = false
+    awesome.connect_signal("debug::error", function (err)
+        -- Make sure we don't go into an endless error loop
+        if in_error then return end
+        in_error = true
+
+        naughty.notify({ preset = naughty.config.presets.critical,
+                         title = "Oops, an error happened!",
+                         text = tostring(err) })
+        in_error = false
+    end)
+end
+-- }}}
+
 -- Import Tag Settings
 require("tags")
+
+-- Import Components
+require("components.exit-screen")
+require("components.wallpaper")
 
 
 -- ===================================================================
 -- Signals
 -- ===================================================================
 
+
+-- Set up each screen
+top_panel = require("components.panels.top-panel")
+left_panel = require("components.panels.left-panel")
+
+awful.screen.connect_for_each_screen(function (s)
+    awful.tag({"1", "2", "3", "4", "5", "6", "7", "8", "9"}, s, awful.layout.layouts[1])
+    s.top_panel = top_panel(s)
+    s.left_panel = left_panel(s)
+end)
 
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function (c)
@@ -64,10 +99,6 @@ end)
 client.connect_signal("mouse::enter", function(c)
     c:emit_signal("request::activate", "mouse_enter", {raise = false})
 end)
-
--- uncomment if using borders
---client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
---client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
 
 -- ===================================================================

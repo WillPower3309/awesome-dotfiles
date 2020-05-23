@@ -18,7 +18,7 @@ local naughty = require("naughty")
 -- Default Applications
 local apps = require("apps");
 
--- Define mod key
+-- Define mod keys
 local modkey = "Mod4"
 local altkey = "Mod1"
 
@@ -42,12 +42,15 @@ keys.desktopbuttons = gears.table.join(
 
 -- Mouse buttons on the client
 keys.clientbuttons = gears.table.join(
+    -- Raise client
     awful.button({}, 1,
         function(c)
             client.focus = c
             c:raise()
         end
     ),
+
+    -- Move and Resize Client
     awful.button({modkey}, 1, awful.mouse.client.move),
     awful.button({modkey}, 3, awful.mouse.client.resize)
 )
@@ -344,7 +347,7 @@ keys.globalkeys = gears.table.join(
         end,
         {description = "decrease the number of columns", group = "layout"}
     ),
-    
+
     -- =========================================
     -- LAYOUT SELECTION
     -- =========================================
@@ -363,7 +366,7 @@ keys.globalkeys = gears.table.join(
         end,
         {description = "select previous", group = "layout"}
     ),
-    
+
     -- =========================================
     -- CLIENT CONTROL
     -- =========================================
@@ -486,9 +489,5 @@ for i = 1, 9 do
         )
     )
 end
-
--- Set keys
-root.keys(keys.globalkeys)
-root.buttons(keys.desktopbuttons)
 
 return keys

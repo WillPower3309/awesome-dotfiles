@@ -1,9 +1,9 @@
---      ████████╗██╗  ██╗███████╗███╗   ███╗███████╗    
---      ╚══██╔══╝██║  ██║██╔════╝████╗ ████║██╔════╝    
---         ██║   ███████║█████╗  ██╔████╔██║█████╗      
---         ██║   ██╔══██║██╔══╝  ██║╚██╔╝██║██╔══╝      
---         ██║   ██║  ██║███████╗██║ ╚═╝ ██║███████╗    
---         ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝╚══════╝    
+--      ████████╗██╗  ██╗███████╗███╗   ███╗███████╗
+--      ╚══██╔══╝██║  ██║██╔════╝████╗ ████║██╔════╝
+--         ██║   ███████║█████╗  ██╔████╔██║█████╗
+--         ██║   ██╔══██║██╔══╝  ██║╚██╔╝██║██╔══╝
+--         ██║   ██║  ██║███████╗██║ ╚═╝ ██║███████╗
+--         ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝╚══════╝
 
 -- ===================================================================
 -- Imports
@@ -88,9 +88,9 @@ theme.menu_submenu = '' -- ➤
 
 
 -- You can use your own layout icons like this:
-theme.layout_tile = "~/.config/awesome/icons/layouts/view-quilt.png"
-theme.layout_floating = "~/.config/awesome/icons/layouts/view-float.png"
-theme.layout_max = "~/.config/awesome/icons/layouts/arrow-expand-all.png"
+--theme.layout_tile = "~/.config/awesome/icons/layouts/view-quilt.png"
+--theme.layout_floating = "~/.config/awesome/icons/layouts/view-float.png"
+--theme.layout_max = "~/.config/awesome/icons/layouts/arrow-expand-all.png"
 
 --theme.icon_theme = "McMojave-circle-blue-dark"
 

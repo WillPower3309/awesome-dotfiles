@@ -61,26 +61,26 @@ end
 -- ===================================================================
 
 
-function suspend_command()
+local function suspend_command()
   exit_screen_hide()
   awful.spawn.with_shell(apps.lock .. ' & systemctl suspend')
 end
 
-function exit_command()
+local function exit_command()
   awesome.quit()
 end
 
-function lock_command()
+local function lock_command()
   exit_screen_hide()
   awful.spawn.with_shell('sleep 1 && ' .. apps.lock)
 end
 
-function poweroff_command()
+local function poweroff_command()
   awful.spawn.with_shell('poweroff')
   awful.keygrabber.stop(exit_screen_grabber)
 end
 
-function reboot_command()
+local function reboot_command()
   awful.spawn.with_shell('reboot')
   awful.keygrabber.stop(exit_screen_grabber)
 end
@@ -149,11 +149,11 @@ exit_screen =
 
 -- define exit screen foreground and background
 exit_screen.bg = beautiful.bg_normal
-exit_screen.fg = '#FEFEFE'
+exit_screen.fg = beautiful.fg_normal
 
 local exit_screen_grabber
 
-function exit_screen_hide()
+local function exit_screen_hide()
   awful.keygrabber.stop(exit_screen_grabber)
   exit_screen.visible = false
 end
@@ -187,17 +187,13 @@ end
 exit_screen:buttons(
   gears.table.join(
     -- Middle click - Hide exit_screen
-    awful.button(
-      {},
-      2,
+    awful.button({}, 2,
       function()
         exit_screen_hide()
       end
     ),
     -- Right click - Hide exit_screen
-    awful.button(
-      {},
-      3,
+    awful.button({}, 3,
       function()
         exit_screen_hide()
       end

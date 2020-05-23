@@ -16,7 +16,7 @@ local filesystem = require('gears.filesystem')
 
 
 local apps = {
-    terminal = "kitty",
+    terminal = "alacritty",
     launcher = "rofi -normal-window -modi drun -show drun",
     lock = "i3lock",
     screenshot = "scrot -e 'mv $f ~/Pictures/ 2>/dev/null'",
@@ -52,7 +52,7 @@ local function run_once(cmd)
     end
     awful.spawn.with_shell(string.format('pgrep -u $USER -x %s > /dev/null || (%s)', findme, cmd), false)
 end
-  
+
 for _, app in ipairs(run_on_start_up) do
     run_once(app)
 end
