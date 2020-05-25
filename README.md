@@ -28,7 +28,7 @@
 
 <a name="features"></a>
 ## Features ##
-+ Lightweight: Uses ~350 MB of ram on my desktop!
++ Super lightweight
 + Easy installation / configuration
 + Very few dependencies
 + Wallpaper auto-blur functionality
@@ -39,6 +39,7 @@
 + Supports multi monitor setups!
   + The top bar appears on every monitor, and the side bar only appears on the main monitor
 + i3-like keybinds
++ Very stable: Built off of the awesome 4.3 release, no bleeding edge git versions required here!
 
 <a name="dependencies"></a>
 ## Dependencies ##
@@ -46,10 +47,10 @@ I have made my best effort to reduce the number of dependencies by using the awe
 
 |Dependency|Description|
 |:----------:|:-------------:|
-|`awesome-git`|Window manager - **must use git version.** If you are using an Arch based distro you can install it off of the AUR. Otherwise [refer to the installation instructions](https://github.com/awesomeWM/awesome/)|
+|`awesome`|Window manager|
 |`feh`|Fast image viewer used as wallpaper setting utility|
 |`picom`|Window compositor, eliminates screen tearing and allows for cool fade effects|
-|`rofi-git`|Application launcher - **must use git version**|
+|`rofi`|Application launcher|
 |`imagemagick`|Used in config to generate blurred wallpaper|
 
 ### Optional Dependencies ###
@@ -183,7 +184,6 @@ If you are new to awesomewm, note that tag refers to workspace, and client refer
 
 <a name="notes"></a>
 ## Notes ##
-+ **If the config isn't working there is a 99% chance it's because you are using `awesome` and not `awesome-git`.** Arch and Manjaro users can download the awesome-git package from the AUR, while users on other distros will need to build it from source. This sounds scary but is as simple as folling the steps outlined in [the official awesomeWM repo](https://github.com/awesomeWM/awesome/)
 + [Awesome API Documentation](https://awesomewm.org/apidoc/index.html)
 + If you encounter any problems please open an issue in this repo and I will gladly investigate it
 + If you would like to change the wallpaper, ensure that the wallpaper is named "wallpaper" and is located in the `~/.config/awesome` folder. Also ensure that you delete the blurred wallpaper file in order for the blurring script to recognize it needs to generate a new blurred wallpaper
