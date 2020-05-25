@@ -56,7 +56,7 @@ end
 -- }}}
 
 -- Import Tag Settings
-require("tags")
+local tags = require("tags")
 
 -- Import Components
 require("components.exit-screen")
@@ -64,7 +64,7 @@ require("components.wallpaper")
 
 
 -- ===================================================================
--- Signals
+-- Set Up Screen
 -- ===================================================================
 
 
@@ -72,11 +72,29 @@ require("components.wallpaper")
 top_panel = require("components.panels.top-panel")
 left_panel = require("components.panels.left-panel")
 
+
+-- define tag layouts
+awful.layout.layouts = {
+    awful.layout.suit.tile,
+    awful.layout.suit.floating,
+    awful.layout.suit.max,
+}
+
+
 awful.screen.connect_for_each_screen(function (s)
-    awful.tag({"1", "2", "3", "4", "5", "6", "7", "8", "9"}, s, awful.layout.layouts[1])
+    for i, tag in pairs(tags) do
+        awful.tag.add(i, {
+            icon = tag.icon,
+            icon_only = true,
+            layout = awful.layout.suit.tile,
+            screen = s,
+            selected = i == 1
+        })
+    end
+
     s.top_panel = top_panel(s)
     s.left_panel = left_panel(s)
-end)
+    end)
 
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function (c)
