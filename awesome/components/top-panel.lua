@@ -72,45 +72,6 @@ local month_calendar = awful.widget.calendar_popup.month({
 -- Attach calentar to clock_widget
 month_calendar:attach(clock_widget, "tc" , { on_pressed = true, on_hover = false })
 
--- Create to each screen
-screen.connect_signal("request::desktop_decoration", function(s)
-  s.systray = wibox.widget.systray()
-  s.systray.visible = false
-  s.systray:set_horizontal(true)
-  s.systray:set_base_size(28)
-  s.systray.opacity = 0.3
-  beautiful.systray_icon_spacing = 16
-end)
-
--- Execute only if system tray widget is not loaded
-awesome.connect_signal("toggle_tray", function()
-  if not require('widgets.systemtray') then
-    if awful.screen.focused().systray.visible ~= true then
-      awful.screen.focused().systray.visible = true
-    else
-      awful.screen.focused().systray.visible = false
-    end
-  end
-end)
-
--- open tag application button
-local add_button = mat_icon_button(mat_icon(icons.open, dpi(10)))
-add_button:buttons(
-  gears.table.join(
-    awful.button({}, 1, nil,
-      function()
-        awful.spawn(
-          awful.screen.focused().selected_tag.defaultApp,
-          {
-            tag = mouse.screen.selected_tag,
-            placement = awful.placement.bottom_right
-          }
-        )
-      end
-    )
-  )
-)
-
 
 -- ===================================================================
 -- Bar Creation
@@ -118,17 +79,16 @@ add_button:buttons(
 
 
 local TopPanel = function(s)
-  local panel = wibox {
+  local panel = awful.wibar({
     ontop = true,
     screen = s,
+    position = "top",
     height = dpi(26),
     width = s.geometry.width,
-    x = s.geometry.x,
-    y = s.geometry.y,
     stretch = false,
     bg = beautiful.bg_normal,
     fg = beautiful.fg_normal
-  }
+  })
 
   -- define space to push windows away (equal to bar length so windows dont cover panel)
   panel:struts({
@@ -141,14 +101,11 @@ local TopPanel = function(s)
     {
       layout = wibox.layout.fixed.horizontal,
       TaskList(s),
-      add_button
     },
-	  clock_widget,
+    clock_widget,
     {
       layout = wibox.layout.fixed.horizontal,
-      s.systray,
-      require('widgets.systemtray'),
-      require('widgets.package-updater'),
+      wibox.layout.margin(wibox.widget.systray(), 0, 0, 3, 3),
       require('widgets.bluetooth'),
       require('widgets.wifi'),
       require('widgets.battery'),

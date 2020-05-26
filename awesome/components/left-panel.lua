@@ -49,7 +49,7 @@ local LeftPanel = function(s)
     nil
   }
 
-  function maximizeLeftPanel(bool)
+  local function maximizeLeftPanel(bool)
     if bool then
       left_panel.height = s.geometry.height - dpi(26)
       left_panel.y = dpi(26)
