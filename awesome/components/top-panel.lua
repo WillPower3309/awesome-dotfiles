@@ -72,27 +72,6 @@ local month_calendar = awful.widget.calendar_popup.month({
 -- Attach calentar to clock_widget
 month_calendar:attach(clock_widget, "tc" , { on_pressed = true, on_hover = false })
 
--- Create to each screen
-screen.connect_signal("request::desktop_decoration", function(s)
-  s.systray = wibox.widget.systray()
-  s.systray.visible = false
-  s.systray:set_horizontal(true)
-  s.systray:set_base_size(28)
-  s.systray.opacity = 0.3
-  beautiful.systray_icon_spacing = 16
-end)
-
--- Execute only if system tray widget is not loaded
-awesome.connect_signal("toggle_tray", function()
-  if not require('widgets.systemtray') then
-    if awful.screen.focused().systray.visible ~= true then
-      awful.screen.focused().systray.visible = true
-    else
-      awful.screen.focused().systray.visible = false
-    end
-  end
-end)
-
 
 -- ===================================================================
 -- Bar Creation
@@ -123,15 +102,14 @@ local TopPanel = function(s)
       layout = wibox.layout.fixed.horizontal,
       TaskList(s),
     },
-	  clock_widget,
+    clock_widget,
     {
       layout = wibox.layout.fixed.horizontal,
-      s.systray,
-      --require('widgets.systemtray'),
-      --require('widgets.bluetooth'),
-      --require('widgets.wifi'),
-      --require('widgets.battery'),
-      --require("widgets.layout-box")
+      wibox.layout.margin(wibox.widget.systray(), 0, 0, 3, 3),
+      require('widgets.bluetooth'),
+      require('widgets.wifi'),
+      require('widgets.battery'),
+      require("widgets.layout-box")
     }
   }
 
