@@ -31,10 +31,9 @@ local apps = {
 
 -- List of apps to start once on start-up
 local run_on_start_up = {
-    "picom",
+    "picom --experimental-backends",
     "redshift",
-    "unclutter",
-    "flashfocus"
+    "unclutter"
 }
 
 
