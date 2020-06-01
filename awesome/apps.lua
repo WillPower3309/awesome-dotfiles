@@ -20,13 +20,6 @@ local apps = {
     launcher = "rofi -normal-window -modi drun -show drun",
     lock = "i3lock",
     screenshot = "scrot -e 'mv $f ~/Pictures/ 2>/dev/null'",
-    filebrowser = "nautilus",
-    browser = "firefox",
-    editor = "code",
-    musicPlayer = "spotify",
-    gameLauncher = "steam",
-    imageEditor = "gimp",
-    virtualMachineLauncher = "virt-manager"
 }
 
 -- List of apps to start once on start-up
