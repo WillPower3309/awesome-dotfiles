@@ -178,6 +178,7 @@ If you are new to awesomewm, note that tag refers to workspace, and client refer
 + `mod + space`: Change the tag layout, alternating between tiled, floating, and maximized
 + `mod + [up / down / left / right / h / j / k / l]`: Change client by direction
 + `mod + Shift + [up / down / left / right / h / j / k / l]`: Move client by direction
++ `mod + Control + [up / down / left / right / h / j / k / l]`: Resize client by direction
 
 ### Mouse ###
 + `mod + drag with left click`: Move client

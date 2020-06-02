@@ -15,6 +15,7 @@ local awful = require("awful")
 local gears = require("gears")
 local naughty = require("naughty")
 local beautiful = require("beautiful")
+local dpi = beautiful.xresources.apply_dpi
 
 -- Default Applications
 local apps = require("apps");
@@ -54,6 +55,35 @@ local function move_client(c, direction)
         end
     else
         awful.client.swap.bydirection(direction, c, nil)
+    end
+end
+
+
+-- Resize client in given direction
+local floating_resize_amount = dpi(20)
+local tiling_resize_factor = 0.05
+
+local function resize_client(c, direction)
+    if awful.layout.get(mouse.screen) == awful.layout.suit.floating or (c and c.floating) then
+        if direction == "up" then
+            c:relative_move(0,  0, 0, -floating_resize_amount)
+        elseif direction == "down" then
+            c:relative_move(0,  0, 0,  floating_resize_amount)
+        elseif direction == "left" then
+            c:relative_move(0,  0, -floating_resize_amount, 0)
+        elseif direction == "right" then
+            c:relative_move(0,  0,  floating_resize_amount, 0)
+        end
+    else
+        if direction == "up" then
+            awful.client.incwfact(-tiling_resize_factor)
+        elseif direction == "down" then
+            awful.client.incwfact( tiling_resize_factor)
+        elseif direction == "left" then
+            awful.tag.incmwfact(-tiling_resize_factor)
+        elseif direction == "right" then
+            awful.tag.incmwfact( tiling_resize_factor)
+        end
     end
 end
 
@@ -322,8 +352,32 @@ keys.globalkeys = gears.table.join(
     ),
 
     -- =========================================
-    -- CLIENT RESIZING (TODO)
+    -- CLIENT RESIZING
     -- =========================================
+    awful.key({ modkey, "Control" }, "Down", function (c)
+        resize_client(client.focus, "down")
+    end),
+    awful.key({ modkey, "Control" }, "Up", function (c)
+        resize_client(client.focus, "up")
+    end),
+    awful.key({ modkey, "Control" }, "Left", function (c)
+        resize_client(client.focus, "left")
+    end),
+    awful.key({ modkey, "Control" }, "Right", function (c)
+        resize_client(client.focus, "right")
+    end),
+    awful.key({ modkey, "Control" }, "j", function (c)
+        resize_client(client.focus, "down")
+    end),
+    awful.key({ modkey, "Control" }, "k", function (c)
+        resize_client(client.focus, "up")
+    end),
+    awful.key({ modkey, "Control" }, "h", function (c)
+        resize_client(client.focus, "left")
+    end),
+    awful.key({ modkey, "Control" }, "l", function (c)
+        resize_client(client.focus, "right")
+    end),
 
     -- =========================================
     -- NUMBER OF MASTER / COLUMN CLIENTS
