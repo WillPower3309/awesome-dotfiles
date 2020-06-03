@@ -22,8 +22,9 @@
 + **OS**: Arch Linux
 + **Shell**: ZSH
 + **WM**: awesome
-+ **Theme**: Qogir-dark
-+ **Icons**: McMojave-Circle-Blue-Dark
++ **Theme**: Qogir Dark
++ **Icons**: Tela Dark
++ **Cursor**: xBreeze Light
 + **Terminal**: Alacritty
 
 <a name="features"></a>
@@ -34,7 +35,7 @@
 + Wallpaper auto-blur functionality
 + Log out / shutdown / restart / lock screen
 + Volume / brightness adjustment widgets with sliders
-+ Integrated dpi / resolution scaling
++ Automatic dpi / resolution scaling
   + Note that xft.dpi must be properly assigned in the .Xresources file if you are using a high DPI screen
 + Supports multi monitor setups!
   + The top bar appears on every monitor, and the side bar only appears on the main monitor
