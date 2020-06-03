@@ -135,21 +135,19 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 4. Exit and reopen neovim
 
 ### Zsh ###
-**[Guide](https://www.freecodecamp.org/news/jazz-up-your-zsh-terminal-in-seven-steps-a-visual-guide-e81a8fd59a38/) if you are having trouble following the steps below**
-1. Install a font that supports powerline, my favourites are Fira Code and Source Code Pro, however a quick google search will show many other great fonts
-2. Install oh-my-zsh
+1. Install oh-my-zsh
 ```
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
-3. Change the zsh theme to powerlevel10k
-  + Install [this font](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
+2. Change the zsh theme to powerlevel10k
+  + Download [this font](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf), and move it into your `/usr/share/fonts` directory
   + Install powerlevel10k with the command below:
   ```
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
   ```
   + Open `~/.zshrc` with your fave text editor
   + Set `ZSH_THEME="powerlevel10k/powerlevel10k"` and save the file
-4. Install Plugins (Note that the ~/.zshrc edits are already done in this repo)
+3. Install Plugins (Note that the ~/.zshrc edits are already done in this repo)
   + Syntax highlighting (copy and paste the below command to install)
     ```
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
