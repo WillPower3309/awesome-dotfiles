@@ -1,6 +1,6 @@
 configuration {
     show-icons:                     true;
-    icon-theme:                     "McMojave-circle-dark";
+    icon-theme:                     "Tela-dark";
     font:                           "SF Pro Display 14";
 }
 
