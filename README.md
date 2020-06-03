@@ -24,7 +24,7 @@
 + **WM**: awesome
 + **Theme**: Qogir Dark
 + **Icons**: Tela Dark
-+ **Cursor**: xBreeze Light
++ **Cursor**: xCursor Breeze Light
 + **Terminal**: Alacritty
 
 <a name="features"></a>
