@@ -70,7 +70,7 @@ These will improve the user experience but aren't required:
 
 ### Fonts You Should Install ###
 + `SF Text`: System font used by macOS, iOS, and watchOS. Used in this config as the WM font. Also used as font for firefox
-+ `Fira Code`: Great monospaced font with ligature support, used in terminal and text editors
++ [`MesloLGS`](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf): Terminal font, customized to work flawlessly with the zsh theme used, mentioned in the [application theming](#appTheming) section of the readme.
 
 <a name="installation"></a>
 ## Installation ##
