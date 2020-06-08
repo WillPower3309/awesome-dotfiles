@@ -72,15 +72,6 @@ theme.tasklist_fg_focus = theme.fg_focus
 theme.tasklist_fg_urgent = theme.fg_urgent
 theme.tasklist_fg_normal = theme.fg_normal
 
--- Notifications
-theme.notification_max_width = dpi(500)
-theme.notification_margin = dpi(5)
-theme.notification_padding = dpi(8)
-
--- Menu
-theme.menu_font = theme.font
-theme.menu_submenu = '' -- ➤
-
 
 -- ===================================================================
 -- Icons
