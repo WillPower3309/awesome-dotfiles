@@ -18,7 +18,7 @@ local beautiful = require("beautiful")
 local dpi = beautiful.xresources.apply_dpi
 
 -- Default Applications
-local apps = require("apps");
+local apps = require("apps").default
 
 -- Define mod keys
 local modkey = "Mod4"

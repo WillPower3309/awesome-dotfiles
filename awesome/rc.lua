@@ -37,6 +37,10 @@ local tags = require("tags")
 require("components.exit-screen")
 require("components.wallpaper")
 
+-- Autostart specified apps
+local apps = require("apps")
+apps.autostart()
+
 
 -- ===================================================================
 -- Set Up Screen
