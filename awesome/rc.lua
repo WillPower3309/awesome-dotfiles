@@ -24,7 +24,7 @@ root.keys(keys.globalkeys)
 root.buttons(keys.desktopbuttons)
 
 -- Import rules
-local create_rules = require("rules")
+local create_rules = require("rules").create
 awful.rules.rules = create_rules(keys.clientkeys, keys.clientbuttons)
 
 -- Notification library
@@ -43,53 +43,49 @@ require("components.wallpaper")
 -- ===================================================================
 
 
--- Set up each screen
-create_top_panel = require("components.top-panel")
-create_left_panel = require("components.left-panel")
-
-
 -- define tag layouts
 awful.layout.layouts = {
-    awful.layout.suit.tile,
-    awful.layout.suit.floating,
-    awful.layout.suit.max,
+   awful.layout.suit.tile,
+   awful.layout.suit.floating,
+   awful.layout.suit.max,
 }
 
+-- Set up each screen
+local top_panel = require("components.top-panel")
+local left_panel = require("components.left-panel")
 
-awful.screen.connect_for_each_screen(function (s)
-    for i, tag in pairs(tags) do
-        awful.tag.add(i, {
-            icon = tag.icon,
-            icon_only = true,
-            layout = awful.layout.suit.tile,
-            screen = s,
-            selected = i == 1
-        })
-    end
+awful.screen.connect_for_each_screen(function(s)
+   for i, tag in pairs(tags) do
+      awful.tag.add(i, {
+         icon = tag.icon,
+         icon_only = true,
+         layout = awful.layout.suit.tile,
+         screen = s,
+         selected = i == 1
+      })
+   end
 
-    s.top_panel = create_top_panel(s)
-    s.left_panel = create_left_panel(s)
+   s.top_panel = top_panel.create(s)
+   s.left_panel = left_panel.create(s)
 end)
 
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function (c)
-    -- Set the window as a slave (put it at the end of others instead of setting it master)
-    if not awesome.startup then
-        awful.client.setslave(c)
-    end
+   -- Set the window as a slave (put it at the end of others instead of setting it master)
+   if not awesome.startup then
+      awful.client.setslave(c)
+   end
 
-    if awesome.startup
-      and not c.size_hints.user_position
-      and not c.size_hints.program_position then
-        -- Prevent clients from being unreachable after screen count changes.
-        awful.placement.no_offscreen(c)
-    end
+   if awesome.startup and not c.size_hints.user_position and not c.size_hints.program_position then
+      -- Prevent clients from being unreachable after screen count changes.
+      awful.placement.no_offscreen(c)
+   end
 end)
 
 -- Enable sloppy focus, so that focus follows mouse.
 require("awful.autofocus")
 client.connect_signal("mouse::enter", function(c)
-    c:emit_signal("request::activate", "mouse_enter", {raise = false})
+   c:emit_signal("request::activate", "mouse_enter", {raise = false})
 end)
 
 

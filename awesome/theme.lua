@@ -6,14 +6,14 @@
 --         ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝╚══════╝
 
 -- ===================================================================
--- Imports
+-- Initialization
 -- ===================================================================
 
 
-local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 
+-- define module table
 local theme = {}
 
 
@@ -57,8 +57,8 @@ theme.titlebar_bg_focus = theme.titlebar_bg -- make titlebars not change color w
 
 -- Taglist
 theme.taglist_bg_empty = theme.bg_normal
-theme.taglist_bg_occupied = '#ffffff1A'
-theme.taglist_bg_urgent = '#E91E6399'
+theme.taglist_bg_occupied = "#ffffff1A"
+theme.taglist_bg_urgent = "#E91E6399"
 theme.taglist_bg_focus = theme.bg_focus
 
 -- Tasklist

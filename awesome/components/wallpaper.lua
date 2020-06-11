@@ -13,7 +13,6 @@
 local awful = require("awful")
 local gears = require("gears")
 local naughty = require("naughty")
-local config_dir = gears.filesystem.get_configuration_dir()
 
 
 -- ===================================================================
@@ -21,10 +20,11 @@ local config_dir = gears.filesystem.get_configuration_dir()
 -- ===================================================================
 
 
-local blurred = false;
+local is_blurred = false;
 
+local config_dir = gears.filesystem.get_configuration_dir()
 local wallpaper = config_dir .. "/wallpaper.jpg"
-local blurredWallpaper = config_dir .. "/blurredWallpaper.png"
+local blurred_wallpaper = config_dir .. "/blurredWallpaper.png"
 
 awful.spawn.with_shell("feh --bg-fill " .. wallpaper)
 
@@ -41,11 +41,11 @@ local function exists(file)
 end
 
 -- check if blurred wallpaper needs to be created
-if not exists(blurredWallpaper) then
-  naughty.notify({
-     preset = naughty.config.presets.normal,
-     title = 'Wallpaper',
-     text = 'Generating blurred wallpaper...'
+if not exists(blurred_wallpaper) then
+   naughty.notify({
+      preset = naughty.config.presets.normal,
+      title = 'Wallpaper',
+      text = 'Generating blurred wallpaper...'
    })
    -- uses image magick to create a blurred version of the wallpaper
    awful.spawn.with_shell("convert -filter Gaussian -blur 0x30 " .. wallpaper .. " " .. blurredWallpaper)
@@ -59,28 +59,28 @@ end
 
 -- changes to blurred wallpaper
 local function blur()
-   if not blurred then
-      awful.spawn.with_shell("feh --bg-fill " .. blurredWallpaper)
-      blurred = true
+   if not is_blurred then
+      awful.spawn.with_shell("feh --bg-fill " .. blurred_wallpaper)
+      is_blurred = true
    end
 end
 
 -- changes to normal wallpaper
 local function unblur()
-   if blurred then
+   if is_blurred then
       awful.spawn.with_shell("feh --bg-fill " .. wallpaper)
-      blurred = false
+      is_blurred = false
    end
 end
 
 -- blur / unblur on tag change
 tag.connect_signal('property::selected', function(t)
-   -- if tag has clients
+   -- check if tag has any clients
    for _ in pairs(t:clients()) do
       blur()
       return
    end
-   -- if tag has no clients
+   -- unblur if tag has no clients
    unblur()
 end)
 
@@ -92,10 +92,10 @@ end)
 -- check if wallpaper should be unblurred on client close
 client.connect_signal("unmanage", function(c)
    local t = awful.screen.focused().selected_tag
-   -- check if any open clients
+   -- check if tag has any clients
    for _ in pairs(t:clients()) do
       return
    end
-   -- unblur if no open clients
+   -- unblur if tag has no clients
    unblur()
 end)
