@@ -16,7 +16,7 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 local icons = require("icons")
 local clickable_container = require("widgets.clickable-container")
-local apps = require("apps")
+local apps = require("apps").default
 local dpi = require("beautiful").xresources.apply_dpi
 
 
