@@ -10,13 +10,15 @@
 -- ===================================================================
 
 
-local beautiful = require('beautiful')
-local wibox = require('wibox')
-local dpi = require('beautiful').xresources.apply_dpi
-local awful = require('awful')
-local gears = require('gears')
+local beautiful = require("beautiful")
+local wibox = require("wibox")
+local dpi = require("beautiful").xresources.apply_dpi
+local awful = require("awful")
+local gears = require("gears")
 
-local tag_list = require('widgets.tag-list')
+local tag_list = require("widgets.tag-list")
+local separator = require("widgets.horizontal-separator")
+local folder = require("widgets.folder")
 
 -- define module table
 local left_panel = {}
@@ -47,7 +49,15 @@ left_panel.create = function(s)
          -- add taglist widget
          tag_list.create(s),
          -- add folders widgets
-         require("widgets.xdg-folders"),
+         {
+            separator,
+            folder.create("Home"),
+            folder.create("Documents"),
+            folder.create("Downloads"),
+            separator,
+            folder.create("Trash"),
+            layout = wibox.layout.fixed.vertical,
+         }
       },
       nil
    }
