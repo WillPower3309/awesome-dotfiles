@@ -20,6 +20,8 @@ local tag_list = require("widgets.tag-list")
 local separator = require("widgets.horizontal-separator")
 local folder = require("widgets.folder")
 
+local home_dir = os.getenv("HOME")
+
 -- define module table
 local left_panel = {}
 
@@ -51,11 +53,11 @@ left_panel.create = function(s)
          -- add folders widgets
          {
             separator,
-            folder.create("Home"),
-            folder.create("Documents"),
-            folder.create("Downloads"),
+            folder.create(home_dir),
+            folder.create(home_dir .. "/Documents"),
+            folder.create(home_dir .. "/Downloads"),
             separator,
-            folder.create("Trash"),
+            folder.create(home_dir .. "/.local/share/Trash/files"),
             layout = wibox.layout.fixed.vertical,
          }
       },

@@ -1,3 +1,8 @@
+-- ===================================================================
+-- Initialization
+-- ===================================================================
+
+
 local awful = require("awful")
 local wibox = require("wibox")
 local clickable_container = require("widgets.clickable-container")
@@ -6,13 +11,37 @@ local dpi = require("beautiful").xresources.apply_dpi
 
 local filebrowser = require("apps").default.filebrowser
 
-local PATH_TO_ICONS = os.getenv("HOME") .. "/.config/awesome/icons/folders/"
+local HOME_DIR = os.getenv("HOME")
+local PATH_TO_ICONS = HOME_DIR .. "/.config/awesome/icons/folders/"
 
 -- define module table
 local folder = {}
 
 
-function folder.create(location)
+-- ===================================================================
+-- Helper Functions
+-- ===================================================================
+
+
+-- split a string into a list based on a deliminator
+local function split_string(inputstr, delim)
+   if delim == nil then
+      delim = "%s"
+   end
+   local t={}
+   for str in string.gmatch(inputstr, "([^"..delim.."]+)") do
+      table.insert(t, str)
+   end
+   return t
+end
+
+
+-- ===================================================================
+-- Functionality
+-- ===================================================================
+
+
+function folder.create(directory)
    local docu_widget = wibox.widget {
       {
          id = "icon",
@@ -27,31 +56,35 @@ function folder.create(location)
       gears.table.join(
          awful.button({}, 1, nil,
             function()
-               if location ~= 'Home' and location ~='Trash' then
-                  awful.spawn.easy_async_with_shell(filebrowser .. " $HOME/" .. location, function(stderr) end, 1)
-               elseif location == 'Home' then
-                  awful.spawn.easy_async_with_shell(filebrowser .. " $HOME", function(stderr) end, 1)
-               else
-                  awful.spawn.easy_async_with_shell(filebrowser .. " trash://", function(stderr) end, 1)
-               end
+               awful.spawn.easy_async_with_shell(filebrowser .. " " .. directory, function(stderr) end, 1)
             end
          )
       )
    )
 
-   awful.tooltip(
-      {
-         objects = {docu_button},
-         mode = "outside",
-         align = "right",
-         timer_function = function()
-            return location
-         end,
-         preferred_positions = {"right", "left", "top", "bottom"}
-      }
-   )
+   -- determine hover name & icon to use
+   -- icon name must correspond with name of folder
+   local folder_name = ""
+   if directory == HOME_DIR then
+      folder_name = "Home"
+   elseif directory == HOME_DIR .. "/.local/share/Trash/files" then
+      folder_name = "Trash"
+   else
+      local dir_list = split_string(directory, "/")
+      folder_name = dir_list[#dir_list]
+   end
 
-   docu_widget.icon:set_image(PATH_TO_ICONS .. location:lower() .. ".png")
+   awful.tooltip({
+      objects = {docu_button},
+      mode = "outside",
+      align = "right",
+      timer_function = function()
+         return folder_name
+      end,
+      preferred_positions = {"right", "left", "top", "bottom"}
+   })
+
+   docu_widget.icon:set_image(PATH_TO_ICONS .. folder_name:lower() .. ".png")
    return docu_button
 end
 
