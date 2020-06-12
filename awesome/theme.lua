@@ -23,42 +23,39 @@ local theme = {}
 
 
 -- Font
-theme.font          = "SF Pro Text 9"
-theme.title_font    = "SF Pro Display Medium 10"
+theme.font = "SF Pro Text 9"
+theme.title_font = "SF Pro Display Medium 10"
 
 -- Background
-theme.bg_normal     = "#1f2430"
-theme.bg_dark       = "#000000"
-theme.bg_focus      = "#151821"
-theme.bg_urgent     = "#3f3f3f"
-theme.bg_minimize   = "#444444"
-theme.bg_systray    = theme.bg_normal
+theme.bg_normal = "#1f2430"
+theme.bg_dark = "#000000"
+theme.bg_focus = "#151821"
+theme.bg_urgent = "#ed8274"
+theme.bg_minimize = "#444444"
+theme.bg_systray = theme.bg_normal
 
 -- Foreground
-theme.fg_normal     = "#ffffff"
-theme.fg_focus      = "#e4e4e4"
-theme.fg_urgent     = "#cc9393"
-theme.fg_minimize   = "#ffffff"
+theme.fg_normal = "#ffffff"
+theme.fg_focus = "#e4e4e4"
+theme.fg_urgent = "#cc9393"
+theme.fg_minimize = "#ffffff"
 
--- Sizing
-theme.useless_gap         = dpi(7)            -- window gap distance
-theme.gap_single_client   = true              -- gaps if only one window is open?
+-- Window Gap Distance
+theme.useless_gap = dpi(7)
+
+-- Show Gaps if Only One Client is Visible
+theme.gap_single_client = true
 
 -- Window Borders
-theme.border_width          = dpi(0)            -- window border width
-theme.border_normal         = theme.bg_normal
-theme.border_focus          = "#ff8a65"
-theme.border_marked         = theme.fg_urgent
-
--- Titlebars
-theme.titlebar_font = theme.title_font
-theme.titlebar_bg = theme.bg_normal
-theme.titlebar_bg_focus = theme.titlebar_bg -- make titlebars not change color when focused
+theme.border_width = dpi(0)
+theme.border_normal = theme.bg_normal
+theme.border_focus = "#ff8a65"
+theme.border_marked = theme.fg_urgent
 
 -- Taglist
 theme.taglist_bg_empty = theme.bg_normal
-theme.taglist_bg_occupied = "#ffffff1A"
-theme.taglist_bg_urgent = "#E91E6399"
+theme.taglist_bg_occupied = "#ffffff1a"
+theme.taglist_bg_urgent = "#e91e6399"
 theme.taglist_bg_focus = theme.bg_focus
 
 -- Tasklist
