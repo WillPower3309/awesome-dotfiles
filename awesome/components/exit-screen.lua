@@ -14,10 +14,11 @@ local awful = require("awful")
 local gears = require("gears")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
-local icons = require("icons")
 local clickable_container = require("widgets.clickable-container")
+
 local apps = require("apps").default
 local dpi = require("beautiful").xresources.apply_dpi
+local ICON_DIR = gears.filesystem.get_configuration_dir() .. "/icons/exit-screen/"
 
 
 -- ===================================================================
@@ -84,7 +85,7 @@ local function reboot_command()
    awful.keygrabber.stop(exit_screen_grabber)
 end
 
-local poweroff = build_button(icons.power, "Shutdown")
+local poweroff = build_button(ICON_DIR .. "power.png", "Shutdown")
 poweroff:connect_signal(
    "button::release",
    function()
@@ -92,7 +93,7 @@ poweroff:connect_signal(
    end
 )
 
-local reboot = build_button(icons.restart, "Restart")
+local reboot = build_button(ICON_DIR .. "restart.png", "Restart")
 reboot:connect_signal(
    "button::release",
    function()
@@ -100,7 +101,7 @@ reboot:connect_signal(
    end
 )
 
-local suspend = build_button(icons.sleep, "Sleep")
+local suspend = build_button(ICON_DIR .. "sleep.png", "Sleep")
 suspend:connect_signal(
    "button::release",
    function()
@@ -108,7 +109,7 @@ suspend:connect_signal(
    end
 )
 
-local exit = build_button(icons.logout, "Logout")
+local exit = build_button(ICON_DIR .. "logout.png", "Logout")
 exit:connect_signal(
    "button::release",
    function()
@@ -116,7 +117,7 @@ exit:connect_signal(
    end
 )
 
-local lock = build_button(icons.lock, "Lock")
+local lock = build_button(ICON_DIR .. "lock.png", "Lock")
 lock:connect_signal(
    "button::release",
    function()
