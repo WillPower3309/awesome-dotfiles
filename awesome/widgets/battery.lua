@@ -1,3 +1,10 @@
+--      ██████╗  █████╗ ████████╗████████╗███████╗██████╗ ██╗   ██╗
+--      ██╔══██╗██╔══██╗╚══██╔══╝╚══██╔══╝██╔════╝██╔══██╗╚██╗ ██╔╝
+--      ██████╔╝███████║   ██║      ██║   █████╗  ██████╔╝ ╚████╔╝
+--      ██╔══██╗██╔══██║   ██║      ██║   ██╔══╝  ██╔══██╗  ╚██╔╝
+--      ██████╔╝██║  ██║   ██║      ██║   ███████╗██║  ██║   ██║
+--      ╚═════╝ ╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚═╝  ╚═╝   ╚═╝
+
 -------------------------------------------------
 -- Battery Widget for Awesome Window Manager
 -- Shows the battery status using the ACPI tool
@@ -8,6 +15,12 @@
 -- @copyright 2017 Pavel Makhov
 -------------------------------------------------
 
+
+-- ===================================================================
+-- Initialization
+-- ===================================================================
+
+
 local awful = require("awful")
 local watch = require("awful.widget.watch")
 local wibox = require("wibox")
@@ -16,6 +29,12 @@ local gears = require("gears")
 local dpi = require("beautiful").xresources.apply_dpi
 
 local PATH_TO_ICONS = os.getenv("HOME") .. "/.config/awesome/icons/battery/"
+
+
+-- ===================================================================
+-- Widget Creation
+-- ===================================================================
+
 
 local widget = wibox.widget {
    {

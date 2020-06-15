@@ -1,3 +1,15 @@
+--      ████████╗ █████╗  ██████╗     ██╗     ██╗███████╗████████╗
+--      ╚══██╔══╝██╔══██╗██╔════╝     ██║     ██║██╔════╝╚══██╔══╝
+--         ██║   ███████║██║  ███╗    ██║     ██║███████╗   ██║
+--         ██║   ██╔══██║██║   ██║    ██║     ██║╚════██║   ██║
+--         ██║   ██║  ██║╚██████╔╝    ███████╗██║███████║   ██║
+--         ╚═╝   ╚═╝  ╚═╝ ╚═════╝     ╚══════╝╚═╝╚══════╝   ╚═╝
+
+-- ===================================================================
+-- Initialization
+-- ===================================================================
+
+
 local awful = require('awful')
 local wibox = require('wibox')
 local dpi = require('beautiful').xresources.apply_dpi
@@ -8,6 +20,13 @@ local modkey = require('keys').modkey
 -- define module table
 local tag_list = {}
 
+
+-- ===================================================================
+-- Widget Creation Functions
+-- ===================================================================
+
+
+-- Create buttons
 local function create_buttons(buttons, object)
    if buttons then
       local btns = {}
@@ -34,6 +53,7 @@ local function create_buttons(buttons, object)
    end
 end
 
+-- Update the taglist
 local function list_update(w, buttons, label, data, objects)
    -- update the widgets, creating them if needed
    w:reset()
@@ -99,6 +119,7 @@ local function list_update(w, buttons, label, data, objects)
    end
 end
 
+-- create the tag list widget
 tag_list.create = function(s)
    return awful.widget.taglist(
       s,
