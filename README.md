@@ -76,7 +76,7 @@ These will improve the user experience but aren't required:
 ## Installation ##
 1. Ensure all [dependencies](#dependencies) are met
 2. Clone this repository and place its contents into your `.config` folder
-3. navigate to the `awesome` folder and place your desired wallpaper there, ensuring that it is named `wallpaper`. One  awesome (pun intended) feature of my config is that the filetype of the wallpaper can be any image filetype and it will automatically recognize it. Remember to delete the `blurredWallpaper` file in order to make the blurring script recognize a new wallpaper has been added and needs to be blurred 
+3. navigate to the `awesome/wallpaper` folder and place your desired wallpaper there, ensuring that it is named `wallpaper`. One  awesome (pun intended) feature of my config is that the filetype of the wallpaper can be any image filetype and it will automatically recognize it. Remember to delete the `blurredWallpaper` file in order to make the blurring script recognize a new wallpaper has been added and needs to be blurred 
 4. edit the `apps.lua` file to define your desired default and startup applications.
 5. If the wifi top bar widget is not working, edit the `widgets/wifi.lua` file and ensure that the `local interface` variable matches your wifi interface name (if you are unsure how to find your interface name, check out [this discussion](https://bbs.archlinux.org/viewtopic.php?id=166171)).
 6. optional: edit the `keys.lua` file to change / add keybinds
@@ -92,7 +92,8 @@ In order to avoid a poorly organized `rc.lua` spanning thousands of lines, it ha
 + `tags.lua`: Contains tag (aka workspace) information, edit this to change the tag's icon and behaviour
 + `icons`: stores icons used in WM
 + `components`: Folder that contains all of the components of the WM, such as panels, volume and brightness sliders, notification pop-ups, etc
-+ `widgets`: stores widgets used in the functionality of the components
++ `widgets`: Stores widgets used in the functionality of the components
++ `wallpaper`: Where wallpaper and its blurred varient is generated / stored
 
 <a name="applications"></a>
 ## My Preferred Applications ##
