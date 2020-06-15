@@ -87,11 +87,8 @@ top_panel.create = function(s)
    panel:setup {
       expand = "none",
       layout = wibox.layout.align.horizontal,
-      {
-         layout = wibox.layout.fixed.horizontal,
-         task_list.create(s),
-      },
-         clock_widget,
+      task_list.create(s),
+      clock_widget,
       {
          layout = wibox.layout.fixed.horizontal,
          wibox.layout.margin(wibox.widget.systray(), 0, 0, 3, 3),
