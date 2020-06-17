@@ -37,7 +37,7 @@ theme.bg_systray = theme.bg_normal
 -- Foreground
 theme.fg_normal = "#ffffff"
 theme.fg_focus = "#e4e4e4"
-theme.fg_urgent = "#cc9393"
+theme.fg_urgent = "#ffffff"
 theme.fg_minimize = "#ffffff"
 
 -- Window Gap Distance
