@@ -10,12 +10,12 @@
 -- ===================================================================
 
 
-local naughty = require('naughty')
-local beautiful = require('beautiful')
-local gears = require('gears')
-local wibox = require('wibox')
-local awful = require('awful')
-local dpi = require('beautiful').xresources.apply_dpi
+local naughty = require("naughty")
+local beautiful = require("beautiful")
+local gears = require("gears")
+local wibox = require("wibox")
+local awful = require("awful")
+local dpi = require("beautiful").xresources.apply_dpi
 
 
 -- ===================================================================
@@ -31,14 +31,14 @@ naughty.config.defaults.timeout = 3
 naughty.config.defaults.shape = function(cr, w, h)
    gears.shape.rounded_rect(cr, w, h, dpi(6))
 end
-naughty.config.defaults.title = 'System Notification'
+naughty.config.defaults.title = "System Notification"
 
 -- Apply theme variables
 naughty.config.padding = dpi(7)
 naughty.config.spacing = dpi(7)
 naughty.config.defaults.margin = dpi(16)
 naughty.config.defaults.border_width = 0
-naughty.config.defaults.position = 'top_right'
+naughty.config.defaults.position = "top_right"
 
 -- Timeouts
 naughty.config.presets.low.timeout = 3
@@ -48,21 +48,21 @@ naughty.config.presets.normal = {
    font = beautiful.title_font,
    fg = beautiful.fg_normal,
    bg = beautiful.bg_normal,
-   position = 'top_right'
+   position = "top_right"
 }
 
 naughty.config.presets.low = {
    font = beautiful.title_font,
    fg = beautiful.fg_normal,
    bg = beautiful.bg_normal,
-   position = 'top_right'
+   position = "top_right"
 }
 
 naughty.config.presets.critical = {
-   font = 'SF Display Bold 10',
-   fg = '#ffffff',
-   bg = '#ff0000',
-   position = 'top_right',
+   font = "SF Display Bold 10",
+   fg = "#ffffff",
+   bg = "#ff0000",
+   position = "top_right",
    timeout = 0
 }
 
@@ -79,7 +79,7 @@ naughty.config.presets.warn = naughty.config.presets.critical
 if awesome.startup_errors then
    naughty.notify({
       preset = naughty.config.presets.critical,
-      title = 'Oops, there were errors during startup!',
+      title = "Oops, there were errors during startup!",
       text = awesome.startup_errors
    })
 end
@@ -87,7 +87,7 @@ end
 do
    local in_error = false
    awesome.connect_signal(
-      'debug::error',
+      "debug::error",
       function(err)
          if in_error then
             return
@@ -96,7 +96,7 @@ do
 
          naughty.notify({
             preset = naughty.config.presets.critical,
-            title = 'Oops, an error happened!',
+            title = "Oops, an error happened!",
             text = tostring(err)
          })
          in_error = false
