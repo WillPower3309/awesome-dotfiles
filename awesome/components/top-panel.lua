@@ -80,7 +80,7 @@ top_panel.create = function(s)
    local panel = awful.wibar({
       screen = s,
       position = "top",
-      height = dpi(26),
+      height = beautiful.top_panel_height,
       width = s.geometry.width,
    })
 
@@ -98,8 +98,6 @@ top_panel.create = function(s)
          require("widgets.layout-box")
       }
    }
-
-   return panel
 end
 
 return top_panel

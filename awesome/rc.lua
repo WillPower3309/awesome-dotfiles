@@ -55,8 +55,8 @@ awful.layout.layouts = {
 }
 
 -- Set up each screen
-local top_panel = require("components.top-panel")
 local left_panel = require("components.left-panel")
+local top_panel = require("components.top-panel")
 
 awful.screen.connect_for_each_screen(function(s)
    for i, tag in pairs(tags) do
@@ -69,13 +69,13 @@ awful.screen.connect_for_each_screen(function(s)
       })
    end
 
-   s.top_panel = top_panel.create(s)
-   s.left_panel = left_panel.create(s)
+   left_panel.create(s)
+   top_panel.create(s)
 end)
 
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function (c)
-   -- Set the window as a slave (put it at the end of others instead of setting it master)
+   -- Set the window as a slave (put it at the end of others instead of setting it as master)
    if not awesome.startup then
       awful.client.setslave(c)
    end

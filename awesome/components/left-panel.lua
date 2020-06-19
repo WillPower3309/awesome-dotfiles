@@ -32,11 +32,11 @@ local left_panel = {}
 
 
 left_panel.create = function(s)
-   local panel = awful.wibar({
+   panel = awful.wibar({
       screen = s,
       position = "left",
       height = s.geometry.height * 7/10,
-      width = dpi(55),
+      width = beautiful.left_panel_width,
       shape = function(cr, width, height)
          gears.shape.partially_rounded_rect(cr, width, height, false, true, true, false, 12)
       end
@@ -63,8 +63,6 @@ left_panel.create = function(s)
       },
       nil
    }
-
-   return panel
 end
 
 return left_panel

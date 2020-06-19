@@ -69,6 +69,10 @@ theme.tasklist_fg_focus = theme.fg_focus
 theme.tasklist_fg_urgent = theme.fg_urgent
 theme.tasklist_fg_normal = theme.fg_normal
 
+-- Panel Sizing
+theme.left_panel_width = dpi(55)
+theme.top_panel_height = dpi(26)
+
 
 -- ===================================================================
 -- Icons
