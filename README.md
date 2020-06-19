@@ -35,6 +35,7 @@
 + Wallpaper auto-blur functionality
 + Log out / shutdown / restart / lock screen
 + Volume / brightness adjustment widgets with sliders
++ Touch screen friendly (I primarily run this on a microsoft surface pro 6)
 + Automatic dpi / resolution scaling
   + Note that xft.dpi must be properly assigned in the .Xresources file if you are using a high DPI screen
 + Supports multi monitor setups!
