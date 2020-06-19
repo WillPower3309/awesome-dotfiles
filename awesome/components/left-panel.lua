@@ -37,6 +37,7 @@ left_panel.create = function(s)
       position = "left",
       height = s.geometry.height * 7/10,
       width = beautiful.left_panel_width,
+      ontop = true,
       shape = function(cr, width, height)
          gears.shape.partially_rounded_rect(cr, width, height, false, true, true, false, 12)
       end
@@ -63,6 +64,64 @@ left_panel.create = function(s)
       },
       nil
    }
+
+   -- panel background that becomes visible when client is maximized
+   panel_bg = wibox({
+      screen = s,
+      position = "left",
+      height = s.geometry.height,
+      width = beautiful.left_panel_width,
+      visible = false
+   })
+
+   -- hide panel when client is fullscreen
+   client.connect_signal('property::fullscreen',
+      function(c)
+         panel.visible = not c.fullscreen
+      end
+   )
+
+   -- maximize panel if client is maximized
+   local function toggle_maximize_left_panel(is_maximized)
+      panel_bg.visible = is_maximized
+
+      if is_maximized then
+         panel.shape = function(cr, width, height)
+            gears.shape.rectangle(cr, width, height)
+         end
+      else
+         panel.shape = function(cr, width, height)
+            gears.shape.partially_rounded_rect(cr, width, height, false, true, true, false, 12)
+         end
+      end
+   end
+
+   client.connect_signal('property::maximized',
+      function(c)
+         if c.first_tag then
+            toggle_maximize_left_panel(c.maximized)
+         end
+      end
+   )
+
+   client.connect_signal('unmanage',
+      function(c)
+         if c.maximized then
+            toggle_maximize_left_panel(false)
+         end
+      end
+   )
+
+   tag.connect_signal('property::layout',
+      function(t)
+         local current_layout = awful.tag.getproperty(t, 'layout')
+         if (current_layout == awful.layout.suit.max) then
+            toggle_maximize_left_panel(true)
+         else
+            toggle_maximize_left_panel(false)
+         end
+      end
+   )
 end
 
 return left_panel
