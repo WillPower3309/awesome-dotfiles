@@ -77,31 +77,6 @@ function rules.create(clientkeys, clientbuttons)
          }, properties = {fullscreen = true}
       },
 
-      -- Centered clients
-      {
-         rule_any = {
-            class = {
-               "Steam",
-               "discord",
-               "Nm-connection-editor",
-               "Pavucontrol"
-            },
-            name = {
-               "Bluetooth Devices"
-            },
-            role = {
-               "GtkFileChooserDialog"
-            },
-            type = {
-               "dialog",
-            }
-         },
-         properties = {},
-         callback = function (c)
-            awful.placement.centered(c,{honor_padding = true, honor_workarea=true})
-         end
-      },
-
       -- "Switch to tag"
       -- These clients make you switch to their tag when they appear
       {
