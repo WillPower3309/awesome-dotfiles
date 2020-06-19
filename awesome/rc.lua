@@ -43,7 +43,7 @@ apps.autostart()
 
 
 -- ===================================================================
--- Set Up Screen
+-- Set Up Screen & Connect Signals
 -- ===================================================================
 
 
@@ -76,6 +76,16 @@ awful.screen.connect_for_each_screen(function(s)
 
    -- Add the top manel to the screen
    top_panel.create(s)
+end)
+
+-- remove gaps if layout is set to max
+tag.connect_signal('property::layout', function(t)
+   local current_layout = awful.tag.getproperty(t, 'layout')
+   if (current_layout == awful.layout.suit.max) then
+      t.gap = 0
+   else
+      t.gap = beautiful.useless_gap
+   end
 end)
 
 -- Signal function to execute when a new client appears.
