@@ -35,6 +35,7 @@ apps.default = {
 -- List of apps to start once on start-up
 local run_on_start_up = {
    "picom --experimental-backends",
+   "/usr/bin/kdeconnect-indicator",
    "redshift",
    "unclutter"
 }

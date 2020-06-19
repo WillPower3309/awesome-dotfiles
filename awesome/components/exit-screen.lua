@@ -20,6 +20,8 @@ local apps = require("apps").default
 local dpi = require("beautiful").xresources.apply_dpi
 local ICON_DIR = gears.filesystem.get_configuration_dir() .. "/icons/exit-screen/"
 
+-- define module table
+local exit_screen = {}
 
 -- ===================================================================
 -- Appearance
@@ -60,6 +62,8 @@ end
 -- Functionality
 -- ===================================================================
 
+
+local exit_screen_grabber
 
 local function suspend_command()
    exit_screen_hide()
@@ -134,7 +138,7 @@ lock:connect_signal(
 local screen_geometry = awful.screen.focused().geometry
 
 -- Create the widget
-local exit_screen = wibox({
+exit_screen.widget = wibox({
    x = screen_geometry.x,
    y = screen_geometry.y,
    visible = false,
@@ -146,14 +150,8 @@ local exit_screen = wibox({
    fg = beautiful.fg_normal
 })
 
-local exit_screen_grabber
-
-function exit_screen_hide()
-   awful.keygrabber.stop(exit_screen_grabber)
-   exit_screen.visible = false
-end
-
-function exit_screen_show()
+-- show exit screen
+function exit_screen.show()
    exit_screen_grabber = awful.keygrabber.run(
       function(_, key, event)
          if event == "release" then
@@ -171,32 +169,38 @@ function exit_screen_show()
          elseif key == "r" then
             reboot_command()
          elseif key == "Escape" or key == "q" or key == "x" then
-            exit_screen_hide()
+            exit_screen.hide()
          end
       end
    )
-   exit_screen.visible = true
+   exit_screen.widget.visible = true
 end
 
-exit_screen:buttons(
+-- hide exit screen
+function exit_screen.hide()
+   awful.keygrabber.stop(exit_screen_grabber)
+   exit_screen.widget.visible = false
+end
+
+exit_screen.widget:buttons(
    gears.table.join(
       -- Middle click - Hide exit_screen
       awful.button({}, 2,
          function()
-            exit_screen_hide()
+            exit_screen.hide()
          end
       ),
       -- Right click - Hide exit_screen
       awful.button({}, 3,
          function()
-            exit_screen_hide()
+            exit_screen.hide()
          end
       )
    )
 )
 
 -- Item placement
-exit_screen:setup {
+exit_screen.widget:setup {
    nil,
    {
       nil,
@@ -216,3 +220,5 @@ exit_screen:setup {
    expand = "none",
    layout = wibox.layout.align.vertical
 }
+
+return exit_screen
