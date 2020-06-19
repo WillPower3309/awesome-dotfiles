@@ -138,7 +138,7 @@ keys.clientbuttons = gears.table.join(
 
 keys.globalkeys = gears.table.join(
    -- =========================================
-   -- APPLICATION KEY BINDINGS
+   -- SPAWN APPLICATION KEY BINDINGS
    -- =========================================
 
    -- Spawn terminal
@@ -157,7 +157,7 @@ keys.globalkeys = gears.table.join(
    ),
 
    -- =========================================
-   -- VOLUME / BRIGHTNESS / SCREENSHOT
+   -- FUNCTION KEYS
    -- =========================================
 
    -- Brightness
@@ -217,6 +217,31 @@ keys.globalkeys = gears.table.join(
       function()
          awful.util.spawn(apps.screenshot, false)
       end
+   ),
+
+   -- =========================================
+   -- RELOAD / QUIT AWESOME
+   -- =========================================
+
+   -- Reload Awesome
+   awful.key({modkey, "Shift"}, "r",
+      awesome.restart,
+      {description = "reload awesome", group = "awesome"}
+   ),
+
+    -- Quit Awesome
+   awful.key({modkey}, "Escape",
+      function()
+         exit_screen.show()
+      end,
+      {description = "quit awesome", group = "awesome"}
+   ),
+
+   awful.key({}, 'XF86PowerOff',
+      function()
+         exit_screen_show()
+      end,
+      {description = 'toggle exit screen', group = 'hotkeys'}
    ),
 
    -- =========================================
@@ -295,49 +320,6 @@ keys.globalkeys = gears.table.join(
          awful.client.focus.byidx(-1)
       end,
       {description = "focus previous by index", group = "client"}
-   ),
-
-   -- =========================================
-   -- RELOAD / QUIT AWESOME
-   -- =========================================
-
-   -- Reload Awesome
-   awful.key({modkey, "Shift"}, "r",
-      awesome.restart,
-      {description = "reload awesome", group = "awesome"}
-   ),
-
-    -- Quit Awesome
-   awful.key({modkey}, "Escape",
-      function()
-         exit_screen.show()
-      end,
-      {description = "quit awesome", group = "awesome"}
-   ),
-
-   awful.key({}, 'XF86PowerOff',
-      function()
-         exit_screen_show()
-      end,
-      {description = 'toggle exit screen', group = 'hotkeys'}
-   ),
-
-   -- =========================================
-   -- GAP CONTROL
-   -- =========================================
-
-   -- Gap control
-   awful.key({modkey, "Shift"}, "minus",
-      function()
-         awful.tag.incgap(5, nil)
-      end,
-      {description = "increment gaps size for the current tag", group = "gaps"}
-   ),
-   awful.key({modkey}, "minus",
-      function()
-         awful.tag.incgap(-5, nil)
-      end,
-      {description = "decrement gap size for the current tag", group = "gaps"}
    ),
 
    -- =========================================
@@ -442,6 +424,24 @@ keys.globalkeys = gears.table.join(
    ),
 
    -- =========================================
+   -- GAP CONTROL
+   -- =========================================
+
+   -- Gap control
+   awful.key({modkey, "Shift"}, "minus",
+      function()
+         awful.tag.incgap(5, nil)
+      end,
+      {description = "increment gaps size for the current tag", group = "gaps"}
+   ),
+   awful.key({modkey}, "minus",
+      function()
+         awful.tag.incgap(-5, nil)
+      end,
+      {description = "decrement gap size for the current tag", group = "gaps"}
+   ),
+
+   -- =========================================
    -- LAYOUT SELECTION
    -- =========================================
 
@@ -461,7 +461,7 @@ keys.globalkeys = gears.table.join(
    ),
 
    -- =========================================
-   -- CLIENT CONTROL
+   -- CLIENT MINIMIZATION
    -- =========================================
 
    -- restore minimized client
@@ -558,27 +558,13 @@ keys.clientkeys = gears.table.join(
          c:raise()
       end,
       {description = "(un)maximize", group = "client"}
-   ),
-   awful.key({modkey, "Control"}, "m",
-      function(c)
-         c.maximized_vertical = not c.maximized_vertical
-         c:raise()
-      end,
-      {description = "(un)maximize vertically", group = "client"}
-   ),
-   awful.key({modkey, "Shift"}, "m",
-      function(c)
-         c.maximized_horizontal = not c.maximized_horizontal
-         c:raise()
-      end,
-      {description = "(un)maximize horizontally", group = "client"}
    )
 )
 
 -- Bind all key numbers to tags
 for i = 1, 9 do
    keys.globalkeys = gears.table.join(keys.globalkeys,
-      -- View tag only.
+      -- Switch to tag
       awful.key({modkey}, "#" .. i + 9,
          function()
             local screen = awful.screen.focused()
@@ -589,18 +575,7 @@ for i = 1, 9 do
          end,
          {description = "view tag #"..i, group = "tag"}
       ),
-      -- Toggle tag display.
-      awful.key({modkey, "Control"}, "#" .. i + 9,
-         function()
-            local screen = awful.screen.focused()
-            local tag = screen.tags[i]
-            if tag then
-               awful.tag.viewtoggle(tag)
-            end
-         end,
-         {description = "toggle tag #" .. i, group = "tag"}
-      ),
-      -- Move client to tag.
+      -- Move client to tag
       awful.key({modkey, "Shift"}, "#" .. i + 9,
          function()
             if client.focus then
@@ -611,18 +586,6 @@ for i = 1, 9 do
             end
          end,
          {description = "move focused client to tag #"..i, group = "tag"}
-      ),
-      -- Toggle tag on focused client.
-      awful.key({modkey, "Control", "Shift"}, "#" .. i + 9,
-         function()
-            if client.focus then
-               local tag = client.focus.screen.tags[i]
-               if tag then
-                  client.focus:toggle_tag(tag)
-               end
-            end
-         end,
-         {description = "toggle focused client on tag #" .. i, group = "tag"}
       )
    )
 end
