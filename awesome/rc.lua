@@ -69,7 +69,12 @@ awful.screen.connect_for_each_screen(function(s)
       })
    end
 
-   left_panel.create(s)
+   -- only add the left panel on the primary screen
+   if s.index == 1 then
+      left_panel.create(s)
+   end
+
+   -- add the top manel to the screen
    top_panel.create(s)
 end)
 
