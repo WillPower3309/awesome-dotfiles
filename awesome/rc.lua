@@ -47,7 +47,7 @@ apps.autostart()
 -- ===================================================================
 
 
--- define tag layouts
+-- Define tag layouts
 awful.layout.layouts = {
    awful.layout.suit.tile,
    awful.layout.suit.floating,
@@ -69,12 +69,12 @@ awful.screen.connect_for_each_screen(function(s)
       })
    end
 
-   -- only add the left panel on the primary screen
+   -- Only add the left panel on the primary screen
    if s.index == 1 then
       left_panel.create(s)
    end
 
-   -- add the top manel to the screen
+   -- Add the top manel to the screen
    top_panel.create(s)
 end)
 
@@ -91,17 +91,19 @@ client.connect_signal("manage", function (c)
    end
 end)
 
--- Enable sloppy focus, so that focus follows mouse.
+-- Autofocus a new client when previously focused one is closed
 require("awful.autofocus")
+
+-- Focus clients under mouse
 client.connect_signal("mouse::enter", function(c)
    c:emit_signal("request::activate", "mouse_enter", {raise = false})
 end)
 
 
 -- ===================================================================
--- Garbage collection (Allows for lower memory consumption)
+-- Garbage collection (allows for lower memory consumption)
 -- ===================================================================
 
 
-collectgarbage("setpause", 160)
-collectgarbage("setstepmul", 400)
+collectgarbage("setpause", 110)
+collectgarbage("setstepmul", 1000)
