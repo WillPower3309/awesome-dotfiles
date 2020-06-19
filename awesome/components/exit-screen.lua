@@ -141,12 +141,10 @@ local exit_screen = wibox({
    ontop = true,
    type = "splash",
    height = screen_geometry.height,
-   width = screen_geometry.width
+   width = screen_geometry.width,
+   bg = beautiful.bg_normal,
+   fg = beautiful.fg_normal
 })
-
--- define exit screen foreground and background
-exit_screen.bg = beautiful.bg_normal
-exit_screen.fg = beautiful.fg_normal
 
 local exit_screen_grabber
 
