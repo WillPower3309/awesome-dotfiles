@@ -58,7 +58,7 @@ left_panel.create = function(s)
             folder.create(home_dir .. "/Documents"),
             folder.create(home_dir .. "/Downloads"),
             separator,
-            folder.create(home_dir .. "/.local/share/Trash/files"),
+            folder.create("trash://"),
             layout = wibox.layout.fixed.vertical,
          }
       },

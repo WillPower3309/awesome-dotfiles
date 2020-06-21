@@ -74,7 +74,7 @@ function folder.create(directory)
    local folder_name = ""
    if directory == HOME_DIR then
       folder_name = "Home"
-   elseif directory == HOME_DIR .. "/.local/share/Trash/files" then
+   elseif directory == "trash://" then
       folder_name = "Trash"
    else
       local dir_list = split_string(directory, "/")
