@@ -73,6 +73,9 @@ theme.tasklist_fg_normal = theme.fg_normal
 theme.left_panel_width = dpi(55)
 theme.top_panel_height = dpi(26)
 
+-- Notification Sizing
+theme.notification_max_width = dpi(350)
+
 
 -- ===================================================================
 -- Icons
