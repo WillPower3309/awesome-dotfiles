@@ -33,8 +33,8 @@
 + Easy installation / configuration
 + Very few dependencies
 + Wallpaper auto-blur functionality
-+ Log out / shutdown / restart / lock screen
-+ Volume / brightness adjustment widgets with sliders
++ Exit screen
++ Locking (via `i3lock`)
 + Touch screen friendly (I primarily run this on a microsoft surface pro 6)
 + Automatic dpi / resolution scaling
   + Note that xft.dpi must be properly assigned in the .Xresources file if you are using a high DPI screen
@@ -53,7 +53,8 @@ I have made my best effort to reduce the number of dependencies by using the awe
 |`feh`|Fast image viewer used as wallpaper setting utility|
 |`picom`|Window compositor, eliminates screen tearing and allows for cool fade effects|
 |`rofi`|Application launcher|
-|`imagemagick`|Used in config to generate blurred wallpaper|
+|`i3lock`|Used to lock the screen|
+|`imagemagick`|**OPTIONAL BUT NEEDED IF USING A DIFFERENT BACKGROUND**, used in config to generate blurred wallpaper|
 
 ### Optional Dependencies ###
 These will improve the user experience but aren't required:
@@ -180,6 +181,7 @@ If you are new to awesomewm, note that tag refers to workspace, and client refer
 + `mod + [up / down / left / right / h / j / k / l]`: Change client by direction
 + `mod + Shift + [up / down / left / right / h / j / k / l]`: Move client by direction
 + `mod + Control + [up / down / left / right / h / j / k / l]`: Resize client by direction
++ `mod + Escape`: Show exit screen
 
 ### Mouse ###
 + `mod + drag with left click`: Move client
