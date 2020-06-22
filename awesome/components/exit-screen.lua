@@ -150,7 +150,8 @@ exit_screen.widget = wibox({
    fg = beautiful.fg_normal
 })
 
--- show exit screen
+-- subscribe to the show_exit_screen signal
+-- show the exit screen when signal is broadcasted
 awesome.connect_signal("show_exit_screen",
    function()
       exit_screen_grabber = awful.keygrabber.run(

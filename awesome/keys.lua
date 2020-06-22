@@ -229,6 +229,7 @@ keys.globalkeys = gears.table.join(
     -- Quit Awesome
    awful.key({modkey}, "Escape",
       function()
+         -- emit signal to show the exit screen
          awesome.emit_signal("show_exit_screen")
       end,
       {description = "quit awesome", group = "awesome"}
