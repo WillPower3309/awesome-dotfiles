@@ -158,55 +158,55 @@ keys.globalkeys = gears.table.join(
    -- =========================================
 
    -- Brightness
-   awful.key({}, 'XF86MonBrightnessUp',
+   awful.key({}, "XF86MonBrightnessUp",
       function()
-         awful.spawn('xbacklight -inc 10', false)
+         awful.spawn("xbacklight -inc 10", false)
       end,
-      {description = '+10%', group = 'hotkeys'}
+      {description = "+10%", group = "hotkeys"}
    ),
-   awful.key({}, 'XF86MonBrightnessDown',
+   awful.key({}, "XF86MonBrightnessDown",
       function()
-         awful.spawn('xbacklight -dec 10', false)
+         awful.spawn("xbacklight -dec 10", false)
       end,
-      {description = '-10%', group = 'hotkeys'}
+      {description = "-10%", group = "hotkeys"}
    ),
 
    -- ALSA volume control
-   awful.key({}, 'XF86AudioRaiseVolume',
+   awful.key({}, "XF86AudioRaiseVolume",
       function()
-         awful.spawn('amixer -D pulse sset Master 5%+', false)
+         awful.spawn("amixer -D pulse sset Master 5%+", false)
       end,
-      {description = 'volume up', group = 'hotkeys'}
+      {description = "volume up", group = "hotkeys"}
    ),
-   awful.key({}, 'XF86AudioLowerVolume',
+   awful.key({}, "XF86AudioLowerVolume",
       function()
-         awful.spawn('amixer -D pulse sset Master 5%-', false)
+         awful.spawn("amixer -D pulse sset Master 5%-", false)
       end,
-      {description = 'volume down', group = 'hotkeys'}
+      {description = "volume down", group = "hotkeys"}
    ),
-   awful.key({}, 'XF86AudioMute',
+   awful.key({}, "XF86AudioMute",
       function()
-         awful.spawn('amixer -D pulse set Master 1+ toggle', false)
+         awful.spawn("amixer -D pulse set Master 1+ toggle", false)
       end,
-      {description = 'toggle mute', group = 'hotkeys'}
+      {description = "toggle mute", group = "hotkeys"}
    ),
-   awful.key({}, 'XF86AudioNext',
+   awful.key({}, "XF86AudioNext",
       function()
-         awful.spawn('mpc next', false)
+         awful.spawn("mpc next", false)
       end,
-      {description = 'next music', group = 'hotkeys'}
+      {description = "next music", group = "hotkeys"}
    ),
-   awful.key({}, 'XF86AudioPrev',
+   awful.key({}, "XF86AudioPrev",
       function()
-         awful.spawn('mpc prev', false)
+         awful.spawn("mpc prev", false)
       end,
-      {description = 'previous music', group = 'hotkeys'}
+      {description = "previous music", group = "hotkeys"}
    ),
-   awful.key({}, 'XF86AudioPlay',
+   awful.key({}, "XF86AudioPlay",
       function()
-         awful.spawn('mpc toggle', false)
+         awful.spawn("mpc toggle", false)
       end,
-      {description = 'play/pause music', group = 'hotkeys'}
+      {description = "play/pause music", group = "hotkeys"}
    ),
 
    -- Screenshot on prtscn using scrot
@@ -226,7 +226,7 @@ keys.globalkeys = gears.table.join(
       {description = "reload awesome", group = "awesome"}
    ),
 
-    -- Quit Awesome
+   -- Quit Awesome
    awful.key({modkey}, "Escape",
       function()
          -- emit signal to show the exit screen
@@ -235,11 +235,11 @@ keys.globalkeys = gears.table.join(
       {description = "quit awesome", group = "awesome"}
    ),
 
-   awful.key({}, 'XF86PowerOff',
+   awful.key({}, "XF86PowerOff",
       function()
          exit_screen_show()
       end,
-      {description = 'toggle exit screen', group = 'hotkeys'}
+      {description = "toggle exit screen", group = "hotkeys"}
    ),
 
    -- =========================================
