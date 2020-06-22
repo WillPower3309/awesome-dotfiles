@@ -17,9 +17,6 @@ local naughty = require("naughty")
 local beautiful = require("beautiful")
 local dpi = beautiful.xresources.apply_dpi
 
--- Import components that are spawned with keys
-local exit_screen = require("components.exit-screen")
-
 -- Default Applications
 local apps = require("apps").default
 
@@ -232,7 +229,7 @@ keys.globalkeys = gears.table.join(
     -- Quit Awesome
    awful.key({modkey}, "Escape",
       function()
-         exit_screen.show()
+         awesome.emit_signal("show_exit_screen")
       end,
       {description = "quit awesome", group = "awesome"}
    ),

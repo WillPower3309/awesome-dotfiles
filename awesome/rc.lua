@@ -33,8 +33,9 @@ require("components.notifications")
 -- Import Tag Settings
 local tags = require("tags")
 
--- Set Wallpaper
+-- Import components
 require("components.wallpaper")
+require("components.exit-screen")
 
 -- Autostart specified apps
 local apps = require("apps")

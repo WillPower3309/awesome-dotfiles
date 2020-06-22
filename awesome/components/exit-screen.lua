@@ -151,30 +151,32 @@ exit_screen.widget = wibox({
 })
 
 -- show exit screen
-function exit_screen.show()
-   exit_screen_grabber = awful.keygrabber.run(
-      function(_, key, event)
-         if event == "release" then
-            return
-         end
+awesome.connect_signal("show_exit_screen",
+   function()
+      exit_screen_grabber = awful.keygrabber.run(
+         function(_, key, event)
+            if event == "release" then
+               return
+            end
 
-         if key == "s" then
-            suspend_command()
-         elseif key == "e" then
-            exit_command()
-         elseif key == "l" then
-            lock_command()
-         elseif key == "p" then
-            poweroff_command()
-         elseif key == "r" then
-            reboot_command()
-         elseif key == "Escape" or key == "q" or key == "x" then
-            exit_screen.hide()
+            if key == "s" then
+               suspend_command()
+            elseif key == "e" then
+               exit_command()
+            elseif key == "l" then
+               lock_command()
+            elseif key == "p" then
+               poweroff_command()
+            elseif key == "r" then
+               reboot_command()
+            elseif key == "Escape" or key == "q" or key == "x" then
+               exit_screen.hide()
+            end
          end
-      end
-   )
-   exit_screen.widget.visible = true
-end
+      )
+      exit_screen.widget.visible = true
+   end
+)
 
 -- hide exit screen
 function exit_screen.hide()
