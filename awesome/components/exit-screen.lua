@@ -17,7 +17,7 @@ local beautiful = require("beautiful")
 local clickable_container = require("widgets.clickable-container")
 
 local apps = require("apps").default
-local dpi = require("beautiful").xresources.apply_dpi
+local dpi = beautiful.xresources.apply_dpi
 local ICON_DIR = gears.filesystem.get_configuration_dir() .. "/icons/exit-screen/"
 
 -- define module table
