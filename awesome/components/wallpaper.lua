@@ -44,8 +44,8 @@ end
 if not exists(blurred_wallpaper) then
    naughty.notify({
       preset = naughty.config.presets.normal,
-      title = 'Wallpaper',
-      text = 'Generating blurred wallpaper...'
+      title = "Wallpaper",
+      text = "Generating blurred wallpaper..."
    })
    -- uses image magick to create a blurred version of the wallpaper
    awful.spawn.with_shell("convert -filter Gaussian -blur 0x30 " .. wallpaper .. " " .. blurredWallpaper)
@@ -74,7 +74,7 @@ local function unblur()
 end
 
 -- blur / unblur on tag change
-tag.connect_signal('property::selected', function(t)
+tag.connect_signal("property::selected", function(t)
    -- check if tag has any clients
    for _ in pairs(t:clients()) do
       blur()
