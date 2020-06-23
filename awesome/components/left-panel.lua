@@ -32,15 +32,21 @@ local left_panel = {}
 
 
 left_panel.create = function(s)
+
+   local panel_shape = function(cr, width, height)
+      gears.shape.partially_rounded_rect(cr, width, height, false, true, true, false, 12)
+   end
+   local maximized_panel_shape = function(cr, width, height)
+      gears.shape.rectangle(cr, width, height)
+   end
+
    panel = awful.wibar({
       screen = s,
       position = "left",
       height = s.geometry.height * 7/10,
       width = beautiful.left_panel_width,
       ontop = true,
-      shape = function(cr, width, height)
-         gears.shape.partially_rounded_rect(cr, width, height, false, true, true, false, 12)
-      end
+      shape = panel_shape
    })
 
    panel:setup {
@@ -74,8 +80,14 @@ left_panel.create = function(s)
       visible = false
    })
 
+  
+   -- ===================================================================
+   -- Functionality
+   -- ===================================================================
+
+
    -- hide panel when client is fullscreen
-   client.connect_signal('property::fullscreen',
+   client.connect_signal("property::fullscreen",
       function(c)
          panel.visible = not c.fullscreen
       end
@@ -84,44 +96,83 @@ left_panel.create = function(s)
    -- maximize panel if client is maximized
    local function toggle_maximize_left_panel(is_maximized)
       panel_bg.visible = is_maximized
-
       if is_maximized then
-         panel.shape = function(cr, width, height)
-            gears.shape.rectangle(cr, width, height)
-         end
+         panel.shape = maximized_panel_shape
       else
-         panel.shape = function(cr, width, height)
-            gears.shape.partially_rounded_rect(cr, width, height, false, true, true, false, 12)
-         end
+         panel.shape = panel_shape
       end
    end
 
-   client.connect_signal('property::maximized',
-      function(c)
-         if c.first_tag then
-            toggle_maximize_left_panel(c.maximized)
-         end
-      end
-   )
+   -- maximize if a client is maximized
+   client.connect_signal("property::maximized", function(c)
+      toggle_maximize_left_panel(c.maximized)
+   end)
 
-   client.connect_signal('unmanage',
-      function(c)
-         if c.maximized then
-            toggle_maximize_left_panel(false)
-         end
+   client.connect_signal("manage", function(c)
+      if awful.tag.getproperty(c.first_tag, "layout") == awful.layout.suit.max then
+         toggle_maximize_left_panel(true)
       end
-   )
+   end)
 
-   tag.connect_signal('property::layout',
-      function(t)
-         local current_layout = awful.tag.getproperty(t, 'layout')
-         if (current_layout == awful.layout.suit.max) then
+   -- unmaximize if a client is removed and there are no maximized clients left
+   client.connect_signal("unmanage", function(c)
+      local t = awful.screen.focused().selected_tag
+      -- if client was maximized
+      if c.maximized then
+         -- check if any clients that are open are maximized
+         for _, c in pairs(t:clients()) do
+            if c.maximized then
+               return
+            end
+         end
+         toggle_maximize_left_panel(false)
+
+      -- if tag was maximized
+      elseif awful.tag.getproperty(t, "layout") == awful.layout.suit.max then
+         -- check if any clients are open (and therefore maximized)
+         for _ in pairs(t:clients()) do
+            return
+         end
+         toggle_maximize_left_panel(false)
+      end
+   end)
+
+   -- maximize if layout is maximized and a client is in the layout
+   tag.connect_signal("property::layout", function(t)
+      -- check if layout is maximized
+      if (awful.tag.getproperty(t, "layout") == awful.layout.suit.max) then
+         -- check if clients are open
+         for _ in pairs(t:clients()) do
             toggle_maximize_left_panel(true)
-         else
-            toggle_maximize_left_panel(false)
+            return
          end
+         toggle_maximize_left_panel(false)
+      else
+         toggle_maximize_left_panel(false)
       end
-   )
+   end)
+
+   -- maximize if a tag is swapped to with a maximized client
+   tag.connect_signal("property::selected", function(t)
+      -- check if layout is maximized
+      if (awful.tag.getproperty(t, "layout") == awful.layout.suit.max) then
+         -- check if clients are open
+         for _ in pairs(t:clients()) do
+            toggle_maximize_left_panel(true)
+            return
+         end
+         toggle_maximize_left_panel(false)
+      else
+         -- check if any clients that are open are maximized
+         for _, c in pairs(t:clients()) do
+            if c.maximized then
+               toggle_maximize_left_panel(true)
+               return
+            end
+         end
+         toggle_maximize_left_panel(false)
+      end
+   end)
 end
 
 return left_panel
