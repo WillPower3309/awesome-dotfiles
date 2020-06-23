@@ -23,6 +23,7 @@ local ICON_DIR = gears.filesystem.get_configuration_dir() .. "/icons/exit-screen
 -- define module table
 local exit_screen = {}
 
+
 -- ===================================================================
 -- Appearance
 -- ===================================================================
@@ -66,7 +67,7 @@ end
 local exit_screen_grabber
 
 local function suspend_command()
-   exit_screen_hide()
+   exit_screen.hide()
    awful.spawn.with_shell(apps.lock .. " & systemctl suspend")
 end
 
@@ -75,7 +76,7 @@ local function exit_command()
 end
 
 local function lock_command()
-   exit_screen_hide()
+   exit_screen.hide()
    awful.spawn.with_shell("sleep 1 && " .. apps.lock)
 end
 
@@ -129,27 +130,6 @@ lock:connect_signal(
    end
 )
 
-
--- ===================================================================
--- Create Widget
--- ===================================================================
-
-
-local screen_geometry = awful.screen.focused().geometry
-
--- Create the widget
-exit_screen.widget = wibox({
-   x = screen_geometry.x,
-   y = screen_geometry.y,
-   visible = false,
-   ontop = true,
-   type = "splash",
-   height = screen_geometry.height,
-   width = screen_geometry.width,
-   bg = beautiful.bg_normal,
-   fg = beautiful.fg_normal
-})
-
 -- subscribe to the show_exit_screen signal
 -- show the exit screen when signal is broadcasted
 awesome.connect_signal("show_exit_screen",
@@ -184,6 +164,25 @@ function exit_screen.hide()
    awful.keygrabber.stop(exit_screen_grabber)
    exit_screen.widget.visible = false
 end
+
+
+-- ===================================================================
+-- Create Widget
+-- ===================================================================
+
+
+local screen_geometry = awful.screen.focused().geometry
+
+-- Create the widget
+exit_screen.widget = wibox({
+   x = screen_geometry.x,
+   y = screen_geometry.y,
+   visible = false,
+   ontop = true,
+   type = "splash",
+   height = screen_geometry.height,
+   width = screen_geometry.width
+})
 
 exit_screen.widget:buttons(
    gears.table.join(

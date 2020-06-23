@@ -30,10 +30,7 @@ local top_panel = {}
 
 -- Clock / Calendar 12h format
 -- Get Time/Date format using `man strftime`
-local textclock = wibox.widget.textclock('<span font="' .. beautiful.title_font ..'">%l:%M %p</span>', 1)
-
--- Clock / Calendar 12AM/PM fornatan font="Roboto Mono bold 11">%I\n%M</span>\n<span font="Roboto Mono bold 9">%p</span>")
-local clock_widget = wibox.container.margin(textclock, dpi(0), dpi(0))
+local clock_widget = wibox.widget.textclock("<span font='" .. beautiful.title_font .."'>%l:%M %p</span>", 1)
 
 -- Alternative to naughty.notify - tooltip. You can compare both and choose the preferred one
 awful.tooltip({
@@ -49,8 +46,7 @@ awful.tooltip({
 })
 
 local cal_shape = function(cr, width, height)
-   gears.shape.partially_rounded_rect(
-      cr, width, height, false, false, true, true, 12)
+   gears.shape.partially_rounded_rect(cr, width, height, false, false, true, true, 12)
 end
 
 -- Calendar Widget
