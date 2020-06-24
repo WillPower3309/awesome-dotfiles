@@ -66,8 +66,8 @@ These will improve the user experience but aren't required:
 + `blueman`: Bluetooth managing application, spawns when the bluetooth top panel icon is clicked
 + `pamac-aur`: Lightweight GUI package manager, spawned when the top panel package icon is clicked
 + `nm-connection-editor`: GUI wifi connection editor, spawned when the top panel wifi icon is clicked
-+ `Scrot`: Screenshot tool, which is mapped to the Print Screen key in keys.lua. **If you want to meet this dependency, ensure that the `~/Pictures` folder exists**, otherwise the program will save your screenshots to your home directory
-+ `Alsa`: Provides kernel driven sound drivers, which the control of has been mapped to volume keys in keys.lua
++ `scrot`: Screenshot tool, which is mapped to the Print Screen key in keys.lua. **If you want to meet this dependency, ensure that the `~/Pictures` folder exists**, otherwise the program will save your screenshots to your home directory
++ `alsa-utils`: Provides kernel driven sound drivers, which the control of has been mapped to volume keys in keys.lua
 + `xbacklight`: Controls display brightness, which the control of has been mapped to brightness keys in keys.lua
 
 ### Fonts You Should Install ###
