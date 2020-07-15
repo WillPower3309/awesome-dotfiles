@@ -235,12 +235,13 @@ keys.globalkeys = gears.table.join(
          -- emit signal to show the exit screen
          awesome.emit_signal("show_exit_screen")
       end,
-      {description = "quit awesome", group = "awesome"}
+      {description = "toggle exit screen", group = "hotkeys"}
    ),
 
    awful.key({}, "XF86PowerOff",
       function()
-         exit_screen_show()
+         -- emit signal to show the exit screen
+         awesome.emit_signal("show_exit_screen")
       end,
       {description = "toggle exit screen", group = "hotkeys"}
    ),
