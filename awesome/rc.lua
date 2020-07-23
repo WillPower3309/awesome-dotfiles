@@ -27,11 +27,8 @@ root.buttons(keys.desktopbuttons)
 local create_rules = require("rules").create
 awful.rules.rules = create_rules(keys.clientkeys, keys.clientbuttons)
 
--- Notification library
+-- Import notification appearance
 require("components.notifications")
-
--- Import Tag Settings
-local tags = require("tags")
 
 -- Import components
 require("components.wallpaper")
@@ -55,10 +52,14 @@ awful.layout.layouts = {
    awful.layout.suit.max,
 }
 
--- Set up each screen
+-- Import tag settings
+local tags = require("tags")
+
+-- Import panels
 local left_panel = require("components.left-panel")
 local top_panel = require("components.top-panel")
 
+-- Set up each screen (add tags & panels)
 awful.screen.connect_for_each_screen(function(s)
    for i, tag in pairs(tags) do
       awful.tag.add(i, {
@@ -75,7 +76,7 @@ awful.screen.connect_for_each_screen(function(s)
       left_panel.create(s)
    end
 
-   -- Add the top manel to the screen
+   -- Add the top panel to every screen
    top_panel.create(s)
 end)
 
@@ -101,6 +102,12 @@ client.connect_signal("manage", function (c)
       awful.placement.no_offscreen(c)
    end
 end)
+
+
+-- ===================================================================
+-- Client Focusing
+-- ===================================================================
+
 
 -- Autofocus a new client when previously focused one is closed
 require("awful.autofocus")
