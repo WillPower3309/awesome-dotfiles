@@ -73,7 +73,6 @@ left_panel.create = function(s)
       position = "left",
       height = s.geometry.height,
       width = beautiful.left_panel_width,
-      bg = "#ffffff",
       visible = false
    })
 
@@ -94,7 +93,6 @@ left_panel.create = function(s)
    awesome.connect_signal("launcher_spawn",
       function()
          panel_bg.visible = true
-
       end
    )
 

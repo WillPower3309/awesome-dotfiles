@@ -41,7 +41,6 @@ function rules.create(clientkeys, clientbuttons)
             buttons = clientbuttons,
             screen = awful.screen.preferred,
             placement = awful.placement.centered
-
          },
       },
       -- Floating clients.
@@ -110,7 +109,12 @@ function rules.create(clientkeys, clientbuttons)
       -- Rofi
       {
          rule_any = {name = {"rofi"}},
-         properties = {maximized = true, ontop = true}
+         properties = {
+            ontop = true,
+            floating = true,
+            width = screen_width * 0.3,
+            placement = awful.placement.left
+         }
       },
 
       -- File chooser dialog
