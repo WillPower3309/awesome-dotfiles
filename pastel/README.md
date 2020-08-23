@@ -2,9 +2,7 @@
     <h1>Awesome Dotfiles</h1>
 </div>
 
-[![HitCount](http://hits.dwyl.io/willpower3309/awesome-dotfiles.svg)](http://hits.dwyl.io/willpower3309/awesome-dotfiles)
-
-![](/screenshot.png)
+![](https://raw.githubusercontent.com/WillPower3309/awesome-dotfiles/mirage_theme/screenshots/screenshot.png)
 
 ## Contents ##
 1. [Details](#details)
