@@ -18,6 +18,9 @@ local awful = require("awful")
 local beautiful = require("beautiful")
 beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
 
+-- Set Wallpaper
+gears.wallpaper.maximized(gears.filesystem.get_configuration_dir() .. "/wallpaper.png")
+
 -- Import Keybinds
 local keys = require("keys")
 root.keys(keys.globalkeys)
@@ -31,9 +34,9 @@ awful.rules.rules = create_rules(keys.clientkeys, keys.clientbuttons)
 require("components.notifications")
 
 -- Import components
-require("components.wallpaper")
 require("components.exit-screen")
 require("components.volume-adjust")
+require("components.round-client")
 
 -- Autostart specified apps
 local apps = require("apps")

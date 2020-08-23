@@ -35,12 +35,13 @@ top_panel.create = function(s)
       ontop = true,
       height = beautiful.top_panel_height,
       width = s.geometry.width,
+      bg = "#00000000",
    })
 
    panel:setup {
       expand = "none",
       layout = wibox.layout.align.horizontal,
-      task_list.create(s),
+      nil,
       require("widgets.calendar"),
       {
          layout = wibox.layout.fixed.horizontal,
