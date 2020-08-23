@@ -65,9 +65,11 @@ local top_panel = require("components.top-panel")
 
 -- Set up each screen (add tags & panels)
 awful.screen.connect_for_each_screen(function(s)
+   tag_icon_dir = gears.filesystem.get_configuration_dir() .. "/icons/tags/"
+
    for i, tag in pairs(tags) do
       awful.tag.add(i, {
-         icon = tag.icon,
+         icon = tag_icon_dir .. i .. ".svg",
          icon_only = true,
          layout = awful.layout.suit.tile,
          screen = s,
@@ -85,8 +87,8 @@ awful.screen.connect_for_each_screen(function(s)
 end)
 
 -- remove gaps if layout is set to max
-tag.connect_signal('property::layout', function(t)
-   local current_layout = awful.tag.getproperty(t, 'layout')
+tag.connect_signal("property::layout", function(t)
+   local current_layout = awful.tag.getproperty(t, "layout")
    if (current_layout == awful.layout.suit.max) then
       t.gap = 0
    else
