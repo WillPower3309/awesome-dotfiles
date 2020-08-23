@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>Awesome Dotfiles</h1>
+    <h1>Pastel Theme</h1>
 </div>
 
 ![](https://raw.githubusercontent.com/WillPower3309/awesome-dotfiles/mirage_theme/screenshots/screenshot.png)
