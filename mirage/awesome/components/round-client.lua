@@ -102,6 +102,17 @@ client.connect_signal('property::hidden', client_callback)
 client.connect_signal('property::minimized', client_callback)
 
 client.connect_signal(
+   'property::maximized',
+   function(c)
+      if c.maximized then
+         render_client(c, 'maximized')
+      else
+         client_callback(c)
+      end
+   end
+)
+
+client.connect_signal(
    'property::fullscreen',
    function(c)
       if c.fullscreen then
