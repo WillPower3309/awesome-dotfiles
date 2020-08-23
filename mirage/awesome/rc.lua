@@ -36,6 +36,7 @@ require("components.notifications")
 -- Import components
 require("components.exit-screen")
 require("components.volume-adjust")
+require("components.titlebar")
 require("components.round-client")
 
 -- Autostart specified apps

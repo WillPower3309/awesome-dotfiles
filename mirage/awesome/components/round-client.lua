@@ -3,9 +3,9 @@
 -- ===================================================================
 
 
-local awful = require('awful')
-local gears = require('gears')
-local beautiful = require('beautiful')
+local awful = require("awful")
+local gears = require("gears")
+local beautiful = require("beautiful")
 
 
 -- ===================================================================
@@ -20,11 +20,11 @@ local function render_client(client, mode)
 
    client.rendering_mode = mode
 
-   if client.rendering_mode == 'maximized' then
+   if client.rendering_mode == "maximized" then
       client.shape = function(cr, w, h)
          gears.shape.rectangle(cr, w, h)
       end
-   elseif client.rendering_mode ~= 'maximized' then
+   elseif client.rendering_mode ~= "maximized" then
       client.shape = function(cr, w, h)
          gears.shape.rounded_rect(cr, w, h, beautiful.client_radius)
       end
@@ -46,9 +46,9 @@ local function changes_on_screen(current_screen)
   end
 
   if (tag_is_max) then
-     current_screen.client_mode = 'maximized'
+     current_screen.client_mode = "maximized"
   else
-     current_screen.client_mode = 'dwindle'
+     current_screen.client_mode = "dwindle"
   end
 
   for _, client in pairs(clients_to_manage) do
@@ -93,19 +93,19 @@ end
 -- ===================================================================
 
 
-client.connect_signal('manage', client_callback)
+client.connect_signal("manage", client_callback)
 
-client.connect_signal('unmanage', client_callback)
+client.connect_signal("unmanage", client_callback)
 
-client.connect_signal('property::hidden', client_callback)
+client.connect_signal("property::hidden", client_callback)
 
-client.connect_signal('property::minimized', client_callback)
+client.connect_signal("property::minimized", client_callback)
 
 client.connect_signal(
-   'property::maximized',
+   "property::maximized",
    function(c)
       if c.maximized then
-         render_client(c, 'maximized')
+         render_client(c, "maximized")
       else
          client_callback(c)
       end
@@ -113,16 +113,16 @@ client.connect_signal(
 )
 
 client.connect_signal(
-   'property::fullscreen',
+   "property::fullscreen",
    function(c)
       if c.fullscreen then
-         render_client(c, 'maximized')
+         render_client(c, "maximized")
       else
          client_callback(c)
       end
    end
 )
 
-tag.connect_signal('property::selected', tag_callback)
+tag.connect_signal("property::selected", tag_callback)
 
-tag.connect_signal('property::layout', tag_callback)
+tag.connect_signal("property::layout", tag_callback)

@@ -36,33 +36,22 @@ left_panel.create = function(s)
    panel = awful.wibar({
       screen = s,
       position = "left",
-      height = s.geometry.height * 7/10,
+      height = s.geometry.height,
       width = beautiful.left_panel_width,
       ontop = true,
       bg = "#00000000",
       shape = function(cr, width, height)
-         gears.shape.partially_rounded_rect(cr, width, height, false, true, true, false, 12)
+         gears.shape.partially_rounded_rect(cr, width, height, false, true, true, false, 36)
       end
    })
 
    panel:setup {
       expand = "none",
       layout = wibox.layout.align.vertical,
-      nil,
+      require("widgets.layout-box"),
       {
          layout = wibox.layout.fixed.vertical,
-         -- add taglist widget
-         tag_list.create(s),
-         -- add folders widgets
-         {
-            separator,
-            folder.create(home_dir),
-            folder.create(home_dir .. "/Documents"),
-            folder.create(home_dir .. "/Downloads"),
-            separator,
-            folder.create("trash://"),
-            layout = wibox.layout.fixed.vertical,
-         }
+         tag_list.create(s)
       },
       nil
    }
