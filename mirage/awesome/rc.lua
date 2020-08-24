@@ -56,9 +56,6 @@ awful.layout.layouts = {
    awful.layout.suit.max,
 }
 
--- Import tag settings
-local tags = require("tags")
-
 -- Import panels
 local left_panel = require("components.left-panel")
 local top_panel = require("components.top-panel")
@@ -67,7 +64,7 @@ local top_panel = require("components.top-panel")
 awful.screen.connect_for_each_screen(function(s)
    tag_icon_dir = gears.filesystem.get_configuration_dir() .. "/icons/tags/"
 
-   for i, tag in pairs(tags) do
+   for i = 1,9,1 do
       awful.tag.add(i, {
          icon = tag_icon_dir .. i .. ".svg",
          icon_only = true,
