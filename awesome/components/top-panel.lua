@@ -52,12 +52,22 @@ top_panel.create = function(s)
       }
    }
 
+
+   -- ===================================================================
+   -- functionality
+   -- ===================================================================
+
+
    -- hide panel when client is fullscreen
-   client.connect_signal('property::fullscreen',
-      function(c)
-         panel.visible = not c.fullscreen
-      end
-   )
+   local function change_panel_visibility(client)
+      panel.visible = not client.fullscreen
+   end
+
+   -- connect panel visibility function to relevant signals
+   client.connect_signal("property::fullscreen", change_panel_visibility)
+   client.connect_signal("focus", change_panel_visibility)
+   client.connect_signal("unfocus", change_panel_visibility)
+
 end
 
 return top_panel
