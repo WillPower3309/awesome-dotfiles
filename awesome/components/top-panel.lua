@@ -60,7 +60,7 @@ top_panel.create = function(s)
 
    -- hide panel when client is fullscreen
    local function change_panel_visibility(client)
-      panel.visible = not client.fullscreen
+      panel.ontop = not client.fullscreen
    end
 
    -- connect panel visibility function to relevant signals
