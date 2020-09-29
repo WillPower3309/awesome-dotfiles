@@ -95,7 +95,6 @@ left_panel.create = function(s)
    client.connect_signal("property::fullscreen", change_panel_visibility)
    client.connect_signal("focus", change_panel_visibility)
    client.connect_signal("unfocus", change_panel_visibility)
-   --tag.connect_signal("property::selected", change_panel_visibility)
 
    -- maximize panel if client is maximized
    local function toggle_maximize_left_panel(is_maximized)
