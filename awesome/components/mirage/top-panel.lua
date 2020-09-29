@@ -32,7 +32,7 @@ top_panel.create = function(s)
    local panel = awful.wibar({
       screen = s,
       position = "top",
-      ontop = true,
+      ontop = false,
       height = beautiful.top_panel_height,
       width = s.geometry.width,
       bg = "#00000000",
@@ -51,13 +51,6 @@ top_panel.create = function(s)
          require("widgets.battery")
       }
    }
-
-   -- hide panel when client is fullscreen
-   client.connect_signal('property::fullscreen',
-      function(c)
-         panel.visible = not c.fullscreen
-      end
-   )
 end
 
 return top_panel
