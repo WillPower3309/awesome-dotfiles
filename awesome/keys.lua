@@ -313,7 +313,7 @@ keys.globalkeys = gears.table.join(
    -- Focus client by index (cycle through clients)
    awful.key({modkey}, "Tab",
       function()
-         awful.client.focus.byidx( 1)
+         awful.client.focus.byidx(1)
       end,
       {description = "focus next by index", group = "client"}
    ),
@@ -322,6 +322,69 @@ keys.globalkeys = gears.table.join(
          awful.client.focus.byidx(-1)
       end,
       {description = "focus previous by index", group = "client"}
+   ),
+
+   -- =========================================
+   -- SCREEN FOCUSING
+   -- =========================================
+
+   -- Focus screen by direction (hjkl keys)
+   awful.key({modkey, "s"}, "j",
+      function()
+         awful.screen.focus_bydirection("down")
+      end,
+      {description = "focus down", group = "client"}
+   ),
+   awful.key({modkey, "s"}, "k",
+      function()
+         awful.screen.focus_bydirection("up")
+      end,
+      {description = "focus up", group = "client"}
+   ),
+   awful.key({modkey, "s"}, "h",
+      function()
+         awful.screen.focus_bydirection("left")
+      end,
+      {description = "focus left", group = "client"}
+   ),
+   awful.key({modkey, "s"}, "l",
+      function()
+         awful.screen.focus_bydirection("right")
+      end,
+      {description = "focus right", group = "client"}
+   ),
+
+   -- Focus screen by direction (arrow keys)
+   awful.key({modkey, "s"}, "Down",
+      function()
+         awful.screen.focus_bydirection("down")
+      end,
+      {description = "focus down", group = "client"}
+   ),
+   awful.key({modkey, "s"}, "Up",
+      function()
+         awful.screen.focus_bydirection("up")
+      end,
+      {description = "focus up", group = "client"}
+   ),
+   awful.key({modkey, "s"}, "Left",
+      function()
+         awful.screen.focus_bydirection("left")
+      end,
+      {description = "focus left", group = "client"}
+   ),
+   awful.key({modkey, "s"}, "Right",
+      function()
+         awful.screen.focus_bydirection("right")
+      end,
+      {description = "focus right", group = "client"}
+   ),
+
+   -- Focus screen by index (cycle through screens)
+   awful.key({modkey}, "s",
+      function()
+         awful.screen.focus_relative(1)
+      end
    ),
 
    -- =========================================
