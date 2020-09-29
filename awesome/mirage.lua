@@ -1,14 +1,14 @@
 local awful = require("awful")
 local gears = require("gears")
 
-local pastel = {}
+local mirage = {}
 
-pastel.initialize = function()
+mirage.initialize = function()
    -- Set Wallpaper
    gears.wallpaper.maximized(gears.filesystem.get_configuration_dir() .. "/wallpaper.png")
 
    -- Import components
-   --require("components.exit-screen")
+   require("components.exit-screen")
    require("components.volume-adjust")
    require("components.mirage.titlebar")
    require("components.mirage.round-client")
@@ -40,4 +40,4 @@ pastel.initialize = function()
    end)
 end
 
-return pastel
+return mirage
