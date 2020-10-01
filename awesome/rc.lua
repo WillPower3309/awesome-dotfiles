@@ -20,12 +20,11 @@ local theme = themes[2]
 
 -- define default apps (global variable so other components can access it)
 apps = {
-   network_manager = '',
-   power_manager = '',
+   network_manager = "",
+   power_manager = "",
    terminal = "alacritty",
-   -- TODO: rofi theme based on theme
    launcher = "rofi -normal-window -modi drun -show drun",
-   lock = 'i3lock',
+   lock = "i3lock",
    screenshot = "scrot -e 'mv $f ~/Pictures/ 2>/dev/null'",
    filebrowser = "nautilus"
 }
@@ -52,12 +51,12 @@ require("components.notifications")
 
 -- Run all the apps listed in run_on_start_up
 for _, app in ipairs(run_on_start_up) do
-    local findme = app
-    local firstspace = app:find(" ")
-    if firstspace then
-        findme = app:sub(0, firstspace - 1)
-    end
-    awful.spawn.with_shell(string.format("pgrep -u $USER -x %s > /dev/null || (%s)", findme, app), false)
+   local findme = app
+   local firstspace = app:find(" ")
+   if firstspace then
+      findme = app:sub(0, firstspace - 1)
+   end
+   awful.spawn.with_shell(string.format("pgrep -u $USER -x %s > /dev/null || (%s)", findme, app), false)
 end
 
 -- Import Keybinds
