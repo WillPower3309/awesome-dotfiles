@@ -45,7 +45,7 @@ left_panel.create = function(s)
       position = "left",
       height = s.geometry.height,
       width = beautiful.left_panel_width,
-      ontop = false,
+      ontop = true,
       visible = true,
       bg = "#000000",
       shape = panel_shape
@@ -81,6 +81,15 @@ left_panel.create = function(s)
    -- Functionality
    -- ===================================================================
 
+
+   -- hide panel when client is fullscreen
+   local function change_panel_visibility(client)
+      panel.ontop = not client.fullscreen
+   end
+
+   -- connect panel visibility function to relevant signals
+   client.connect_signal("property::fullscreen", change_panel_visibility)
+   client.connect_signal("focus", change_panel_visibility)
 
    -- maximize panel if client is maximized
    local function toggle_maximize_left_panel(is_maximized)

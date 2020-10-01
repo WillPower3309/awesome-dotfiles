@@ -32,7 +32,7 @@ top_panel.create = function(s)
    local panel = awful.wibar({
       screen = s,
       position = "top",
-      ontop = false,
+      ontop = true,
       height = beautiful.top_panel_height,
       width = s.geometry.width,
    })
@@ -51,6 +51,21 @@ top_panel.create = function(s)
          require("widgets.layout-box")
       }
    }
+
+
+   -- ===================================================================
+   -- Functionality
+   -- ===================================================================
+
+
+   -- hide panel when client is fullscreen
+   local function change_panel_visibility(client)
+      panel.ontop = not client.fullscreen
+   end
+
+   -- connect panel visibility function to relevant signals
+   client.connect_signal("property::fullscreen", change_panel_visibility)
+   client.connect_signal("focus", change_panel_visibility)
 
 end
 

@@ -34,7 +34,7 @@ top_panel.create = function(s)
    local panel = awful.wibar({
       screen = s,
       position = "top",
-      ontop = false,
+      ontop = true,
       height = beautiful.top_panel_height,
       width = s.geometry.width,
       bg = "#00000000",
@@ -59,8 +59,7 @@ top_panel.create = function(s)
       position = "top",
       ontop = false,
       height = beautiful.top_panel_height,
-      width = s.geometry.width - beautiful.left_panel_width,
-      x = s.geometry.x + beautiful.left_panel_width,
+      width = s.geometry.width,
       bg = "#000000",
       visible = false
    })
@@ -71,15 +70,21 @@ top_panel.create = function(s)
    -- ===================================================================
 
 
+   -- hide panel when client is fullscreen
+   local function change_panel_visibility(client)
+      panel.ontop = not client.fullscreen
+   end
+
+   -- connect panel visibility function to relevant signals
+   client.connect_signal("property::fullscreen", change_panel_visibility)
+   client.connect_signal("focus", change_panel_visibility)
+
    -- maximize panel if client is maximized
    local function toggle_maximize_top_panel(is_maximized)
       if is_maximized then
          panel_bg.visible = true
-         -- need to set panel ontop=true or panel_bg will be above it
-         panel.ontop = true
       else
          panel_bg.visible = false
-         panel.ontop = false
       end
    end
 
