@@ -72,7 +72,9 @@ top_panel.create = function(s)
 
    -- hide panel when client is fullscreen
    local function change_panel_visibility(client)
-      panel.ontop = not client.fullscreen
+      if client.screen == s then
+         panel.ontop = not client.fullscreen
+      end
    end
 
    -- connect panel visibility function to relevant signals
@@ -81,10 +83,12 @@ top_panel.create = function(s)
 
    -- maximize panel if client is maximized
    local function toggle_maximize_top_panel(is_maximized)
-      if is_maximized then
-         panel_bg.visible = true
-      else
-         panel_bg.visible = false
+      if s == awful.screen.focused() then
+         if is_maximized then
+            panel_bg.visible = true
+         else
+            panel_bg.visible = false
+         end
       end
    end
 

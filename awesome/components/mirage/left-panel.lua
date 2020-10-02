@@ -84,7 +84,9 @@ left_panel.create = function(s)
 
    -- hide panel when client is fullscreen
    local function change_panel_visibility(client)
-      panel.ontop = not client.fullscreen
+      if client.screen == s then
+         panel.ontop = not client.fullscreen
+      end
    end
 
    -- connect panel visibility function to relevant signals
@@ -93,10 +95,12 @@ left_panel.create = function(s)
 
    -- maximize panel if client is maximized
    local function toggle_maximize_left_panel(is_maximized)
-      if is_maximized then
-         panel.shape = maximized_panel_shape
-      else
-         panel.shape = panel_shape
+      if s == awful.screen.focused() then
+         if is_maximized then
+            panel.shape = maximized_panel_shape
+         else
+            panel.shape = panel_shape
+         end
       end
    end
 
