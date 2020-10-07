@@ -113,7 +113,7 @@ local return_button = function()
 	end
 
 	local network_notify = function(message, title, app_name, icon)
-		naughty.notification({ 
+		naughty.notify({
 			message = message,
 			title = title,
 			app_name = app_name,

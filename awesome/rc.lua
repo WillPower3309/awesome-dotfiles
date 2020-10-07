@@ -16,7 +16,7 @@ local themes = {
 }
 
 -- change this number to use the corresponding theme
-local theme = themes[2]
+local theme = themes[1]
 
 -- define default apps (global variable so other components can access it)
 apps = {
