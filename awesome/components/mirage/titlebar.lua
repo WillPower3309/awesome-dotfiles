@@ -58,32 +58,34 @@ end)
 
 -- Catch the Signal when a client is created
 client.connect_signal("manage", function(c)
-
-  -- Center all clients with skip_center property on spawn
-  if c.floating and not c.skip_center then
-    awful.placement.centered(c)
-  end
-
-  -- Hide bars when client and layout is maximized
-  if not c.max then
-    awful.titlebar.show(c, 'top')
-  else
-    awful.titlebar.hide(c, 'top')
-  end
-
+   -- Hide bars when client and layout is maximized
+   if not c.max then
+      awful.titlebar.show(c, 'top')
+   else
+      awful.titlebar.hide(c, 'top')
+   end
 end)
 
 -- Catch the signal when a client's layout is changed
 screen.connect_signal("arrange", function(s)
-  for _, c in pairs(s.clients) do
-    if c.floating and c.first_tag.layout.name ~= 'max' then
-      if not c.hide_titlebars then
-        awful.titlebar.show(c, 'top')
-      else
-        awful.titlebar.hide(c, 'top')
+   for _, c in pairs(s.clients) do
+      if c.floating and c.first_tag.layout.name ~= 'max' then
+         if not c.hide_titlebars then
+            awful.titlebar.show(c, 'top')
+         else
+            awful.titlebar.hide(c, 'top')
+         end
+      elseif c.first_tag.layout.name == 'max' and not c.fullscreen then
+         awful.titlebar.hide(c, 'top')
       end
-    elseif c.first_tag.layout.name == 'max' and not c.fullscreen then
-      awful.titlebar.hide(c, 'top')
-    end
-  end
+   end
 end)
+
+-- Catch the signal when a client is maximized
+--client.connect_signal("property::maximized", function(c)
+--   if c.maximized then
+--      awful.titlebar.hide(c, 'top')
+--   else
+--      awful.titlebar.show(c, 'top')
+--   end
+--end)

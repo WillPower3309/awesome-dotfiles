@@ -17,7 +17,7 @@ local dpi = require('beautiful').xresources.apply_dpi
 local clickable_container = require('widgets.clickable-container')
 
 local config_dir = gears.filesystem.get_configuration_dir()
-local widget_icon_dir = config_dir .. 'widgets/network/icons/'
+local widget_icon_dir = config_dir .. 'icons/network/'
 
 -- Configuration
 local interfaces = {
