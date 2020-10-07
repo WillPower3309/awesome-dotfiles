@@ -20,8 +20,8 @@ local theme = themes[1]
 
 -- define default apps (global variable so other components can access it)
 apps = {
-   network_manager = "",
-   power_manager = "",
+   network_manager = "", -- recommended: nm-connection-editor
+   power_manager = "", -- recommended: xfce4-power-manager
    terminal = "alacritty",
    launcher = "rofi -normal-window -modi drun -show drun",
    lock = "i3lock",

@@ -57,10 +57,7 @@ local return_button = function()
 	
 	widget_button:buttons(
 		gears.table.join(
-			awful.button(
-				{},
-				1,
-				nil,
+			awful.button({}, 1, nil,
 				function()
 					awful.spawn(apps.network_manager, false)
 				end
