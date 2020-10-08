@@ -5,6 +5,12 @@
 --      ██║  ██║╚███╔███╔╝███████╗███████║╚██████╔╝██║ ╚═╝ ██║███████╗
 --      ╚═╝  ╚═╝ ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝
 
+
+-- Standard awesome libraries
+local gears = require("gears")
+local awful = require("awful")
+
+
 -- ===================================================================
 -- User Configuration
 -- ===================================================================
@@ -16,14 +22,15 @@ local themes = {
 }
 
 -- change this number to use the corresponding theme
-local theme = themes[1]
+local theme = themes[2]
+local theme_config_dir = gears.filesystem.get_configuration_dir() .. "/configuration/" .. theme .. "/"
 
 -- define default apps (global variable so other components can access it)
 apps = {
    network_manager = "", -- recommended: nm-connection-editor
    power_manager = "", -- recommended: xfce4-power-manager
-   terminal = "alacritty",
-   launcher = "rofi -normal-window -modi drun -show drun",
+   terminal = "alacritty --config-file " .. theme_config_dir .. "alacritty.yml",
+   launcher = "rofi -normal-window -modi drun -show drun -theme " .. theme_config_dir .. "rofi.rasi",
    lock = "i3lock",
    screenshot = "scrot -e 'mv $f ~/Pictures/ 2>/dev/null'",
    filebrowser = "nautilus"
@@ -31,7 +38,7 @@ apps = {
 
 -- List of apps to run on start-up
 local run_on_start_up = {
-   "picom",
+   "picom --experimental-backends --config " .. theme_config_dir .. "picom.conf",
    "redshift",
    "unclutter"
 }
@@ -41,10 +48,6 @@ local run_on_start_up = {
 -- Initialization
 -- ===================================================================
 
-
--- Standard awesome libraries
-local gears = require("gears")
-local awful = require("awful")
 
 -- Import notification appearance
 require("components.notifications")
