@@ -67,6 +67,15 @@ left_panel.create = function(s)
       nil
    }
 
+   -- panel background that becomes visible when client is maximized
+   panel_bg = wibox({
+      screen = s,
+      position = "left",
+      height = s.geometry.height,
+      width = beautiful.left_panel_width,
+      visible = false
+   })
+
   
    -- ===================================================================
    -- Functionality
