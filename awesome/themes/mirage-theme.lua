@@ -32,7 +32,7 @@ theme.title_font = "SF Pro Display Medium 10"
 
 -- Background
 theme.bg_normal = "#5B60711A"
-theme.bg_dark = "#000000"
+theme.bg_dark = "#090B0C"
 theme.bg_focus = "#151821"
 theme.bg_urgent = "#ed8274"
 theme.bg_minimize = "#444444"

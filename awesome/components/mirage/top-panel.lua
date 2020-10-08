@@ -49,7 +49,7 @@ top_panel.create = function(s)
          layout = wibox.layout.fixed.horizontal,
          wibox.layout.margin(wibox.widget.systray(), 0, 0, 3, 3),
          require("widgets.bluetooth"),
-         require("widgets.network"),
+         require("widgets.network")(),
          require("widgets.battery")
       }
    }
