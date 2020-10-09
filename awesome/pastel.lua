@@ -18,7 +18,7 @@ pastel.initialize = function()
       for i = 1, 9, 1
       do
          awful.tag.add(i, {
-            icon = gears.filesystem.get_configuration_dir() .. '/icons/tags/' .. i .. '.png',
+            icon = gears.filesystem.get_configuration_dir() .. '/icons/tags/pastel/' .. i .. '.png',
             icon_only = true,
             layout = awful.layout.suit.tile,
             screen = s,
