@@ -34,7 +34,7 @@ local left_panel = {}
 left_panel.create = function(s)
 
    local panel_shape = function(cr, width, height)
-      gears.shape.partially_rounded_rect(cr, width, height, false, true, true, false, 36)
+      gears.shape.partially_rounded_rect(cr, width, height, false, true, true, false, 40)
    end
    local maximized_panel_shape = function(cr, width, height)
       gears.shape.rectangle(cr, width, height)

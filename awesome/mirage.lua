@@ -19,7 +19,7 @@ mirage.initialize = function()
 
    -- Set up each screen (add tags & panels)
    awful.screen.connect_for_each_screen(function(s)
-      for i = 1, 9, 1
+      for i = 1, 7, 1
       do
          awful.tag.add(i, {
             icon = gears.filesystem.get_configuration_dir() .. '/icons/tags/mirage/' .. i .. '.png',

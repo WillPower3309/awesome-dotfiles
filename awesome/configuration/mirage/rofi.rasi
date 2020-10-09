@@ -18,7 +18,7 @@ configuration {
 
 window {
     height: 100%;
-    width: 33%;
+    width: 28%;
     transparency: "real";
     background-color: @background;
 }
@@ -44,13 +44,13 @@ entry {
 
 mainbox {
     children: [ inputbar, listview ];
-    padding: 5%;
+    margin: 5% 1.5% 0 5%;
 }
 
 listview {
     columns: 3;
     layout: vertical;
-    spacing: 25;
+    spacing: 0;
     margin: 8% 0;
 }
 
