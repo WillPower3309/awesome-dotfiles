@@ -60,7 +60,7 @@ top_panel.create = function(s)
       ontop = false,
       height = beautiful.top_panel_height,
       width = s.geometry.width,
-      bg = "#000000",
+      bg = beautiful.bg_dark,
       visible = false
    })
 

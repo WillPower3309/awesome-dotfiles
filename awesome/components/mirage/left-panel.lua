@@ -67,15 +67,6 @@ left_panel.create = function(s)
       nil
    }
 
-   -- panel background that becomes visible when client is maximized
-   panel_bg = wibox({
-      screen = s,
-      position = "left",
-      height = s.geometry.height,
-      width = beautiful.left_panel_width,
-      visible = false
-   })
-
   
    -- ===================================================================
    -- Functionality
@@ -175,22 +166,6 @@ left_panel.create = function(s)
       end
    end)
 
-
-   -- panel visual change on rofi spawn
-   awesome.connect_signal("launcher_spawn",
-      function()
-         panel_bg.visible = true
-      end
-   )
-
-   -- hide blurred part of panel when rofi is closed:
-   -- hides whenever any client is closed but since its hidden
-   -- unless rofi is open it effectively accomplishes the above
-   client.connect_signal("unmanage",
-      function()
-         panel_bg.visible = false
-      end
-   )
 end
 
 return left_panel

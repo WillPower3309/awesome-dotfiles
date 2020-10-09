@@ -58,7 +58,7 @@ theme.border_focus = "#ff8a65"
 theme.border_marked = theme.fg_urgent
 
 -- Taglist
-theme.taglist_bg_empty = "#000000"
+theme.taglist_bg_empty = theme.bg_dark
 theme.taglist_bg_occupied = "#111111"
 theme.taglist_bg_urgent = "#e91e6399"
 theme.taglist_bg_focus = theme.bg_normal
