@@ -59,7 +59,7 @@ left_panel.create = function(s)
    panel:setup {
       expand = "none",
       layout = wibox.layout.align.vertical,
-      require("widgets.layout-box"),
+      wibox.layout.margin(require("widgets.layout-box"), dpi(13), dpi(13), dpi(13), dpi(13)),
       {
          layout = wibox.layout.fixed.vertical,
          tag_list.create(s)

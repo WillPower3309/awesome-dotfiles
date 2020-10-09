@@ -84,10 +84,10 @@ theme.notification_max_width = dpi(350)
 -- ===================================================================
 
 
--- You can use your own layout icons like this:
-theme.layout_tile = "~/.config/awesome/icons/layouts/view-quilt.png"
-theme.layout_floating = "~/.config/awesome/icons/layouts/view-float.png"
-theme.layout_max = "~/.config/awesome/icons/layouts/arrow-expand-all.png"
+-- Define layout icons
+theme.layout_tile = "~/.config/awesome/icons/layouts/tiled.png"
+theme.layout_floating = "~/.config/awesome/icons/layouts/floating.png"
+theme.layout_max = "~/.config/awesome/icons/layouts/maximized.png"
 
 theme.icon_theme = "Tela-dark"
 
