@@ -13,6 +13,7 @@ local wibox = require("wibox")
 -- Titlebar Setup
 -- ===================================================================
 
+
 client.connect_signal("request::titlebars", function(c)
    -- buttons for the titlebar
    local buttons = gears.table.join(

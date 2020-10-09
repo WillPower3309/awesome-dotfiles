@@ -100,7 +100,7 @@ theme.icon_theme = "Tela-dark"
 -- ===================================================================
 
 
-theme.titlebars_enabled = true
+--theme.titlebars_enabled = true
 theme.titlebar_bg_focus = theme.bg_normal
 theme.titlebar_bg_normal = theme.bg_normal
 theme.titlebar_fg_focus = theme.fg_normal
