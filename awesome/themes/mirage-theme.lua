@@ -112,32 +112,28 @@ theme.titlebar_fg_normal = theme.fg_focus
 theme.titlebar_font = theme.title_font
 
 -- Close Button
-theme.titlebar_close_button_normal = icon_dir .. 'close_normal.svg'
+theme.titlebar_close_button_normal = icon_dir .. 'normal.svg'
 theme.titlebar_close_button_focus  = icon_dir .. 'close_focus.svg'
-
--- Minimize Button
-theme.titlebar_minimize_button_normal = icon_dir .. 'minimize_normal.svg'
-theme.titlebar_minimize_button_focus  = icon_dir .. 'minimize_focus.svg'
-
--- Maximized Button
-theme.titlebar_maximized_button_normal_inactive = icon_dir .. 'maximized_normal_inactive.svg'
-theme.titlebar_maximized_button_focus_inactive  = icon_dir .. 'maximized_focus_inactive.svg'
-theme.titlebar_maximized_button_normal_active = icon_dir .. 'maximized_normal_active.svg'
-theme.titlebar_maximized_button_focus_active  = icon_dir .. 'maximized_focus_active.svg'
-
--- Hovered Close Button
-theme.titlebar_close_button_normal_hover = icon_dir .. 'close_normal_hover.svg'
+theme.titlebar_close_button_normal_hover = icon_dir .. 'close_focus_hover.svg'
 theme.titlebar_close_button_focus_hover  = icon_dir .. 'close_focus_hover.svg'
 
--- Hovered Minimize Buttin
-theme.titlebar_minimize_button_normal_hover = icon_dir .. 'minimize_normal_hover.svg'
+-- Minimize Button
+theme.titlebar_minimize_button_normal = icon_dir .. 'normal.svg'
+theme.titlebar_minimize_button_focus  = icon_dir .. 'minimize_focus.svg'
+theme.titlebar_minimize_button_normal_hover = icon_dir .. 'minimize_focus_hover.svg'
 theme.titlebar_minimize_button_focus_hover  = icon_dir .. 'minimize_focus_hover.svg'
 
--- Hovered Maximized Button
-theme.titlebar_maximized_button_normal_inactive_hover = icon_dir .. 'maximized_normal_inactive_hover.svg'
-theme.titlebar_maximized_button_focus_inactive_hover  = icon_dir .. 'maximized_focus_inactive_hover.svg'
-theme.titlebar_maximized_button_normal_active_hover = icon_dir .. 'maximized_normal_active_hover.svg'
-theme.titlebar_maximized_button_focus_active_hover  = icon_dir .. 'maximized_focus_active_hover.svg'
+-- Maximized Button (While Window is Maximized)
+theme.titlebar_maximized_button_normal_active = icon_dir .. 'normal.svg'
+theme.titlebar_maximized_button_focus_active  = icon_dir .. 'maximized_focus.svg'
+theme.titlebar_maximized_button_normal_active_hover = icon_dir .. 'maximized_focus_hover.svg'
+theme.titlebar_maximized_button_focus_active_hover  = icon_dir .. 'maximized_focus_hover.svg'
+
+-- Maximized Button (While Window is not Maximized)
+theme.titlebar_maximized_button_normal_inactive = icon_dir .. 'normal.svg'
+theme.titlebar_maximized_button_focus_inactive  = icon_dir .. 'maximized_focus.svg'
+theme.titlebar_maximized_button_normal_inactive_hover = icon_dir .. 'maximized_focus_hover.svg'
+theme.titlebar_maximized_button_focus_inactive_hover  = icon_dir .. 'maximized_focus_hover.svg'
 
 -- return theme
 return theme
