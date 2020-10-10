@@ -13,7 +13,6 @@
 local xresources = require("beautiful.xresources")
 local gears = require("gears")
 local dpi = xresources.apply_dpi
-local icon_dir = gears.filesystem.get_configuration_dir() .. "/icons/"
 
 -- define module table
 local theme = {}
@@ -89,6 +88,7 @@ theme.notification_max_width = dpi(350)
 
 
 -- Define layout icons
+-- titlebars_enabled = true,
 theme.layout_tile = "~/.config/awesome/icons/layouts/tiled.png"
 theme.layout_floating = "~/.config/awesome/icons/layouts/floating.png"
 theme.layout_max = "~/.config/awesome/icons/layouts/maximized.png"
@@ -97,11 +97,14 @@ theme.icon_theme = "Tela-dark"
 
 
 -- ===================================================================
--- Titlebar
+-- Titlebars
 -- ===================================================================
 
 
---theme.titlebars_enabled = true
+theme.titlebars_enabled = true
+
+local icon_dir = gears.filesystem.get_configuration_dir() .. "/icons/titlebar/"
+
 theme.titlebar_bg_focus = theme.bg_normal
 theme.titlebar_bg_normal = theme.bg_normal
 theme.titlebar_fg_focus = theme.fg_normal
@@ -109,69 +112,32 @@ theme.titlebar_fg_normal = theme.fg_focus
 theme.titlebar_font = theme.title_font
 
 -- Close Button
-theme.titlebar_close_button_normal = icon_dir .. "titlebar/close_normal.svg"
-theme.titlebar_close_button_focus  = icon_dir .. "titlebar/close_focus.svg"
+theme.titlebar_close_button_normal = icon_dir .. 'close_normal.svg'
+theme.titlebar_close_button_focus  = icon_dir .. 'close_focus.svg'
 
 -- Minimize Button
-theme.titlebar_minimize_button_normal = icon_dir .. "titlebar/minimize_normal.svg"
-theme.titlebar_minimize_button_focus  = icon_dir .. "titlebar/minimize_focus.svg"
-
--- Ontop Button
-theme.titlebar_ontop_button_normal_inactive = icon_dir .. "titlebar/ontop_normal_inactive.svg"
-theme.titlebar_ontop_button_focus_inactive  = icon_dir .. "titlebar/ontop_focus_inactive.svg"
-theme.titlebar_ontop_button_normal_active = icon_dir .. "titlebar/ontop_normal_active.svg"
-theme.titlebar_ontop_button_focus_active  = icon_dir .. "titlebar/ontop_focus_active.svg"
-
--- Sticky Button
-theme.titlebar_sticky_button_normal_inactive = icon_dir .. "titlebar/sticky_normal_inactive.svg"
-theme.titlebar_sticky_button_focus_inactive  = icon_dir .. "titlebar/sticky_focus_inactive.svg"
-theme.titlebar_sticky_button_normal_active = icon_dir .. "titlebar/sticky_normal_active.svg"
-theme.titlebar_sticky_button_focus_active  = icon_dir .. "titlebar/sticky_focus_active.svg"
-
--- Floating Button
-theme.titlebar_floating_button_normal_inactive = icon_dir .. "titlebar/floating_normal_inactive.svg"
-theme.titlebar_floating_button_focus_inactive  = icon_dir .. "titlebar/floating_focus_inactive.svg"
-theme.titlebar_floating_button_normal_active = icon_dir .. "titlebar/floating_normal_active.svg"
-theme.titlebar_floating_button_focus_active  = icon_dir .. "titlebar/floating_focus_active.svg"
+theme.titlebar_minimize_button_normal = icon_dir .. 'minimize_normal.svg'
+theme.titlebar_minimize_button_focus  = icon_dir .. 'minimize_focus.svg'
 
 -- Maximized Button
-theme.titlebar_maximized_button_normal_inactive = icon_dir .. "titlebar/maximized_normal_inactive.svg"
-theme.titlebar_maximized_button_focus_inactive  = icon_dir .. "titlebar/maximized_focus_inactive.svg"
-theme.titlebar_maximized_button_normal_active = icon_dir .. "titlebar/maximized_normal_active.svg"
-theme.titlebar_maximized_button_focus_active  = icon_dir .. "titlebar/maximized_focus_active.svg"
+theme.titlebar_maximized_button_normal_inactive = icon_dir .. 'maximized_normal_inactive.svg'
+theme.titlebar_maximized_button_focus_inactive  = icon_dir .. 'maximized_focus_inactive.svg'
+theme.titlebar_maximized_button_normal_active = icon_dir .. 'maximized_normal_active.svg'
+theme.titlebar_maximized_button_focus_active  = icon_dir .. 'maximized_focus_active.svg'
 
 -- Hovered Close Button
-theme.titlebar_close_button_normal_hover = icon_dir .. "titlebar/close_normal_hover.svg"
-theme.titlebar_close_button_focus_hover  = icon_dir .. "titlebar/close_focus_hover.svg"
+theme.titlebar_close_button_normal_hover = icon_dir .. 'close_normal_hover.svg'
+theme.titlebar_close_button_focus_hover  = icon_dir .. 'close_focus_hover.svg'
 
 -- Hovered Minimize Buttin
-theme.titlebar_minimize_button_normal_hover = icon_dir .. "titlebar/minimize_normal_hover.svg"
-theme.titlebar_minimize_button_focus_hover  = icon_dir .. "titlebar/minimize_focus_hover.svg"
-
--- Hovered Ontop Button
-theme.titlebar_ontop_button_normal_inactive_hover = icon_dir .. "titlebar/ontop_normal_inactive_hover.svg"
-theme.titlebar_ontop_button_focus_inactive_hover  = icon_dir .. "titlebar/ontop_focus_inactive_hover.svg"
-theme.titlebar_ontop_button_normal_active_hover = icon_dir .. "titlebar/ontop_normal_active_hover.svg"
-theme.titlebar_ontop_button_focus_active_hover  = icon_dir .. "titlebar/ontop_focus_active_hover.svg"
-
--- Hovered Sticky Button
-theme.titlebar_sticky_button_normal_inactive_hover = icon_dir .. "titlebar/sticky_normal_inactive_hover.svg"
-theme.titlebar_sticky_button_focus_inactive_hover  = icon_dir .. "titlebar/sticky_focus_inactive_hover.svg"
-theme.titlebar_sticky_button_normal_active_hover = icon_dir .. "titlebar/sticky_normal_active_hover.svg"
-theme.titlebar_sticky_button_focus_active_hover  = icon_dir .. "titlebar/sticky_focus_active_hover.svg"
-
--- Hovered Floating Button
-theme.titlebar_floating_button_normal_inactive_hover = icon_dir .. "titlebar/floating_normal_inactive_hover.svg"
-theme.titlebar_floating_button_focus_inactive_hover  = icon_dir .. "titlebar/floating_focus_inactive_hover.svg"
-theme.titlebar_floating_button_normal_active_hover = icon_dir .. "titlebar/floating_normal_active_hover.svg"
-theme.titlebar_floating_button_focus_active_hover  = icon_dir .. "titlebar/floating_focus_active_hover.svg"
+theme.titlebar_minimize_button_normal_hover = icon_dir .. 'minimize_normal_hover.svg'
+theme.titlebar_minimize_button_focus_hover  = icon_dir .. 'minimize_focus_hover.svg'
 
 -- Hovered Maximized Button
-theme.titlebar_maximized_button_normal_inactive_hover = icon_dir .. "titlebar/maximized_normal_inactive_hover.svg"
-theme.titlebar_maximized_button_focus_inactive_hover  = icon_dir .. "titlebar/maximized_focus_inactive_hover.svg"
-theme.titlebar_maximized_button_normal_active_hover = icon_dir .. "titlebar/maximized_normal_active_hover.svg"
-theme.titlebar_maximized_button_focus_active_hover  = icon_dir .. "titlebar/maximized_focus_active_hover.svg"
-
+theme.titlebar_maximized_button_normal_inactive_hover = icon_dir .. 'maximized_normal_inactive_hover.svg'
+theme.titlebar_maximized_button_focus_inactive_hover  = icon_dir .. 'maximized_focus_inactive_hover.svg'
+theme.titlebar_maximized_button_normal_active_hover = icon_dir .. 'maximized_normal_active_hover.svg'
+theme.titlebar_maximized_button_focus_active_hover  = icon_dir .. 'maximized_focus_active_hover.svg'
 
 -- return theme
 return theme

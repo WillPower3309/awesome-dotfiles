@@ -78,6 +78,9 @@ theme.top_panel_height = dpi(26)
 -- Notification Sizing
 theme.notification_max_width = dpi(350)
 
+-- Titlebars
+theme.titlebars_enabled = false
+
 
 -- ===================================================================
 -- Icons

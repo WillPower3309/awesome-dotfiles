@@ -62,6 +62,14 @@ for _, app in ipairs(run_on_start_up) do
    awful.spawn.with_shell(string.format("pgrep -u $USER -x %s > /dev/null || (%s)", findme, app), false)
 end
 
+-- Import theme
+local beautiful = require("beautiful")
+beautiful.init(gears.filesystem.get_configuration_dir() .. "themes/" .. theme .. "-theme.lua")
+
+-- Initialize theme
+local selected_theme = require(theme)
+selected_theme.initialize()
+
 -- Import Keybinds
 local keys = require("keys")
 root.keys(keys.globalkeys)
@@ -70,14 +78,6 @@ root.buttons(keys.desktopbuttons)
 -- Import rules
 local create_rules = require("rules").create
 awful.rules.rules = create_rules(keys.clientkeys, keys.clientbuttons)
-
--- Import theme
-local beautiful = require("beautiful")
-beautiful.init(gears.filesystem.get_configuration_dir() .. "themes/" .. theme .. "-theme.lua")
-
--- Initialize theme
-local selected_theme = require(theme)
-selected_theme.initialize()
 
 -- Define layouts
 awful.layout.layouts = {
