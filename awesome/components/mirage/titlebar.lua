@@ -1,6 +1,24 @@
+--      ████████╗██╗████████╗██╗     ███████╗██████╗  █████╗ ██████╗
+--      ╚══██╔══╝██║╚══██╔══╝██║     ██╔════╝██╔══██╗██╔══██╗██╔══██╗
+--         ██║   ██║   ██║   ██║     █████╗  ██████╔╝███████║██████╔╝
+--         ██║   ██║   ██║   ██║     ██╔══╝  ██╔══██╗██╔══██║██╔══██╗
+--         ██║   ██║   ██║   ███████╗███████╗██████╔╝██║  ██║██║  ██║
+--         ╚═╝   ╚═╝   ╚═╝   ╚══════╝╚══════╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+
+-- ===================================================================
+-- Initialization
+-- ===================================================================
+
+
 local awful = require("awful")
 local wibox = require("wibox")
 local dpi = require("beautiful").xresources.apply_dpi
+
+
+-- ===================================================================
+-- Titlebar Creation
+-- ===================================================================
+
 
 -- Add a titlebar
 client.connect_signal("request::titlebars", function(c)
@@ -16,10 +34,7 @@ client.connect_signal("request::titlebars", function(c)
          wibox.layout.margin(awful.titlebar.widget.maximizedbutton(c), dpi(4), dpi(5), dpi(5), dpi(5)),
          layout = wibox.layout.fixed.horizontal
       },
-      {
-         align = "center",
-         widget = awful.titlebar.widget.titlewidget(c)
-      },
+      nil,
       nil,
       layout = wibox.layout.align.horizontal
    }

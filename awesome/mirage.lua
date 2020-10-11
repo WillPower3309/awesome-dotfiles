@@ -1,7 +1,25 @@
+--      ███╗   ███╗██╗██████╗  █████╗  ██████╗ ███████╗
+--      ████╗ ████║██║██╔══██╗██╔══██╗██╔════╝ ██╔════╝
+--      ██╔████╔██║██║██████╔╝███████║██║  ███╗█████╗
+--      ██║╚██╔╝██║██║██╔══██╗██╔══██║██║   ██║██╔══╝
+--      ██║ ╚═╝ ██║██║██║  ██║██║  ██║╚██████╔╝███████╗
+--      ╚═╝     ╚═╝╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝
+
+-- ===================================================================
+-- Initialization
+-- ===================================================================
+
+
 local awful = require("awful")
 local gears = require("gears")
 
 local mirage = {}
+
+
+-- ===================================================================
+-- Mirage setup
+-- ===================================================================
+
 
 mirage.initialize = function()
    -- Set Wallpaper
@@ -11,7 +29,6 @@ mirage.initialize = function()
    require("components.exit-screen")
    require("components.volume-adjust")
    require("components.mirage.titlebar")
-   require("components.mirage.round-client")
 
    -- Import panels
    local left_panel = require("components.mirage.left-panel")

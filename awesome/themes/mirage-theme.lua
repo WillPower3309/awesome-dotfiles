@@ -61,7 +61,7 @@ theme.taglist_bg_empty = theme.bg_dark
 theme.taglist_bg_occupied = "#111111"
 theme.taglist_bg_urgent = "#e91e6399"
 theme.taglist_bg_focus = theme.bg_normal
-theme.taglist_spacing = dpi(25)
+theme.taglist_spacing = dpi(19)
 
 -- Tasklist
 theme.tasklist_font = theme.font
