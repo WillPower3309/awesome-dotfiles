@@ -20,6 +20,7 @@ local dpi = beautiful.xresources.apply_dpi
 local offsetx = dpi(56)
 local offsety = dpi(300)
 local screen = awful.screen.focused()
+local icon_dir = gears.filesystem.get_configuration_dir() .. "/icons/volume/" .. beautiful.name .. "/"
 
 
 -- ===================================================================
@@ -60,7 +61,7 @@ volume_adjust:setup {
    },
    wibox.container.margin(
       wibox.widget{
-         image = gears.filesystem.get_configuration_dir() .. "/icons/volume.png",
+         image = icon_dir .. "/volume.png",
          widget = wibox.widget.imagebox
       }, dpi(7), dpi(7), dpi(14), dpi(14)
    )
