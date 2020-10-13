@@ -35,7 +35,7 @@ theme.bg_dark = "#090B0C"
 theme.bg_focus = "#151821"
 theme.bg_urgent = "#ed8274"
 theme.bg_minimize = "#444444"
-theme.bg_systray = theme.bg_normal
+theme.bg_systray = "#00000000"
 
 -- Foreground
 theme.fg_normal = "#ffffff"
