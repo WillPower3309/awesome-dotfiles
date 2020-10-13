@@ -34,7 +34,6 @@ theme.bg_dark = "#000000"
 theme.bg_focus = "#151821"
 theme.bg_urgent = "#ed8274"
 theme.bg_minimize = "#444444"
-theme.bg_systray = theme.bg_normal
 
 -- Foreground
 theme.fg_normal = "#ffffff"
@@ -77,6 +76,10 @@ theme.top_panel_height = dpi(26)
 
 -- Notification Sizing
 theme.notification_max_width = dpi(350)
+
+-- System Tray
+theme.bg_systray = theme.bg_normal
+theme.systray_icon_spacing = dpi(5)
 
 -- Titlebars
 theme.titlebars_enabled = false

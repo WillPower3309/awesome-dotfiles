@@ -35,7 +35,6 @@ theme.bg_dark = "#090B0C"
 theme.bg_focus = "#151821"
 theme.bg_urgent = "#ed8274"
 theme.bg_minimize = "#444444"
-theme.bg_systray = "#00000000"
 
 -- Foreground
 theme.fg_normal = "#ffffff"
@@ -81,6 +80,10 @@ theme.top_panel_height = dpi(30)
 -- Notification Sizing
 theme.notification_max_width = dpi(350)
 
+-- System Tray
+theme.bg_systray = "#00000000"
+theme.systray_icon_spacing = dpi(5)
+
 
 -- ===================================================================
 -- Icons
@@ -109,7 +112,6 @@ theme.titlebar_bg_focus = theme.bg_normal
 theme.titlebar_bg_normal = theme.bg_normal
 theme.titlebar_fg_focus = theme.fg_normal
 theme.titlebar_fg_normal = theme.fg_focus
-theme.titlebar_font = theme.title_font
 
 -- Close Button
 theme.titlebar_close_button_normal = icon_dir .. 'normal.svg'

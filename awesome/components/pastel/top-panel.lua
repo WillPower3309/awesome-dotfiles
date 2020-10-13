@@ -44,7 +44,7 @@ top_panel.create = function(s)
       require("widgets.calendar"),
       {
          layout = wibox.layout.fixed.horizontal,
-         wibox.layout.margin(wibox.widget.systray(), 0, 0, dpi(3), dpi(3)),
+         wibox.widget.systray(),
          require("widgets.bluetooth"),
          require("widgets.network")(),
          require("widgets.battery"),

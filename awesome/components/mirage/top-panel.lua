@@ -14,7 +14,6 @@ local awful = require("awful")
 local beautiful = require("beautiful")
 local wibox = require("wibox")
 local gears = require("gears")
-local dpi = beautiful.xresources.apply_dpi
 
 -- import widgets
 local task_list = require("widgets.task-list")
@@ -30,15 +29,19 @@ local top_panel = {}
 
 top_panel.create = function(s)
 
-
-   local panel = awful.wibar({
+   local panel = wibox({
       screen = s,
       position = "top",
       ontop = true,
+      visible = true,
       height = beautiful.top_panel_height,
       width = s.geometry.width,
       bg = "#00000000",
+      type = "dock",
    })
+
+   -- do not define panel:struts
+   -- this will allow the calendar widget to appear above the panel
 
    panel:setup {
       expand = "none",
@@ -47,7 +50,7 @@ top_panel.create = function(s)
       require("widgets.calendar"),
       {
          layout = wibox.layout.fixed.horizontal,
-         wibox.layout.margin(wibox.widget.systray(), 0, 0, 3, 3),
+         wibox.widget.systray(),
          require("widgets.bluetooth"),
          require("widgets.network")(),
          require("widgets.battery")
