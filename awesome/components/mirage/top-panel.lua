@@ -15,9 +15,6 @@ local beautiful = require("beautiful")
 local wibox = require("wibox")
 local gears = require("gears")
 
--- import widgets
-local task_list = require("widgets.task-list")
-
 -- define module table
 local top_panel = {}
 
@@ -47,7 +44,7 @@ top_panel.create = function(s)
       expand = "none",
       layout = wibox.layout.align.horizontal,
       nil,
-      require("widgets.calendar"),
+      require("widgets.calendar").create(s),
       {
          layout = wibox.layout.fixed.horizontal,
          wibox.widget.systray(),

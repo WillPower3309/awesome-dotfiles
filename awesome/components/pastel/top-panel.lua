@@ -41,7 +41,7 @@ top_panel.create = function(s)
       expand = "none",
       layout = wibox.layout.align.horizontal,
       task_list.create(s),
-      require("widgets.calendar"),
+      require("widgets.calendar").create(s),
       {
          layout = wibox.layout.fixed.horizontal,
          wibox.widget.systray(),
