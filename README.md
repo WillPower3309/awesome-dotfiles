@@ -19,13 +19,13 @@
 
 <a name="details"></a>
 ## Details ##
-+ **OS**: Arch Linux
++ **OS**: Gentoo Linux
 + **Shell**: ZSH
 + **WM**: awesome
 + **Theme**: Qogir Dark
 + **Icons**: Tela Dark
 + **Cursor**: xCursor Breeze Light
-+ **Terminal**: Alacritty
++ **Terminal**: St
 
 <a name="features"></a>
 ## Features ##
@@ -45,13 +45,13 @@
 
 <a name="dependencies"></a>
 ## Dependencies ##
-I have made my best effort to reduce the number of dependencies by using the awesome API to its fullest extent, and allowing users to edit the `apps.lua` file (see [installation section](#installation)) to define their own preferred applications. That being said, here are the dependencies.
+I have made my best effort to reduce the number of dependencies by using the awesome API to its fullest extent, and allowing users to specify their preferred applications via the `rc.lua` file (see [installation section](#installation)). That being said, here are the dependencies:
 
 |Dependency|Description|
 |:----------:|:-------------:|
 |`awesome`|Window manager|
 |`feh`|Fast image viewer used as wallpaper setting utility|
-|`picom`|Window compositor, eliminates screen tearing and allows for cool fade effects|
+|`picom`|Window compositor, eliminates screen tearing and allows for cool fade effects. **git version required for mirage theme**|
 |`rofi`|Application launcher|
 |`imagemagick`|**OPTIONAL BUT NEEDED IF USING A DIFFERENT BACKGROUND**, used in config to generate blurred wallpaper|
 
@@ -82,14 +82,15 @@ These will improve the user experience but aren't required:
 <a name="folderStructure"></a>
 ## Awesome Folder File Structure ##
 In order to avoid a poorly organized `rc.lua` spanning thousands of lines, it has been split into multiple files / folders. I have taken extra care to create a logical directory structure that will hopefully allow those new to awesomewm to have an easy time navigating it.
-+ `rc.lua`: Contains the script that runs when awesome starts (essentially links all the other files together)
-+ `apps.lua`: Contains the default and startup applications
++ `rc.lua`: The main script that runs when awesome starts. Defines default applications, and selects theme
 + `keys.lua`: Contains keybinds
 + `rules.lua`: Contains window rules
-+ `theme.lua`: Contains theme variables
-+ `tags.lua`: Contains tag (aka workspace) information, edit this to change the tag's icon and behaviour
++ `pastel.lua`: Initializes the pastel theme (spawns all of the pastel theme components)
++ `mirage.lua`: Initializes the mirage theme (spawns all of the mirage theme components)
++ `themes`: Contains files with theme variables (ie colors, sizing, font, etc)
 + `icons`: stores icons used in WM
 + `components`: Folder that contains all of the components of the WM, such as panels, volume and brightness sliders, notification pop-ups, etc
++ `configuration`: Contains theme-based config files for applications (ie rofi, picom, etc)
 + `widgets`: Stores widgets used in the functionality of the components
 + `wallpaper`: Where wallpaper and its blurred varient is generated / stored
 
@@ -99,14 +100,13 @@ In order to avoid a poorly organized `rc.lua` spanning thousands of lines, it ha
 + **Text Editor - doom emacs and nvim**: I'm an alpha chad
 + **File Manager - Nautilus**: Lightweight file browser, few dependencies, and can be configured to work with a preferred terminal. Also has extensions for easy right click extraction / compression of archive files (ie zip / rar etc)
 + **Web Browser - Firefox**: Super configurable and isn't made by Google
-+ **Terminal - Alacritty**: A FREAKIN GPU ACCELERATED TERMINAL. So OP I love it
++ **Terminal - St**: Super minimal terminal that is arguably the fastest modern terminal. Is hard to set up, I would recommend `alacritty` for most users
 + **Theme / Look & Feel Manager - lxappearance**: makes managing icon / cursor / application themes easy, only theme manager with no DE dependencies, and works very well
 
 ### Other cool applications you should install ###
-+ `redshift`: Changed screen warmth based on the time of day
++ `redshift`: Changes screen warmth based on the time of day
 + `neofetch`: Displays system information in the terminal
 + `cmatrix`: Terminal base matrix text effect
-+ `cava`: Terminal audio visualizer!
 
 <a name="appTheming"></a>
 ## Application Theming ##
@@ -162,7 +162,7 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 <a name="keybinds"></a>
 ## Keybinds ##
 **Note that the modkey is set to be the windows / command key. If you would like to use a different modkey check out the `keys.lua` file.**
-If you are new to awesomewm, note that tag refers to workspace, and client refers to window.
+If you are new to awesomewm, note that tag refers to workspace, and client refers to window. Shown below are the **main** keybinds that most users will care about.
 
 ### Keyboard ###
 + `mod + enter`: Spawn terminal
