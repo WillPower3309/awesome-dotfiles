@@ -15,6 +15,8 @@ local beautiful = require("beautiful")
 local wibox = require("wibox")
 local gears = require("gears")
 
+local dpi = beautiful.xresources.apply_dpi
+
 -- define module table
 local top_panel = {}
 
