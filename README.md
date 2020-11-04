@@ -51,7 +51,7 @@ I have made my best effort to reduce the number of dependencies by using the awe
 |:----------:|:-------------:|
 |`awesome`|Window manager|
 |`feh`|Fast image viewer used as wallpaper setting utility|
-|`picom`|Window compositor, eliminates screen tearing and allows for cool fade effects. **git version required for mirage theme**|
+|`picom-ibhagwan`|Window compositor, eliminates screen tearing and allows for cool fade effects. **ibhagwan version required for mirage theme**|
 |`rofi`|Application launcher|
 |`imagemagick`|**OPTIONAL BUT NEEDED IF USING A DIFFERENT BACKGROUND**, used in config to generate blurred wallpaper|
 
