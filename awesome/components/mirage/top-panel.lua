@@ -39,8 +39,9 @@ top_panel.create = function(s)
       type = "dock",
    })
 
-   -- do not define panel:struts
-   -- this will allow the calendar widget to appear above the panel
+   panel:struts({
+      top = beautiful.top_panel_height
+   })
 
    panel:setup {
       expand = "none",
