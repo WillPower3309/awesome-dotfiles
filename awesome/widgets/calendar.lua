@@ -36,7 +36,7 @@ calendar.create = function(screen)
       mode = "outside",
       align = "right",
       timer_function = function()
-         return os.date("The date today is %B %d, %Y. And it's fucking %A!")
+         return os.date("The date today is %B %d, %Y.")
       end,
       preferred_positions = {"right", "left", "top", "bottom"},
       margin_leftright = dpi(8),

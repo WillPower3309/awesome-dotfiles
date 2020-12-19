@@ -1,0 +1,83 @@
+:root {
+	/* All the CSS variables here are global */
+	/* These applies to all colorschemes */
+
+	/* If windows - `-moz-win-glass`, if macOS - `-moz-mac-vibrancy-dark` */
+	--bf-moz-appearance: -moz-win-glass !important;
+
+	--bf-backdrop-blur: 6px;
+
+	--bf-sidebar-searchbar-radius: 6px;
+
+	--bf-accent-bg: #4C5FF9CC;
+	--bf-blank-page-bg: #252525;
+	
+	--bf-urlbar-hightlight-bg: var(--bf-accent-bg);
+	--bf-urlbar-radius: 9px;
+	--bf-urlbar-results-font-size: 12pt;
+	--bf-urlbar-results-font-weight: 550;
+	--bf-urlbar-font-size: 12pt;
+	--bf-urlbar-font-weight: 500;
+	--bf-urlbar-switch-tab-color: #6498EF;
+	--bf-urlbar-bookmark-color: #53E2AE;
+	
+	--bf-navbar-padding: 6px;
+	
+	--bf-tab-selected-bg: #77777788;
+	--bf-tab-font-size: 11pt;
+	--bf-tab-font-weight: 400;
+	--bf-tab-height: 36px;
+	--bf-tab-border-radius: 6px;
+	--bf-tab-soundplaying-bg: #985EFFCC;
+
+	--toolbar-bgcolor: transparent !important;
+	--urlbar-separator-color: transparent !important;
+}
+
+/* Light Mode */
+:root:-moz-lwtheme-darktext {
+	--bf-main-window: transparent;
+	--bf-bg: #F2F2F266;
+	--bf-color: #0A0A0A;
+	
+	--bf-hover-bg: #1A1A1A33;
+	--bf-active-bg: #1A1A1A66;
+	
+	--bf-icon-color: #0A0A0A;
+	--bf-tab-toolbar-bg: #F2F2F2AA;
+	--bf-tab-selected-bg: #00000022;
+	--bf-navbar-bg: var(--bf-bg);
+	--bf-urlbar-bg: var(--bf-bg);
+	--bf-urlbar-active-bg: var(--bf-bg);
+	--bf-urlbar-focused-color: var(--bf-color);
+	
+	--bf-sidebar-bg: var(--bf-bg);
+	--bf-sidebar-color: var(--bf-color);
+	
+	--bf-menupopup-bg: #F2F2F2AA;
+	--bf-menupopup-color: var(--bf-color);
+}
+
+/* Dark Mode */
+:root:-moz-lwtheme-brighttext {
+	--bf-main-window: transparent;
+	--bf-bg: #5B60711A;
+	--bf-color: #F2F2F2;
+	
+	--bf-hover-bg: #F2F2F233;
+	--bf-active-bg: #F2F2F266;
+	
+	--bf-icon-color: #F2F2F2;
+	--bf-tab-toolbar-bg: var(--bf-bg);
+	--bf-tab-selected-bg: #F2F2F210;
+	--bf-navbar-bg: var(--bf-bg);
+	--bf-urlbar-bg: var(--bf-bg);
+	--bf-urlbar-active-bg: var(--bf-bg);
+	--bf-urlbar-focused-color: var(--bf-color);
+	
+	--bf-sidebar-bg: var(--bf-bg);
+	--bf-sidebar-color: var(--bf-color);
+	
+	--bf-menupopup-bg: #000000AA;
+	--bf-menupopup-color: var(--bf-color);
+}
