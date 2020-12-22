@@ -57,10 +57,10 @@ theme.border_marked = theme.fg_urgent
 
 -- Taglist
 theme.taglist_bg_empty = theme.bg_dark
-theme.taglist_bg_occupied = "#111111"
+theme.taglist_bg_occupied = theme.bg_dark
 theme.taglist_bg_urgent = "#e91e6399"
-theme.taglist_bg_focus = theme.bg_normal
-theme.taglist_spacing = dpi(19)
+theme.taglist_bg_focus = theme.bg_dark
+theme.taglist_spacing = dpi(25)
 
 -- Tasklist
 theme.tasklist_font = theme.font
@@ -91,7 +91,6 @@ theme.systray_icon_spacing = dpi(5)
 
 
 -- Define layout icons
--- titlebars_enabled = true,
 theme.layout_tile = "~/.config/awesome/icons/layouts/tiled.png"
 theme.layout_floating = "~/.config/awesome/icons/layouts/floating.png"
 theme.layout_max = "~/.config/awesome/icons/layouts/maximized.png"
