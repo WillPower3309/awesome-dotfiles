@@ -16,9 +16,8 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 local clickable_container = require("widgets.clickable-container")
 
-local apps = require("apps").default
 local dpi = beautiful.xresources.apply_dpi
-local ICON_DIR = gears.filesystem.get_configuration_dir() .. "/icons/exit-screen/"
+local ICON_DIR = gears.filesystem.get_configuration_dir() .. "/icons/exit-screen/" .. beautiful.name .. "/"
 
 -- define module table
 local exit_screen = {}

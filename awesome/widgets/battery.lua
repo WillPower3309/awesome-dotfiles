@@ -50,7 +50,7 @@ widget_button:buttons(
    gears.table.join(
       awful.button({}, 1, nil,
          function()
-            awful.spawn("xfce4-power-manager-settings")
+            awful.spawn(apps.power_manager)
          end
       )
    )

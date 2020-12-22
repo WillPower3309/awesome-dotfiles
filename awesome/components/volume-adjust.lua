@@ -20,12 +20,17 @@ local dpi = beautiful.xresources.apply_dpi
 local offsetx = dpi(56)
 local offsety = dpi(300)
 local screen = awful.screen.focused()
+local icon_dir = gears.filesystem.get_configuration_dir() .. "/icons/volume/" .. beautiful.name .. "/"
 
 
 -- ===================================================================
 -- Appearance & Functionality
 -- ===================================================================
 
+
+local volume_icon = wibox.widget {
+   widget = wibox.widget.imagebox
+}
 
 -- create the volume_adjust component
 local volume_adjust = wibox({
@@ -59,10 +64,7 @@ volume_adjust:setup {
       layout = wibox.container.rotate
    },
    wibox.container.margin(
-      wibox.widget{
-         image = gears.filesystem.get_configuration_dir() .. "/icons/volume.png",
-         widget = wibox.widget.imagebox
-      }, dpi(7), dpi(7), dpi(14), dpi(14)
+      volume_icon
    )
 }
 
@@ -83,7 +85,15 @@ awesome.connect_signal("volume_change",
       awful.spawn.easy_async_with_shell(
          "amixer sget Master | grep 'Right:' | awk -F '[][]' '{print $2}'| sed 's/[^0-9]//g'",
          function(stdout)
-            volume_bar.value = tonumber(stdout)
+            local volume_level = tonumber(stdout)
+            volume_bar.value = volume_level
+            if (volume_level > 40) then
+               volume_icon:set_image(icon_dir .. "volume.png")
+            elseif (volume_level > 0) then
+               volume_icon:set_image(icon_dir .. "volume-low.png")
+            else
+               volume_icon:set_image(icon_dir .. "volume-off.png")
+            end
          end,
          false
       )

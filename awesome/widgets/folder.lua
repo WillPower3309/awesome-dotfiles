@@ -16,8 +16,6 @@ local clickable_container = require("widgets.clickable-container")
 local gears = require("gears")
 local dpi = require("beautiful").xresources.apply_dpi
 
-local filebrowser = require("apps").default.filebrowser
-
 local HOME_DIR = os.getenv("HOME")
 local PATH_TO_ICONS = HOME_DIR .. "/.config/awesome/icons/folders/"
 
@@ -63,7 +61,7 @@ function folder.create(directory)
       gears.table.join(
          awful.button({}, 1, nil,
             function()
-               awful.spawn.easy_async_with_shell(filebrowser .. " " .. directory, function(stderr) end, 1)
+               awful.spawn.easy_async_with_shell(apps.filebrower .. " " .. directory, function(stderr) end, 1)
             end
          )
       )

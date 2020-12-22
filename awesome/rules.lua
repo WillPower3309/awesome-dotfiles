@@ -33,6 +33,7 @@ function rules.create(clientkeys, clientbuttons)
       {
          rule = {},
          properties = {
+            titlebars_enabled = beautiful.titlebars_enabled,
             border_width = beautiful.border_width,
             border_color = beautiful.border_normal,
             focus = awful.client.focus.filter,
@@ -41,7 +42,6 @@ function rules.create(clientkeys, clientbuttons)
             buttons = clientbuttons,
             screen = awful.screen.preferred,
             placement = awful.placement.centered
-
          },
       },
       -- Floating clients.
@@ -110,7 +110,11 @@ function rules.create(clientkeys, clientbuttons)
       -- Rofi
       {
          rule_any = {name = {"rofi"}},
-         properties = {maximized = true, ontop = true}
+         --properties = {maximized = true, ontop = true}
+         properties = {floating = true, titlebars_enabled = false},
+         callback = function(c)
+            awful.placement.left(c)
+         end
       },
 
       -- File chooser dialog

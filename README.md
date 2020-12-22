@@ -19,13 +19,13 @@
 
 <a name="details"></a>
 ## Details ##
-+ **OS**: Arch Linux
++ **OS**: Gentoo Linux
 + **Shell**: ZSH
 + **WM**: awesome
 + **Theme**: Qogir Dark
 + **Icons**: Tela Dark
 + **Cursor**: xCursor Breeze Light
-+ **Terminal**: Alacritty
++ **Terminal**: St
 
 <a name="features"></a>
 ## Features ##
@@ -45,15 +45,14 @@
 
 <a name="dependencies"></a>
 ## Dependencies ##
-I have made my best effort to reduce the number of dependencies by using the awesome API to its fullest extent, and allowing users to edit the `apps.lua` file (see [installation section](#installation)) to define their own preferred applications. That being said, here are the dependencies.
+I have made my best effort to reduce the number of dependencies by using the awesome API to its fullest extent, and allowing users to specify their preferred applications via the `rc.lua` file (see [installation section](#installation)). That being said, here are the dependencies:
 
 |Dependency|Description|
 |:----------:|:-------------:|
 |`awesome`|Window manager|
 |`feh`|Fast image viewer used as wallpaper setting utility|
-|`picom`|Window compositor, eliminates screen tearing and allows for cool fade effects|
+|`picom-ibhagwan`|Window compositor, eliminates screen tearing and allows for cool fade effects. **ibhagwan version required for mirage theme**|
 |`rofi`|Application launcher|
-|`i3lock`|Used to lock the screen|
 |`imagemagick`|**OPTIONAL BUT NEEDED IF USING A DIFFERENT BACKGROUND**, used in config to generate blurred wallpaper|
 
 ### Optional Dependencies ###
@@ -61,11 +60,8 @@ These will improve the user experience but aren't required:
 **Bear in mind that most of these dependencies come preinstalled on non arch systems. I would recommend reading their descriptions below to determine which ones you need to install. Alternatively, set up my config and install the packages based on what isn't appearing in the top panel.**
 + `i3lock`: Will be opened when the lock icon is selected in the exit window
 + `acpi`: Battery managing cli application, used by top bar widget to determine battery status
-+ `xfce4-power-manager`: Lightweight power manager spawned when the top panel battery icon is clicked
 + `bluez`, `bluez-utils`: Bluetooth cli application, used by top bar widget to determine if bluetooth is on
 + `blueman`: Bluetooth managing application, spawns when the bluetooth top panel icon is clicked
-+ `pamac-aur`: Lightweight GUI package manager, spawned when the top panel package icon is clicked
-+ `nm-connection-editor`: GUI wifi connection editor, spawned when the top panel wifi icon is clicked
 + `scrot`: Screenshot tool, which is mapped to the Print Screen key in keys.lua. **If you want to meet this dependency, ensure that the `~/Pictures` folder exists**, otherwise the program will save your screenshots to your home directory
 + `alsa-utils`: Provides kernel driven sound drivers, which the control of has been mapped to volume keys in keys.lua
 + `xbacklight`: Controls display brightness, which the control of has been mapped to brightness keys in keys.lua
@@ -78,22 +74,23 @@ These will improve the user experience but aren't required:
 ## Installation ##
 1. Ensure all [dependencies](#dependencies) are met
 2. Clone this repository and place its contents into your `.config` folder
-3. navigate to the `awesome/wallpaper` folder and place your desired wallpaper there, ensuring that it is named `wallpaper`. One  awesome (pun intended) feature of my config is that the filetype of the wallpaper can be any image filetype and it will automatically recognize it. Remember to delete the `blurredWallpaper` file in order to make the blurring script recognize a new wallpaper has been added and needs to be blurred 
-4. edit the `apps.lua` file to define your desired default and startup applications.
-5. If the wifi top bar widget is not working, edit the `widgets/wifi.lua` file and ensure that the `local interface` variable matches your wifi interface name (if you are unsure how to find your interface name, check out [this discussion](https://bbs.archlinux.org/viewtopic.php?id=166171)).
+3. edit the `rc.lua` file to select your theme, and define your desired default and startup applications.
+4. navigate to the `awesome/wallpaper` folder and place your desired wallpaper there, ensuring that it is named `wallpaper`. One  awesome (pun intended) feature of my config is that the filetype of the wallpaper can be any image filetype and it will automatically recognize it. Remember to delete the `blurredWallpaper` file in order to make the blurring script recognize a new wallpaper has been added and needs to be blurred 
+5. If the network top bar widget is not working, edit the `widgets/network.lua` file and ensure that the `local interfaces` variable matches your network interface name (if you are unsure how to find your interface name, check out [this discussion](https://bbs.archlinux.org/viewtopic.php?id=166171)).
 6. optional: edit the `keys.lua` file to change / add keybinds
 
 <a name="folderStructure"></a>
 ## Awesome Folder File Structure ##
 In order to avoid a poorly organized `rc.lua` spanning thousands of lines, it has been split into multiple files / folders. I have taken extra care to create a logical directory structure that will hopefully allow those new to awesomewm to have an easy time navigating it.
-+ `rc.lua`: Contains the script that runs when awesome starts (essentially links all the other files together)
-+ `apps.lua`: Contains the default and startup applications
++ `rc.lua`: The main script that runs when awesome starts. Defines default applications, and selects theme
 + `keys.lua`: Contains keybinds
 + `rules.lua`: Contains window rules
-+ `theme.lua`: Contains theme variables
-+ `tags.lua`: Contains tag (aka workspace) information, edit this to change the tag's icon and behaviour
++ `pastel.lua`: Initializes the pastel theme (spawns all of the pastel theme components)
++ `mirage.lua`: Initializes the mirage theme (spawns all of the mirage theme components)
++ `themes`: Contains files with theme variables (ie colors, sizing, font, etc)
 + `icons`: stores icons used in WM
 + `components`: Folder that contains all of the components of the WM, such as panels, volume and brightness sliders, notification pop-ups, etc
++ `configuration`: Contains theme-based config files for applications (ie rofi, picom, etc)
 + `widgets`: Stores widgets used in the functionality of the components
 + `wallpaper`: Where wallpaper and its blurred varient is generated / stored
 
@@ -103,14 +100,13 @@ In order to avoid a poorly organized `rc.lua` spanning thousands of lines, it ha
 + **Text Editor - doom emacs and nvim**: I'm an alpha chad
 + **File Manager - Nautilus**: Lightweight file browser, few dependencies, and can be configured to work with a preferred terminal. Also has extensions for easy right click extraction / compression of archive files (ie zip / rar etc)
 + **Web Browser - Firefox**: Super configurable and isn't made by Google
-+ **Terminal - Alacritty**: A FREAKIN GPU ACCELERATED TERMINAL. So OP I love it
++ **Terminal - St**: Super minimal terminal that is arguably the fastest modern terminal. Is hard to set up, I would recommend `alacritty` for most users
 + **Theme / Look & Feel Manager - lxappearance**: makes managing icon / cursor / application themes easy, only theme manager with no DE dependencies, and works very well
 
 ### Other cool applications you should install ###
-+ `redshift`: Changed screen warmth based on the time of day
++ `redshift`: Changes screen warmth based on the time of day
 + `neofetch`: Displays system information in the terminal
 + `cmatrix`: Terminal base matrix text effect
-+ `cava`: Terminal audio visualizer!
 
 <a name="appTheming"></a>
 ## Application Theming ##
@@ -166,7 +162,7 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 <a name="keybinds"></a>
 ## Keybinds ##
 **Note that the modkey is set to be the windows / command key. If you would like to use a different modkey check out the `keys.lua` file.**
-If you are new to awesomewm, note that tag refers to workspace, and client refers to window.
+If you are new to awesomewm, note that tag refers to workspace, and client refers to window. Shown below are the **main** keybinds that most users will care about.
 
 ### Keyboard ###
 + `mod + enter`: Spawn terminal
