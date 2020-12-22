@@ -22,7 +22,7 @@ local themes = {
 }
 
 -- change this number to use the corresponding theme
-local theme = themes[2]
+local theme = themes[1]
 local theme_config_dir = gears.filesystem.get_configuration_dir() .. "/configuration/" .. theme .. "/"
 
 -- define default apps (global variable so other components can access it)
