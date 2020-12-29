@@ -1,5 +1,1 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" width="240" height="240" viewBox="0 0 24.00 24.00" enable-background="new 0 0 24.00 24.00" xml:space="preserve">
-	<path fill="#ffffff" fill-opacity="1" stroke-width="0.2" stroke-linejoin="round" d="M 14.8783,16.2911L 12.9993,18.1701L 12.9993,14.4121M 12.9993,5.82607L 14.8783,7.70507L 12.9993,9.58407M 17.7063,7.70507L 11.9993,1.99807L 10.9993,1.99807L 10.9993,9.58407L 6.41331,4.99807L 4.99931,6.41207L 10.5853,11.9981L 4.99931,17.5841L 6.41331,18.9981L 10.9993,14.4121L 10.9993,21.9981L 11.9993,21.9981L 17.7063,16.2911L 13.4133,11.9981L 17.7063,7.70507 Z "/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="48px" height="48px"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M17 7l-4.29-4.29c-.63-.63-1.71-.19-1.71.7v6.18L7.11 5.7c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L10.59 12 5.7 16.89c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L11 14.41v6.18c0 .89 1.08 1.34 1.71.71L17 17c.39-.39.39-1.02 0-1.41L13.41 12 17 8.42c.39-.39.39-1.03 0-1.42zm-4-1.17l1.88 1.88L13 9.59V5.83zm1.88 10.46L13 18.17v-3.76l1.88 1.88z"/></svg>
