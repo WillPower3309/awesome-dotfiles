@@ -1,7 +1,7 @@
 configuration {
     show-icons: true;
     icon-theme: "Tela-dark";
-    font: "SF Pro Display 14";
+    font: "Iosevka Nerd Font 14";
     display-drun: "";
     drun-display-format: "{name}";
 }
@@ -35,6 +35,7 @@ prompt {
 }
 
 entry {
+    font: "SF Pro Display 14";
     placeholder-color: #999999;
     placeholder: "Search Applications";
     blink: true;
@@ -87,6 +88,7 @@ element-icon {
 }
 
 element-text {
+    font: "SF Pro Display 14";
     padding: 10 0 0 0;
     text-color: inherit;
     horizontal-align: 0.5;

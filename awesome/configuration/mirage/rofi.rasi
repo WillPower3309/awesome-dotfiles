@@ -1,7 +1,7 @@
 configuration {
     show-icons: true;
     icon-theme: "Tela-dark";
-    font: "SF Pro Display 12";
+    font: "Iosevka Nerd Font 12";
     display-drun: "";
     drun-display-format: "{name}";
 }
@@ -17,7 +17,7 @@ configuration {
 
 window {
     height: 100%;
-    width: 20%;
+    width: 25%;
     transparency: "real";
     background-color: @background;
 }
@@ -35,6 +35,7 @@ prompt {
 }
 
 entry {
+    font: "SF Pro Display 12";
     placeholder-color: #999999;
     placeholder: "Search Applications";
     blink: true;
@@ -43,7 +44,7 @@ entry {
 
 mainbox {
     children: [ inputbar, listview ];
-    margin: 5% 1% 0 3.5%;
+    margin: 5% 1% 0 5.5%;
 }
 
 listview {
