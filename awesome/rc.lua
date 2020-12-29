@@ -37,9 +37,10 @@ apps = {
 }
 
 -- define wireless and ethernet interface names for the network widget
+-- use `ip link` command to determine these
 network_interfaces = {
    wlan = 'wlp1s0',
-   lan = 'eth0'
+   lan = 'enp1s0'
 }
 
 -- List of apps to run on start-up
