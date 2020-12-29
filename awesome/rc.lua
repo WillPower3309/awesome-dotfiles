@@ -36,6 +36,12 @@ apps = {
    filebrowser = "nautilus"
 }
 
+-- define wireless and ethernet interface names for the network widget
+network_interfaces = {
+   wlan = 'wlp1s0',
+   lan = 'eth0'
+}
+
 -- List of apps to run on start-up
 local run_on_start_up = {
    "picom --experimental-backends --config " .. theme_config_dir .. "picom.conf",

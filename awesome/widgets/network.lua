@@ -19,12 +19,6 @@ local clickable_container = require('widgets.clickable-container')
 local config_dir = gears.filesystem.get_configuration_dir()
 local widget_icon_dir = config_dir .. 'icons/network/'
 
--- Configuration
-local interfaces = {
-	wlan_interface = 'wlp1s0',
-	lan_interface = 'eth0'
-}
-
 local network_mode = nil
 
 local return_button = function()
@@ -39,7 +33,7 @@ local return_button = function()
 	local widget = wibox.widget {
 		{
 			id = 'icon',
-			image = widget_icon_dir .. 'wifi-strength-off' .. '.svg',
+			image = widget_icon_dir .. 'loading.svg',
 			widget = wibox.widget.imagebox,
 			resize = true
 		},
@@ -136,13 +130,13 @@ local return_button = function()
 		local update_wireless_data = function(strength, healthy)
 			awful.spawn.easy_async_with_shell(
 				[[
-				iw dev ]] .. interfaces.wlan_interface .. [[ link
+				iw dev ]] .. network_interfaces.wlan .. [[ link
 				]],
 				function(stdout)
 					local essid = stdout:match('SSID: (.-)\n') or 'N/A'
 					local bitrate = stdout:match('tx bitrate: (.+/s)') or 'N/A'
 					local message = 'Connected to: <b>' .. (essid or 'Loading...*') ..
-						'</b>\nWireless Interface: <b>' .. interfaces.wlan_interface ..
+						'</b>\nWireless Interface: <b>' .. network_interfaces.wlan ..
 						'</b>\nWiFi-Strength: <b>' .. tostring(wifi_strength) .. '%' ..
 						'</b>\nBit rate: <b>' .. tostring(bitrate) .. '</b>'
 					
@@ -207,7 +201,7 @@ local return_button = function()
 		network_mode = 'wired'
 
 		local notify_connected = function()
-			local message = 'Connected to internet with <b>\"' .. interfaces.lan_interface .. '\"</b>'
+			local message = 'Connected to internet with <b>\"' .. network_interfaces.lan .. '\"</b>'
 			local title = 'Connection Established'
 			local app_name = 'System Notification'
 			local icon = widget_icon_dir .. 'wired.svg'
@@ -224,10 +218,10 @@ local return_button = function()
 					widget_icon_name = widget_icon_name .. '-alert'
 					update_tooltip(
 						'<b>Connected but no internet!</b>' ..
-						'\nEthernet Interface: <b>' .. interfaces.lan_interface .. '</b>'
+						'\nEthernet Interface: <b>' .. network_interfaces.lan .. '</b>'
 					)
 				else
-					update_tooltip('Ethernet Interface: <b>' .. interfaces.lan_interface .. '</b>')
+					update_tooltip('Ethernet Interface: <b>' .. network_interfaces.lan .. '</b>')
 					if startup or reconnect_startup then
 						awesome.emit_signal('system::network_connected')
 						notify_connected()
@@ -280,8 +274,8 @@ local return_button = function()
 	local check_network_mode = function()
 		awful.spawn.easy_async_with_shell(
 			[=[
-			wireless="]=] .. tostring(interfaces.wlan_interface) .. [=["
-			wired="]=] .. tostring(interfaces.lan_interface) .. [=["
+			wireless="]=] .. tostring(network_interfaces.wlan) .. [=["
+			wired="]=] .. tostring(network_interfaces.lan) .. [=["
 			net="/sys/class/net/"
 
 			wired_state="down"
