@@ -1,7 +1,7 @@
 configuration {
     show-icons: true;
     icon-theme: "Tela-dark";
-    font: "SF Pro Display 14";
+    font: "SF Pro Display 12";
     display-drun: "";
     drun-display-format: "{name}";
 }
@@ -9,25 +9,24 @@ configuration {
 * {
     background-color: transparent;
     background: #5B60711A;
-    background-alt: #E5E9F047;
+    background-alt: #ffffff13;
     text-color: #D8DEE9;
-    selected-text-color: #000000;
     primary: #A3BE8C;
     urgent: #BF616A;
 }
 
 window {
     height: 100%;
-    width: 28%;
+    width: 20%;
     transparency: "real";
     background-color: @background;
 }
 
 inputbar {
-    background-color: #ffffff20;
+    background-color: @background-alt;
     text-color: @foreground;
     border-radius: 25%;
-    padding: 1.3%;
+    padding: 1.1%;
 }
 
 prompt {
@@ -44,19 +43,19 @@ entry {
 
 mainbox {
     children: [ inputbar, listview ];
-    margin: 5% 1.5% 0 5%;
+    margin: 5% 1% 0 3.5%;
 }
 
 listview {
     columns: 3;
     layout: vertical;
     spacing: 0;
-    margin: 8% 0;
+    margin: 7% 0;
 }
 
 element {
     orientation: vertical;
-    padding: 2% 2%;
+    padding: 1.5% 1.5%;
     border-radius: 40;
 }
 
@@ -71,7 +70,6 @@ element normal.active, element alternate.active {
 
 element selected {
     background-color: @background-alt;
-    color: @selected-text-color;
 }
 
 element selected.urgent {
@@ -80,7 +78,6 @@ element selected.urgent {
 
 element selected.active {
     background-color: @background-alt;
-    color: @selected-text-color;
 }
 
 element-icon {
@@ -88,7 +85,7 @@ element-icon {
 }
 
 element-text {
-    padding: 10 0 0 0;
-    text-color: inherit;
+    font: "SF Pro Display 10";
+    color: inherit;
     horizontal-align: 0.5;
 }
