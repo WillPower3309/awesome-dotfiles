@@ -72,7 +72,7 @@ local return_button = function()
 	local check_internet_health = [=[
 	status_ping=0
 
-	packets="$(ping -q -w2 -c2 1.1.1.1 | grep -o "100% packet loss")"
+	packets="$(ping -q -w2 -c2 example.com | grep -o "100% packet loss")"
 	if [ ! -z "${packets}" ];
 	then
 		status_ping=0
@@ -122,7 +122,7 @@ local return_button = function()
 			local message = 'You are now connected to <b>\"' .. essid .. '\"</b>'
 			local title = 'Connection Established'
 			local app_name = 'System Notification'
-			local icon = widget_icon_dir .. 'wifi.svg'
+			local icon = widget_icon_dir .. 'connected_notification.svg'
 			network_notify(message, title, app_name, icon)
 		end
 
