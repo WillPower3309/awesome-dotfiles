@@ -8,11 +8,11 @@
 <div align="center">
     <h3>Pastel Theme</h3>
 </div>
-![](./screenshots/pastel.png)
+![](https://raw.githubusercontent.com/WillPower3309/awesome-dotfiles/master/screenshots/pastel.png)
 <div align="center">
     <h3>Mirage Theme</h3>
 </div>
-![](./screenshots/mirage.png)
+![](https://raw.githubusercontent.com/WillPower3309/awesome-dotfiles/master/screenshots/mirage.png)
 
 ## Contents ##
 1. [Details](#details)
