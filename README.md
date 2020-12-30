@@ -4,7 +4,15 @@
 
 [![HitCount](http://hits.dwyl.io/willpower3309/awesome-dotfiles.svg)](http://hits.dwyl.io/willpower3309/awesome-dotfiles)
 
-![](/screenshot.png)
+
+<div align="center">
+    <h3>Pastel Theme</h3>
+</div>
+![](/screenshots/pastel.png)
+<div align="center">
+    <h3>Mirage Theme</h3>
+</div>
+![](/screenshots/mirage.png)
 
 ## Contents ##
 1. [Details](#details)
@@ -12,27 +20,24 @@
 3. [Dependencies](#dependencies)
 4. [Installation](#installation)
 5. [Folder Structure](#folderStructure)
-6. [My Preferred Applications](#applications)
-7. [Application Theming](#appTheming)
-8. [Keybinds](#keybinds)
-9. [Notes](#notes)
+6. [Application Theming](#appTheming)
+7. [Keybinds](#keybinds)
+8. [Notes](#notes)
 
 <a name="details"></a>
 ## Details ##
-+ **OS**: Gentoo Linux
 + **Shell**: ZSH
 + **WM**: awesome
 + **Theme**: Qogir Dark
 + **Icons**: Tela Dark
 + **Cursor**: xCursor Breeze Light
-+ **Terminal**: St
++ **Terminal**: Alacritty
 
 <a name="features"></a>
 ## Features ##
 + Super lightweight
 + Easy installation / configuration
 + Very few dependencies
-+ Wallpaper auto-blur functionality
 + Exit screen
 + Locking (via `i3lock`)
 + Touch screen friendly (I primarily run this on a microsoft surface pro 6)
@@ -74,15 +79,14 @@ These will improve the user experience but aren't required:
 ## Installation ##
 1. Ensure all [dependencies](#dependencies) are met
 2. Clone this repository and place its contents into your `.config` folder
-3. edit the `rc.lua` file to select your theme, and define your desired default and startup applications.
-4. navigate to the `awesome/wallpaper` folder and place your desired wallpaper there, ensuring that it is named `wallpaper`. One  awesome (pun intended) feature of my config is that the filetype of the wallpaper can be any image filetype and it will automatically recognize it. Remember to delete the `blurredWallpaper` file in order to make the blurring script recognize a new wallpaper has been added and needs to be blurred 
-5. If the network top bar widget is not working, edit the `widgets/network.lua` file and ensure that the `local interfaces` variable matches your network interface name (if you are unsure how to find your interface name, check out [this discussion](https://bbs.archlinux.org/viewtopic.php?id=166171)).
-6. optional: edit the `keys.lua` file to change / add keybinds
+3. edit the `rc.lua` file to select your theme, and define your desired default and startup applications, as well as network interfaces
+4. navigate to the `awesome/wallpaper` folder and place your desired wallpaper there, ensuring that it is named either `wallpaper.jpg` if using the pastel theme, or `mirage.png` if using the mirage theme. Remember to delete the `blurredWallpaper` file in order to make the blurring script recognize a new wallpaper has been added and needs to be blurred 
+5. optional: edit the `keys.lua` file to change / add keybinds
 
 <a name="folderStructure"></a>
 ## Awesome Folder File Structure ##
 In order to avoid a poorly organized `rc.lua` spanning thousands of lines, it has been split into multiple files / folders. I have taken extra care to create a logical directory structure that will hopefully allow those new to awesomewm to have an easy time navigating it.
-+ `rc.lua`: The main script that runs when awesome starts. Defines default applications, and selects theme
++ `rc.lua`: The main script that runs when awesome starts. Defines theme and default applications, and selects them
 + `keys.lua`: Contains keybinds
 + `rules.lua`: Contains window rules
 + `pastel.lua`: Initializes the pastel theme (spawns all of the pastel theme components)
@@ -94,15 +98,6 @@ In order to avoid a poorly organized `rc.lua` spanning thousands of lines, it ha
 + `widgets`: Stores widgets used in the functionality of the components
 + `wallpaper`: Where wallpaper and its blurred varient is generated / stored
 
-<a name="applications"></a>
-## My Preferred Applications ##
-+ **Display Manager - SDDM (with sddm-sugar-dark theme)**: Beautiful display manager. Matches the window manager theme very well and looks amazing
-+ **Text Editor - doom emacs and nvim**: I'm an alpha chad
-+ **File Manager - Nautilus**: Lightweight file browser, few dependencies, and can be configured to work with a preferred terminal. Also has extensions for easy right click extraction / compression of archive files (ie zip / rar etc)
-+ **Web Browser - Firefox**: Super configurable and isn't made by Google
-+ **Terminal - St**: Super minimal terminal that is arguably the fastest modern terminal. Is hard to set up, I would recommend `alacritty` for most users
-+ **Theme / Look & Feel Manager - lxappearance**: makes managing icon / cursor / application themes easy, only theme manager with no DE dependencies, and works very well
-
 ### Other cool applications you should install ###
 + `redshift`: Changes screen warmth based on the time of day
 + `neofetch`: Displays system information in the terminal
@@ -111,9 +106,14 @@ In order to avoid a poorly organized `rc.lua` spanning thousands of lines, it ha
 <a name="appTheming"></a>
 ## Application Theming ##
 ### Firefox ###
+**Pastel**
 1. Set up [my custom Firefox theme](https://github.com/willpower3309/MinimalistMaterialFox)
 2. Use [this](https://github.com/Jaredk3nt/homepage) homepage
 3. Use `SF Text` font
+
+**Mirage**
+1. Set up the [blurredfox theme](https://github.com/manilarome/blurredfox)
+2. Replace the `colors/blurred.css` with the one found in this repo under `awesome/configuration/mirage/blurred.css`
 
 ### Spotify ###
 1. [Install `Spicetify`](https://github.com/khanhas/spicetify-cli)
