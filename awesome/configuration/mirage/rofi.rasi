@@ -17,7 +17,7 @@ configuration {
 
 window {
     height: 100%;
-    width: 25%;
+    width: 20%;
     transparency: "real";
     background-color: @background;
 }
@@ -44,7 +44,7 @@ entry {
 
 mainbox {
     children: [ inputbar, listview ];
-    margin: 5% 1% 0 5.5%;
+    margin: 5% 1% 0 3.5%;
 }
 
 listview {
