@@ -61,7 +61,7 @@ function folder.create(directory)
       gears.table.join(
          awful.button({}, 1, nil,
             function()
-               awful.spawn.easy_async_with_shell(apps.filebrower .. " " .. directory, function(stderr) end, 1)
+               awful.spawn.easy_async_with_shell(apps.filebrowser .. " " .. directory, function(stderr) end, 1)
             end
          )
       )
