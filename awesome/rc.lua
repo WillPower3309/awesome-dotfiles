@@ -66,7 +66,8 @@ for _, app in ipairs(run_on_start_up) do
    if firstspace then
       findme = app:sub(0, firstspace - 1)
    end
-   awful.spawn.with_shell(string.format("pgrep -u $USER -x %s > /dev/null || (%s)", findme, app), false)
+   -- pipe commands to bash to allow command to be shell agnostic
+   awful.spawn.with_shell(string.format("echo 'pgrep -u $USER -x %s > /dev/null || (%s)' | bash -", findme, app), false)
 end
 
 -- Import theme
