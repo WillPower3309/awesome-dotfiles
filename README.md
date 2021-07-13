@@ -2,9 +2,6 @@
     <h1>Awesome Dotfiles</h1>
 </div>
 
-[![HitCount](http://hits.dwyl.io/willpower3309/awesome-dotfiles.svg)](http://hits.dwyl.io/willpower3309/awesome-dotfiles)
-
-
 <div align="center">
     <h3>Pastel Theme</h3>
 </div>
