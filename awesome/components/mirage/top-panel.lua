@@ -53,7 +53,8 @@ top_panel.create = function(s)
          wibox.layout.margin(wibox.widget.systray(), dpi(5), dpi(5), dpi(5), dpi(5)),
          require("widgets.bluetooth"),
          require("widgets.network")(),
-         require("widgets.battery")
+         require("widgets.battery"),
+         nil
       }
    }
 
