@@ -80,7 +80,7 @@ end
 
 local last_battery_check = os.time()
 
-watch("acpi -i", 1,
+watch('bash -c \'acpi -i | grep -E "^Battery [0-9]+: ([^%]+%)$|(.+remaining)$|(.+charged)$" --color=never\'', 1,
    function(_, stdout)
       local battery_info = {}
       local capacities = {}
