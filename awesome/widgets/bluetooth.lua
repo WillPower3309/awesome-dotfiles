@@ -42,6 +42,15 @@ widget_button:buttons(
          function()
             awful.spawn("blueman-manager")
          end
+      ),
+      awful.button({}, 3, nil,
+         function()
+            if checker ~= nil then
+               awful.spawn.easy_async_with_shell('bluetoothctl power off')
+            else
+               awful.spawn.easy_async_with_shell('bluetoothctl power on')
+            end
+         end
       )
    )
 )
@@ -63,10 +72,10 @@ awful.tooltip(
 )
 
 local last_bluetooth_check = os.time()
-watch("bluetoothctl --monitor list", 5,
+watch("bluetoothctl show", 5,
    function(_, stdout)
       -- Check if there  bluetooth
-      checker = stdout:match("Controller") -- If 'Controller' string is detected on stdout
+      checker = stdout:match("Powered: yes") -- If Controller powered: yes string is detected on stdout
       local widget_icon_name
       if (checker ~= nil) then
          widget_icon_name = "bluetooth"
