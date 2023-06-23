@@ -86,6 +86,9 @@ awesome.connect_signal("volume_change",
          "amixer sget Master | grep 'Right:' | awk -F '[][]' '{print $2}'| sed 's/[^0-9]//g'",
          function(stdout)
             local volume_level = tonumber(stdout)
+            if(volume_level == nil) then
+               volume_level = 0
+            end
             volume_bar.value = volume_level
             if (volume_level > 40) then
                volume_icon:set_image(icon_dir .. "volume.png")
