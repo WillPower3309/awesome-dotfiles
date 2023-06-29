@@ -79,9 +79,10 @@ These will improve the user experience but aren't required:
 ## Installation ##
 1. Ensure all [dependencies](#dependencies) are met
 2. Clone this repository and place its contents into your `.config` folder
-3. edit the `awesome/rc.lua` file to select your theme, and define your desired default and startup applications, as well as network interfaces
-4. navigate to the `awesome/wallpaper` folder and place your desired wallpaper there, ensuring that it is named either `wallpaper.jpg` if using the pastel theme, or `mirage.png` if using the mirage theme. Remember to delete the `blurredWallpaper` file in order to make the blurring script recognize a new wallpaper has been added and needs to be blurred 
-5. optional: edit the `keys.lua` file to change / add keybinds
+3. Edit the `awesome/rc.lua` file to select your theme, and define your desired default and startup applications, as well as network interfaces
+4. Execute `sudo chmod +x ~/.config/awesome/components/toggle_mute.sh` to make sure that the mute button works
+5. Navigate to the `awesome/wallpaper` folder and place your desired wallpaper there, ensuring that it is named either `wallpaper.jpg` if using the pastel theme, or `mirage.png` if using the mirage theme. Remember to delete the `blurredWallpaper` file in order to make the blurring script recognize a new wallpaper has been added and needs to be blurred 
+6. (Optional): Edit the `keys.lua` file to change / add keybinds
 
 <a name="folderStructure"></a>
 ## Awesome Folder File Structure ##
