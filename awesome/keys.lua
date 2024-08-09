@@ -485,9 +485,35 @@ keys.globalkeys = gears.table.join(
          end
       end,
       {description = "restore minimized", group = "client"}
+   ),
+   
+   -- =========================================
+   -- NAVIGATE THROUGH TAGS UP/DOWN
+   -- =========================================
+
+   -- Navigate to a previous tag
+   awful.key({modkey, "Shift"}, "u",
+      function()
+         local screen = awful.screen.focused()
+         local tag = awful.tag.viewidx(1, screen)
+         if tag then
+            tag:view_only()
+         end
+      end,
+      {description = "navigate to a previous tag", group = "tag"}
+   ),
+   -- Navigate to a next tag
+   awful.key({modkey, "Shift"}, "i",
+      function()
+         local screen = awful.screen.focused()
+         local tag = awful.tag.viewidx(-1, screen)
+         if tag then
+            tag:view_only()
+         end
+      end,
+      {description = "navigate to a next tag", group = "tag"}
    )
 )
-
 
 -- ===================================================================
 -- Client Key bindings
